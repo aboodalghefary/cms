@@ -55,9 +55,9 @@ Route::group([
    'prefix' => LaravelLocalization::setLocale(),
    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
 ], function () {
-   // Route::middleware(['redirect.prefix'])->get('/', function () {
-   //    return view('auth.login');
-   // });
+   Route::middleware(['redirect.prefix'])->get('/login', function () {
+      return view('auth.login');
+   });
 
    route::middleware(['auth:admin,author'])->get('home', function () {
       return view('cms.home');

@@ -27,7 +27,6 @@
             </thead>
             <tbody>
                 @foreach ($categories as $category)
-                    {{ dd($category->blogs) }}
                     <tr>
                         <td>{{ $category->id }}</td>
                         <td> <img src="{{ asset('storage/images/category/' . $category->image) }}" alt="Sub Image"
