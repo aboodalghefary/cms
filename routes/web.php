@@ -49,6 +49,7 @@ Route::post('/upload', [PostTasksController::class, 'upload']);
 
 
 Route::get('/', [FrontController::class, 'index']);
+Route::get('/post_details/{id}', [FrontController::class, 'post_details'])->name('post_details');
 
 
 Route::group([

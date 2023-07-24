@@ -6,17 +6,13 @@
         </span>
     </div>
 
-    {{-- @foreach ($categories as $category)
-        {{ dd($category->blogs) }}
-    @endforeach --}}
-
     <div class="container-3-columns">
         <!-- الخبران الرئيسيان البارزان في هذا القالب -->
         @if (isset($categories[0]->blogs[0]))
             <div class="column text-right pt-3 ">
                 <div style="width: 330px; height: 285px; background-image: url({{ asset('storage/images/blog/' . $categories[0]->blogs[0]->image ?? null) }});"
                     class="column position-relative ">
-                    <a href="../pages/details-new.html">
+                    <a href="{{ route('post_details', ['id' => $categories[0]->blogs[0]->id]) }}">
                         <div class="text text-right bottom-right text-white ">
                             <h6 class=" text-right"> {{ $categories[0]->blogs[0]->name }} </h6>
                             <span class="date "> {{ $categories[0]->blogs[0]->date }} </span>
@@ -30,7 +26,7 @@
             <div class="column text-right pt-3">
                 <div style="width: 330px; height: 285px; background-image: url({{ asset('storage/images/blog/' . $categories[0]->blogs[1]->image ?? null) }});"
                     class="column position-relative ">
-                    <a href="../pages/details-new.html">
+                    <a href="{{ route('post_details', ['id' => $categories[0]->blogs[0]->id]) }}">
                         <div class="text text-right bottom-right text-white ">
                             <h6 class=" text-right"> {{ $categories[0]->blogs[1]->name ?? null }} </h6>
                             <span class="date "> {{ $categories[0]->blogs[1]->date ?? null }} </span>
@@ -46,7 +42,7 @@
                 <div class="box d-flex align-items-center py-3 ">
                     <div style="width: 100px; height: 75px; background-image: url( {{ asset('storage/images/blog/' . $categories[0]->blogs[2]->image ?? null) }} );"
                         class=" text-right">
-                        <a href="../pages/details-new.html"> </a>
+                        <a href="{{ route('post_details', ['id' => $categories[0]->blogs[0]->id]) }}"> </a>
                     </div>
                     <div class="text text-right  text-white mr-3">
                         <h6 class="text-right ">
@@ -61,7 +57,7 @@
                 <div class="box d-flex align-items-center  py-3  ">
                     <div style="width: 100px; height: 75px; background-image: url( {{ asset('storage/images/blog/' . $categories[0]->blogs[3]->image ?? null) }} );"
                         class="text-right">
-                        <a href="../pages/details-new.html"> </a>
+                        <a href="{{ route('post_details', ['id' => $categories[0]->blogs[0]->id]) }}"> </a>
                     </div>
                     <div class="text text-right  text-white mr-3 ">
                         <h6 class="text-right ">
@@ -75,7 +71,7 @@
                 <div class="box d-flex align-items-center py-3   ">
                     <div style="width: 100px; height: 75px; background-image: url({{ asset('storage/images/blog/' . $categories[0]->blogs[4]->image ?? null) }} );"
                         class="text-right">
-                        <a href="../pages/details-new.html"> </a>
+                        <a href="{{ route('post_details', ['id' => $categories[0]->blogs[0]->id]) }}"> </a>
                     </div>
                     <div class="text text-right  text-white  mr-3">
                         <h6 class="text-right ">

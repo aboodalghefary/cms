@@ -467,7 +467,7 @@
         </div>
 
         @php
-            $remainingRows = $rows->slice(4); // Get all rows starting from the fifth row
+            $remainingRows = $rows->slice(4); 
         @endphp
         <!-- هذا نفس القالب الرابع (تصنيفان في نفس الصف كل تصنيف به خبر رئيسي و2 فرعي) -->
 
