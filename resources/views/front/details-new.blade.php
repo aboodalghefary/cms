@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!--  styles for this template -->
-    <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('front/assets/css/lightbox.css') }}">
-
-    <!-- icons -->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-
-    <!-- fonts -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=neckar-bold" /> -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&display=swap">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&family=Marhey&display=swap">
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+        <!--  styles for this template -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/lightbox.css">
+    
+        <!-- icons -->
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+    
+        <!-- fonts -->
+        <!-- <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=neckar-bold" /> -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&family=Marhey&display=swap">
+    </head>
 <body>
 
     <header class="nav-scrolled" dir="rtl">
@@ -29,8 +26,8 @@
             <div class="container align-items-center">
                 <a class="navbar-brand" href="#">
                     <div class="logo  d-flex flex-column align-items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="87px" height="51px">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87px"
+                            height="51px">
                             <image x="0px" y="0px" width="87px" height="51px"
                                 xlink:href="data:img/png;base64,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" />
                         </svg>
@@ -48,26 +45,33 @@
                             <a class="nav-link active " aria-current="page" href="../pages/index.html">الرئيسية</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="">الاخبار</a>
+                            <a class="nav-link " href="#"">الاخبار</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">تقارير خاصة</a>
+                        <li class=" nav-item">
+                                <a class="nav-link" href="#"">تقارير خاصة</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">مقالات</a>
+                        <li class=" nav-item">
+                                    <a class="nav-link" href="#"">مقالات</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pages/video-library.html">فيديو </a>
+                        <li class=" nav-item">
+                                        <a class="nav-link" href="../pages/video-library.html">فيديو </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../pages/contact.html">اتصل بنا</a>
                         </li>
                         <ul class="navbar-nav mr-5 text-white nav-links links d-flex flex-row pt-2 pr-5 mr-auto">
-                            <li class="  "><a class="twitter" href=""><i class="fab fa-twitter"></i></a></li>
-                            <li class=" "><a class="facebook" href=""><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li class="  "><a class="youtube" href=""><i class="fab fa-youtube"></i></a></li>
-                            <li class=" "><a href=""><i class="fal fa-search"></i></a></li>
+                            <li class="  "><a class="twitter" href="#""><i class=" fab fa-twitter"></i></a></li>
+                            <li class=" "><a class="facebook" href="#""><i class=" fab fa-facebook-f"></i></a></li>
+                            <li class="  "><a class="youtube" href="#""><i class=" fab fa-youtube"></i></a></li>
+                            <li class="search"><a href="#""><i class=" fal fa-search"></i></a></li>
+                            <div class="boxsearch" dir="rtl">
+                                <button class="close-icon">
+                                  <i class="fa-solid fa-xmark close"></i> </button>
+                                <input type="text" placeholder="ابحث هنا">
+                                <button class="search-icon">
+                                  <i class="fa-solid fa-magnifying-glass search"></i>
+                                </button>
+                              </div>
                         </ul>
                     </ul>
 
@@ -91,14 +95,13 @@
                 <a href="index.html"> الخبر مفصلا</a>
             </li>
         </div>
-    </ol> 
+    </ol>
 
     <main class="container text-right py-5">
         <div class="row ">
             <div class="col-lg-8 detail-new ">
                 <div class="card ">
-                    <a href="#"><img class="card-img-top" src="{{ asset('front/assets/images/mainnew.png') }}"
-                            alt=""></a>
+                    <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
                     <div class="card-body ">
 
                         <h6 class="short-desk card-text text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
@@ -172,11 +175,10 @@
                                         class="fab fa-facebook-f"></i></a></li>
                             <li class="messanger d-inline-block mb-sm-3 "><a class="" href=""><i
                                         class="fa-brands fa-facebook-messenger"></i></a></li>
-                            <li class="d-inline-block mb-sm-3 "><a href=""><i class="fab fa-google"></i></a>
-                            </li>
+                            <li class="d-inline-block mb-sm-3 "><a href=""><i class="fab fa-google"></i></a></li>
                         </ul>
                     </div>
-
+                    
                 </div>
                 <div class="news-more pt-4 container"">
                     <span class=" mark-title">
@@ -186,10 +188,9 @@
                 <div class="row container card-width  ">
                     <div class="col-lg-4  col-md-6 g-md-3 col-sm-12 mt-3  ">
                         <div class="card  h-100">
-                            <a href="#"><img class="card-img-top"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
                             <div class="card-body">
-
+        
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
                             </div>
@@ -197,10 +198,9 @@
                     </div>
                     <div class="col-lg-4  col-md-6 g-md-3 col-sm-12 mt-3  ">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
                             <div class="card-body">
-
+        
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
                             </div>
@@ -208,159 +208,146 @@
                     </div>
                     <div class="col-lg-4  col-md-6 g-md-3 col-sm-12 mt-3  ">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
                             <div class="card-body">
-
+        
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="my-5 pt-5 pl-5 d-flex align-items-center justify-content-between  border-bottom ">
+                <div class="my-5 pt-5 pl-5 d-flex align-items-center justify-content-between  border-bottom pb-3">
                     <p class="comments">التعليقات : <span class="comments-number">0</span></p>
                     <div class="filter-comments ">
                         <form action="/action_page.php">
-                            <label class="comments" for="cars">اختر حسب:</label>
+                            <label class="comments" for="cars">فرز حسب:</label>
                             <select name="cars" id="cars">
-                                <option value="volvo">الاقدم </option>
-                                <option value="saab">الاقدم </option>
-                                <option value="opel">الاقدم </option>
-                                <option value="audi">الاقدم </option>
+                              <option value="volvo">الاقدم </option>
+                              <option value="saab">الاقدم </option>
+                              <option value="opel">الاقدم </option>
+                              <option value="audi">الاقدم </option>
                             </select>
-                        </form>
+                          </form>                        
                     </div>
                 </div>
-                <div class="container-2-col-commits  ">
+                <div class="container-2-col-commits pb-4 ">
                     <div class=" ">
                         <img style="width: 70px; height: 80px; background: #000;" src=".#" alt="">
                     </div>
                     <div class=" ">
                         <textarea style="width: 100%; height: 100px;">
-
                         </textarea>
                     </div>
                 </div>
-
+         
                 <div class="border-top pt-2 mb-5 ">
                     <a class="d-inline-block " href="#">
                         <i class="fab fa-facebook-f bg-info text-white px-2 py-1 ml-2"></i>
                         <span>المكون الاضافي على فيسبوك</span>
                     </a>
-                </div>
+                  </div>
 
 
-
+                
             </div>
             <div class="col-lg-4 related-side pt-sm-5 p-lg-0  ">
                 <div class="side-one ">
-                    <div class="news-more  px-4 py-3 border ">
+                    <div class="news-more  px-4 py-3 border "">
                         <span class=" mark-title">
                         </span>
                         <span class="title-sec"> متعلقات</span>
                     </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
+                    <div class="news-more d-flex align-items-center   px-4 py-4 border "">
                         <i class="fa-regular fa-arrow-left"></i>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
+                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس "كيسوفيم"</a></span>
                     </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
+                    <div class="news-more d-flex align-items-center   px-4 py-4 border "">
                         <i class="fa-regular fa-arrow-left"></i>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
+                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس "كيسوفيم"</a></span>
                     </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
+                    <div class="news-more d-flex align-items-center   px-4 py-4 border "">
                         <i class="fa-regular fa-arrow-left"></i>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
+                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس "كيسوفيم"</a></span>
                     </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
+                    <div class="news-more d-flex align-items-center   px-4 py-4 border "">
                         <i class="fa-regular fa-arrow-left"></i>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
+                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس "كيسوفيم"</a></span>
                     </div>
 
                 </div>
                 <div class="side-two py-5 ">
-                    <div class="news-more  px-4 py-3 border ">
+                    <div class="news-more  px-4 py-3 border "">
                         <span class=" mark-title">
                         </span>
                         <span class="title-sec"> الأكثر مشاهدة</span>
                     </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
+                    <div class="news-more d-flex align-items-center   px-4 py-4 border "">
                         <video width="100" height="80" controls>
                             <!-- test inert real vedio -->
                             <source src="../assets/Download.mp4" type=video/mp4>
-                        </video>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
+                          </video>
+                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس "كيسوفيم"</a></span>
                     </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
+                    <div class="news-more d-flex align-items-center   px-4 py-4 border "">
                         <video width="100" height="80" controls>
                             <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg>
                             <source src="/build/videos/arcnet.io(7-sec).mp4" type=video/mp4>
-                        </video>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
+                          </video>
+                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس "كيسوفيم"</a></span>
                     </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
+                    <div class="news-more d-flex align-items-center   px-4 py-4 border "">
                         <video width="100" height="80" controls>
                             <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg>
                             <source src="/build/videos/arcnet.io(7-sec).mp4" type=video/mp4>
-                        </video>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
+                          </video>
+                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس "كيسوفيم"</a></span>
                     </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
+                    <div class="news-more d-flex align-items-center   px-4 py-4 border "">
                         <video width="100" height="80" controls>
                             <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg>
                             <source src="/build/videos/arcnet.io(7-sec).mp4" type=video/mp4>
-                        </video>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
+                          </video>
+                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس "كيسوفيم"</a></span>
                     </div>
 
                 </div>
                 <div class="side-three pb-5 ">
-                    <div class="news-more  px-4 py-3 border ">
+                    <div class="news-more  px-4 py-3 border "">
                         <span class=" mark-title">
                         </span>
                         <span class="title-sec"> الاخبار الرئيسية</span>
                     </div>
                     <div class="d-grid flex-column">
                         <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
                             <div class="card-body">
-
+        
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
                             </div>
                         </div>
                         <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
                             <div class="card-body">
-
+        
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
                             </div>
                         </div>
                         <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
+                            <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
                             <div class="card-body">
-
+        
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
                             </div>
                         </div>
                     </div>
-
+                 
                 </div>
             </div>
-
+         
         </div>
         <a href="#" class="to-top">
             <i class="fas fa-chevron-up"></i>
@@ -391,13 +378,14 @@
             </div>
         </div>
     </footer>
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{ asset('front/assets/js/videolist.js') }}"></script>
-    <script src="{{ asset('front/assets/js/scroll.js') }}"></script>
+   <!-- Bootstrap core JavaScript -->
+   <script src="../assets/js/main.js"></script>
+   <script src="../assets/js/videolist.js"></script>
+   <script src="../assets/js/scroll.js"></script>
 
-    <!-- vendor files -->
-    <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+   <!-- vendor files -->
+   <script src="../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

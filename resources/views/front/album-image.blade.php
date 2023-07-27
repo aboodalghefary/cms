@@ -48,25 +48,33 @@
                             <a class="nav-link active " aria-current="page" href="../pages/index.html">الرئيسية</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="">الاخبار</a>
+                            <a class="nav-link " href="#"">الاخبار</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">تقارير خاصة</a>
+                        <li class=" nav-item">
+                                <a class="nav-link" href="#"">تقارير خاصة</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">مقالات</a>
+                        <li class=" nav-item">
+                                    <a class="nav-link" href="#"">مقالات</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pages/video-library.html">فيديو </a>
+                        <li class=" nav-item">
+                                        <a class="nav-link" href="../pages/video-library.html">فيديو </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../pages/contact.html">اتصل بنا</a>
                         </li>
                         <ul class="navbar-nav mr-5 text-white nav-links links d-flex flex-row pt-2 pr-5 mr-auto">
-                            <li class="  "><a class="twitter" href=""><i class="fab fa-twitter"></i></a></li>
-                            <li class=" "><a class="facebook" href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="  "><a class="youtube" href=""><i class="fab fa-youtube"></i></a></li>
-                            <li class=" "><a href=""><i class="fal fa-search"></i></a></li>
+                            <li class="  "><a class="twitter" href="#""><i class=" fab fa-twitter"></i></a></li>
+                            <li class=" "><a class="facebook" href="#""><i class=" fab fa-facebook-f"></i></a></li>
+                            <li class="  "><a class="youtube" href="#""><i class=" fab fa-youtube"></i></a></li>
+                            <li class="search"><a href="#""><i class=" fal fa-search"></i></a></li>
+                            <div class="boxsearch" dir="rtl">
+                                <button class="close-icon">
+                                  <i class="fa-solid fa-xmark close"></i> </button>
+                                <input type="text" placeholder="ابحث هنا">
+                                <button class="search-icon">
+                                  <i class="fa-solid fa-magnifying-glass search"></i>
+                                </button>
+                              </div>
                         </ul>
                     </ul>
 
@@ -84,7 +92,7 @@
         </div>
     </ol>
 
-    <main class="container">
+    <main  class="main container  d-flex flex-column justify-content-center" style="min-height: 100vh;">
         <div class="row pb-5">
 
             <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
