@@ -427,18 +427,19 @@
                      <span class="title-sec text-white">مكتبة الفيديو</span>
                  </div>
                  <div class="plyr__video-embed" id="player1">
-                     <iframe src="" allow="autoplay"></iframe>
+                     <iframe src="https://www.youtube.com/embed/H13cW1pYYcY" allow="autoplay"></iframe>
                  </div>
              </div>
+
              <div class="video-list ">
                  <div style="border-color:#1d1b1b;" class="vid text-right py-2 shahhed">
                      <i class="fa-light fa-film"></i>
                      <span class="title-sec text-white">شاهد</span>
                  </div>
                  <div style="border-color:#333; " class="vid text-right"
-                     data-src="">
+                     data-src="https://www.youtube.com/embed/H13cW1pYYcY">
                      <div style="min-width: 100px;" class="plyr__video-embed bg-danger" id="player2">
-                         <iframe src=""></iframe>
+                         <iframe src="https://www.youtube.com/embed/H13cW1pYYcY"></iframe>
                      </div>
                      <div class="vid-co pt-2">
                          <div class="play-fa">
@@ -452,9 +453,9 @@
                      </div>
                  </div>
                  <div style="border-color:#333; " class="vid text-right"
-                     data-src="">
+                     data-src="https://www.youtube.com/embed/CFTccBzBGQw">
                      <div style="min-width: 100px;" class="plyr__video-embed bg-danger" id="player3">
-                         <iframe src=""></iframe>
+                         <iframe src="https://www.youtube.com/embed/CFTccBzBGQw"></iframe>
                      </div>
                      <div class="vid-co pt-2">
                          <div class="play-fa">
@@ -468,9 +469,9 @@
                      </div>
                  </div>
                  <div style="border-color:#333; " class="vid text-right "
-                     data-src="">
+                     data-src="https://www.youtube.com/embed/H13cW1pYYcY">
                      <div style="min-width: 100px;" class="plyr__video-embed bg-danger" id="player4">
-                         <iframe src=""></iframe>
+                         <iframe src="https://www.youtube.com/embed/H13cW1pYYcY"></iframe>
                      </div>
                      <div class="vid-co pt-2">
                          <div class="play-fa">
@@ -484,9 +485,9 @@
                      </div>
                  </div>
                  <div style="border-color:#333; " class="vid text-right"
-                     data-src="">
+                     data-src="https://www.youtube.com/embed/CFTccBzBGQw">
                      <div style="min-width: 100px;" class="plyr__video-embed bg-danger" id="player5">
-                         <iframe src=""></iframe>
+                         <iframe src="https://www.youtube.com/embed/CFTccBzBGQw"></iframe>
                      </div>
                      <div class="vid-co pt-2">
                          <div class="play-fa">
@@ -501,7 +502,7 @@
                  </div>
              </div>
          </div>
-        </div>
+     </div>
 
             <!-- تقارير خاصة -->
             <div class="spec-artical bg-light  py-5">
@@ -653,14 +654,15 @@
       integrity="sha512-M/AUlH5tMMuhvt9trN4rXBjsXq9HrOUmtblZHhesbx97sGycEnXX/ws1W7yyrF8zEjotdNhYNfHOd3WMu96eKA=="
       crossorigin="anonymous"></script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/videolist.js"></script>
-  <script src="../assets/js/scroll.js"></script>
+
+    <!--core JavaScript -->
+    <script src="{{asset('front/assets/js/main.js')}}"></script>
+    <script src="{{asset('front/assets/js/videolist.js')}}"></script>
+    <script src="{{asset('front/assets/js/scroll.js')}}"></script>
 
   <!-- vendor files -->
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{asset('front/assets/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
   <!-- script lightGallery library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
