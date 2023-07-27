@@ -32,7 +32,7 @@
                 <div class="row my-3">
                     <div class="col-lg-6">
                         <label for="video_path">الفيديو</label>
-                        <input type="file" class="form-control" id="video_path">
+                        <input type="text" class="form-control" placeholder="عنوان الفيديو من اليوتيوب" id="video_path">
                         @error('video_path')
                             <div class="text-danger" id="video_path-error">{{ $message }}</div>
                         @enderror
@@ -57,7 +57,7 @@
             let formData = new FormData();
             formData.append('title', document.getElementById('title').value);
             formData.append('library_id', document.getElementById('library_id').value);
-            formData.append('video_path', document.getElementById('video_path').files[0]);
+            formData.append('video_path', document.getElementById('video_path').value);
             store('/cms/admin/videos', formData);
         }
     </script>

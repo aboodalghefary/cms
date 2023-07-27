@@ -62,12 +62,13 @@ class VideosController extends Controller
             $video = new Video();
             $video->title = $request->get('title');
             $video->library_id = $request->get('library_id');
-            if (request()->hasFile('video_path')) {
-               $videoFile = $request->file('video_path');
-               $videotitle = time() . 'video.' . $videoFile->getClientOriginalExtension();
-               $videoFile->move('storage/images/videos', $videotitle);
-               $video->video_path = $videotitle;
-            }
+
+
+            $parsedUrl = parse_url($request->get('video_path'));
+            parse_str($parsedUrl['query'], $queryParams);
+            $youtubeVideoId = $queryParams['v'];
+            $video->video_path = $youtubeVideoId;
+
 
             $isSaved = $video->save();
 
@@ -138,13 +139,8 @@ class VideosController extends Controller
             $video = Video::findOrFail($id);
             $video->title = $request->get('title');
             $video->library_id = $request->get('library_id');
+            $video->video_path = $request->get('video_path');
 
-            if (request()->hasFile('video_path')) {
-               $videoFile = $request->file('video_path');
-               $videotitle = time() . 'video.' . $videoFile->getClientOriginalExtension();
-               $videoFile->move('storage/videos/videos', $videotitle);
-               $video->video_path = $videotitle;
-            }
 
             $isSaved = $video->save();
 

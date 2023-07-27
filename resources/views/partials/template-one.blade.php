@@ -1,4 +1,4 @@
-<div class="row pt-5 mb-5 bg-black-sec px-3">
+<div class="row mt-5 pt-5 mb-5 bg-black-sec px-3">
     <div class="text-right mb-3">
         <span class=" mark-title">
         </span>

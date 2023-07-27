@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Library;
 use App\Models\Row;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class FrontController extends Controller
    public function index()
    {
       $rows = Row::all();
-      return view('front.index', compact('rows'));
+      $library = Library::with('videos')->first();
+      return view('front.index', compact('rows', 'library'));
    }
    public function post_details($id)
    {

@@ -15,6 +15,7 @@
             height: auto;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 @endsection
 
 
@@ -39,10 +40,9 @@
                     <tr>
                         <td width="5%">{{ $video->id }}</td>
                         <td width="25%">
-                            <video controls>
-                                <source src="{{ asset('storage/images/videos/' . $video->video_path) }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <iframe width="200" height="100"
+                                src="https://www.youtube.com/embed/{{ $video->video_path }}" frameborder="0"
+                                allowfullscreen></iframe>
                         </td>
                         <td>{{ $video->title }}</td>
                         <td>{{ $video->library->title }}</td>
@@ -178,4 +178,8 @@
             DatatableBasic.init();
         });
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.4/plyr.js"
+        integrity="sha512-M/AUlH5tMMuhvt9trN4rXBjsXq9HrOUmtblZHhesbx97sGycEnXX/ws1W7yyrF8zEjotdNhYNfHOd3WMu96eKA=="
+        crossorigin="anonymous"></script>
 @endsection
