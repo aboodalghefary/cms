@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-zoom.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-thumbnail.min.css" />
     <!-- Bootstrap core CSS -->
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!--  styles for this template -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
 
     <!-- icons -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
@@ -32,97 +32,28 @@
 
 <body dir="">
 
-    <header class="nav-scrolled" dir="rtl">
-        <nav class="navbar navbar-light navbar-expand-lg bg-body-tertiary">
-            <div class="container align-items-center">
-                <a class="navbar-brand" href="#">
-                    <div class="logo  d-flex flex-column align-items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87px"
-                            height="51px">
-                            <image x="0px" y="0px" width="87px" height="51px"
-                                xlink:href="data:img/png;base64,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" />
-                        </svg>
-                        <span class="logo-text ">الاخباري</span>
-                    </div>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fa-duotone fa-bars text-danger"></i>
-                </button>
-                <div class="collapse  navbar-collapse" id="navbarSupportedContent">
-                    <ul class=" navbar-nav mr-auto mb-2 ml3 mb-lg-0">
-                        <li class="nav-item active-item">
-                            <a class="nav-link active " aria-current="page" href="../pages/index.html">الرئيسية</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link " href="#"">الاخبار</a>
-                        </li>
-                        <li class=" nav-item">
-                                <a class="nav-link" href="#"">تقارير خاصة</a>
-                        </li>
-                        <li class=" nav-item">
-                                    <a class="nav-link" href="#"">مقالات</a>
-                        </li>
-                        <li class=" nav-item">
-                                        <a class="nav-link" href="../pages/video-library.html">فيديو </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pages/contact.html">اتصل بنا</a>
-                        </li>
-                        <ul class="navbar-nav mr-5 text-white nav-links links d-flex flex-row pt-2 pr-5 mr-auto">
-                            <li class="  "><a class="twitter" href="#""><i class=" fab fa-twitter"></i></a></li>
-                            <li class=" "><a class="facebook" href="#""><i class=" fab fa-facebook-f"></i></a></li>
-                            <li class="  "><a class="youtube" href="#""><i class=" fab fa-youtube"></i></a></li>
-                            <li class="search"><a href="#""><i class=" fal fa-search"></i></a></li>
-                            <div class="boxsearch" dir="rtl">
-                                <button class="close-icon">
-                                  <i class="fa-solid fa-xmark close"></i> </button>
-                                <input type="text" placeholder="ابحث هنا">
-                                <button class="search-icon">
-                                  <i class="fa-solid fa-magnifying-glass search"></i>
-                                </button>
-                              </div>
-                        </ul>
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-    </header>
+    @include('partials.header')
 
     <ol class="breadcrumb" dir="rtl">
         <div class="bread container d-flex">
-            <li class="breadcrumb-item active"> الرئيسية </li>
+            <li class="breadcrumb-item "> الرئيسية </li>
             <li class="breadcrumb-item ">
-                <a href="index.html"> البوم الصور</a>
+                <a href="{{ route('image_albums') }}"> البوم الصور</a>
             </li>
-            <li class="breadcrumb-item ">
-                <a href="index.html"> صور سيارات</a>
+            <li class="breadcrumb-item active">
+                <a href="#"> {{ $album->title }} </a>
             </li>
         </div>
     </ol>
 
-    <main  class="main d-flex flex-column justify-content-center cont box " style="min-height: 70vh;">
+    <main class="main d-flex flex-column cont box " style="min-height: 70vh;">
         <div class="gallery">
-            <a class="card" href="../assets/images/1.jpg">
-                <img src="../assets/images/1.jpg" alt="">
-            </a>
-            <a class="card" href="../assets/images/2.jpg">
-                <img src="../assets/images/2.jpg" alt="">
-            </a>
-            <a class="card" href="../assets/images/1.jpg">
-                <img src="../assets/images/1.jpg" alt="">
-            </a>
-            <a class="card" href="../assets/images/2.jpg">
-                <img src="../assets/images/2.jpg" alt="">
-            </a>
-            <a class="card" href="../assets/images/1.jpg">
-                <img src="../assets/images/1.jpg" alt="">
-            </a>
-            <a class="card" href="../assets/images/2.jpg">
-                <img src="../assets/images/2.jpg" alt="">
-            </a>
+            @foreach ($album->photos as $photo)
+                <a class="card" href="{{ asset('storage/images/photos/' . $photo->image_path) }}">
+                    <img src="{{ asset('storage/images/photos/' . $photo->image_path) }}" alt=""
+                        style="object-fit: cover">
+                </a>
+            @endforeach
         </div>
     </main>
 
@@ -146,8 +77,7 @@
                                 class="fab fa-youtube"></i></a></li>
                 </ul>
             </div>
-            <div
-                class="mx-auto">
+            <div class="mx-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54px"
                     height="43px">
                     <image x="0px" y="0px" width="54px" height="43px"
@@ -157,43 +87,39 @@
         </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/videolist.js"></script>
-    <script src="../assets/js/scroll.js"></script>
+    <script src="{{ asset('front/assets/js/scroll.js') }}"></script>
 
     <!-- vendor files -->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- script lightGallery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/autoplay/lg-autoplay.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/autoplay/lg-autoplay.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/fullscreen/lg-fullscreen.min.js">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/share/lg-share.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
-        <script>
-            let gallery = document.querySelector('.gallery');
-            lightGallery(gallery, {
-                plugins: [lgFullscreen, lgShare, lgZoom, lgThumbnail], // Include the lgThumbnail plugin
-                controls: true,
-                counter: true,
-                download: false,
-                autoplay: true,
-                autoplaySpeed: 1000,
-                pauseOnHover: true,
-                getThumbContHeight: function () {
-                    return 100; // Adjust the height of the thumbnail container as needed
-                },
-                thumbWidth: 100, // Adjust the width of each thumbnail as needed
-                thumbHeight: '80px', // Adjust the height of each thumbnail as needed
-                thumbMargin: 10, // Adjust the margin between thumbnails as needed
-                thumbContHeight: 120 // Adjust the height of the thumbnail container as needed
-            });
-        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script>
+        let gallery = document.querySelector('.gallery');
+        lightGallery(gallery, {
+            plugins: [lgFullscreen, lgShare, lgZoom, lgThumbnail], // Include the lgThumbnail plugin
+            controls: true,
+            counter: true,
+            download: false,
+            autoplay: true,
+            autoplaySpeed: 1000,
+            pauseOnHover: true,
+            getThumbContHeight: function() {
+                return 100; // Adjust the height of the thumbnail container as needed
+            },
+            thumbWidth: 100, // Adjust the width of each thumbnail as needed
+            thumbHeight: '80px', // Adjust the height of each thumbnail as needed
+            thumbMargin: 10, // Adjust the margin between thumbnails as needed
+            thumbContHeight: 120 // Adjust the height of the thumbnail container as needed
+        });
+    </script>
 
 
 

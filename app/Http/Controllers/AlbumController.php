@@ -58,6 +58,12 @@ class AlbumController extends Controller
       if (!$validator->fails()) {
          $album = new Album();
          $album->title = $request->get('title');
+         if (request()->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . 'image.' . $image->getClientOriginalExtension();
+            $image->move('storage/images/albums/', $imageName);
+            $album->image = $imageName;
+         }
          $isSaved = $album->save();
 
          if ($isSaved) {
@@ -118,6 +124,12 @@ class AlbumController extends Controller
       if (!$validator->fails()) {
          $album = Album::findOrFail($id);
          $album->title = $request->get('title');
+         if (request()->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . 'image.' . $image->getClientOriginalExtension();
+            $image->move('storage/images/albums/', $imageName);
+            $album->image = $imageName;
+         }
          $isSaved = $album->save();
 
          if ($isSaved) {

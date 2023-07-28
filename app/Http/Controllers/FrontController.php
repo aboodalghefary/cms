@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\Album;
 use App\Models\Blog;
 use App\Models\Library;
 use App\Models\Row;
@@ -19,8 +20,13 @@ class FrontController extends Controller
    }
    public function video_library()
    {
-      $libraries = Library::with('videos')->all();
+      $libraries = Library::all();
       return view('front.video-library', compact('libraries'));
+   }
+   public function image_albums()
+   {
+      $albums = Album::all();
+      return view('front.album-image', compact('albums'));
    }
    public function contactIndex()
    {
@@ -61,5 +67,18 @@ class FrontController extends Controller
    {
       $blog = Blog::findOrFail($id);
       return view('front.details-new', compact('blog'));
+   }
+   public function library_details($id)
+   {
+      $library = Library::findOrFail($id);
+      $libraries_most_views  = Library::orderBy('views', 'desc')->limit(10)->get();
+
+      return view('front.video-playlist', compact('library', 'libraries_most_views'));
+   }
+   public function album_details($id)
+   {
+      $album = Album::findOrFail($id);
+
+      return view('front.images', compact('album'));
    }
 }

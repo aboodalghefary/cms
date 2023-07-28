@@ -24,6 +24,7 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>الصورة</th>
                     <th>العنوان</th>
                     <th>اضافة صور</th>
                     <th>عرض الصور</th>
@@ -34,6 +35,9 @@
                 @foreach ($albums as $album)
                     <tr>
                         <td>{{ $album->id }}</td>
+                        <td>
+                            <img src="{{ asset('storage/images/albums/' . $album->image) }}" alt="Sub Image" width="150">
+                        </td>
                         <td>{{ $album->title }}</td>
                         <td><a href="{{ route('photos_create', $album->id) }}" class="btn text-nowrap btn-outline-indigo">
                                 اضافة

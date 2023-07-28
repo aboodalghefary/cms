@@ -53,6 +53,12 @@ class LibraryController extends Controller
       if (!$validator->fails()) {
          $library  = new Library();
          $library->title = $request->get('title');
+         if (request()->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . 'image.' . $image->getClientOriginalExtension();
+            $image->move('storage/images/libraries/', $imageName);
+            $library->image = $imageName;
+         }
          $isSaved = $library->save();
 
          if ($isSaved) {
@@ -113,6 +119,12 @@ class LibraryController extends Controller
       if (!$validator->fails()) {
          $library = Library::findOrFail($id);
          $library->title = $request->get('title');
+         if (request()->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . 'image.' . $image->getClientOriginalExtension();
+            $image->move('storage/images/libraries/', $imageName);
+            $library->image = $imageName;
+         }
          $isSaved = $library->save();
 
          if ($isSaved) {

@@ -24,6 +24,7 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>الصورة</th>
                     <th>العنوان</th>
                     <th>اضافة فيديو</th>
                     <th>عرض الفيديوهات</th>
@@ -34,6 +35,10 @@
                 @foreach ($libraries as $library)
                     <tr>
                         <td>{{ $library->id }}</td>
+                        <td>
+                            <img src="{{ asset('storage/images/libraries/' . $library->image) }}" alt="Sub Image"
+                                width="150">
+                        </td>
                         <td>{{ $library->title }}</td>
                         <td><a href="{{ route('videos_create', $library->id) }}" class="btn text-nowrap btn-outline-indigo">
                                 اضافة

@@ -13,11 +13,8 @@ return new class extends Migration
     */
    public function up()
    {
-      Schema::create('albums', function (Blueprint $table) {
-         $table->id();
-         $table->string('title');
-         $table->string('image');
-         $table->timestamps();
+      Schema::table('libraries', function (Blueprint $table) {
+         $table->integer('views')->default(0);
       });
    }
 
@@ -28,6 +25,8 @@ return new class extends Migration
     */
    public function down()
    {
-      Schema::dropIfExists('albums');
+      Schema::table('libraries', function (Blueprint $table) {
+         //
+      });
    }
 };

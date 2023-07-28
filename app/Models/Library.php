@@ -13,4 +13,9 @@ class Library extends Model
    {
       return $this->hasMany(Video::class);
    }
+
+   public function incrementViews()
+   {
+      $this->increment('views');
+   }
 }

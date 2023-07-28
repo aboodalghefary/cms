@@ -42,6 +42,11 @@
                             <div class="text-danger" id="title-error">{{ $message }}</div>
                         @enderror
                     </div>
+                    <div class="col-lg-6">
+                        <label>الصورة</label>
+                        <input type="file" class="form-control" name="image" id="image">
+                        <div class="form-text text-muted">Accepted formats: gif, png, jpg. Max file size 2Mb</div>
+                    </div>
                 </div>
 
                 <div class="form-group my-3">
@@ -62,6 +67,7 @@
         function performUpdate(id) {
             let formData = new FormData();
             formData.append('title', document.getElementById('title').value);
+            formData.append('image', document.getElementById('image').files[0]);
             storeRedirect('/cms/admin/libraries_update/' + id, formData, '/cms/admin/libraries/');
         }
     </script>

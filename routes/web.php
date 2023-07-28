@@ -52,7 +52,10 @@ Route::get('/', [FrontController::class, 'index'])->name('front_index');
 Route::get('/post_details/{id}', [FrontController::class, 'post_details'])->name('post_details');
 Route::get('/contact', [FrontController::class, 'contactIndex'])->name('contact');
 Route::post('/contact_store', [FrontController::class, 'contact_store'])->name('contact_store');
+Route::get('/image_albums', [FrontController::class, 'image_albums'])->name('image_albums');
 Route::get('/video_library', [FrontController::class, 'video_library'])->name('video_library');
+Route::get('/album_details/{id}', [FrontController::class, 'album_details'])->name('album_details');
+Route::get('/library_details/{id}', [FrontController::class, 'library_details'])->middleware('increase.views')->name('library_details');
 
 
 Route::group([

@@ -37,7 +37,6 @@
         .column {
             background-size: cover;
             background-repeat: no-repeat;
-
         }
     </style>
 </head>
@@ -234,7 +233,7 @@
                 </div>
                 <div class="container-4-columns">
 
-                        <div class="card ">
+                    <div class="card ">
                         <a href="../pages/details-new.html">
                             <div class="box">
                                 <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
@@ -247,12 +246,12 @@
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                            </a>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                      <div class="card ">
+                    <div class="card ">
                         <a href="../pages/details-new.html">
                             <div class="box">
                                 <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
@@ -265,12 +264,12 @@
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                            </a>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                          <div class="card ">
+                    <div class="card ">
                         <a href="../pages/details-new.html">
                             <div class="box">
                                 <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
@@ -283,12 +282,12 @@
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                            </a>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                          <div class="card ">
+                    <div class="card ">
                         <a href="../pages/details-new.html">
                             <div class="box">
                                 <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
@@ -301,12 +300,12 @@
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                            </a>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                          <div class="card ">
+                    <div class="card ">
                         <a href="../pages/details-new.html">
                             <div class="box">
                                 <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
@@ -319,12 +318,12 @@
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                            </a>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                          <div class="card ">
+                    <div class="card ">
                         <a href="../pages/details-new.html">
                             <div class="box">
                                 <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
@@ -337,12 +336,12 @@
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                            </a>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                          <div class="card ">
+                    <div class="card ">
                         <a href="../pages/details-new.html">
                             <div class="box">
                                 <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
@@ -355,12 +354,12 @@
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                            </a>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                          <div class="card ">
+                    <div class="card ">
                         <a href="../pages/details-new.html">
                             <div class="box">
                                 <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
@@ -373,7 +372,7 @@
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                            </a>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>

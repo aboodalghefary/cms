@@ -26,9 +26,9 @@
     @include('partials.header')
     <ol class="breadcrumb" dir="rtl">
         <div class="bread container d-flex">
-            <li class="breadcrumb-item active"> الرئيسية </li>
-            <li class="breadcrumb-item ">
-                <a href="index.html">مكتبة الفيديو </a>
+            <li class="breadcrumb-item "> الرئيسية </li>
+            <li class="breadcrumb-item active ">
+                <a href="index.html"> مكاتب الفيديو </a>
             </li>
         </div>
     </ol>
@@ -36,110 +36,31 @@
 
 
 
-    <main class="main container  d-flex flex-column justify-content-center" style="min-height: 100vh;">
-        <div class="row pb-5">
-
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
-                <div style="width: 350px; height: 370px;" class="card mb-3 box">
-                    <a style="height: 220px" href="../pages/video-playlist.html">
-                        <div style="position: relative;">
-                            <img src="../assets/images/2.jpg" alt=""
-                                style="width: 100%; height: 80%; object-fit: cover;">
-                            <div class="play-vid"
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                <i class="fa-regular fa-play"></i>
+    <main class="main container  d-flex flex-column" style="min-height: 75vh;">
+        <div class="row">
+            @foreach ($libraries as $library)
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+                    <div style="width: 350px; height: 370px;" class="card mb-3 box">
+                        <a style="height: 220px" href="{{ route('library_details', $library->id) }}">
+                            <div style="position: relative;">
+                                <img src="{{ asset('storage/images/libraries/' . $library->image) }}" alt=""
+                                    style="width: 100%; height: 250px; object-fit: cover;">
+                                <div class="play-vid"
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                    <i class="fa-regular fa-play"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-                        </div>
-                        <div class="container text-black-50  bg-white text-right">
-                            <span class="date">25/3/2000</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
-                <div style="width: 350px; height: 370px;" class="card mb-3 box">
-                    <a style="height: 220px" href="../pages/video-playlist.html">
-                        <div style="position: relative;">
-                            <img src="../assets/images/2.jpg" alt=""
-                                style="width: 100%; height: 80%; object-fit: cover;">
-                            <div class="play-vid"
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                <i class="fa-regular fa-play"></i>
+                            <div class="card-body">
+                                <h5 class="card-text text-right"> {{ $library->title }} </h5>
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-                        </div>
-                        <div class="container text-black-50  bg-white text-right">
-                            <span class="date">25/3/2000</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
-                <div style="width: 350px; height: 370px;" class="card mb-3 box">
-                    <a style="height: 220px" href="../pages/video-playlist.html">
-                        <div style="position: relative;">
-                            <img src="../assets/images/2.jpg" alt=""
-                                style="width: 100%; height: 80%; object-fit: cover;">
-                            <div class="play-vid"
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                <i class="fa-regular fa-play"></i>
+                            <div class="container text-black-50  bg-white text-right">
+                                <span class="date"> منذ
+                                    {{ $library->created_at->locale('ar')->shortAbsoluteDiffForHumans() }} </span>
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-                        </div>
-                        <div class="container text-black-50  bg-white text-right">
-                            <span class="date">25/3/2000</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
-                <div style="width: 350px; height: 370px;" class="card mb-3 box">
-                    <a style="height: 220px" href="../pages/video-playlist.html">
-                        <div style="position: relative;">
-                            <img src="../assets/images/2.jpg" alt=""
-                                style="width: 100%; height: 80%; object-fit: cover;">
-                            <div class="play-vid"
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                <i class="fa-regular fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-                        </div>
-                        <div class="container text-black-50  bg-white text-right">
-                            <span class="date">25/3/2000</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
-                <div style="width: 350px; height: 370px;" class="card mb-3 box">
-                    <a style="height: 220px" href="../pages/video-playlist.html">
-                        <div style="position: relative;">
-                            <img src="../assets/images/2.jpg" alt=""
-                                style="width: 100%; height: 80%; object-fit: cover;">
-                            <div class="play-vid"
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                <i class="fa-regular fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-                        </div>
-                        <div class="container text-black-50  bg-white text-right">
-                            <span class="date">25/3/2000</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </main>
 
