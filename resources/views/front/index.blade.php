@@ -113,10 +113,13 @@
                 <!-- الاخبار الرئيسية البارزة للتنصيف )  هنا ضع اول خبرين للتصنيف الذي تريده)-->
                 <div class="row  template-main  two-main-news pb-0 no-gutters">
                     <div class="col-lg-6 col-md-6 col-sm-12  mb-1  ">
-                        <div class="column position-relative ">
+                        <div class="column position-relative img ">
                             <a href="../pages/details-new.html">
-                                <img style="background-size: cover;" class=""
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
+                                <div class="box">
+
+                                    <img style="background-size: cover;" class=""
+                                        src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
+                                </div>
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                         .</h6>
@@ -128,10 +131,14 @@
                             <span>محليات</span>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-1 ">
-                        <div class="column position-relative">
+                    <div class="col-lg-6 col-md-6 col-sm-12  mb-1  ">
+                        <div class="column position-relative img ">
                             <a href="../pages/details-new.html">
-                                <img src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
+                                <div class="box">
+
+                                    <img style="background-size: cover;" class=""
+                                        src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
+                                </div>
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                         .</h6>
@@ -147,9 +154,13 @@
                 <!--  الاخبار الفرعية للتنصيف)  هنا ضع  ثلاثة اخبار للتصنيف)-->
                 <div class="row template-sub  three-sub-news no-gutters ">
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-1   ">
-                        <div class="column position-relative">
-                            <a href="../pages/details-new.html"> <img
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
+                        <div class="column position-relative img">
+                            <a href="../pages/details-new.html">
+                                <div class="box">
+
+                                    <img style="background-size: cover;" class=""
+                                        src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
+                                </div>
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                         .</h6>
@@ -163,9 +174,13 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-1   ">
-                        <div class="column position-relative">
-                            <a href="../pages/details-new.html"> <img
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
+                        <div class="column position-relative img">
+                            <a href="../pages/details-new.html">
+                                <div class="box">
+
+                                    <img style="background-size: cover;" class=""
+                                        src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
+                                </div>
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                         .</h6>
@@ -179,9 +194,13 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-1   ">
-                        <div class="column position-relative">
-                            <a href="../pages/details-new.html"> <img
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
+                        <div class="column position-relative img">
+                            <a href="../pages/details-new.html">
+                                <div class="box">
+
+                                    <img style="background-size: cover;" class=""
+                                        src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
+                                </div>
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                         .</h6>
@@ -215,98 +234,146 @@
                 </div>
                 <div class="container-4-columns">
 
-                    <div class="card ">
-                        <a href="../pages/details-new.html"><img class="card-img-top"
-                                src="{{ asset('front/assets/images/1.jpg') }}" alt=""></a>
-                        <div class="card-body">
+                        <div class="card ">
+                        <a href="../pages/details-new.html">
+                            <div class="box">
+                                <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
+                                    alt="">
+                            </div>
+
+                        </a>
+
+                        <a href="../pages/details-new.html" class="card-body">
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                        </div>
+                            </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                    <div class="card ">
-                        <a href="../pages/details-new.html"><img class="card-img-top"
-                                src="{{ asset('front/assets/images/1.jpg') }}" alt=""></a>
-                        <div class="card-body">
+                      <div class="card ">
+                        <a href="../pages/details-new.html">
+                            <div class="box">
+                                <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
+                                    alt="">
+                            </div>
+
+                        </a>
+
+                        <a href="../pages/details-new.html" class="card-body">
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                        </div>
+                            </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                    <div class="card ">
-                        <a href="../pages/details-new.html"><img class="card-img-top"
-                                src="{{ asset('front/assets/images/1.jpg') }}" alt=""></a>
-                        <div class="card-body">
+                          <div class="card ">
+                        <a href="../pages/details-new.html">
+                            <div class="box">
+                                <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
+                                    alt="">
+                            </div>
+
+                        </a>
+
+                        <a href="../pages/details-new.html" class="card-body">
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                        </div>
+                            </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                    <div class="card ">
-                        <a href="../pages/details-new.html"><img class="card-img-top"
-                                src="{{ asset('front/assets/images/1.jpg') }}" alt=""></a>
-                        <div class="card-body">
+                          <div class="card ">
+                        <a href="../pages/details-new.html">
+                            <div class="box">
+                                <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
+                                    alt="">
+                            </div>
+
+                        </a>
+
+                        <a href="../pages/details-new.html" class="card-body">
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                        </div>
+                            </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                    <div class="card ">
-                        <a href="../pages/details-new.html"><img class="card-img-top"
-                                src="{{ asset('front/assets/images/1.jpg') }}" alt=""></a>
-                        <div class="card-body">
+                          <div class="card ">
+                        <a href="../pages/details-new.html">
+                            <div class="box">
+                                <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
+                                    alt="">
+                            </div>
+
+                        </a>
+
+                        <a href="../pages/details-new.html" class="card-body">
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                        </div>
+                            </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                    <div class="card ">
-                        <a href="../pages/details-new.html"><img class="card-img-top"
-                                src="{{ asset('front/assets/images/1.jpg') }}" alt=""></a>
-                        <div class="card-body">
+                          <div class="card ">
+                        <a href="../pages/details-new.html">
+                            <div class="box">
+                                <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
+                                    alt="">
+                            </div>
+
+                        </a>
+
+                        <a href="../pages/details-new.html" class="card-body">
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                        </div>
+                            </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                    <div class="card ">
-                        <a href="../pages/details-new.html"><img class="card-img-top"
-                                src="{{ asset('front/assets/images/1.jpg') }}" alt=""></a>
-                        <div class="card-body">
+                          <div class="card ">
+                        <a href="../pages/details-new.html">
+                            <div class="box">
+                                <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
+                                    alt="">
+                            </div>
+
+                        </a>
+
+                        <a href="../pages/details-new.html" class="card-body">
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                        </div>
+                            </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
                     </div>
-                    <div class="card ">
-                        <a href="../pages/details-new.html"><img class="card-img-top"
-                                src="{{ asset('front/assets/images/1.jpg') }}" alt=""></a>
-                        <div class="card-body">
+                          <div class="card ">
+                        <a href="../pages/details-new.html">
+                            <div class="box">
+                                <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
+                                    alt="">
+                            </div>
+
+                        </a>
+
+                        <a href="../pages/details-new.html" class="card-body">
                             <span class="category-title d-block  text-right pb-2">تكنولوجيا</span>
                             <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h6>
-                        </div>
+                            </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="time">قبل 2 دقيقة</span>
                         </div>
@@ -424,7 +491,7 @@
         </div>
 
         <!-- تقارير خاصة -->
-        <div class="spec-artical bg-light  py-5">
+        <div class="spec-artical bg-light  py-5 box2">
 
             <div class="container">
                 <div class="text-right  mb-3 ">
@@ -438,7 +505,7 @@
                 <div class="pt-1">
                     <a href="../pages/details-new.html">
                         <div style=" margin-right: 2px; width: 284px; height: 250px; background-image: url({{ asset('front/assets/images/1.jpg') }});"
-                            class="column position-relative   ">
+                            class="column position-relative img   ">
                             <div class="text text-right bottom-right text-white ">
                                 <h6 class=" text-right">محطة روسية جديدة تنضم إلى شبكة قياس المسافة بالليزر
 
@@ -451,7 +518,7 @@
                 <div class="pt-1">
                     <a href="../pages/details-new.html">
                         <div style=" margin-right: 2px; width: 284px; height: 250px; background-image: url({{ asset('front/assets/images/1.jpg') }});"
-                            class="column position-relative   ">
+                            class="column position-relative img   ">
                             <div class="text text-right bottom-right text-white ">
                                 <h6 class=" text-right">محطة روسية جديدة تنضم إلى شبكة قياس المسافة بالليزر
 
@@ -464,7 +531,7 @@
                 <div class="pt-1">
                     <a href="../pages/details-new.html">
                         <div style=" margin-right: 2px; width: 284px; height: 250px; background-image: url({{ asset('front/assets/images/1.jpg') }});"
-                            class="column position-relative   ">
+                            class="column position-relative img   ">
                             <div class="text text-right bottom-right text-white ">
                                 <h6 class=" text-right">محطة روسية جديدة تنضم إلى شبكة قياس المسافة بالليزر
 
@@ -477,7 +544,7 @@
                 <div class="pt-1">
                     <a href="../pages/details-new.html">
                         <div style=" margin-right: 2px; width: 284px; height: 250px; background-image: url({{ asset('front/assets/images/1.jpg') }});"
-                            class="column position-relative   ">
+                            class="column position-relative img   ">
                             <div class="text text-right bottom-right text-white ">
                                 <h6 class=" text-right">محطة روسية جديدة تنضم إلى شبكة قياس المسافة بالليزر
 
@@ -515,7 +582,7 @@
             <span class="title-sec text-black"> معرض الصور </span>
         </div>
         <div class=" gallery-section container">
-            <div style="width: min-content;" class="gallery mx-auto mb-5 image-album ">
+            <div style="width: min-content;" class="gallery mx-auto mb-5 image-album box">
                 <a style="height: fit-content; width: 290px;" href="{{ asset('front/assets/images/1.jpg') }}">
                     <div class="card" style="height: 310px;">
                         <img src="{{ asset('front/assets/images/1.jpg') }}" alt=""
@@ -531,7 +598,7 @@
             </div>
             <div style="width: fit-content;" class="cover-album ">
                 <a href="../pages/images.html">
-                    <div style=" position: relative;" class=" column position-relative">
+                    <div style=" position: relative;" class=" column position-relative img">
                         <img style="height: 310px" src="{{ asset('front/assets/images/569-310.png') }}"
                             alt="">
                         <div class="text text-white text-album" dir="rtl">

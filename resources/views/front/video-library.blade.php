@@ -94,10 +94,10 @@
 
 
   <main  class="main container  d-flex flex-column justify-content-center" style="min-height: 100vh;">
-    <div class="row pb-5">
+   <div class="row pb-5">
 
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
+      <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+        <div style="width: 350px; height: 370px;" class="card mb-3 box">
           <a style="height: 220px" href="../pages/video-playlist.html">
             <div style="position: relative;">
               <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
@@ -114,8 +114,8 @@
           </a>
         </div>
       </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
+      <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+        <div style="width: 350px; height: 370px;" class="card mb-3 box">
           <a style="height: 220px" href="../pages/video-playlist.html">
             <div style="position: relative;">
               <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
@@ -132,30 +132,8 @@
           </a>
         </div>
       </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
-          <a style="height: 220px" href="../pages/video-playlist.html">
-            <div style="position: relative;">
-              <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
-              <div class="play-fa active" onclick="togglePlayPause()">
-                <i style="font-size: 14px; margin-left: 5px; display: none;" class="fa-regular fa-pause"></i>
-                <i style="font-size: 14px; margin-left: 5px;" class="fa-regular fa-play"></i>
-                <span style="font-size: 14px; text-align: right;">تشغيل</span>
-              </div>
-
-
-            </div>
-            <div class="card-body">
-              <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-            </div>
-            <div class="container text-black-50  bg-white text-right">
-              <span class="date">25/3/2000</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
+      <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+        <div style="width: 350px; height: 370px;" class="card mb-3 box">
           <a style="height: 220px" href="../pages/video-playlist.html">
             <div style="position: relative;">
               <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
@@ -172,8 +150,8 @@
           </a>
         </div>
       </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
+      <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+        <div style="width: 350px; height: 370px;" class="card mb-3 box">
           <a style="height: 220px" href="../pages/video-playlist.html">
             <div style="position: relative;">
               <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
@@ -190,8 +168,8 @@
           </a>
         </div>
       </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
+      <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+        <div style="width: 350px; height: 370px;" class="card mb-3 box">
           <a style="height: 220px" href="../pages/video-playlist.html">
             <div style="position: relative;">
               <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
@@ -243,7 +221,6 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="../assets/js/main.js"></script>
   <script src="../assets/js/videolist.js"></script>
   <script src="../assets/js/scroll.js"></script>
 

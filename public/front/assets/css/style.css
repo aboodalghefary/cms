@@ -32,6 +32,18 @@ body {
 
 }
 
+.box{
+   height: 100%;
+   width: 100%;
+   overflow: hidden;
+   transition: 0.3s;
+ }
+  .box img:hover{
+   transform:  scale(1.1);
+   opacity: .8;
+
+  }
+
 
 textarea {
    width: 100%;
@@ -104,11 +116,10 @@ a:hover {
 }
 
 .main-btn:hover {
-   background-color: #fffcfc !important;
-   color: #f13b2a !important;
    transition: 1s !important;
+   opacity: .7;
 
-}
+ }
 
 .bg-black-sec {
    background-color: #11151df5;
@@ -132,7 +143,20 @@ a:hover {
    right: 8%;
 }
 
-
+.box{
+   height: 100%;
+   width: 100%;
+   overflow: hidden;
+ }
+  .box img:hover ,  .box .img:hover ,.art:hover{
+   transform:  scale(1.1);
+   opacity: .8;
+   transition: 0.7s;
+  }
+  .box2 .img:hover{
+   opacity: .7;
+   transition: 0.7s;
+  }
 /* start header */
 .boxsearch {
    position: absolute;
@@ -687,7 +711,7 @@ p {
   overflow: hidden;
  } */
 .gallery .card:hover img {
-   transform: scale(96%);
+   transform: scale(99%);
 
 }
 
@@ -777,6 +801,11 @@ p {
    overflow-y: scroll;
 }
 
+@media (max-width:991px) {
+   .cont-vid .video-list {
+     margin-top: 10px;
+   }
+  }
 .cont-vid .video-list::-webkit-scrollbar,
 .cont-vid .video-list::-webkit-scrollbar-track,
 .cont-vid .video-list::-webkit-scrollbar-thumb {

@@ -93,7 +93,7 @@
               <span >.</span>
           </div>
           <div class="plyr__video-embed" id="player1">
-              <iframe src="https://www.youtube.com/embed/H13cW1pYYcY"  
+              <iframe src="https://www.youtube.com/embed/H13cW1pYYcY"
                   allow="autoplay"></iframe>
           </div>
       </div>
@@ -167,128 +167,128 @@
   </div>
 </div>
 
-  <section class="container py-5">
-    
-      <div class="text-right container">
-        <span class=" mark-title">
-        </span>
-        <span class="title-sec text-black ">الاكثر مشاهدة
-        </span>
-      </div>
+<section class="container py-5">
 
-    <div class="row ">
+   <div class="text-right container">
+     <span class=" mark-title">
+     </span>
+     <span class="title-sec text-black ">الاكثر مشاهدة
+     </span>
+   </div>
 
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
-          <a style="height: 220px" href="../pages/video-playlist.html">
-            <div style="position: relative;">
-              <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
-              <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                <i class="fa-regular fa-play"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-            </div>
-            <div class="container text-black-50  bg-white text-right">
-              <span class="date">25/3/2000</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
-          <a style="height: 220px" href="../pages/video-playlist.html">
-            <div style="position: relative;">
-              <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
-              <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                <i class="fa-regular fa-play"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-            </div>
-            <div class="container text-black-50  bg-white text-right">
-              <span class="date">25/3/2000</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
-          <a style="height: 220px" href="../pages/video-playlist.html">
-            <div style="position: relative;">
-              <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
-              <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                <i class="fa-regular fa-play"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-            </div>
-            <div class="container text-black-50  bg-white text-right">
-              <span class="date">25/3/2000</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
-          <a style="height: 220px" href="../pages/video-playlist.html">
-            <div style="position: relative;">
-              <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
-              <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                <i class="fa-regular fa-play"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-            </div>
-            <div class="container text-black-50  bg-white text-right">
-              <span class="date">25/3/2000</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
-          <a style="height: 220px" href="../pages/video-playlist.html">
-            <div style="position: relative;">
-              <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
-              <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                <i class="fa-regular fa-play"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-            </div>
-            <div class="container text-black-50  bg-white text-right">
-              <span class="date">25/3/2000</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center">
-        <div style="width: 350px; height: 370px;" class="card mb-3">
-          <a style="height: 220px" href="../pages/video-playlist.html">
-            <div style="position: relative;">
-              <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
-              <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                <i class="fa-regular fa-play"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
-            </div>
-            <div class="container text-black-50  bg-white text-right">
-              <span class="date">25/3/2000</span>
-            </div>
-          </a>
-        </div>
-      </div>
+ <div class="row ">
 
-    </div>
-  </section>
+   <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+     <div style="width: 350px; height: 370px;" class="card mb-3 box">
+       <a style="height: 220px" href="../pages/video-playlist.html">
+         <div style="position: relative;">
+           <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
+           <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+             <i class="fa-regular fa-play"></i>
+           </div>
+         </div>
+         <div class="card-body">
+           <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
+         </div>
+         <div class="container text-black-50  bg-white text-right">
+           <span class="date">25/3/2000</span>
+         </div>
+       </a>
+     </div>
+   </div>
+   <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+     <div style="width: 350px; height: 370px;" class="card mb-3 box">
+       <a style="height: 220px" href="../pages/video-playlist.html">
+         <div style="position: relative;">
+           <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
+           <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+             <i class="fa-regular fa-play"></i>
+           </div>
+         </div>
+         <div class="card-body">
+           <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
+         </div>
+         <div class="container text-black-50  bg-white text-right">
+           <span class="date">25/3/2000</span>
+         </div>
+       </a>
+     </div>
+   </div>
+   <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+     <div style="width: 350px; height: 370px;" class="card mb-3 box">
+       <a style="height: 220px" href="../pages/video-playlist.html">
+         <div style="position: relative;">
+           <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
+           <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+             <i class="fa-regular fa-play"></i>
+           </div>
+         </div>
+         <div class="card-body">
+           <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
+         </div>
+         <div class="container text-black-50  bg-white text-right">
+           <span class="date">25/3/2000</span>
+         </div>
+       </a>
+     </div>
+   </div>
+   <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+     <div style="width: 350px; height: 370px;" class="card mb-3 box">
+       <a style="height: 220px" href="../pages/video-playlist.html">
+         <div style="position: relative;">
+           <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
+           <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+             <i class="fa-regular fa-play"></i>
+           </div>
+         </div>
+         <div class="card-body">
+           <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
+         </div>
+         <div class="container text-black-50  bg-white text-right">
+           <span class="date">25/3/2000</span>
+         </div>
+       </a>
+     </div>
+   </div>
+   <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+     <div style="width: 350px; height: 370px;" class="card mb-3 box">
+       <a style="height: 220px" href="../pages/video-playlist.html">
+         <div style="position: relative;">
+           <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
+           <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+             <i class="fa-regular fa-play"></i>
+           </div>
+         </div>
+         <div class="card-body">
+           <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
+         </div>
+         <div class="container text-black-50  bg-white text-right">
+           <span class="date">25/3/2000</span>
+         </div>
+       </a>
+     </div>
+   </div>
+   <div  class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">
+     <div style="width: 350px; height: 370px;" class="card mb-3 box">
+       <a style="height: 220px" href="../pages/video-playlist.html">
+         <div style="position: relative;">
+           <img src="../assets/images/2.jpg" alt="" style="width: 100%; height: 80%; object-fit: cover;">
+           <div class="play-vid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+             <i class="fa-regular fa-play"></i>
+           </div>
+         </div>
+         <div class="card-body">
+           <h5 class="card-text text-right">شاهد فيديوهات رياضية حصرية لاول مرة </h5>
+         </div>
+         <div class="container text-black-50  bg-white text-right">
+           <span class="date">25/3/2000</span>
+         </div>
+       </a>
+     </div>
+   </div>
+
+ </div>
+</section>
 
   <a href="#" class="to-top">
     <i class="fas fa-chevron-up"></i>
@@ -324,7 +324,6 @@
    crossorigin="anonymous"></script>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="{{asset('front/assets/js/main.js')}}"></script>
   <script src="{{asset('front/assets/js/videolist.js')}}"></script>
   <script src="{{asset('front/assets/js/scroll.js')}}"></script>
 

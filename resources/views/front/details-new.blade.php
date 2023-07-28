@@ -66,7 +66,9 @@
                     </div>
                     <div class="hash-tag container py-5 ">
                         @foreach ($blog->tags as $tag)
-                            <span class="d-inline-block mb-3">#{{ $tag->name }}</span>
+                        <a href="#">
+                           <span class="d-inline-block mb-3">#{{ $tag->name }}</span>
+                        </a>
                         @endforeach
 
                     </div>
@@ -91,36 +93,36 @@
                 </div>
                 <div class="row container card-width  ">
                     <div class="col-lg-4  col-md-6 g-md-3 col-sm-12 mt-3  ">
-                        <div class="card  h-100">
+                        <div class="card  h-100 box">
                             <a href="#"><img class="card-img-top"
                                     src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <div class="card-body">
+                            <a href="#" class="card-body">
 
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-4  col-md-6 g-md-3 col-sm-12 mt-3  ">
-                        <div class="card h-100">
+                        <div class="card  h-100 box">
                             <a href="#"><img class="card-img-top"
                                     src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <div class="card-body">
+                            <a href="#" class="card-body">
 
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-4  col-md-6 g-md-3 col-sm-12 mt-3  ">
-                        <div class="card h-100">
+                        <div class="card  h-100 box">
                             <a href="#"><img class="card-img-top"
                                     src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <div class="card-body">
+                            <a href="#" class="card-body">
 
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -245,32 +247,29 @@
                         <span class="title-sec"> الاخبار الرئيسية</span>
                     </div>
                     <div class="d-grid flex-column">
-                        <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top"
+                       <div class="card h-100 py-2">
+                            <a href="#"><img class="card-img-top box"
                                     src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <div class="card-body">
-
+                            <a href="#" class="card-body">
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
-                            </div>
+                            </a>
                         </div>
                         <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top"
+                            <a href="#"><img class="card-img-top box"
                                     src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <div class="card-body">
-
+                            <a href="#" class="card-body">
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
-                            </div>
+                            </a>
                         </div>
-                        <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top"
+                         <div class="card h-100 py-2">
+                            <a href="#"><img class="card-img-top box"
                                     src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <div class="card-body">
-
+                            <a href="#" class="card-body">
                                 <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
-                            </div>
+                            </a>
                         </div>
                     </div>
 

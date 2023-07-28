@@ -156,7 +156,6 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../assets/js/main.js"></script>
     <script src="../assets/js/videolist.js"></script>
     <script src="../assets/js/scroll.js"></script>
 

@@ -92,154 +92,153 @@
     </ol>
 
     <main  class="main container  d-flex flex-column justify-content-center" style="min-height: 100vh;">
-        <div class="row pb-5">
+      <div class="row pb-5">
+         <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
+             <div class="card h-100 position-relative box">
+                 <a href="../pages/images.html"><img class="card-img-top" src="../assets/images/caralbum.png"
+                         alt=""></a>
+                 <a href="../pages/images.html" class="card-body">
 
-            <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
-                <div class="card h-100 position-relative">
-                    <a href="../pages/images.html"><img class="card-img-top" src="{{asset('front/assets/images/caralbum.png')}}"
-                            alt=""></a>
-                    <div class="card-body">
+                     <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
+                         .</h5>
+                 </a>
+                 <div class="container text-black-50 pb-2 bg-white text-right">
+                     <span class="date">25/3/2000</span>
+                 </div>
+             </div>
+             <div class="img-num top-left">
+                 <span>24</span>
+                 <i class="mr-2 fa-regular fa-image"></i>
+             </div>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
+             <div class="card h-100 position-relative box">
+                 <a href="../pages/images.html"><img class="card-img-top" src="../assets/images/caralbum.png"
+                         alt=""></a>
+                 <a href="../pages/images.html" class="card-body">
 
-                        <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
-                            .</h5>
-                    </div>
-                    <div class="container text-black-50 pb-2 bg-white text-right">
-                        <span class="date">25/3/2000</span>
-                    </div>
-                </div>
-                <div class="img-num top-left">
-                    <span>24</span>
-                    <i class="mr-2 fa-regular fa-image"></i>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
-                <div class="card h-100 position-relative">
-                    <a href="../pages/details-new.html"><img class="card-img-top" src="{{asset('front/assets/images/caralbum.png')}}"
-                            alt=""></a>
-                    <div class="card-body">
+                     <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
+                         .</h5>
+                 </a>
+                 <div class="container text-black-50 pb-2 bg-white text-right">
+                     <span class="date">25/3/2000</span>
+                 </div>
+             </div>
+             <div class="img-num top-left">
+                 <span>24</span>
+                 <i class="mr-2 fa-regular fa-image"></i>
+             </div>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
+             <div class="card h-100 position-relative box">
+                 <a href="../pages/images.html"><img class="card-img-top" src="../assets/images/caralbum.png"
+                         alt=""></a>
+                 <a href="../pages/images.html" class="card-body">
 
-                        <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
-                            .</h5>
-                    </div>
-                    <div class="container text-black-50 pb-2 bg-white text-right">
-                        <span class="date">25/3/2000</span>
-                    </div>
-                </div>
-                <div class="img-num top-left">
-                    <span>24</span>
-                    <i class="mr-2 fa-regular fa-image"></i>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
-                <div class="card h-100 position-relative">
-                    <a href="../pages/details-new.html"><img class="card-img-top" src="{{asset('front/assets/images/caralbum.png')}}"
-                            alt=""></a>
-                    <div class="card-body">
+                     <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
+                         .</h5>
+                 </a>
+                 <div class="container text-black-50 pb-2 bg-white text-right">
+                     <span class="date">25/3/2000</span>
+                 </div>
+             </div>
+             <div class="img-num top-left">
+                 <span>24</span>
+                 <i class="mr-2 fa-regular fa-image"></i>
+             </div>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
+             <div class="card h-100 position-relative box">
+                 <a href="../pages/images.html"><img class="card-img-top" src="../assets/images/caralbum.png"
+                         alt=""></a>
+                 <a href="../pages/images.html" class="card-body">
 
-                        <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
-                            .</h5>
-                    </div>
-                    <div class="container text-black-50 pb-2 bg-white text-right">
-                        <span class="date">25/3/2000</span>
-                    </div>
-                </div>
-                <div class="img-num top-left">
-                    <span>24</span>
-                    <i class="mr-2 fa-regular fa-image"></i>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
-                <div class="card h-100 position-relative">
-                    <a href="../pages/details-new.html"><img class="card-img-top" src="{{asset('front/assets/images/caralbum.png')}}"
-                            alt=""></a>
-                    <div class="card-body">
+                     <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
+                         .</h5>
+                 </a>
+                 <div class="container text-black-50 pb-2 bg-white text-right">
+                     <span class="date">25/3/2000</span>
+                 </div>
+             </div>
+             <div class="img-num top-left">
+                 <span>24</span>
+                 <i class="mr-2 fa-regular fa-image"></i>
+             </div>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
+             <div class="card h-100 position-relative box">
+                 <a href="../pages/images.html"><img class="card-img-top" src="../assets/images/caralbum.png"
+                         alt=""></a>
+                 <a href="../pages/images.html" class="card-body">
 
-                        <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
-                            .</h5>
-                    </div>
-                    <div class="container text-black-50 pb-2 bg-white text-right">
-                        <span class="date">25/3/2000</span>
-                    </div>
-                </div>
-                <div class="img-num top-left">
-                    <span>24</span>
-                    <i class="mr-2 fa-regular fa-image"></i>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
-                <div class="card h-100 position-relative">
-                    <a href="../pages/details-new.html"><img class="card-img-top" src="{{asset('front/assets/images/caralbum.png')}}"
-                            alt=""></a>
-                    <div class="card-body">
+                     <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
+                         .</h5>
+                 </a>
+                 <div class="container text-black-50 pb-2 bg-white text-right">
+                     <span class="date">25/3/2000</span>
+                 </div>
+             </div>
+             <div class="img-num top-left">
+                 <span>24</span>
+                 <i class="mr-2 fa-regular fa-image"></i>
+             </div>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
+             <div class="card h-100 position-relative box">
+                 <a href="../pages/images.html"><img class="card-img-top" src="../assets/images/caralbum.png"
+                         alt=""></a>
+                 <a href="../pages/images.html" class="card-body">
 
-                        <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
-                            .</h5>
-                    </div>
-                    <div class="container text-black-50 pb-2 bg-white text-right">
-                        <span class="date">25/3/2000</span>
-                    </div>
-                </div>
-                <div class="img-num top-left">
-                    <span>24</span>
-                    <i class="mr-2 fa-regular fa-image"></i>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
-                <div class="card h-100 position-relative">
-                    <a href="../pages/details-new.html"><img class="card-img-top" src="{{asset('front/assets/images/caralbum.png')}}"
-                            alt=""></a>
-                    <div class="card-body">
+                     <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
+                         .</h5>
+                 </a>
+                 <div class="container text-black-50 pb-2 bg-white text-right">
+                     <span class="date">25/3/2000</span>
+                 </div>
+             </div>
+             <div class="img-num top-left">
+                 <span>24</span>
+                 <i class="mr-2 fa-regular fa-image"></i>
+             </div>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
+             <div class="card h-100 position-relative box">
+                 <a href="../pages/images.html"><img class="card-img-top" src="../assets/images/caralbum.png"
+                         alt=""></a>
+                 <a href="../pages/images.html" class="card-body">
 
-                        <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
-                            .</h5>
-                    </div>
-                    <div class="container text-black-50 pb-2 bg-white text-right">
-                        <span class="date">25/3/2000</span>
-                    </div>
-                </div>
-                <div class="img-num top-left">
-                    <span>24</span>
-                    <i class="mr-2 fa-regular fa-image"></i>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
-                <div class="card h-100 position-relative">
-                    <a href="../pages/details-new.html"><img class="card-img-top" src="{{asset('front/assets/images/caralbum.png')}}"
-                            alt=""></a>
-                    <div class="card-body">
+                     <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
+                         .</h5>
+                 </a>
+                 <div class="container text-black-50 pb-2 bg-white text-right">
+                     <span class="date">25/3/2000</span>
+                 </div>
+             </div>
+             <div class="img-num top-left">
+                 <span>24</span>
+                 <i class="mr-2 fa-regular fa-image"></i>
+             </div>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
+             <div class="card h-100 position-relative box">
+                 <a href="../pages/images.html"><img class="card-img-top" src="../assets/images/caralbum.png"
+                         alt=""></a>
+                 <a href="../pages/images.html" class="card-body">
 
-                        <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
-                            .</h5>
-                    </div>
-                    <div class="container text-black-50 pb-2 bg-white text-right">
-                        <span class="date">25/3/2000</span>
-                    </div>
-                </div>
-                <div class="img-num top-left">
-                    <span>24</span>
-                    <i class="mr-2 fa-regular fa-image"></i>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
-                <div class="card h-100 position-relative">
-                    <a href="../pages/details-new.html"><img class="card-img-top" src="{{asset('front/assets/images/caralbum.png')}}"
-                            alt=""></a>
-                    <div class="card-body">
+                     <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
+                         .</h5>
+                 </a>
+                 <div class="container text-black-50 pb-2 bg-white text-right">
+                     <span class="date">25/3/2000</span>
+                 </div>
+             </div>
+             <div class="img-num top-left">
+                 <span>24</span>
+                 <i class="mr-2 fa-regular fa-image"></i>
+             </div>
+         </div>
 
-                        <h5 class="card-text text-right">البوم صور سيارة كيا الجديدة
-                            .</h5>
-                    </div>
-                    <div class="container text-black-50 pb-2 bg-white text-right">
-                        <span class="date">25/3/2000</span>
-                    </div>
-                </div>
-                <div class="img-num top-left">
-                    <span>24</span>
-                    <i class="mr-2 fa-regular fa-image"></i>
-                </div>
-            </div>
-
-        </div>
+     </div>
         <a href="#" class="to-top">
             <i class="fas fa-chevron-up"></i>
         </a>
@@ -271,7 +270,6 @@
     </footer>
     <!-- Bootstrap core JavaScript -->
     <!-- Bootstrap core JavaScript -->
-    <script src="{{asset('front/assets/js/main.js')}}"></script>
     <script src="{{asset('front/assets/js/videolist.js')}}"></script>
     <script src="{{asset('front/assets/js/scroll.js')}}"></script>
 

@@ -98,10 +98,13 @@
         <div>
             <div class="row  template-main  two-main-news pb-0 no-gutters">
                 <div class="col-lg-6 col-md-6 col-sm-12  mb-1  ">
-                    <div class="column position-relative ">
+                    <div class="column position-relative img ">
                         <a href="../pages/details-new.html">
-                            <img style="background-size: cover;" class="" src="../assets/images/mainnew2.png"
-                                alt="Image 1">
+                            <div class="box">
+                                <img style="background-size: cover;" class="" src="../assets/images/mainnew2.png"
+                                    alt="Image 1">
+                            </div>
+
                             <div class="text text-right bottom-right text-white ">
                                 <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
@@ -114,9 +117,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-1 ">
-                    <div class="column position-relative">
+                    <div class="column position-relative img">
                         <a href="../pages/details-new.html">
-                            <img src="../assets/images/mainnew2.png" alt="Image 1">
+                            <div class="box">
+
+                                <img src="../assets/images/mainnew2.png" alt="Image 1">
+                            </div>
+
                             <div class="text text-right bottom-right text-white ">
                                 <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                     .</h6>
@@ -130,121 +137,128 @@
                 </div>
             </div>
             <div class="row">
-    
+
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-5  ">
-                    <div class="card h-100">
+                    <div class="card h-100 box">
                         <a href="../pages/details-new.html"><img class="card-img-top" src="../assets/images/mainnew.png"
                                 alt=""></a>
-                        <div class="card-body">
-    
+                        <a href="../pages/details-new.html" class="card-body">
+
                             <h5 class="card-text text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h5>
-                        </div>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="date">25/3/2000</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-5  ">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
-                        <div class="card-body">
-    
+                    <div class="card h-100 box">
+                        <a href="../pages/details-new.html"><img class="card-img-top" src="../assets/images/mainnew.png"
+                                alt=""></a>
+                        <a href="../pages/details-new.html" class="card-body">
+
                             <h5 class="card-text text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h5>
-                        </div>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
-                            <span>25/3/2000</span>
+                            <span class="date">25/3/2000</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-5  ">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
-                        <div class="card-body">
-    
+                    <div class="card h-100 box">
+                        <a href="../pages/details-new.html"><img class="card-img-top" src="../assets/images/mainnew.png"
+                                alt=""></a>
+                        <a href="../pages/details-new.html" class="card-body">
+
                             <h5 class="card-text text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h5>
-                        </div>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
-                            <span>25/3/2000</span>
+                            <span class="date">25/3/2000</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-5  ">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
-                        <div class="card-body">
-    
+                    <div class="card h-100 box">
+                        <a href="../pages/details-new.html"><img class="card-img-top" src="../assets/images/mainnew.png"
+                                alt=""></a>
+                        <a href="../pages/details-new.html" class="card-body">
+
                             <h5 class="card-text text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h5>
-                        </div>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
-                            <span>25/3/2000</span>
+                            <span class="date">25/3/2000</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-5  ">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
-                        <div class="card-body">
-    
+                    <div class="card h-100 box">
+                        <a href="../pages/details-new.html"><img class="card-img-top" src="../assets/images/mainnew.png"
+                                alt=""></a>
+                        <a href="../pages/details-new.html" class="card-body">
+
                             <h5 class="card-text text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h5>
-                        </div>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
-                            <span>25/3/2000</span>
+                            <span class="date">25/3/2000</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-5  ">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
-                        <div class="card-body">
-    
+                    <div class="card h-100 box">
+                        <a href="../pages/details-new.html"><img class="card-img-top" src="../assets/images/mainnew.png"
+                                alt=""></a>
+                        <a href="../pages/details-new.html" class="card-body">
+
                             <h5 class="card-text text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h5>
-                        </div>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
-                            <span>25/3/2000</span>
+                            <span class="date">25/3/2000</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-5  ">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
-                        <div class="card-body">
-    
+                    <div class="card h-100 box">
+                        <a href="../pages/details-new.html"><img class="card-img-top" src="../assets/images/mainnew.png"
+                                alt=""></a>
+                        <a href="../pages/details-new.html" class="card-body">
+
                             <h5 class="card-text text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h5>
-                        </div>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
-                            <span>25/3/2000</span>
+                            <span class="date">25/3/2000</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-5  ">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="../assets/images/mainnew.png" alt=""></a>
-                        <div class="card-body">
-    
+                    <div class="card h-100 box">
+                        <a href="../pages/details-new.html"><img class="card-img-top" src="../assets/images/mainnew.png"
+                                alt=""></a>
+                        <a href="../pages/details-new.html" class="card-body">
+
                             <h5 class="card-text text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
                                 .</h5>
-                        </div>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
-                            <span>25/3/2000</span>
+                            <span class="date">25/3/2000</span>
                         </div>
                     </div>
                 </div>
-    
-    
-    
+
+
+
             </div>
             <a href="#" class="to-top">
                 <i class="fas fa-chevron-up"></i>
             </a>
         </div>
-       
+
     </main>
 
 
@@ -274,7 +288,6 @@
         </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
-    <script src="../assets/js/main.js"></script>
     <script src="../assets/js/videolist.js"></script>
     <script src="../assets/js/scroll.js"></script>
 
