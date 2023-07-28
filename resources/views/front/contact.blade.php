@@ -13,7 +13,7 @@
 
     <!-- icons -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css" rel="stylesheet">
     <!-- fonts -->
     <!-- <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=neckar-bold" /> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&display=swap">
@@ -36,20 +36,31 @@
         <main class="">
             <div class="main container contact d-flex flex-column justify-content-center" style="min-height: 70vh;">
                 <div class="row  no-gutters ">
+
+
                     <div class="col-lg-7  pb-4 ">
                         <form action="">
                             <div class="d-flex justify-content-between">
                                 <input type="text" class="form-control my-3 px-4 py-3" name="name" id="name"
                                     placeholder="الاسم">
-                                <input type="email" class="form-control my-3 px-4 py-3" name="name" id="name"
+                                <input type="email" class="form-control my-3 px-4 py-3" name="email" id="email"
                                     placeholder="البريد الالكتروني">
                             </div>
                             <input style="width: 100%;" type="text" class="form-control px-4 py-3 mb-3"
-                                name="name" id="name" placeholder="الموضوع">
-                            <textarea style="outline: none" placeholder="نص الرسالة" class="p-3"></textarea>
-                            <button type="button" class="btn main-btn mt-5">ارسال الرسالة</button>
+                                name="title" id="title" placeholder="الموضوع">
+                            <textarea style="outline: none" id="content" placeholder="نص الرسالة" class="p-3"></textarea>
+                            <button type="button" onclick="performStore()" class="btn main-btn mt-5">ارسال
+                                الرسالة</button>
                         </form>
                     </div>
+
+
+
+
+
+
+
+
                     <div class=" connect-title col-lg-5 pt-3 border mx-auto ">
                         <div class=" text-right mb-3">
                             <span style="font-weight: bold; " class="label">معلومات الاتصال</span>
@@ -100,12 +111,12 @@
 
 
     <!-- vendor files -->
-    <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
-
+    <script src="{{ asset('cms/assets/js/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('cms/assets/js/vendor/notifications/sweet_alert.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"
         integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('cms/assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('cms/assets/js/crud.js') }}"></script>
     <script>
         function performStore() {
@@ -114,7 +125,7 @@
             formData.append('email', document.getElementById('email').value);
             formData.append('content', document.getElementById('content').value);
             formData.append('title', document.getElementById('title').value);
-            store('/cms/admin/admins', formData);
+            store('/contact_store', formData);
         }
     </script>
 </body>

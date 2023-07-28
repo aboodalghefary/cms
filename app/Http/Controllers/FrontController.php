@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
 use App\Models\Blog;
 use App\Models\Library;
 use App\Models\Row;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontController extends Controller
 {
@@ -18,6 +20,37 @@ class FrontController extends Controller
    public function contactIndex()
    {
       return view('front.contact');
+   }
+   public function contact_store(Request $request)
+   {
+      $validator = validator($request->all(), [
+         'title' => 'required|string|min:3',
+         'name' => 'required|string|min:3',
+         'content' => 'required|string|min:3',
+         'email' => 'required|string|min:3',
+      ], [
+         'title.required' => 'ادخل الرسالة ',
+         'title.min' => 'لا يقبل أقل من 3 حروف',
+      ]);
+
+      if (!$validator->fails()) {
+         $contact = new AboutUs();
+         $contact->title = $request->get('title');
+         $contact->name = $request->get('name');
+         $contact->content = $request->get('content');
+         $contact->email = $request->get('email');
+         $isSaved = $contact->save();
+
+         if ($isSaved) {
+            DB::commit();
+            return response()->json(['icon' => 'success', 'title' => "تمت الإضافة بنجاح"], 200);
+         } else {
+            DB::rollBack();
+            return response()->json(['icon' => 'error', 'title' => "فشلت عملية التخزين"], 400);
+         }
+      } else {
+         return response()->json(['icon' => 'error', 'title' => $validator->getMessageBag()->first()], 400);
+      }
    }
    public function post_details($id)
    {

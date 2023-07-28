@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!-- Bootstrap core CSS -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
   <!--  styles for this template -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
 
   <!-- icons -->
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
