@@ -86,7 +86,7 @@
                 </span>
             </div>
             <div class="">
-                <a href="../pages/details-new.html" class=" d-flex  py-2  art">
+                <a href="../pages/details-new.html" class=" d-flex  py-2  ">
                     <div style="width: 78px; height: 78px; border-radius: 50%; background-image: url( {{ asset('storage/images/blog/' . $categories[1]->blogs[0]->image ?? null) }} );"
                         class=" text-right">
                     </div>
@@ -96,7 +96,7 @@
                         <span class="date text-black-50"> {{ $categories[1]->blogs[0]->date }} </span>
                     </div>
                 </a>
-                <a href="../pages/details-new.html" class=" d-flex  py-2  art">
+                <a href="../pages/details-new.html" class=" d-flex  py-2  ">
                     <div style="width: 78px; height: 78px; border-radius: 50%; background-image: url( {{ asset('storage/images/blog/' . $categories[1]->blogs[1]->image ?? null) }} );"
                         class=" text-right">
                     </div>
@@ -107,7 +107,7 @@
                     </div>
                 </a>
 
-                <a href="../pages/details-new.html" class=" d-flex  py-2  art">
+                <a href="../pages/details-new.html" class=" d-flex  py-2  ">
                     <div style="width: 78px; height: 78px; border-radius: 50%; background-image: url( {{ asset('storage/images/blog/' . $categories[1]->blogs[3]->image ?? null) }} );"
                         class=" text-right">
                     </div>
@@ -118,7 +118,7 @@
                     </div>
                 </a>
 
-                <a href="../pages/details-new.html" class=" d-flex  py-2  art">
+                <a href="../pages/details-new.html" class=" d-flex  py-2  ">
                     <div style="width: 78px; height: 78px; border-radius: 50%; background-image: url( {{ asset('storage/images/blog/' . $categories[1]->blogs[4]->image ?? null) }} );"
                         class=" text-right">
                     </div>

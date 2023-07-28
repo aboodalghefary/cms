@@ -10,11 +10,9 @@
             @endphp
             @foreach ($category->blogs as $blog)
                 @if ($counter < 3)
-
-                    <div class="box d-flex align-items-center py-3">
+                    <a href="../pages/details-new.html" class=" d-flex align-items-center py-3  ">
                         <div style="width: 100px; height: 75px; background-image: url({{ asset('storage/images/blog/' . $blog->image ?? null) }});"
                             class="text-right">
-                            <a href="../pages/details-new.html"></a>
                         </div>
                         <div class="text text-right text-black mr-3">
                             <h6 class="text-right">
@@ -22,7 +20,7 @@
                             </h6>
                             <span class="date text-black-50">{{ $blog->date }}</span>
                         </div>
-                    </div>
+                    </a>
                     @php
                         $counter++;
                     @endphp
