@@ -45,8 +45,9 @@
         <div class="row ">
             <div class="col-lg-8 detail-new ">
                 <div class="card ">
-                    <a href="#"><img style="max-height: 350px; object-fit: cover" class="card-img-top"
-                            src="{{ asset('storage/images/blog/' . $blog->image) }}" alt=""></a>
+                    <a href="#"><img style="max-height: 350px; object-fit: cover; object-position: center top"
+                            class="card-img-top" src="{{ asset('storage/images/blog/' . $blog->image) }}"
+                            alt=""></a>
                     <div class="card-body ">
 
                         <h6 class="short-desk card-text text-right">
@@ -124,7 +125,7 @@
                     </div>
                 </div>
                 <div class="my-5 pt-5 pl-5 d-flex align-items-center justify-content-between  border-bottom pb-3">
-                    <p class="comments">التعليقات : <span class="comments-number">0</span></p>
+                    {{-- <p class="comments">التعليقات : <span class="comments-number">0</span></p>
                     <div class="filter-comments ">
                         <form action="/action_page.php">
                             <label class="comments" for="cars">فرز حسب:</label>
@@ -135,9 +136,20 @@
                                 <option value="audi">الاقدم </option>
                             </select>
                         </form>
-                    </div>
+                    </div> --}}
+                    @if ($blog->comments_enabled == 1)
+                        <div class="fb-comments" data-href="{{ route('post_details', $blog->id) }}" data-width="100%"
+                            data-numposts="5"></div>
+                    @else
+                        <div class="alert alert-dark w-100 text-center" style="cursor: pointer">
+                            التعليقات معطلة على هذا الخبر
+                        </div>
+                    @endif
+
+
+
                 </div>
-                <div class="container-2-col-commits pb-4 ">
+                {{-- <div class="container-2-col-commits pb-4 ">
                     <div class=" ">
                         <img style="width: 70px; height: 80px; background: #000;" src=".#" alt="">
                     </div>
@@ -152,7 +164,7 @@
                         <i class="fab fa-facebook-f bg-info text-white px-2 py-1 ml-2"></i>
                         <span>المكون الاضافي على فيسبوك</span>
                     </a>
-                </div>
+                </div> --}}
 
 
 
@@ -302,7 +314,10 @@
     <!-- vendor files -->
     <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
+    <!-- تعويض {your-app-id} بمعرّف التطبيق الخاص بك -->
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=1223591008520673&autoLogAppEvents=1"
+        nonce="a4LkJkFD"></script>
 </body>
 
 </html>
