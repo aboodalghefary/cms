@@ -17,6 +17,11 @@ class FrontController extends Controller
       $library = Library::with('videos')->first();
       return view('front.index', compact('rows', 'library'));
    }
+   public function video_library()
+   {
+      $libraries = Library::with('videos')->all();
+      return view('front.video-library', compact('libraries'));
+   }
    public function contactIndex()
    {
       return view('front.contact');
