@@ -33,7 +33,7 @@
                         <a class="nav-link" href="../pages/video-library.html">فيديو </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/contact.html">اتصل بنا</a>
+                        <a class="nav-link" href="{{ route('contact') }}">اتصل بنا</a>
                     </li>
                     <ul class="navbar-nav mr-5 text-white nav-links links d-flex flex-row pt-2 pr-5 mr-auto">
                         <li class="  "><a class="twitter" href="#"><i class=" fab fa-twitter"></i></a>

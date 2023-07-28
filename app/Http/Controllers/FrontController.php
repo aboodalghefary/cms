@@ -15,6 +15,10 @@ class FrontController extends Controller
       $library = Library::with('videos')->first();
       return view('front.index', compact('rows', 'library'));
    }
+   public function contactIndex()
+   {
+      return view('front.contact');
+   }
    public function post_details($id)
    {
       $blog = Blog::findOrFail($id);

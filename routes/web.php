@@ -50,6 +50,7 @@ Route::post('/upload', [PostTasksController::class, 'upload']);
 
 Route::get('/', [FrontController::class, 'index'])->name('front_index');
 Route::get('/post_details/{id}', [FrontController::class, 'post_details'])->name('post_details');
+Route::get('/contact', [FrontController::class, 'contactIndex'])->name('contact');
 
 
 Route::group([
