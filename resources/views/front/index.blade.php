@@ -413,8 +413,8 @@
 
             @include('partials.' . $thirdRow->template, ['categories' => $thirdRow->categories])
             <!-- القالب الرابع (يوجد في هذا تصنيفان في نفس الصف كل تصنيف به خبر بارز وخبران فرعيان)-->
-
         </div>
+
         <div class="container pt-5">
             <!--(القالب الخامس به تصنيفان-->
             @php
@@ -638,8 +638,8 @@
             </div>
         </div>
     </footer>
-    <!-- video plyer -->
 
+    <!-- video plyer -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.4/plyr.js"
         integrity="sha512-M/AUlH5tMMuhvt9trN4rXBjsXq9HrOUmtblZHhesbx97sGycEnXX/ws1W7yyrF8zEjotdNhYNfHOd3WMu96eKA=="
         crossorigin="anonymous"></script>
