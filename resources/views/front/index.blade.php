@@ -335,8 +335,6 @@
                 </div>
             </div>
 
-
-
             @php
                 $remainingRows = $rows->slice(4);
             @endphp
@@ -508,6 +506,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/share/lg-share.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
     <script>
         let gallery = document.querySelector('.gallery');
         lightGallery(gallery, {

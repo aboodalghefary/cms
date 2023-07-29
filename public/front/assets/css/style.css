@@ -161,7 +161,15 @@ h6:hover {
 .overlayFade {
    height: 100%;
    width: 100%;
-   top: 0;
+   top: 0px;
+   left: 0;
+   background-color: #11151d69;
+}
+
+.mega-menue .overlayFade {
+   height: 100%;
+   width: 100%;
+   top: -5px;
    left: 0;
    background-color: #11151d69;
 }
@@ -342,6 +350,92 @@ h6:hover {
 
 /* end overlayhover */
 
+/*  start mega-menue */
+.mega-menue{
+   display: none;
+ }
+ .mega{
+   width: 100%;
+   /* height: 40vh; */
+   background: #1f2024ea;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: absolute;
+   right: 0;
+   left: 0;
+   top: 105px;
+   padding: 0 0;
+   border-top: 3px solid var(--main-color);
+   border-radius: 5px;
+ }
+
+
+@media (min-width:991px) {
+   .navbar-nav .news:hover .mega-menue{
+      display: block !important;
+   }
+}
+.mega-menue .category-right{
+   width: 20%;
+   height: 100%;
+   padding: 15px 0;
+   background: #1f2024fa;
+}
+.mega-menue .category-right ul{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 5px;
+}
+
+.mega-menue .category-right ul li.active{
+   background-color: #cf1e1e81;
+ }
+
+.mega-menue .category-right ul li:hover{
+   background-color: #cf1e1e81;
+ }
+ .mega-menue .category-right ul li:hover a{
+   color: #2980b9 !important;
+ }
+.mega-menue .category-right ul li a{
+   display: block;
+   color: white;
+   padding: 10px 10px;
+}
+
+
+.mega-menue .four-category-news{
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   gap: 55px 0;
+   padding: 30px 0;
+   width: 100%;
+   height: 100%;
+}
+
+.mega-menue .four-category-news .card{
+   background: none !important;
+   border: none !important;
+   border-radius: 20px;
+}
+.mega-menue .four-category-news .card .date{
+   background-color: none !important;
+
+}
+.mega-menue .four-category-news .card .card-body ,
+   .mega-menue .four-category-news .card .date
+{
+   padding: 5px 5px !important;
+   margin: 0 !important;
+}
+.mega-menue  h6:hover{
+   color: #2980b9 !important;
+}
+/*  end mega-menue */
+
 /* start header */
 .boxsearch {
    position: absolute;
@@ -468,6 +562,16 @@ header a {
    font-weight: 400;
    margin-top: 5px;
 }
+
+
+
+@media (min-width:991px) {
+   .navbar-main .nav-item-main{
+      padding: 25px 0;
+   }
+}
+
+
 
 
 .links li {

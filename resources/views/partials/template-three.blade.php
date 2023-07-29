@@ -52,8 +52,6 @@
                     </div>
                 </div>
 
-
-
                 <div href="{{ route('post_details', ['id' => $category->blogs[2]->id]) }}"
                     class="col-lg-6 col-md-8 col-sm-12   ">
                     <div style="width: 260px; " class=" card">

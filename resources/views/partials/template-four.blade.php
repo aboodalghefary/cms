@@ -45,11 +45,11 @@
                         <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
                     </a>
                 </div>
-                <div class="text text-right  text-black mr-3">
+                <a href="" class="text text-right  text-black mr-3">
                     <h6 class="text-right "> {{ $categories[0]->blogs[1]->name }}
                     </h6>
                     <span class="date text-black-50"> {{ $categories[0]->blogs[1]->date }}</span>
-                </div>
+                </a>
             </div>
         </a>
         <a href="{{ route('post_details', ['id' => $categories[1]->blogs[1]->id]) }}">
@@ -65,11 +65,11 @@
                         <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
                     </a>
                 </div>
-                <div class="text text-right  text-black mr-3">
+                <a href="" class="text text-right  text-black mr-3">
                     <h6 class="text-right "> {{ $categories[1]->blogs[1]->name }}
                     </h6>
                     <span class="date text-black-50"> {{ $categories[1]->blogs[1]->date }}</span>
-                </div>
+                </a>
             </div>
         </a>
         <a href="{{ route('post_details', ['id' => $categories[1]->blogs[2]->id]) }}">
@@ -84,11 +84,11 @@
                         <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
                     </a>
                 </div>
-                <div class="text text-right  text-black mr-3">
+                <a href="" class="text text-right  text-black mr-3">
                     <h6 class="text-right "> {{ $categories[1]->blogs[2]->name }}
                     </h6>
                     <span class="date text-black-50"> {{ $categories[1]->blogs[2]->date }}</span>
-                </div>
+                </a>
             </div>
         </a>
     </div>

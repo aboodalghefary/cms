@@ -16,26 +16,141 @@
                 <i class="fa-duotone fa-bars text-danger"></i>
             </button>
             <div class="collapse  navbar-collapse" id="navbarSupportedContent">
-                <ul class=" navbar-nav mr-auto mb-2 ml3 mb-lg-0">
-                    <li class="nav-item active-item">
+                <ul class=" navbar-nav navbar-main mr-auto  mb-lg-0">
+                    <li class="nav-item nav-item-main active-item ">
                         <a class="nav-link active " aria-current="page" href="{{ route('front_index') }}">الرئيسية</a>
                     </li>
-                    <li class="nav-item ">
+                    <li  class="nav-item nav-item-main news ">
                         <a class="nav-link " href="#">الاخبار</a>
+                        <!-- start megamenue -->
+                        <div class="mega-menue ">
+
+                            <div class="mega">
+                                <div class="category-right  px-1 ">
+                                    <ul class="text-right ">
+                                        <li class="active"  >
+                                            <a href="#"> الكل</a>
+                                        </li>
+                                        <li class="" >
+                                            <a href="#"> تصنيف 1</a>
+                                        </li>
+                                        <li class="" >
+                                            <a href="#"> تصنيف 2</a>
+                                        </li>
+                                        <li class="" >
+                                            <a href="#"> تصنيف 3</a>
+                                        </li>
+                                        <li class="" >
+                                            <a href="#"> تصنيف 4</a>
+                                        </li>
+                                        <li class="" >
+                                            <a href="#"> تصنيف 5</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="four-category-news ">
+
+                                    <div style="width: 260px;" class=" card">
+                                        <div class="lay">
+                                            <img style="height: 155px" class="card-img-top"
+                                                src="{{ asset('front/assets/images/2.jpg') }}" alt="">
+                                            <a href="#"
+                                                style="display: flex; align-items: center; justify-content: center;"
+                                                class="overlayy overlayFade">
+                                                <i style="display: block; color: white; font-size: 25px;"
+                                                    class="fa-solid fa-link-simple"></i>
+                                            </a>
+                                        </div>
+                                        <a href="# " class="card-body">
+                                            <h6 class=" text-right text-white">
+                                                مستوطنون يحاولون سرقة أغنام المواطنين في تجمع عرب المليحات غرب أريحا
+                                            </h6>
+                                        </a>
+                                        <div class=" text-white-50  text-right">
+                                            <span class="date">22/2/200 </span>
+                                        </div>
+                                    </div>
+                                    <div style="width: 260px;" class=" card">
+                                        <div class="lay">
+                                            <img style="height: 155px" class="card-img-top"
+                                                src="{{ asset('front/assets/images/2.jpg') }}" alt="">
+                                            <a href="#"
+                                                style="display: flex; align-items: center; justify-content: center;"
+                                                class="overlayy overlayFade">
+                                                <i style="display: block; color: white; font-size: 25px;"
+                                                    class="fa-solid fa-link-simple"></i>
+                                            </a>
+                                        </div>
+                                        <a href="# " class="card-body">
+                                            <h6 class=" text-right text-white">
+                                                مستوطنون يحاولون سرقة أغنام المواطنين في تجمع عرب المليحات غرب أريحا
+                                            </h6>
+                                        </a>
+                                        <div class=" text-white-50  text-right">
+                                            <span class="date">22/2/200 </span>
+                                        </div>
+                                    </div>
+                                    <div style="width: 260px;" class=" card">
+                                        <div class="lay">
+                                            <img style="height: 155px" class="card-img-top"
+                                                src="{{ asset('front/assets/images/2.jpg') }}" alt="">
+                                            <a href="#"
+                                                style="display: flex; align-items: center; justify-content: center;"
+                                                class="overlayy overlayFade">
+                                                <i style="display: block; color: white; font-size: 25px;"
+                                                    class="fa-solid fa-link-simple"></i>
+                                            </a>
+                                        </div>
+                                        <a href="# " class="card-body">
+                                            <h6 class=" text-right text-white">
+                                                مستوطنون يحاولون سرقة أغنام المواطنين في تجمع عرب المليحات غرب أريحا
+                                            </h6>
+                                        </a>
+                                        <div class=" text-white-50  text-right">
+                                            <span class="date">22/2/200 </span>
+                                        </div>
+                                    </div>
+                                    <div style="width: 260px;" class=" card">
+                                        <div class="lay">
+                                            <img style="height: 155px" class="card-img-top"
+                                                src="{{ asset('front/assets/images/2.jpg') }}" alt="">
+                                            <a href="#"
+                                                style="display: flex; align-items: center; justify-content: center;"
+                                                class="overlayy overlayFade">
+                                                <i style="display: block; color: white; font-size: 25px;"
+                                                    class="fa-solid fa-link-simple"></i>
+                                            </a>
+                                        </div>
+                                        <a href="# " class="card-body">
+                                            <h6 class=" text-right text-white">
+                                                مستوطنون يحاولون سرقة أغنام المواطنين في تجمع عرب المليحات غرب أريحا
+                                            </h6>
+                                        </a>
+                                        <div class=" text-white-50  text-right">
+                                            <span class="date">22/2/200 </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end megamenue -->
                     </li>
-                    <li class=" nav-item">
+                    <li class=" nav-item nav-item-main ">
                         <a class="nav-link" href="#">تقارير خاصة</a>
                     </li>
-                    <li class=" nav-item">
+                    <li class=" nav-item nav-item-main ">
                         <a class="nav-link" href="#">مقالات</a>
                     </li>
-                    <li class=" nav-item">
+                    <li class=" nav-item nav-item-main ">
                         <a class="nav-link" href="../pages/video-library.html">فيديو </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item nav-item-main ">
                         <a class="nav-link" href="{{ route('contact') }}">اتصل بنا</a>
                     </li>
-                    <ul class="navbar-nav mr-5 text-white nav-links links d-flex flex-row pt-2 pr-5 mr-auto">
+                    <ul class="navbar-nav mr-5 text-white nav-links links d-flex flex-row pt-2 pr-5 mr-auto mt-4">
                         <li class="  "><a class="twitter" href="#"><i class=" fab fa-twitter"></i></a>
                         </li>
                         <li class=" "><a class="facebook" href="#"><i class=" fab fa-facebook-f"></i></a>
