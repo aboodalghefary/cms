@@ -55,6 +55,7 @@ Route::post('/contact_store', [FrontController::class, 'contact_store'])->name('
 Route::get('/image_albums', [FrontController::class, 'image_albums'])->name('image_albums');
 Route::get('/video_library', [FrontController::class, 'video_library'])->name('video_library');
 Route::get('/album_details/{id}', [FrontController::class, 'album_details'])->name('album_details');
+Route::get('/category/{id}', [FrontController::class, 'category'])->name('category');
 Route::get('/library_details/{id}', [FrontController::class, 'library_details'])->middleware('increase.views')->name('library_details');
 
 

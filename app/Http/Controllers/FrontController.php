@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AboutUs;
 use App\Models\Album;
 use App\Models\Blog;
+use App\Models\Category;
 use App\Models\Library;
 use App\Models\Row;
 use Illuminate\Http\Request;
@@ -27,6 +28,11 @@ class FrontController extends Controller
    {
       $albums = Album::all();
       return view('front.album-image', compact('albums'));
+   }
+   public function category($id)
+   {
+      $category = Category::findOrFail($id);
+      return view('front.category-news', compact('category'));
    }
    public function contactIndex()
    {
