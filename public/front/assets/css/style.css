@@ -769,7 +769,11 @@ p {
 .scc2 {
    margin-top: 50px !important;
 }
-
+@media (min-width:991px) {
+   .scc2 {
+      margin-top: 50px !important;
+   }
+}
 
 .gallery-section {
    display: grid;

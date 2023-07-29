@@ -61,12 +61,12 @@
                                     class="fa-solid fa-link-simple"></i>
                             </a>
                         </div>
-                        <div class="text text-right  text-white mr-3">
+                        <a href="" class="text text-right  text-white mr-3">
                             <h6 class="text-right ">
                                 {{ $categories[0]->blogs[2]->name ?? null }}
                             </h6>
                             <span class="date text-white-50">{{ $categories[0]->blogs[2]->date ?? null }} </span>
-                        </div>
+                        </a>
                     </div>
                 </a>
             @endif
@@ -83,12 +83,12 @@
                                     class="fa-solid fa-link-simple"></i>
                             </a>
                         </div>
-                        <div class="text text-right  text-white mr-3">
+                        <a href="" class="text text-right  text-white mr-3">
                             <h6 class="text-right ">
                                 {{ $categories[0]->blogs[2]->name ?? null }}
                             </h6>
                             <span class="date text-white-50">{{ $categories[0]->blogs[2]->date ?? null }} </span>
-                        </div>
+                        </a>
                     </div>
                 </a>
             @endif
@@ -105,12 +105,12 @@
                                     class="fa-solid fa-link-simple"></i>
                             </a>
                         </div>
-                        <div class="text text-right  text-white mr-3">
+                        <a href="" class="text text-right  text-white mr-3">
                             <h6 class="text-right ">
                                 {{ $categories[0]->blogs[2]->name ?? null }}
                             </h6>
                             <span class="date text-white-50">{{ $categories[0]->blogs[2]->date ?? null }} </span>
-                        </div>
+                        </a>
                     </div>
                 </a>
             @endif

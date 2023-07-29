@@ -29,7 +29,7 @@
 
 
             <!-- الخبر الفرعي -->
-            <div class=" d-flex align-items-center mt-2 pt-2 ">
+            <div class=" d-flex align-items-center mt-2 pt-2 pb-3 ">
 
                 <div class="lay">
                     <div style="width: 100px; height: 75px; background-image: url( {{ asset('storage/images/blog/' . $categories[0]->blogs[1]->image ?? null) }});"
@@ -49,7 +49,7 @@
             </div>
         </div>
         <!-- عمود الصف الثاني للتصنيف نفسه به 4 اخبار فرعية  -->
-        <div class="column scc  px-3 ">
+        <div class="column scc   ">
             <div class=" d-flex align-items-center pb-3  ">
                 <div class="lay">
                     <div style="width: 100px; height: 75px; background-image: url( {{ asset('storage/images/blog/' . $categories[0]->blogs[2]->image ?? null) }} );"

@@ -20,12 +20,12 @@
                                <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
                            </a>
                        </div>
-                        <div class="text text-right text-black mr-3">
+                        <a href="" class="text text-right text-black mr-3">
                             <h6 class="text-right">
                                 {{ $blog->name }}
                             </h6>
                             <span class="date text-black-50">{{ $blog->date }}</span>
-                        </div>
+                        </a>
                      </div>
                     @php
                         $counter++;
