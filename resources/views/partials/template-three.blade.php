@@ -6,51 +6,76 @@
                 </span>
                 <span class="title-sec text-black"> {{ $category->name }} </span>
             </div>
+            <div class="hover ">
+                <div class="content  ">
+                    <div class="2">
+                        <a href="../pages/details-new.html">
 
-            <div style="width: 555px; height: 255px; background-image: url({{ asset('storage/images/blog/' . $category->blogs[0]->image ?? null) }});"
-                class="column position-relative  ">
-                <a href="../pages/details-new.html">
-                    <div class="text text-right bottom-right text-white ">
-                        <h6 class=" text-right">
-                            {{ $category->blogs[0]->name }}
-                        </h6>
-                        <span class="date "> {{ $category->blogs[0]->date }} </span>
+                            <div style="width: 555px; height: 255px; background-image: url({{ asset('storage/images/blog/' . $category->blogs[0]->image ?? null) }});"
+                                class="column position-relative  ">
+                                <div class="text text-right bottom-right text-white ">
+                                    <h6 class=" text-right">
+                                        {{ $category->blogs[0]->name }}
+                                    </h6>
+                                    <span class="date "> {{ $category->blogs[0]->date }} </span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
+                <a href="" class="overlay"></a>
             </div>
             <div class="row  mt-3">
-                <div class="col-lg-6 col-md-8 col-sm-12   ">
 
-                    <div class="card ">
-                        <a href="../pages/details-new.html"><img class="card-img-top"
+                <div href="../pages/details-new.html" class="col-lg-6 col-md-8 col-sm-12   ">
+                    <div style="width: 260px; " class=" card">
+                        <div class="lay">
+                            <img style="height: 155px" class="card-img-top"
                                 src="{{ asset('storage/images/blog/' . $category->blogs[1]->image ?? null) }}"
-                                alt=""></a>
-                        <div class="card-body">
+                                alt="">
+                            <a href="" style="display: flex; align-items: center; justify-content: center;"
+                                class="overlayy overlayFade">
+                                <i style="display: block; color: white; font-size: 25px;"
+                                    class="fa-solid fa-link-simple"></i>
+                            </a>
+                        </div>
+                        <a href="" class="card-body">
                             <h6 class=" text-right">
                                 {{ $category->blogs[1]->name }}
                             </h6>
-                        </div>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
                             <span class="date"> {{ $category->blogs[1]->date }} </span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-8 col-sm-12    ">
 
-                    <div class="card ">
-                        <a href="../pages/details-new.html"><img class="card-img-top"
-                                src="{{ asset('storage/images/blog/' . $category->blogs[2]->image ?? null) }}"
-                                alt=""></a>
-                        <div class="card-body">
-                            <h6 class=" text-right">
-                                {{ $category->blogs[2]->name }}
-                            </h6>
+
+
+                <div href="../pages/details-new.html" class="col-lg-6 col-md-8 col-sm-12   ">
+                    <div style="width: 260px; " class=" card">
+
+                        <div class="lay">
+                            <img style="height: 155px" class="card-img-top"
+                                src="{{ asset('storage/images/blog/' . $category->blogs[1]->image ?? null) }}"
+                                alt="">
+                            <a href="" style="display: flex; align-items: center; justify-content: center;"
+                                class="overlayy overlayFade">
+                                <i style="display: block; color: white; font-size: 25px;"
+                                    class="fa-solid fa-link-simple"></i>
+                            </a>
                         </div>
+                        <a href="" class="card-body">
+                            <h6 class=" text-right">
+                                {{ $category->blogs[1]->name }}
+                            </h6>
+                        </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
-                            <span class="date"> {{ $category->blogs[2]->date }} </span>
+                            <span class="date"> {{ $category->blogs[1]->date }} </span>
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </div>

@@ -1,6 +1,6 @@
 <div class="row d-flex justify-content-between">
     @foreach ($categories as $category)
-        <div style="width: 350px;" class="  py-3 my-2 mx-auto px-4  border box ">
+        <div style="width: 350px;" class="  py-3 my-2 mx-auto px-4  border  ">
             <div class="text-right mb-3">
                 <span class="mark-title"></span>
                 <span class="title-sec text-black">{{ $category->name }}</span>
@@ -10,17 +10,23 @@
             @endphp
             @foreach ($category->blogs as $blog)
                 @if ($counter < 3)
-                    <a href="../pages/details-new.html" class=" d-flex align-items-center py-3  ">
-                        <div style="width: 100px; height: 75px; background-image: url({{ asset('storage/images/blog/' . $blog->image ?? null) }});"
-                            class="text-right">
-                        </div>
+                    <div class=" d-flex align-items-center py-3  ">
+                        <div class="lay">
+                           <div style="width: 100px; height: 75px; background-image: url({{ asset('storage/images/blog/' . $blog->image ?? null) }});"
+                              class="text-right">
+                          </div>
+                           <a href="" style="display: flex; align-items: center; justify-content: center;"
+                               class="overlayy overlayFade">
+                               <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
+                           </a>
+                       </div>
                         <div class="text text-right text-black mr-3">
                             <h6 class="text-right">
                                 {{ $blog->name }}
                             </h6>
                             <span class="date text-black-50">{{ $blog->date }}</span>
                         </div>
-                    </a>
+                     </div>
                     @php
                         $counter++;
                     @endphp
