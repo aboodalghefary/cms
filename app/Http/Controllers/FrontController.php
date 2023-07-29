@@ -82,6 +82,11 @@ class FrontController extends Controller
 
       return view('front.video-playlist', compact('library', 'libraries_most_views'));
    }
+   public function get_last_news_ajax($id)
+   {
+      $libraries_most_views  = Library::find($id)->latest()->take(4)->get();
+      return response()->json(['libraries_most_views' => $libraries_most_views]);
+   }
    public function album_details($id)
    {
       $album = Album::findOrFail($id);

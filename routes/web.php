@@ -57,6 +57,7 @@ Route::get('/video_library', [FrontController::class, 'video_library'])->name('v
 Route::get('/album_details/{id}', [FrontController::class, 'album_details'])->name('album_details');
 Route::get('/category/{id}', [FrontController::class, 'category'])->name('category');
 Route::get('/library_details/{id}', [FrontController::class, 'library_details'])->middleware('increase.views')->name('library_details');
+Route::get('/get_last_news_ajax/{id}', [FrontController::class, 'get_last_news_ajax'])->name('get_last_news_ajax');
 
 
 Route::group([
