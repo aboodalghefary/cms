@@ -10,6 +10,7 @@ use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DivController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LibraryController;
@@ -68,15 +69,16 @@ Route::group([
       return view('auth.login');
    });
 
-   route::middleware(['auth:admin,author'])->get('home', function () {
-      return view('cms.home');
-   })->name('home');
+   route::middleware(['auth:admin,author'])->get('home', [HomeController::class, 'index'])->name('home');
 
    Route::prefix('cms/')->middleware(['guest:admin,author'])->group(function () {
       route::get('{guard}/login', [UserAuthController::class, 'showLogin'])->name('view.login');
    });
    Route::prefix('cms/admin')->middleware(['auth:admin,author'])->group(function () {
 
+      // Route::get('home', [HomeController::class, 'index'])->name('home');
+      Route::resource('divs', DivController::class);
+      Route::post('divs_update/{div}', [DivController::class, 'update'])->name('divs_update');
 
       Route::resource('categories', CategoryController::class);
       Route::post('categories_update/{id}', [CategoryController::class, 'update'])->name('categories_update');

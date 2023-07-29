@@ -30,7 +30,6 @@
             type="text/css">
         <link href="{{ asset('cms/assets/css/ltr/layout.min.css') }}" id="stylesheet" rel="stylesheet" type="text/css">
     @endif
-    <link href="{{ asset('cms/assets/ckeditor5-38.1.0-utz9f2qmopbn/build/ckeditor.js') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -191,6 +190,29 @@
             <!-- Inner content -->
             <div class="content-inner">
                 <div class="content">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6">
+                            @php
+                                $logoDiv = $divs->where('name', 'logo')->first();
+                            @endphp
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold">اللوجو</div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $logoDiv->name }}' , '{{ $logoDiv->id }}')">تعديل</span>
+                                    </div>
+                                    <a href="#" class="ms-3">
+                                        <img src="{{ asset('storage/images/div/' . $logoDiv->image) }}"
+                                            class="rounded-circle" width="44" height="44" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                 </div>
             </div>
@@ -198,7 +220,47 @@
 
         </div>
         <!-- /main content -->
+        <div id="modal_form_horizontal" class="modal fade" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">تعديل</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
 
+                    <form action="#" class="form-horizontal">
+                        <div class="modal-body ">
+                            <div class="row mb-3 d-none hrefInput">
+                                <label class="col-form-label col-sm-3">اللينك</label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="href" placeholder="اللينك" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 d-none imageInput">
+                                <label class="col-form-label col-sm-3">صورة</label>
+                                <div class="col-sm-9">
+                                    <input type="file" id="image" placeholder="صورة" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 d-none contentInput">
+                                <label class="col-form-label col-sm-3">المحتوى</label>
+                                <div class="col-sm-9">
+                                    <textarea placeholder="المحتوى" id="content" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link" data-bs-dismiss="modal">اغلاق</button>
+                            <button type="button" id="submit" class="btn btn-primary">حفظ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /page content -->
 
