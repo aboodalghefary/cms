@@ -12,21 +12,24 @@
                 @if ($counter < 3)
                     <div class=" d-flex align-items-center py-3  ">
                         <div class="lay">
-                           <div style="width: 100px; height: 75px; background-image: url({{ asset('storage/images/blog/' . $blog->image ?? null) }});"
-                              class="text-right">
-                          </div>
-                           <a href="" style="display: flex; align-items: center; justify-content: center;"
-                               class="overlayy overlayFade">
-                               <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
-                           </a>
-                       </div>
-                        <a href="" class="text text-right text-black mr-3">
+                            <div style="width: 100px; height: 75px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $blog->image ?? null) }});"
+                                class="text-right">
+                            </div>
+                            <a href=" {{ route('post_details', ['id' => $blog->id]) }} "
+                                style="display: flex; align-items: center; justify-content: center;"
+                                class="overlayy overlayFade">
+                                <i style="display: block; color: white; font-size: 25px;"
+                                    class="fa-solid fa-link-simple"></i>
+                            </a>
+                        </div>
+                        <a href=" {{ route('post_details', ['id' => $blog->id]) }} "
+                            class="text text-right text-black mr-3">
                             <h6 class="text-right">
                                 {{ $blog->name }}
                             </h6>
                             <span class="date text-black-50">{{ $blog->date }}</span>
                         </a>
-                     </div>
+                    </div>
                     @php
                         $counter++;
                     @endphp

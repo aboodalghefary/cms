@@ -17,7 +17,8 @@ class FrontController extends Controller
    {
       $rows = Row::all();
       $library = Library::with('videos')->first();
-      return view('front.index', compact('rows', 'library'));
+      $news = Blog::latest()->take(13)->get();
+      return view('front.index', compact('rows', 'library', 'news'));
    }
    public function video_library()
    {

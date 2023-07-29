@@ -9,9 +9,9 @@
             <div class="hover ">
                 <div class="content  ">
                     <div class="2">
-                        <a href="../pages/details-new.html">
+                        <a href="{{ route('post_details', ['id' => $category->blogs[0]->id]) }}">
 
-                            <div style="width: 555px; height: 255px; background-image: url({{ asset('storage/images/blog/' . $category->blogs[0]->image ?? null) }});"
+                            <div style="width: 555px; height: 255px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $category->blogs[0]->image ?? null) }});"
                                 class="column position-relative  ">
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right">
@@ -23,23 +23,25 @@
                         </a>
                     </div>
                 </div>
-                <a href="" class="overlay"></a>
+                <a href=" {{ route('post_details', ['id' => $category->blogs[0]->id]) }} " class="overlay"></a>
             </div>
             <div class="row  mt-3">
 
-                <div href="../pages/details-new.html" class="col-lg-6 col-md-8 col-sm-12   ">
+                <div href="{{ route('post_details', ['id' => $category->blogs[1]->id]) }}"
+                    class="col-lg-6 col-md-8 col-sm-12   ">
                     <div style="width: 260px; " class=" card">
                         <div class="lay">
                             <img style="height: 155px" class="card-img-top"
                                 src="{{ asset('storage/images/blog/' . $category->blogs[1]->image ?? null) }}"
                                 alt="">
-                            <a href="" style="display: flex; align-items: center; justify-content: center;"
+                            <a href=" {{ route('post_details', ['id' => $category->blogs[1]->id]) }} "
+                                style="display: flex; align-items: center; justify-content: center;"
                                 class="overlayy overlayFade">
                                 <i style="display: block; color: white; font-size: 25px;"
                                     class="fa-solid fa-link-simple"></i>
                             </a>
                         </div>
-                        <a href="" class="card-body">
+                        <a href=" {{ route('post_details', ['id' => $category->blogs[1]->id]) }} " class="card-body">
                             <h6 class=" text-right">
                                 {{ $category->blogs[1]->name }}
                             </h6>
@@ -52,26 +54,28 @@
 
 
 
-                <div href="../pages/details-new.html" class="col-lg-6 col-md-8 col-sm-12   ">
+                <div href="{{ route('post_details', ['id' => $category->blogs[2]->id]) }}"
+                    class="col-lg-6 col-md-8 col-sm-12   ">
                     <div style="width: 260px; " class=" card">
 
                         <div class="lay">
                             <img style="height: 155px" class="card-img-top"
-                                src="{{ asset('storage/images/blog/' . $category->blogs[1]->image ?? null) }}"
+                                src="{{ asset('storage/images/blog/' . $category->blogs[2]->image ?? null) }}"
                                 alt="">
-                            <a href="" style="display: flex; align-items: center; justify-content: center;"
+                            <a href=" {{ route('post_details', ['id' => $category->blogs[2]->id]) }} "
+                                style="display: flex; align-items: center; justify-content: center;"
                                 class="overlayy overlayFade">
                                 <i style="display: block; color: white; font-size: 25px;"
                                     class="fa-solid fa-link-simple"></i>
                             </a>
                         </div>
-                        <a href="" class="card-body">
+                        <a href=" {{ route('post_details', ['id' => $category->blogs[2]->id]) }} " class="card-body">
                             <h6 class=" text-right">
-                                {{ $category->blogs[1]->name }}
+                                {{ $category->blogs[2]->name }}
                             </h6>
                         </a>
                         <div class="container text-black-50 pb-2 bg-white text-right">
-                            <span class="date"> {{ $category->blogs[1]->date }} </span>
+                            <span class="date"> {{ $category->blogs[2]->date }} </span>
                         </div>
                     </div>
                 </div>

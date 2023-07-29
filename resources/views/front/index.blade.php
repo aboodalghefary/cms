@@ -111,121 +111,69 @@
             <div class="template-one ">
                 <!-- الاخبار الرئيسية البارزة للتنصيف )  هنا ضع اول خبرين للتصنيف الذي تريده)-->
                 <div class="row  template-main  two-main-news pb-0 no-gutters">
-                    <div class="col-lg-6 col-md-6 col-sm-12  mb-1  ">
-                        <div class="hover">
-                            <div class="content boxx">
-                                <div class="column position-relative  ">
-                                    <a href="../pages/details-new.html">
+                    @foreach ($news as $index => $blog)
+                        @if ($index < 2)
+                            <div class="col-lg-6 col-md-6 col-sm-12  mb-1">
+                                <div class="hover">
+                                    <div class="content boxx">
+                                        <div class="column position-relative  ">
+                                            <a href="{{ route('post_details', $blog->id) }}">
 
-                                        <img style="background-size: cover;" class=""
-                                            src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
-                                        <div class="text text-right bottom-right text-white ">
-                                            <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                                .</h6>
-                                            <span class="time ">قبل 25 دقيقة </span>
+                                                <img style="background-size: cover;" class=""
+                                                    src="{{ asset('storage/images/blog/' . $blog->image) }}"
+                                                    alt="Image 1">
+                                                <div class="text text-right bottom-right text-white ">
+                                                    <h6 class=" text-right">
+                                                        {{ $blog->name }}
+                                                    </h6>
+                                                    <span class="time ">قبل
+                                                        {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
+                                                    </span>
+                                                </div>
+                                            </a>
                                         </div>
-                                    </a>
+                                    </div>
+                                    <a href="{{ route('category', $blog->category_id) }}" class="overlay"></a>
+                                    <div class="label top-right">
+                                        <span>{{ $blog->category->name }}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <a href="" class="overlay"></a>
-                            <div class="label top-right">
-                                <span>محليات</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12  mb-1  ">
-                        <div class="hover">
-                            <div class="content boxx">
-                                <div class="column position-relative  ">
-                                    <a href="../pages/details-new.html">
-
-                                        <img style="background-size: cover;" class=""
-                                            src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
-                                        <div class="text text-right bottom-right text-white ">
-                                            <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                                .</h6>
-                                            <span class="time ">قبل 25 دقيقة </span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <a href="" class="overlay"></a>
-                            <div class="label top-right">
-                                <span>محليات</span>
-                            </div>
-                        </div>
-                    </div>
+                        @endif
+                    @endforeach
                 </div>
                 <!--  الاخبار الفرعية للتنصيف)  هنا ضع  ثلاثة اخبار للتصنيف)-->
                 <div class="row template-sub  three-sub-news no-gutters ">
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-1   ">
-                        <div class="hover">
-                            <div class="content boxx">
-                                <div class="column position-relative  ">
-                                    <a href="../pages/details-new.html">
+                    @foreach ($news as $index => $blog)
+                        @if ($index > 1 && $index <= 4)
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-1">
+                                <div class="hover">
+                                    <div class="content boxx">
+                                        <div class="column position-relative  ">
+                                            <a href="{{ route('post_details', $blog->id) }}">
 
-                                        <img style="background-size: cover;" class=""
-                                            src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
-                                        <div class="text text-right bottom-right text-white ">
-                                            <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                                .</h6>
-                                            <span class="time ">قبل 25 دقيقة </span>
+                                                <img style="background-size: cover; " class=""
+                                                    src="{{ asset('storage/images/blog/' . $blog->image) }}"
+                                                    alt="Image 1">
+                                                <div class="text text-right bottom-right text-white ">
+                                                    <h6 class=" text-right">
+                                                        {{ $blog->name }}
+                                                    </h6>
+                                                    <span class="time "> منذ
+                                                        {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
+                                                    </span>
+                                                </div>
+                                            </a>
                                         </div>
-                                    </a>
+                                    </div>
+                                    <a href="" class="overlay"></a>
+                                    <div class="label top-right">
+                                        <span>{{ $blog->category->name }}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <a href="" class="overlay"></a>
-                            <div class="label top-right">
-                                <span>محليات</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-1   ">
-                        <div class="hover">
-                            <div class="content boxx">
-                                <div class="column position-relative  ">
-                                    <a href="../pages/details-new.html">
-
-                                        <img style="background-size: cover;" class=""
-                                            src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
-                                        <div class="text text-right bottom-right text-white ">
-                                            <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                                .</h6>
-                                            <span class="time ">قبل 25 دقيقة </span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <a href="" class="overlay"></a>
-                            <div class="label top-right">
-                                <span>محليات</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-1   ">
-                        <div class="hover">
-                            <div class="content boxx">
-                                <div class="column position-relative  ">
-                                    <a href="../pages/details-new.html">
-
-                                        <img style="background-size: cover;" class=""
-                                            src="{{ asset('front/assets/images/mainnew.png') }}" alt="Image 1">
-                                        <div class="text text-right bottom-right text-white ">
-                                            <h6 class=" text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                                .</h6>
-                                            <span class="time ">قبل 25 دقيقة </span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <a href="" class="overlay"></a>
-                            <div class="label top-right">
-                                <span>محليات</span>
-                            </div>
-                        </div>
-                    </div>
-
-
+                        @endif
+                    @endforeach
                 </div>
 
                 <!-- مساحة اعلانية -->
@@ -245,176 +193,35 @@
                         </span>
                     </div>
                     <div class="container-4-columns">
+                        @foreach ($news as $index => $blog)
+                            @if ($index > 4)
+                                <div class="card ">
+                                    <a href="{{ route('post_details', $blog->id) }}">
+                                        <div class="box">
+                                            <img class="card-img-top" style="height: 260px"
+                                                src="{{ asset('storage/images/blog/' . $blog->image) }}"
+                                                alt="">
+                                        </div>
+                                    </a>
+                                    <div class="card-body">
+                                        <a href="#"
+                                            class="category-title d-block  text-right pb-2">{{ $blog->category->name }}
+                                        </a>
+                                        <a href="{{ route('post_details', $blog->id) }}">
+                                            <h6 class="category-desc text-right">
+                                                {{ $blog->name }}
+                                            </h6>
+                                        </a>
+                                    </div>
 
-                        <div class="card ">
-                            <a href="../pages/details-new.html">
-                                <div class="box">
-                                    <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
-                                        alt="">
+                                    <div class="container text-black-50 pb-2 bg-white text-right">
+                                        <span class="time"> منذ
+                                            {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
+                                        </span>
+                                    </div>
                                 </div>
-                            </a>
-                            <div class="card-body">
-                                <a href="#" class="category-title d-block  text-right pb-2">تكنولوجيا</a>
-                                <a href="../pages/details-new.html">
-                                    <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في
-                                        أحداث
-                                        غزة
-                                        .</h6>
-                                </a>
-                            </div>
-
-                            <div class="container text-black-50 pb-2 bg-white text-right">
-                                <span class="time">قبل 2 دقيقة</span>
-                            </div>
-                        </div>
-                        <div class="card ">
-                            <a href="../pages/details-new.html">
-                                <div class="box">
-                                    <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <a href="#" class="category-title d-block  text-right pb-2">تكنولوجيا</a>
-                                <a href="../pages/details-new.html">
-                                    <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في
-                                        أحداث
-                                        غزة
-                                        .</h6>
-                                </a>
-                            </div>
-
-                            <div class="container text-black-50 pb-2 bg-white text-right">
-                                <span class="time">قبل 2 دقيقة</span>
-                            </div>
-                        </div>
-                        <div class="card ">
-                            <a href="../pages/details-new.html">
-                                <div class="box">
-                                    <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <a href="#" class="category-title d-block  text-right pb-2">تكنولوجيا</a>
-                                <a href="../pages/details-new.html">
-                                    <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في
-                                        أحداث
-                                        غزة
-                                        .</h6>
-                                </a>
-                            </div>
-
-                            <div class="container text-black-50 pb-2 bg-white text-right">
-                                <span class="time">قبل 2 دقيقة</span>
-                            </div>
-                        </div>
-                        <div class="card ">
-                            <a href="../pages/details-new.html">
-                                <div class="box">
-                                    <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <a href="#" class="category-title d-block  text-right pb-2">تكنولوجيا</a>
-                                <a href="../pages/details-new.html">
-                                    <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في
-                                        أحداث
-                                        غزة
-                                        .</h6>
-                                </a>
-                            </div>
-
-                            <div class="container text-black-50 pb-2 bg-white text-right">
-                                <span class="time">قبل 2 دقيقة</span>
-                            </div>
-                        </div>
-                        <div class="card ">
-                            <a href="../pages/details-new.html">
-                                <div class="box">
-                                    <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <a href="#" class="category-title d-block  text-right pb-2">تكنولوجيا</a>
-                                <a href="../pages/details-new.html">
-                                    <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في
-                                        أحداث
-                                        غزة
-                                        .</h6>
-                                </a>
-                            </div>
-
-                            <div class="container text-black-50 pb-2 bg-white text-right">
-                                <span class="time">قبل 2 دقيقة</span>
-                            </div>
-                        </div>
-
-                        <div class="card ">
-                            <a href="../pages/details-new.html">
-                                <div class="box">
-                                    <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <a href="#" class="category-title d-block  text-right pb-2">تكنولوجيا</a>
-                                <a href="../pages/details-new.html">
-                                    <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في
-                                        أحداث
-                                        غزة
-                                        .</h6>
-                                </a>
-                            </div>
-
-                            <div class="container text-black-50 pb-2 bg-white text-right">
-                                <span class="time">قبل 2 دقيقة</span>
-                            </div>
-                        </div>
-                        <div class="card ">
-                            <a href="../pages/details-new.html">
-                                <div class="box">
-                                    <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <a href="#" class="category-title d-block  text-right pb-2">تكنولوجيا</a>
-                                <a href="../pages/details-new.html">
-                                    <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في
-                                        أحداث
-                                        غزة
-                                        .</h6>
-                                </a>
-                            </div>
-
-                            <div class="container text-black-50 pb-2 bg-white text-right">
-                                <span class="time">قبل 2 دقيقة</span>
-                            </div>
-                        </div>
-                        <div class="card ">
-                            <a href="../pages/details-new.html">
-                                <div class="box">
-                                    <img class="card-img-top" src="{{ asset('front/assets/images/1.jpg') }}"
-                                        alt="">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <a href="#" class="category-title d-block  text-right pb-2">تكنولوجيا</a>
-                                <a href="../pages/details-new.html">
-                                    <h6 class="category-desc text-right">الاحتلال يكشف عن مهام واسم أبرز وحداته في
-                                        أحداث
-                                        غزة
-                                        .</h6>
-                                </a>
-                            </div>
-
-                            <div class="container text-black-50 pb-2 bg-white text-right">
-                                <span class="time">قبل 2 دقيقة</span>
-                            </div>
-                        </div>
+                            @endif
+                        @endforeach
 
                     </div>
                 </div>
@@ -546,7 +353,7 @@
                 <i class="fas fa-chevron-up"></i>
             </a>
     </main>
-    
+
     <!-- تقارير خاصة -->
     <div class="spec-artical bg-light  py-5 box2">
 
