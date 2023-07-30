@@ -28,25 +28,19 @@
                             <div class="mega">
                                 <div class="category-right  px-1 ">
                                     <ul class="text-right ">
-                                        <li class="active"  >
-                                            <a href="#"> الكل</a>
-                                        </li>
-                                        <li class="" >
+
+                                        <li class="active"  data-category="1">
                                             <a href="#"> تصنيف 1</a>
                                         </li>
-                                        <li class="" >
+                                        <li class=""  data-category="2">
                                             <a href="#"> تصنيف 2</a>
                                         </li>
-                                        <li class="" >
+                                        <li class=""  data-category="3">
                                             <a href="#"> تصنيف 3</a>
                                         </li>
-                                        <li class="" >
+                                        <li class=""  data-category="4">
                                             <a href="#"> تصنيف 4</a>
                                         </li>
-                                        <li class="" >
-                                            <a href="#"> تصنيف 5</a>
-                                        </li>
-
                                     </ul>
                                 </div>
                                 <div class="four-category-news ">
