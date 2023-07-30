@@ -26,8 +26,7 @@
                     <th>المحتوى</th>
                     <th>المؤلف</th>
                     <th class="text-nowrap">التعليقات</th>
-                    <th class="text-nowrap">اضافة تعليق</th>
-                    <th class="text-nowrap">عرض التعليقات</th>
+
                     <th>التصنيف</th>
                     <th>الاشارات</th>
                     <th class="div-center">الاجراءات</th>
@@ -47,14 +46,7 @@
                             </button>
                         </td>
                         <td>{{ $blog->author->user->name ?? null }}</td>
-                        {{-- <td><a href="{{ route('comments_create', $blog->id) }}" class="btn text-nowrap btn-outline-indigo">
-                                اضافة
-                                تعليق </a></td>
-                        <td><a href="{{ route('comments_index', $blog->id) }}" class="btn text-nowrap btn-outline-indigo">
-                                عرض
-                                التعليقات
-                            </a></td>
-                        <td> --}}
+                        <td>
                             @if ($blog->comments_enabled == 1)
                                 <span class="badge bg-success text-success bg-opacity-20"><i class="ph-check ph-sm"></i>
                                     مفعلة</span>

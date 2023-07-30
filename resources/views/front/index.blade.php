@@ -428,28 +428,25 @@
         </div>
         <div class=" gallery-section container">
             <div style="width: min-content;" class="gallery mx-auto mb-5 image-album box">
-                <a style="height: fit-content; width: 290px;" href="{{ asset('front/assets/images/1.jpg') }}">
-                    <div class="card" style="height: 310px;">
-                        <img src="{{ asset('front/assets/images/1.jpg') }}" alt=""
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </a>
-                <a style="height: fit-content; width: 290px;" href="{{ asset('front/assets/images/2.jpg') }}">
-                    <div class="card" style="height: 310px;">
-                        <img src="{{ asset('front/assets/images/2.jpg') }}" alt=""
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </a>
+                @foreach ($images as $photo)
+                    <a style="height: fit-content; width: 290px;"
+                        href="{{ asset('storage/images/photos/' . $photo->image_path) }}">
+                        <div class="card" style="height: 310px;">
+                            <img src="{{ asset('storage/images/photos/' . $photo->image_path) }}" alt=""
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </a>
+                @endforeach
             </div>
-            <div style="width: fit-content;" class="cover-album ">
-                <a href="../pages/images.html">
+            <div style="width: 100%;" class="cover-album ">
+                <a href="{{ route('album_details', $album->id) }}">
                     <div style=" position: relative;" class=" column position-relative img">
-                        <img style="height: 310px" src="{{ asset('front/assets/images/569-310.png') }}"
-                            alt="">
+                        <img style="height: 310px;width: 100%; object-fit: cover"
+                            src="{{ asset('storage/images/albums/' . $album->image) }}" alt="">
                         <div class="text text-white text-album" dir="rtl">
-                            <h6 style="position: absolute; top: 30px; right: 10px;" class="text-right">محطة روسية
-                                جديدة
-                                تنضم إلى شبكة قياس المسافة بالليزر.</h6>
+                            <h6 style="position: absolute; top: 30px; right: 10px;" class="text-right">
+                                {{ $album->title }}
+                            </h6>
                             <i style="position: absolute; top: 10px; left: 10px;"
                                 class="fa-regular fa-image text-white "></i>
                         </div>
@@ -581,8 +578,6 @@
                 });
             }
         });
-
-
     </script>
 
 </body>

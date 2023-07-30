@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
 use App\Models\Album;
+use App\Models\Photo;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Library;
@@ -17,27 +18,45 @@ class FrontController extends Controller
    {
       $rows = Row::all();
       $library = Library::with('videos')->first();
+      $album = Album::latest()->first();
+      $images = Photo::latest()->take(2)->get();
       $news = Blog::latest()->take(13)->get();
-      return view('front.index', compact('rows', 'library', 'news'));
+      $categories = Category::whereNull('parent_id')->get();
+      return view('front.index', compact(
+         'rows',
+         'library',
+         'news',
+         'categories',
+         'album',
+         'images'
+      ));
    }
    public function video_library()
    {
       $libraries = Library::all();
-      return view('front.video-library', compact('libraries'));
+      $categories = Category::whereNull('parent_id')->get();
+
+      return view('front.video-library', compact('libraries', 'categories'));
    }
    public function image_albums()
    {
       $albums = Album::all();
-      return view('front.album-image', compact('albums'));
+      $categories = Category::whereNull('parent_id')->get();
+
+      return view('front.album-image', compact('albums', 'categories'));
    }
    public function category($id)
    {
       $category = Category::findOrFail($id);
-      return view('front.category-news', compact('category'));
+      $categories = Category::whereNull('parent_id')->get();
+
+      return view('front.category-news', compact('category', 'categories'));
    }
    public function contactIndex()
    {
-      return view('front.contact');
+      $categories = Category::whereNull('parent_id')->get();
+
+      return view('front.contact', 'categories');
    }
    public function contact_store(Request $request)
    {
@@ -73,14 +92,17 @@ class FrontController extends Controller
    public function post_details($id)
    {
       $blog = Blog::findOrFail($id);
-      return view('front.details-new', compact('blog'));
+      $categories = Category::whereNull('parent_id')->get();
+
+      return view('front.details-new', compact('blog', 'categories'));
    }
    public function library_details($id)
    {
       $library = Library::findOrFail($id);
       $libraries_most_views  = Library::orderBy('views', 'desc')->limit(10)->get();
+      $categories = Category::whereNull('parent_id')->get();
 
-      return view('front.video-playlist', compact('library', 'libraries_most_views'));
+      return view('front.video-playlist', compact('library', 'libraries_most_views', 'categories'));
    }
    public function get_last_news_ajax($id)
    {
@@ -91,7 +113,8 @@ class FrontController extends Controller
    public function album_details($id)
    {
       $album = Album::findOrFail($id);
+      $categories = Category::whereNull('parent_id')->get();
 
-      return view('front.images', compact('album'));
+      return view('front.images', compact('album', 'categories'));
    }
 }

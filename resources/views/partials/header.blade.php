@@ -20,124 +20,41 @@
                     <li class="nav-item nav-item-main active-item ">
                         <a class="nav-link active " aria-current="page" href="{{ route('front_index') }}">الرئيسية</a>
                     </li>
-                    <li  class="nav-item nav-item-main news ">
-                        <a class="nav-link " href="#">الاخبار</a>
-                        <!-- start megamenue -->
-                        <div class="mega-menue ">
+                    @foreach ($categories as $category)
+                        <li class="nav-item nav-item-main news ">
+                            <a class="nav-link "
+                                href="{{ route('category', ['id' => $category->id]) }}">{{ $category->name }}</a>
+                            <!-- start megamenue -->
+                            @if (count($category->subCategories) != 0)
+                                <div class="mega-menue ">
 
-                            <div class="mega">
-                                <div class="category-right  px-1 ">
-                                    <ul class="text-right ">
-
-                                        <li class="active"  data-category="1">
-                                            <a href="#"> تصنيف 1</a>
-                                        </li>
-                                        <li class=""  data-category="2">
-                                            <a href="#"> تصنيف 2</a>
-                                        </li>
-                                        <li class=""  data-category="3">
-                                            <a href="#"> تصنيف 3</a>
-                                        </li>
-                                        <li class=""  data-category="4">
-                                            <a href="#"> تصنيف 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="four-category-news ">
-
-                                    <div style="width: 260px;" class=" card">
-                                        <div class="lay">
-                                            <img style="height: 155px" class="card-img-top"
-                                                src="{{ asset('front/assets/images/2.jpg') }}" alt="">
-                                            <a href="#"
-                                                style="display: flex; align-items: center; justify-content: center;"
-                                                class="overlayy overlayFade">
-                                                <i style="display: block; color: white; font-size: 25px;"
-                                                    class="fa-solid fa-link-simple"></i>
-                                            </a>
+                                    <div class="mega">
+                                        <div class="category-right  px-1 ">
+                                            <ul class="text-right ">
+                                                @foreach ($category->subCategories as $subCategory)
+                                                    <li class="active" data-category="{{ $subCategory->id }}">
+                                                        <a href="{{ route('category', ['id' => $subCategory->id]) }}">
+                                                            {{ $subCategory->name }} </a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
                                         </div>
-                                        <a href="# " class="card-body">
-                                            <h6 class=" text-right text-white">
-                                                مستوطنون يحاولون سرقة أغنام المواطنين في تجمع عرب المليحات غرب أريحا
-                                            </h6>
-                                        </a>
-                                        <div class=" text-white-50  text-right">
-                                            <span class="date">22/2/200 </span>
-                                        </div>
-                                    </div>
-                                    <div style="width: 260px;" class=" card">
-                                        <div class="lay">
-                                            <img style="height: 155px" class="card-img-top"
-                                                src="{{ asset('front/assets/images/2.jpg') }}" alt="">
-                                            <a href="#"
-                                                style="display: flex; align-items: center; justify-content: center;"
-                                                class="overlayy overlayFade">
-                                                <i style="display: block; color: white; font-size: 25px;"
-                                                    class="fa-solid fa-link-simple"></i>
-                                            </a>
-                                        </div>
-                                        <a href="# " class="card-body">
-                                            <h6 class=" text-right text-white">
-                                                مستوطنون يحاولون سرقة أغنام المواطنين في تجمع عرب المليحات غرب أريحا
-                                            </h6>
-                                        </a>
-                                        <div class=" text-white-50  text-right">
-                                            <span class="date">22/2/200 </span>
-                                        </div>
-                                    </div>
-                                    <div style="width: 260px;" class=" card">
-                                        <div class="lay">
-                                            <img style="height: 155px" class="card-img-top"
-                                                src="{{ asset('front/assets/images/2.jpg') }}" alt="">
-                                            <a href="#"
-                                                style="display: flex; align-items: center; justify-content: center;"
-                                                class="overlayy overlayFade">
-                                                <i style="display: block; color: white; font-size: 25px;"
-                                                    class="fa-solid fa-link-simple"></i>
-                                            </a>
-                                        </div>
-                                        <a href="# " class="card-body">
-                                            <h6 class=" text-right text-white">
-                                                مستوطنون يحاولون سرقة أغنام المواطنين في تجمع عرب المليحات غرب أريحا
-                                            </h6>
-                                        </a>
-                                        <div class=" text-white-50  text-right">
-                                            <span class="date">22/2/200 </span>
-                                        </div>
-                                    </div>
-                                    <div style="width: 260px;" class=" card">
-                                        <div class="lay">
-                                            <img style="height: 155px" class="card-img-top"
-                                                src="{{ asset('front/assets/images/2.jpg') }}" alt="">
-                                            <a href="#"
-                                                style="display: flex; align-items: center; justify-content: center;"
-                                                class="overlayy overlayFade">
-                                                <i style="display: block; color: white; font-size: 25px;"
-                                                    class="fa-solid fa-link-simple"></i>
-                                            </a>
-                                        </div>
-                                        <a href="# " class="card-body">
-                                            <h6 class=" text-right text-white">
-                                                مستوطنون يحاولون سرقة أغنام المواطنين في تجمع عرب المليحات غرب أريحا
-                                            </h6>
-                                        </a>
-                                        <div class=" text-white-50  text-right">
-                                            <span class="date">22/2/200 </span>
+                                        <div class="four-category-news ">
                                         </div>
                                     </div>
 
                                 </div>
-                            </div>
+                            @endif
+                            <!-- end megamenue -->
+                        </li>
+                    @endforeach
 
-                        </div>
-                        <!-- end megamenue -->
-                    </li>
-                    <li class=" nav-item nav-item-main ">
+                    {{-- <li class=" nav-item nav-item-main ">
                         <a class="nav-link" href="#">تقارير خاصة</a>
                     </li>
                     <li class=" nav-item nav-item-main ">
                         <a class="nav-link" href="#">مقالات</a>
-                    </li>
+                    </li> --}}
                     <li class=" nav-item nav-item-main ">
                         <a class="nav-link" href="../pages/video-library.html">فيديو </a>
                     </li>
