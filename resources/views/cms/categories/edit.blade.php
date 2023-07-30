@@ -58,6 +58,8 @@
                 <div class="form-group my-3">
                     <button type="button" onclick="performUpdate({{ $category->id }})" class="btn btn-dark"
                         id="create-button">إنشاء</button>
+                    <button type="button" onclick="performDestroy({{ $category->id }})"class="btn btn-danger"> <i
+                            class="ph-trash"></i> </button>
                 </div>
             </form>
 
@@ -70,9 +72,55 @@
     <script src="{{ asset('cms/assets/js/vendor/forms/selects/select2.min.js') }}"></script>
     <script src="{{ asset('cms/assets/demo/pages/form_select2.js') }}"></script>
     <script>
+        function performDestroy(id, referance) {
+            let url = '/cms/admin/categories/' + id;
+            confirmDestroyy(url, referance);
+        }
+
+        function confirmDestroyy(url, td) {
+            Swal.fire({
+                title: "هل أنت متأكد من عملية الحذف ؟",
+                text: "لا يمكن التراجع عن عملية الحذف",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "نعم",
+                cancelButtonText: "لا",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    destroyy(url, td);
+                }
+            });
+        }
+
+        function destroyy(url, td) {
+            axios
+                .delete(url)
+                .then(function(response) {
+                    // handle success
+                    console.log(response);
+                    window.location.href = '/cms/admin/categories'
+
+                    //   showMessage(response.data);
+                    td.closest("tr").remove();
+                })
+                .catch(function(error) {
+                    // handle error
+                    console.log(error.response);
+                    showMessage(error.response.response.data);
+                })
+                .then(function() {
+                    // always executed
+                    window.location.href = '/cms/admin/categories'
+                    //   showMessage(response.data);
+                });
+        }
+
         function performUpdate(id) {
             let formData = new FormData();
             formData.append('name', document.getElementById('name').value);
+            formData.append('parent_id', document.getElementById('parent_id').value);
             formData.append('image', document.getElementById('image').files[0]);
             storeRedirect('/cms/admin/categories_update/' + id, formData, '/cms/admin/categories/');
         }

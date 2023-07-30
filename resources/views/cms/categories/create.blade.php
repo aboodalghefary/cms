@@ -35,6 +35,26 @@
                             <div class="text-danger" id="name-error">{{ $message }}</div>
                         @enderror
                     </div>
+                    <div class="col-lg-6">
+                        <label for="parent_id">الفئة الأب:</label>
+                        <select name="parent_id" id="parent_id" class="form-select select">
+                            <optgroup>
+                                <option value="">بدون فئة أب</option>
+                            </optgroup>
+
+                            @foreach ($categories as $category)
+                                @if ($category->parent_id == null)
+                                    <optgroup label=" فئة {{ $category->name }} ">
+                                        <option value="{{ $category->id }}"> {{ $category->name }}</option>
+                                        @foreach ($category->subCategories as $subCategory)
+                                            <option value="{{ $subCategory->id }}"> ---- {{ $subCategory->name }}</option>
+                                        @endforeach
+                                    </optgroup>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
@@ -67,9 +87,11 @@
             let formData = new FormData();
             formData.append('name', document.getElementById('name').value);
             formData.append('image', document.getElementById('image').files[0]);
-
+            formData.append('parent_id', document.getElementById('parent_id').value);
             store('/cms/admin/categories', formData);
         }
+
+
     </script>
     <script src="{{ asset('cms/assets/js/vendor/forms/selects/select2.min.js') }}"></script>
     <script src="{{ asset('cms/assets/demo/pages/form_select2.js') }}"></script>

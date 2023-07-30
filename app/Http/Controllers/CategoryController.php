@@ -22,7 +22,7 @@ class CategoryController extends Controller
    {
       $this->authorize('viewAny', Categories::class);
 
-      $categories = Category::all();
+      $categories = Category::whereNull('parent_id')->get();
       return view('cms.categories.index', compact('categories'));
    }
 
@@ -34,8 +34,8 @@ class CategoryController extends Controller
    public function create()
    {
       $this->authorize('create', Categories::class);
-
-      return view('cms.categories.create');
+      $categories = Category::all();
+      return view('cms.categories.create', compact('categories'));
    }
 
    /**
@@ -59,7 +59,9 @@ class CategoryController extends Controller
       if (!$validator->fails()) {
          $category = new Category();
          $category->name = $request->get('name');
-
+         if ($request->get('parent_id') != null) {
+            $category->parent_id = $request->get('parent_id');
+         }
          if (request()->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . 'image.' . $image->getClientOriginalExtension();

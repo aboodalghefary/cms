@@ -123,7 +123,7 @@ var Fancytree = function() {
             selectMode: 1,
             source: {
                 url: '../../../assets/demo/data/fancytree/fancytree.json'
-            }    
+            }
         });
 
         // Multiple selection
@@ -158,7 +158,7 @@ var Fancytree = function() {
             selectMode: 2,
             source: {
                 url: '../../../assets/demo/data/fancytree/fancytree.json'
-            }    
+            }
         });
 
         // Define element

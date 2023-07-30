@@ -10,15 +10,23 @@ class Category extends Model
 {
    use HasFactory;
    use Trans;
+   protected $fillable = ['name', 'image', 'parent_id'];
 
    public function blogs()
    {
       return $this->hasMany(Blog::class);
    }
-   public function sub_categories()
+
+   public function parentCategory()
    {
-      return $this->hasMany(SubCategory::class);
+      return $this->belongsTo(Category::class, 'parent_id');
    }
+
+   public function subCategories()
+   {
+      return $this->hasMany(Category::class, 'parent_id');
+   }
+
    public function rows()
    {
       return $this->belongsToMany(Row::class, 'category_row', 'category_id', 'row_id');
