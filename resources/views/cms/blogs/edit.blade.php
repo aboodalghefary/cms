@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="row mb-3">
-                    <label class="col-lg-3 col-form-label">المؤلف</label>
+                    <label class="col-lg-3 col-form-label">التصنيف</label>
                     <div class="col-lg-9">
                         <select name="category_id" id="category_id" class="form-control">
                             @foreach ($categories as $category)

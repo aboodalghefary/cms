@@ -28,6 +28,7 @@ use App\Http\Controllers\RolePermissionController;
 use App\Http\Controllers\RowController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SpecialOfferController;
+use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\VideosController;
 use App\Http\Controllers\WeatherController;
@@ -80,6 +81,11 @@ Route::group([
       Route::resource('divs', DivController::class);
       Route::post('divs_update/{div}', [DivController::class, 'update'])->name('divs_update');
 
+      // Route::resource('sub_categories', SubCategoryController::class);
+      Route::get('sub_categories_index/{id}', [SubCategoryController::class, 'index'])->name('sub_categories_index');
+      Route::get('sub_categories_create/{id}', [SubCategoryController::class, 'create'])->name('sub_categories_create');
+      Route::post('sub_categories_store', [SubCategoryController::class, 'store'])->name('sub_categories_store');
+      Route::post('sub_categories_update/{id}', [SubCategoryController::class, 'update'])->name('sub_categories_update');
       Route::resource('categories', CategoryController::class);
       Route::post('categories_update/{id}', [CategoryController::class, 'update'])->name('categories_update');
       Route::resource('albums', AlbumController::class);
