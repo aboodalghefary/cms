@@ -17,7 +17,7 @@ if (lang == "rtl") {
    });
 }
 
-function openEditModal(element, divName, divID) {
+function openEditModal(element, divName, divID, divHref, divContent) {
    var imageInput = document.querySelector(
       "#modal_form_horizontal .imageInput"
    );
@@ -28,6 +28,54 @@ function openEditModal(element, divName, divID) {
    var submmitBtn = document.querySelector("#modal_form_horizontal #submit");
    if (divName == "logo") {
       imageInput.classList.remove("d-none");
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "home_ad1") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "home_ad2") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "home_ad3") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "home_ad4") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "home_ad5") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "home_ad6") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "home_ad7") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "home_ad8") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
       submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
    }
 }

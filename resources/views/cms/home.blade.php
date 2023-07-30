@@ -211,6 +211,149 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6">
+                            @php
+                                $ad1Div = $divs->where('name', 'home_ad1')->first();
+                                $ad2Div = $divs->where('name', 'home_ad2')->first();
+                                $ad3Div = $divs->where('name', 'home_ad3')->first();
+                                $ad4Div = $divs->where('name', 'home_ad4')->first();
+                                $ad5Div = $divs->where('name', 'home_ad5')->first();
+                                $ad6Div = $divs->where('name', 'home_ad6')->first();
+                                $ad7Div = $divs->where('name', 'home_ad7')->first();
+                                $ad8Div = $divs->where('name', 'home_ad8')->first();
+                            @endphp
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> اعلان الرئيسية الاول </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $ad1Div->name }}' , '{{ $ad1Div->id }}' ,'{{ $ad1Div->href }}','{{ $ad1Div->content }}' )">تعديل</span>
+                                    </div>
+                                    <a href="#" class="ms-3">
+                                        <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}" width="140"
+                                            height="55" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> اعلان الرئيسية الثاني </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $ad2Div->name }}' , '{{ $ad2Div->id }}' ,'{{ $ad2Div->href }}','{{ $ad2Div->content }}' )">تعديل</span>
+                                    </div>
+                                    <a href="#" class="ms-3">
+                                        <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}" width="140"
+                                            height="55" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> اعلان الرئيسية الثالث </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $ad3Div->name }}' , '{{ $ad3Div->id }}' ,'{{ $ad3Div->href }}','{{ $ad3Div->content }}' )">تعديل</span>
+                                    </div>
+                                    <a href="#" class="ms-3">
+                                        <img src="{{ asset('storage/images/div/' . $ad3Div->image) }}" width="140"
+                                            height="55" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> اعلان الرئيسية الرابع </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $ad4Div->name }}' , '{{ $ad4Div->id }}' ,'{{ $ad4Div->href }}','{{ $ad4Div->content }}' )">تعديل</span>
+                                    </div>
+                                    <a href="#" class="ms-3">
+                                        <img src="{{ asset('storage/images/div/' . $ad4Div->image) }}" width="140"
+                                            height="55" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> اعلان الرئيسية الخامس </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $ad5Div->name }}' , '{{ $ad5Div->id }}' ,'{{ $ad5Div->href }}','{{ $ad5Div->content }}' )">تعديل</span>
+                                    </div>
+                                    <a href="#" class="ms-3">
+                                        <img src="{{ asset('storage/images/div/' . $ad5Div->image) }}" width="140"
+                                            height="55" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> اعلان الرئيسية السادس </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $ad6Div->name }}' , '{{ $ad6Div->id }}' ,'{{ $ad6Div->href }}','{{ $ad6Div->content }}' )">تعديل</span>
+                                    </div>
+                                    <a href="#" class="ms-3">
+                                        <img src="{{ asset('storage/images/div/' . $ad6Div->image) }}" width="140"
+                                            height="55" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> اعلان الرئيسية السابع </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $ad7Div->name }}' , '{{ $ad7Div->id }}' ,'{{ $ad7Div->href }}','{{ $ad7Div->content }}' )">تعديل</span>
+                                    </div>
+                                    <a href="#" class="ms-3">
+                                        <img src="{{ asset('storage/images/div/' . $ad7Div->image) }}" width="140"
+                                            height="55" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> اعلان الرئيسية الثامن </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $ad8Div->name }}' , '{{ $ad8Div->id }}' ,'{{ $ad8Div->href }}','{{ $ad8Div->content }}' )">تعديل</span>
+                                    </div>
+                                    <a href="#" class="ms-3">
+                                        <img src="{{ asset('storage/images/div/' . $ad8Div->image) }}" width="140"
+                                            height="55" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
 
 
 
