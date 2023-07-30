@@ -6,9 +6,9 @@ function displayNewsItems(posts) {
       const formattedDate = new Date(post.updated_at).toLocaleDateString('en-US');
       const imageSrc = "storage/images/blog/" + post.image;
       const newItem = `
-        <div style="width: 260px;" class="card">
+        <div class="card">
           <div class="lay">
-            <img style="height: 155px" class="card-img-top" src="${imageSrc}" alt="">
+            <img style="height: 125px" class="card-img-top" src="${imageSrc}" alt="">
             <a href="#" style="display: flex; align-items: center; justify-content: center;" class="overlayy overlayFade">
               <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
             </a>

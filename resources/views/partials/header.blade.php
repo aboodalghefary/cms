@@ -28,11 +28,15 @@
                             @if (count($category->subCategories) != 0)
                                 <div class="mega-menue ">
 
-                                    <div class="mega">
+                                    <div class="mega container">
                                         <div class="category-right  px-1 ">
                                             <ul class="text-right ">
+                                             <li class="active" data-category="{{ $category->id }}">
+                                                <a href="">
+                                                    الكل </a>
+                                            </li>
                                                 @foreach ($category->subCategories as $subCategory)
-                                                    <li class="active" data-category="{{ $subCategory->id }}">
+                                                    <li  data-category="{{ $subCategory->id }}">
                                                         <a href="{{ route('category', ['id' => $subCategory->id]) }}">
                                                             {{ $subCategory->name }} </a>
                                                     </li>
