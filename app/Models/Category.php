@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Traits\Trans;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class Category extends Model
 {
@@ -16,7 +17,7 @@ class Category extends Model
    {
       return $this->hasMany(Blog::class);
    }
-
+   
    public function parentCategory()
    {
       return $this->belongsTo(Category::class, 'parent_id');

@@ -41,26 +41,25 @@
     <main class="main container  d-flex flex-column justify-content-center  py-5" style="min-height: 100vh;">
         <div>
             <div class="row  template-main  two-main-news pb-0 no-gutters">
-                @foreach ($category->blogs as $key => $blog)
+                @foreach ($allBlogs as $key => $blogData)
                     @if ($key >= 2)
                         @continue
                     @endif
-
                     <div class="col-lg-6 col-md-6 col-sm-12  mb-1  ">
                         <div class="column position-relative img ">
-                            <a href="{{ route('post_details', ['id' => $blog->id]) }}">
+                            <a href="{{ route('post_details', ['id' => $blogData['id']]) }}">
                                 <div class="box">
                                     <img style="object-fit: cover; width: 100%; height: 260px; object-position: 0px -17px;"
-                                        class="" src="{{ asset('storage/images/blog/' . $blog->image) }}"
+                                        class="" src="{{ asset('storage/images/blog/' . $blogData['image']) }}"
                                         alt="Image 1">
                                 </div>
 
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right">
-                                        {{ $blog->name }}
+                                        {{ $blogData['name'] }}
                                     </h6>
                                     <span class="time ">قبل
-                                        {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
+                                        {{ \Carbon\Carbon::parse($blogData['created_at'])->locale('ar')->shortAbsoluteDiffForHumans() }}
                                     </span>
                                 </div>
                             </a>
@@ -71,32 +70,34 @@
                     </div>
                 @endforeach
 
+
             </div>
             <div class="row">
 
-                @foreach ($category->blogs as $key => $blog)
+                @foreach ($allBlogs as $key => $blog)
                     @if ($key < 2)
                         @continue
                     @endif
 
                     <div class="col-lg-3 col-md-4 col-sm-12 mt-5">
                         <div class="card h-100 box">
-                            <a href="{{ route('post_details', ['id' => $blog->id]) }}"><img class="card-img-top"
+                            <a href="{{ route('post_details', ['id' => $blog['id']]) }}"><img class="card-img-top"
                                     style="object-fit: cover; width: 100%; height: 260px; object-position: 0px -17px;"
-                                    src="{{ asset('storage/images/blog/' . $blog->image) }}" alt=""></a>
-                            <a href="{{ route('post_details', ['id' => $blog->id]) }}" class="card-body">
+                                    src="{{ asset('storage/images/blog/' . $blog['image']) }}" alt=""></a>
+                            <a href="{{ route('post_details', ['id' => $blog['id']]) }}" class="card-body">
                                 <h5 class="card-text text-right">
-                                    {{ $blog->name }}
+                                    {{ $blog['name'] }}
                                 </h5>
                             </a>
                             <div class="container text-black-50 pb-2 bg-white text-right">
                                 <span class="date"> قبل
-                                    {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
+                                    {{ \Carbon\Carbon::parse($blog['created_at'])->locale('ar')->shortAbsoluteDiffForHumans() }}
                                 </span>
                             </div>
                         </div>
                     </div>
                 @endforeach
+
 
 
 

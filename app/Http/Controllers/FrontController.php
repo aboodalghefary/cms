@@ -22,6 +22,8 @@ class FrontController extends Controller
       $images = Photo::latest()->take(2)->get();
       $news = Blog::latest()->take(13)->get();
       $categories = Category::whereNull('parent_id')->get();
+
+
       return view('front.index', compact(
          'rows',
          'library',
@@ -47,10 +49,25 @@ class FrontController extends Controller
    }
    public function category($id)
    {
-      $category = Category::findOrFail($id);
       $categories = Category::whereNull('parent_id')->get();
+      $category = Category::findOrFail($id);
 
-      return view('front.category-news', compact('category', 'categories'));
+      $blogs = $category->blogs;
+
+      $subCategories = $category->subCategories;
+      $subCategoryBlogs = [];
+
+      foreach ($subCategories as $subCategory) {
+         $subCategoryBlogs = array_merge($subCategoryBlogs, $subCategory->blogs->toArray());
+      }
+
+      $allBlogs = array_unique(array_merge($blogs->toArray(), $subCategoryBlogs), SORT_REGULAR);
+
+      usort($allBlogs, function ($a, $b) {
+         return strtotime($b['created_at']) - strtotime($a['created_at']);
+      });
+
+      return view('front.category-news', compact('allBlogs', 'category', 'categories'));
    }
    public function contactIndex()
    {
@@ -106,9 +123,25 @@ class FrontController extends Controller
    }
    public function get_last_news_ajax($id)
    {
-      $get_last_news_ajax  = Category::findOrFail($id);
-      $posts = Blog::where('category_id', $id)->latest()->take(4)->get();
-      return response()->json(['get_last_news_ajax' => $get_last_news_ajax, 'posts' => $posts]);
+      $category = Category::findOrFail($id);
+
+      $blogs = $category->blogs;
+
+      $subCategories = $category->subCategories;
+      $subCategoryBlogs = [];
+
+      foreach ($subCategories as $subCategory) {
+         $subCategoryBlogs = array_merge($subCategoryBlogs, $subCategory->blogs->toArray());
+      }
+
+      $allBlogs = array_unique(array_merge($blogs->toArray(), $subCategoryBlogs), SORT_REGULAR);
+
+      usort($allBlogs, function ($a, $b) {
+         return strtotime($b['created_at']) - strtotime($a['created_at']);
+      });
+      $firstFourBlogs = array_slice($allBlogs, 0, 4);
+      $posts = $firstFourBlogs;
+      return response()->json(['posts' => $posts]);
    }
    public function album_details($id)
    {
