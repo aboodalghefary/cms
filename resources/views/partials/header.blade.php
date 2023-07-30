@@ -15,8 +15,8 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa-duotone fa-bars text-danger"></i>
             </button>
-            <div class="collapse  navbar-collapse" id="navbarSupportedContent">
-                <ul class=" navbar-nav navbar-main mr-auto  mb-lg-0">
+            <div class="collapse  navbar-collapse " id="navbarSupportedContent">
+                <ul class=" navbar-nav navbar-main mr-auto  mb-lg-0 ">
                     <li class="nav-item nav-item-main active-item ">
                         <a class="nav-link active " aria-current="page" href="{{ route('front_index') }}">الرئيسية</a>
                     </li>
@@ -31,12 +31,13 @@
                                     <div class="mega container">
                                         <div class="category-right  px-1 ">
                                             <ul class="text-right ">
-                                             <li class="active" data-category="{{ $category->id }}">
-                                                <a href="">
-                                                    الكل </a>
-                                            </li>
+                                                <li class="active" data-category="{{ $category->id }}"
+                                                    data-default="true">
+                                                    <a href="">الكل</a>
+                                                </li>
+
                                                 @foreach ($category->subCategories as $subCategory)
-                                                    <li  data-category="{{ $subCategory->id }}">
+                                                    <li data-category="{{ $subCategory->id }}">
                                                         <a href="{{ route('category', ['id' => $subCategory->id]) }}">
                                                             {{ $subCategory->name }} </a>
                                                     </li>
@@ -65,23 +66,24 @@
                     <li class="nav-item nav-item-main ">
                         <a class="nav-link" href="{{ route('contact') }}">اتصل بنا</a>
                     </li>
-                    <ul class="navbar-nav mr-5 text-white nav-links links d-flex flex-row pt-2 pr-5 mr-auto mt-4">
-                        <li class="  "><a class="twitter" href="#"><i class=" fab fa-twitter"></i></a>
-                        </li>
-                        <li class=" "><a class="facebook" href="#"><i class=" fab fa-facebook-f"></i></a>
-                        </li>
-                        <li class="  "><a class="youtube" href="#"><i class=" fab fa-youtube"></i></a>
-                        </li>
-                        <li class="search"><a href="#"><i class=" fal fa-search"></i></a></li>
-                        <div class="boxsearch" dir="rtl">
-                            <button class="close-icon">
-                                <i class="fa-solid fa-xmark close"></i> </button>
-                            <input type="text" placeholder="ابحث هنا">
-                            <button class="search-icon">
-                                <i class="fa-solid fa-magnifying-glass search"></i>
-                            </button>
-                        </div>
-                    </ul>
+
+                </ul>
+                <ul class="navbar-nav  text-white nav-links links d-flex flex-row justify-content-end mr-auto pt-3">
+                    <li><a class="twitter" href="#"><i class=" fab fa-twitter"></i></a>
+                    </li>
+                    <li><a class="facebook" href="#"><i class=" fab fa-facebook-f"></i></a>
+                    </li>
+                    <li><a class="youtube" href="#"><i class=" fab fa-youtube"></i></a>
+                    </li>
+                    <li class="search"><a href="#"><i class=" fal fa-search"></i></a></li>
+                    <div class="boxsearch" dir="rtl">
+                        <button class="close-icon">
+                            <i class="fa-solid fa-xmark close"></i> </button>
+                        <input type="text" placeholder="ابحث هنا">
+                        <button class="search-icon">
+                            <i class="fa-solid fa-magnifying-glass search"></i>
+                        </button>
+                    </div>
                 </ul>
 
             </div>
