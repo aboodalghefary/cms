@@ -22,29 +22,20 @@
                     <th>#</th>
                     <th>الصورة</th>
                     <th>الاسم</th>
-                    <th>اضافة اصناف فرعية</th>
-                    <th>عرض اصناف فرعية</th>
+                    <th>الصنف الرئيسي</th>
                     <th class="div-center">الاجراءات</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($categories as $category)
+                @foreach ($sub_categories as $category)
                     <tr>
-                        <td>{{ $category->id }}</td>
-                        <td> <img src="{{ asset('storage/images/category/' . $category->image) }}" alt="Sub Image"
-                                width="50">
+                        <td class="text-nowrap">{{ $category->id }}</td>
+                        <td class="text-nowrap"> <img src="{{ asset('storage/images/category/' . $category->image) }}"
+                                alt="Sub Image" width="50px">
                         </td>
-                        <td>{{ $category->name }}</td>
-                        <td><a href="{{ route('sub_categories_create', $category->id) }}"
-                                class="btn text-nowrap btn-outline-indigo">
-                                اضافة
-                                صنف فرعي </a></td>
-                        <td><a href="{{ route('sub_categories_index', $category->id) }}"
-                                class="btn text-nowrap btn-outline-indigo">
-                                عرض
-                                الاصناف الفرعية
-                            </a></td>
-                        <td class="div-center">
+                        <td class="text-nowrap">{{ $category->name }}</td>
+                        <td class="text-nowrap text-center">{{ $category->category->name }}</td>
+                        <td class="div-center" width="15px">
                             <div class="d-inline-flex">
                                 <div class="dropdown">
                                     <a href="#" class="div-body" data-bs-toggle="dropdown">
