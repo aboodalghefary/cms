@@ -42,6 +42,29 @@
                             <div class="text-danger" id="name-error">{{ $message }}</div>
                         @enderror
                     </div>
+                    <div class="col-lg-6">
+                        <label for="parent_id">الفئة الأب:</label>
+                        <select name="parent_id" id="parent_id" class="form-select select">
+                            <optgroup>
+                                <option value="">بدون فئة أب</option>
+                            </optgroup>
+
+                            @foreach ($categories as $categoryOption)
+                                @if ($categoryOption->parent_id == null)
+                                    <optgroup label=" فئة {{ $categoryOption->name }} ">
+                                        <option value="{{ $categoryOption->id }}"
+                                            @if ($categoryOption->id == $category->parent_id) selected @endif> {{ $categoryOption->name }}
+                                        </option>
+                                        @foreach ($categoryOption->subCategories as $subCategory)
+                                            <option value="{{ $subCategory->id }}"
+                                                @if ($subCategory->id == $category->parent_id) selected @endif>
+                                                ---- {{ $subCategory->name }}</option>
+                                        @endforeach
+                                    </optgroup>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
