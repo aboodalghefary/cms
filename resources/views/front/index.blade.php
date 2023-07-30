@@ -497,6 +497,8 @@
     <!-- vendor files -->
     <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <!-- script lightGallery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
@@ -579,6 +581,8 @@
                 });
             }
         });
+
+
     </script>
 
 </body>
