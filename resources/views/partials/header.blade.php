@@ -31,12 +31,12 @@
                                     <div class="mega container">
                                         <div class="category-right  px-1 ">
                                             <ul class="text-right ">
-                                             <li class="active" data-category="{{ $category->id }}">
-                                                <a href="">
-                                                    الكل </a>
-                                            </li>
+                                                <li class="active" data-category="{{ $category->id }}">
+                                                    <a href="{{ route('category', ['id' => $category->id]) }}">
+                                                        الكل </a>
+                                                </li>
                                                 @foreach ($category->subCategories as $subCategory)
-                                                    <li  data-category="{{ $subCategory->id }}">
+                                                    <li data-category="{{ $subCategory->id }}">
                                                         <a href="{{ route('category', ['id' => $subCategory->id]) }}">
                                                             {{ $subCategory->name }} </a>
                                                     </li>
