@@ -7,6 +7,7 @@ use App\Models\Album;
 use App\Models\Photo;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Div;
 use App\Models\Library;
 use App\Models\Row;
 use Illuminate\Http\Request;
@@ -17,6 +18,7 @@ class FrontController extends Controller
    public function index()
    {
       $rows = Row::all();
+      $divs = Div::all();
       $library = Library::with('videos')->first();
       $album = Album::latest()->first();
       $images = Photo::latest()->take(2)->get();
@@ -30,7 +32,8 @@ class FrontController extends Controller
          'news',
          'categories',
          'album',
-         'images'
+         'images',
+         'divs',
       ));
    }
    public function video_library()

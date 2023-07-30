@@ -98,12 +98,27 @@
                 </div>
 
             </div>
-
+            @php
+                $ad1Div = $divs->where('name', 'home_ad1')->first();
+                $ad2Div = $divs->where('name', 'home_ad2')->first();
+                $ad3Div = $divs->where('name', 'home_ad3')->first();
+                $ad4Div = $divs->where('name', 'home_ad4')->first();
+                $ad5Div = $divs->where('name', 'home_ad5')->first();
+                $ad6Div = $divs->where('name', 'home_ad6')->first();
+                $ad7Div = $divs->where('name', 'home_ad7')->first();
+                $ad8Div = $divs->where('name', 'home_ad8')->first();
+            @endphp
             <!-- مساحة اعلانية -->
-            <div class="advertise-space adv-2-columns py-5  ">
-                <p class=" bg-light py-5  "> مساحة اعلانية </p>
+            <div class="advertise-space adv-2-columns py-5 ">
 
-                <p class=" bg-light  py-5  "> مساحة اعلانية </p>
+                <a class=" ">
+                  <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}">
+                </a>
+
+                <a class=" ">
+                   <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}"
+                        alt="">
+                </a>
 
             </div>
 
@@ -178,9 +193,12 @@
 
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
-                    <p class=" bg-light py-5  "> مساحة اعلانية </p>
 
-                    <p class=" bg-light  py-5  "> مساحة اعلانية </p>
+                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad3Div->image) }}"
+                            alt=""> </a>
+
+                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad4Div->image) }}"
+                            alt=""> </a>
 
                 </div>
 
@@ -245,9 +263,12 @@
 
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
-                    <p class=" bg-light py-5  "> مساحة اعلانية </p>
 
-                    <p class=" bg-light  py-5  "> مساحة اعلانية </p>
+                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad5Div->image) }}"
+                            alt=""> </a>
+
+                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad6Div->image) }}"
+                            alt=""> </a>
 
                 </div>
 
@@ -268,9 +289,12 @@
 
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
-                    <p class=" bg-light py-5  "> مساحة اعلانية </p>
 
-                    <p class=" bg-light  py-5  "> مساحة اعلانية </p>
+                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad7Div->image) }}"
+                            alt=""> </a>
+
+                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad8Div->image) }}"
+                            alt=""> </a>
 
                 </div>
             </div>

@@ -25,15 +25,10 @@ function displayNewsItems(posts) {
    });
  }
 
- function handleListItemMouseEnter(event) {
-   const category = event.currentTarget.dataset.category;
-   const listItems = $('.mega-menue .category-right ul li');
-
-   listItems.removeClass('active');
-   $(event.currentTarget).addClass('active');
-
+ // Function to fetch and display default category data
+ function displayDefaultCategoryData(categoryId) {
    $.ajax({
-     url: `/get_last_news_ajax/${category}`,
+     url: `/get_last_news_ajax/${categoryId}`,
      type: 'GET',
      dataType: 'json',
      success: function(data) {
@@ -51,22 +46,27 @@ function displayNewsItems(posts) {
    const defaultCategoryId = categoryNumber1.data('category');
    const isDefault = categoryNumber1.data('default');
 
-   $.ajax({
-     url: `/get_last_news_ajax/${defaultCategoryId}`,
-     type: 'GET',
-     dataType: 'json',
-     success: function(data) {
-       const posts = data.posts;
-       displayNewsItems(posts);
-     },
-     error: function(error) {
-       console.error('Error fetching data:', error);
-     }
+   // Display default category data on page load
+   displayDefaultCategoryData(defaultCategoryId);
+
+   $('.mega-menue .category-right ul li').on('mouseenter', function(event) {
+     const category = $(this).data('category');
+     const listItems = $('.mega-menue .category-right ul li');
+
+     listItems.removeClass('active');
+     $(this).addClass('active');
+
+     $.ajax({
+       url: `/get_last_news_ajax/${category}`,
+       type: 'GET',
+       dataType: 'json',
+       success: function(data) {
+         const posts = data.posts;
+         displayNewsItems(posts);
+       },
+       error: function(error) {
+         console.error('Error fetching data:', error);
+       }
+     });
    });
-
-   if (isDefault) {
-     handleListItemMouseEnter({ currentTarget: categoryNumber1[0] });
-   }
  });
-
- $('.mega-menue .category-right ul li').on('mouseenter', handleListItemMouseEnter);
