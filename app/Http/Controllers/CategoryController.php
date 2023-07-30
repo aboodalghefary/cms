@@ -105,7 +105,8 @@ class CategoryController extends Controller
       $this->authorize('update', Categories::class);
 
       $category = Category::findOrFail($id);
-      return view('cms.categories.edit', compact('category'));
+      $categories = Category::all();
+      return view('cms.categories.edit', compact('category', 'categories'));
    }
 
    /**
@@ -133,6 +134,7 @@ class CategoryController extends Controller
          if (!$validator->fails()) {
             $category = Category::findOrFail($id);
             $category->name = $request->get('name');
+            $category->parent_id = $request->get('parent_id');
 
             if (request()->hasFile('image')) {
                $image = $request->file('image');
