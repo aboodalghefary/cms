@@ -42,7 +42,7 @@ function displayNewsItems(posts) {
  }
 
  $(document).ready(function() {
-   const categoryNumber1 = $('.mega-menue .category-right ul li[data-category="1"]');
+   const categoryNumber1 = $('.mega-menue .category-right ul li[data-category="2"]');
    const defaultCategoryId = categoryNumber1.data('category');
    const isDefault = categoryNumber1.data('default');
 
