@@ -84,8 +84,9 @@ class FrontController extends Controller
    }
    public function get_last_news_ajax($id)
    {
-      $libraries_most_views  = Library::find($id)->latest()->take(4)->get();
-      return response()->json(['libraries_most_views' => $libraries_most_views]);
+      $get_last_news_ajax  = Category::findOrFail($id);
+      $posts = Blog::where('category_id', $id)->latest()->take(4)->get();
+      return response()->json(['get_last_news_ajax' => $get_last_news_ajax, 'posts' => $posts]);
    }
    public function album_details($id)
    {
