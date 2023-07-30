@@ -28,10 +28,8 @@
                             <div class="mega">
                                 <div class="category-right  px-1 ">
                                     <ul class="text-right ">
-                                        <li class="active"  data-category="0" >
-                                            <a href="#"> الكل</a>
-                                        </li>
-                                        <li class=""  data-category="1">
+
+                                        <li class="active"  data-category="1">
                                             <a href="#"> تصنيف 1</a>
                                         </li>
                                         <li class=""  data-category="2">
