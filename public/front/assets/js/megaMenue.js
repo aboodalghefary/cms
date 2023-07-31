@@ -18,13 +18,9 @@ parent_category.forEach((parent) => {
                var formattedDate = new Date(post.updated_at).toLocaleDateString(
                   "en-US"
                );
-<<<<<<< HEAD
-               var imageSrc = "storage/images/blog/" + post.image;
                var newsLink = `/post_details/${post.id}`;
 
-=======
                var imageSrc = "/storage/images/blog/" + post.image;
->>>>>>> 278eaad1e67586ab3262314e3e2a98b8fb1401da
                var newItem = `
                        <div class="card">
                            <div class="lay">
@@ -70,13 +66,9 @@ subCategoryLinks.forEach((link) => {
                var formattedDate = new Date(post.updated_at).toLocaleDateString(
                   "en-US"
                );
-<<<<<<< HEAD
-               var imageSrc = "storage/images/blog/" + post.image;
                var newsLink = `/post_details/${post.id}`;
 
-=======
                var imageSrc = "/storage/images/blog/" + post.image;
->>>>>>> 278eaad1e67586ab3262314e3e2a98b8fb1401da
                var newItem = `
                        <div class="card">
                            <div class="lay">
@@ -104,9 +96,8 @@ subCategoryLinks.forEach((link) => {
    });
 });
 
-
-$('.mega-menue .category-right ul li').on('mouseenter', function (event) {
-   const listItems = $('.mega-menue .category-right ul li');
-   listItems.removeClass('active');
-   $(this).addClass('active');
+$(".mega-menue .category-right ul li").on("mouseenter", function (event) {
+   const listItems = $(".mega-menue .category-right ul li");
+   listItems.removeClass("active");
+   $(this).addClass("active");
 });

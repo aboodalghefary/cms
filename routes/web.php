@@ -60,6 +60,7 @@ Route::get('/album_details/{id}', [FrontController::class, 'album_details'])->na
 Route::get('/category/{id}', [FrontController::class, 'category'])->name('category');
 Route::get('/library_details/{id}', [FrontController::class, 'library_details'])->middleware('increase.views')->name('library_details');
 Route::get('/get_last_news_ajax/{id}', [FrontController::class, 'get_last_news_ajax'])->name('get_last_news_ajax');
+Route::get('/get_last_news_ajax_by_name/{name}', [FrontController::class, 'get_last_news_ajax_by_name'])->name('get_last_news_ajax_by_name');
 
 
 Route::group([

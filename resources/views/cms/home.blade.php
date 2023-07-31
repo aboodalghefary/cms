@@ -372,6 +372,50 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6">
+                            @php
+                                $motaleqtDiv = $divs->where('name', 'متعلقات')->first();
+                                $mainNewsDiv = $divs->where('name', 'الاخبار الرئيسية')->first();
+                                $readTooDiv = $divs->where('name', 'اقرا ايضا')->first();
+                            @endphp
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> المتعلقات في صفحة الخبر </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $motaleqtDiv->name }}' , '{{ $motaleqtDiv->id }}' ,'{{ $motaleqtDiv->href }}','{{ $motaleqtDiv->content }}' )">تعديل</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> الاخبار الرئيسية في صفحة الخبر </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $mainNewsDiv->name }}' , '{{ $mainNewsDiv->id }}' ,'{{ $mainNewsDiv->href }}','{{ $mainNewsDiv->content }}' )">تعديل</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> اقرا ايضا في صفحة الخبر </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $readTooDiv->name }}' , '{{ $readTooDiv->id }}' ,'{{ $readTooDiv->href }}','{{ $readTooDiv->content }}' )">تعديل</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
             </div>

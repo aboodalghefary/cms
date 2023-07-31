@@ -140,27 +140,35 @@
                     <div class="news-more  px-4 py-3 border ">
                         <span class=" mark-title">
                         </span>
+                        @php
+                            $motaleqtDiv = $divs->where('name', 'متعلقات')->first();
+                            $mainNewsDiv = $divs->where('name', 'الاخبار الرئيسية')->first();
+                            $readTooDiv = $divs->where('name', 'اقرا ايضا')->first();
+                        @endphp
                         <span class="title-sec"> متعلقات</span>
                     </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
-                        <i class="fa-regular fa-arrow-left"></i>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
-                    </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
-                        <i class="fa-regular fa-arrow-left"></i>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
-                    </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
-                        <i class="fa-regular fa-arrow-left"></i>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
-                    </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
-                        <i class="fa-regular fa-arrow-left"></i>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
+                    <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
+                        <div class="news-more d-flex align-items-center px-4 py-4 border ">
+                            <i class="fa-regular fa-arrow-left"></i>
+                            <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
+                                    "كيسوفيم"</a></span>
+                        </div>
+                        <div class="news-more d-flex align-items-center px-4 py-4 border ">
+                            <i class="fa-regular fa-arrow-left"></i>
+                            <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
+                                    "كيسوفيم"</a></span>
+                        </div>
+                        <div class="news-more d-flex align-items-center px-4 py-4 border ">
+                            <i class="fa-regular fa-arrow-left"></i>
+                            <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
+                                    "كيسوفيم"</a></span>
+                        </div>
+                        <div class="news-more d-flex align-items-center px-4 py-4 border ">
+                            <i class="fa-regular fa-arrow-left"></i>
+                            <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
+                                    "كيسوفيم"</a></span>
+                        </div>
+
                     </div>
 
                 </div>
@@ -280,6 +288,7 @@
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=1223591008520673&autoLogAppEvents=1"
         nonce="a4LkJkFD"></script>
     <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
+    <script src="{{ asset('front/assets/js/news_detailes.js') }}"></script>
 
 </body>
 
