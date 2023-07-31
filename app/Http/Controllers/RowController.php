@@ -137,8 +137,19 @@ class RowController extends Controller
             $row = Row::findOrFail($id);
             $row->template = $request->input('template');
             $row->save();
-            $categories = is_array($request->input('categories')) ? $request->input('categories') : explode(',', $request->input('categories'));
-            $row->categories()->attach($categories);
+            $newCategories = is_array($request->input('categories')) ? $request->input('categories') : explode(',', $request->input('categories'));
+
+            // حفظ المعرفات الحالية المرتبطة بالصف في مصفوفة
+            $currentCategories = $row->categories->pluck('id')->toArray();
+
+            // حذف المعرفات التي تم حذفها من القيم الجديدة
+            $categoriesToDelete = array_diff($currentCategories, $newCategories);
+            if (!empty($categoriesToDelete)) {
+               $row->categories()->detach($categoriesToDelete);
+            }
+
+            // إضافة المعرفات الجديدة إلى العلاقة
+            $row->categories()->sync($newCategories);
 
             DB::commit();
             return response()->json(['icon' => 'success', 'title' => 'تمت الإضافة بنجاح'], 200);
