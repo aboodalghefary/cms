@@ -21,18 +21,17 @@
                         <a class="nav-link active " aria-current="page" href="{{ route('front_index') }}">الرئيسية</a>
                     </li>
                     @foreach ($categories as $category)
-                        <li class="nav-item nav-item-main news ">
-                            <a class="nav-link "
+                        <li class="nav-item nav-item-main news category">
+                            <a class="nav-link"
                                 href="{{ route('category', ['id' => $category->id]) }}">{{ $category->name }}</a>
                             <!-- start megamenue -->
                             @if (count($category->subCategories) != 0)
-                                <div class="mega-menue ">
-
+                                <div class="mega-menue">
                                     <div class="mega container">
                                         <div class="category-right  px-1 ">
                                             <ul class="text-right">
-                                                <li class="active" data-category="{{ $category->id }}"
-                                                    data-default="true">
+                                                <li class="active all" data-category="{{ $category->id }}"
+                                                    >
                                                     <a href="">الكل</a>
                                                 </li>
                                                 @foreach ($category->subCategories as $subCategory)
@@ -43,8 +42,8 @@
                                                 @endforeach
                                             </ul>
                                         </div>
-                                        <div class="four-category-news ">
-                                        </div>
+                                        <div class="four-category-news">
+                                       </div>
                                     </div>
 
                                 </div>
