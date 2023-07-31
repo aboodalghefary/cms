@@ -1,52 +1,56 @@
 @extends('cms.master')
-@section('title', 'الفيديوها')
+@section('title', 'قوالب تصنيفات الفرونت ')
 
-@section('tittle_1', ' تعديل الفيديو ')
-@section('tittle_2', ' تعديل الفيديو ')
+@section('tittle_1', ' اضافة قالب تصنيفات ')
+@section('tittle_2', ' اضافة قالب تصنيفات ')
 
 
 @section('styles')
-
 @endsection
 
 
 @section('content')
 
+    <!-- Basic datatable -->
     <div class="card">
         <div class="card-header">
-            <h5 class="mb-0">تعديل الفيديو</h5>
+            <h5 class="mb-0">اضافة قالب تصنيفات</h5>
         </div>
 
         <div class="card-body">
-
             <form enctype="multipart/form-data">
-                <div class="row my-3">
-                    <div class="col-lg-6">
-                        <label for="title">العنوان</label>
-                        <input type="text" class="form-control" placeholder="{{ $video->title }}"
-                            value="{{ $video->title }}" id="title">
-                        @error('title')
-                            <div class="text-danger" id="title-error">{{ $message }}</div>
-                        @enderror
-                    </div>
+                <div class="form-group col-md-6">
+                    <label for="template"> القالب </label>
+                    <select class="form-select" name="template" id="template" aria-label="form-select-sm example">
+                        <option value="template-one" @if ($row->template == 'template-one') selected @endif> القالب 1 </option>
+                        <option value="template-two" @if ($row->template == 'template-two') selected @endif> القالب 2 </option>
+                        <option value="template-three" @if ($row->template == 'template-three') selected @endif> القالب 3 </option>
+                        <option value="template-four" @if ($row->template == 'template-four') selected @endif> القالب 4 </option>
+                        <option value="template-five" @if ($row->template == 'template-five') selected @endif> القالب 5 </option>
+
+                    </select>
                 </div>
-                <div class="row my-3">
-                    <div class="col-lg-6">
-                        <label for="video_path">الفيديو</label>
-                        <input type="file" class="form-control" id="video_path">
-                        @error('video_path')
-                            <div class="text-danger" id="video_path-error">{{ $message }}</div>
-                        @enderror
-                    </div>
+                <div class="form-group col-md-6">
+                    <label for="categories"> الاصناف</label>
+                    <select multiple="multiple" class="form-select select selectpicker" data-placeholder="Select something"
+                        name="categories" id="categories" aria-label="form-select-sm example">
+                        @foreach ($categories as $category)
+                            @php
+                                $categoryIds = $row->categories->pluck('id')->toArray();
+                            @endphp
+                            <option value="{{ $category->id }}" @if (in_array($category->id, $categoryIds)) selected @endif>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
-                <input type="text" class="form-control" id="library_id" value="{{ $video->library_id }}" hidden disabled>
+
 
                 <div class="form-group my-3">
-                    <button type="button" onclick="performUpdate({{ $video->id }})" class="btn btn-dark"
+                    <button type="button" onclick="performUpdate({{ $row->id }})" class="btn btn-dark"
                         id="create-button">إنشاء</button>
                 </div>
             </form>
-
         </div>
     </div>
 
@@ -56,13 +60,16 @@
     <script src="{{ asset('cms/assets/js/vendor/forms/selects/select2.min.js') }}"></script>
     <script src="{{ asset('cms/assets/demo/pages/form_select2.js') }}"></script>
     <script>
+        $(document).ready(function() {
+            $('.selectpicker').selectpicker();
+        });
+
         function performUpdate(id) {
             let formData = new FormData();
-            formData.append('title', document.getElementById('title').value);
-            formData.append('library_id', document.getElementById('library_id').value);
-            formData.append('video_path', document.getElementById('video_path').files[0]);
-            storeRedirect('/cms/admin/videos_update/' + id, formData, '/cms/admin/videos_index/' + document.getElementById(
-                'library_id').value);
+            formData.append('template', document.getElementById('template').value);
+            let selectedCategories = $('#categories').val();
+            formData.append('categories', selectedCategories);
+            storeRedirect('/cms/admin/rows_update/' + id, formData, '/cms/admin/rows');
         }
     </script>
 @endsection

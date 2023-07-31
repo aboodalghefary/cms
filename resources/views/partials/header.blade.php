@@ -22,35 +22,33 @@
                     </li>
                     @foreach ($categories as $category)
                         <li class="nav-item nav-item-main news category">
-                            <a class="nav-link"
-                                href="{{ route('category', ['id' => $category->id]) }}">{{ $category->name }}</a>
-                            <!-- start megamenue -->
+                            <a class="nav-link parent_category" href="{{ route('category', ['id' => $category->id]) }}"
+                                data-category="{{ $category->id }}">{{ $category->name }}</a>
                             @if (count($category->subCategories) != 0)
-                                <div class="mega-menue">
+                                <div class="mega-menue" data-category="{{ $category->id }}">
                                     <div class="mega container">
                                         <div class="category-right  px-1 ">
                                             <ul class="text-right">
-                                                <li class="active all" data-category="{{ $category->id }}"
-                                                    >
-                                                    <a href="">الكل</a>
+                                                <li class="active all" data-category="{{ $category->id }}">
+                                                    <a href="#">الكل</a>
                                                 </li>
                                                 @foreach ($category->subCategories as $subCategory)
                                                     <li data-category="{{ $subCategory->id }}">
-                                                        <a
+                                                        <a class="sub-category-link"
                                                             href="{{ route('category', ['id' => $subCategory->id]) }}">{{ $subCategory->name }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
                                         </div>
                                         <div class="four-category-news">
-                                       </div>
+                                        </div>
                                     </div>
-
                                 </div>
                             @endif
-                            <!-- end megamenue -->
                         </li>
                     @endforeach
+
+
 
                     {{-- <li class=" nav-item nav-item-main ">
                         <a class="nav-link" href="#">تقارير خاصة</a>

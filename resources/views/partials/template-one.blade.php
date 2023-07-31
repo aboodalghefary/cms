@@ -2,8 +2,10 @@
     <div class="text-right mb-3">
         <span class=" mark-title">
         </span>
-        <span class="title-sec text-white"> {{ $categories[0]->name }}
-        </span>
+
+        <a class="cat-id" href="{{ route('category', ['id' => $category->id]) }}">
+         <span class="title-sec text-white"> {{ $categories[0]->name }}
+         </span>     </a>
     </div>
 
     <div class="container-3-columns">

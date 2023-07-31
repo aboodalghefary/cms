@@ -589,6 +589,10 @@ header a {
    font-weight: 400;
    margin-top: 5px;
 }
+.cat-id:hover{
+
+   color: #2980b9 !important;
+}
 
 @media (min-width:991px) {
    .navbar-main .nav-item-main{

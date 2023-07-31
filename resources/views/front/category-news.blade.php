@@ -64,9 +64,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="label top-right">
-                            <span> {{ $category->name }} </span>
-                        </div>
+                      
                     </div>
                 @endforeach
 

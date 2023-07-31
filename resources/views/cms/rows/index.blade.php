@@ -1,11 +1,11 @@
 @extends('cms.master')
-@section('title', 'الفيديو')
+@section('title', 'قوالب عرض اصناف الموقع')
 
-@section('tittle_1', ' عرض الفيديو ')
+@section('tittle_1', ' عرض قوالب عرض اصناف الموقع ')
 @section('breadcrumb')
-    <a href="{{ url()->previous() }}" class="breadcrumb-item"> عرض مكتبات الفيديو </a>
+    <a href="{{ url()->previous() }}" class="breadcrumb-item"> عرض قوالب عرض اصناف الموقع </a>
 @endsection
-@section('tittle_2', ' عرض الفيديو ')
+@section('tittle_2', ' عرض قوالب عرض اصناف الموقع ')
 
 
 @section('styles')
@@ -28,25 +28,27 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>الفيديو</th>
-                    <th>الاسم</th>
-                    <th>المكتبة</th>
+                    <th>القالب</th>
+                    <th>الاصناف</th>
                     <th class="div-center">الاجراءات</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($videos as $video)
+                @foreach ($rows as $row)
                     <tr>
-                        <td width="5%">{{ $video->id }}</td>
-                        <td width="25%">
-                            <video controls>
-                                <source src="{{ asset('storage/images/videos/' . $video->video_path) }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                        <td width="5%">{{ $row->id }}</td>
+                        <td width="25%">{{ $row->template }}</td>
+                        <td>
+                            @foreach ($row->categories as $category)
+                                @php
+                                    $colors = ['bg-teal text-teal', 'bg-indigo text-indigo', 'bg-purple text-purple', 'bg-pink text-pink', 'bg-dark text-reset', 'bg-info text-info', 'bg-warning text-warning', 'bg-success text-success', 'bg-danger text-danger', 'bg-primary text-primary', 'bg-secondary text-secondary'];
+                                    $color = $colors[$loop->index % count($colors)];
+                                @endphp
+                                <span class="badge {{ $color }} bg-opacity-20"> <i class="ph-tag ph-sm"></i>
+                                    {{ $category->name }}
+                                </span>
+                            @endforeach
                         </td>
-                        <td>{{ $video->title }}</td>
-                        <td>{{ $video->library->title }}</td>
-
                         <td class="div-center">
                             <div class="d-inline-flex">
                                 <div class="dropdown">
@@ -54,11 +56,11 @@
                                         <i class="ph-list"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="{{ route('videos.edit', $video->id) }}" class="dropdown-item">
+                                        <a href="{{ route('rows.edit', $row->id) }}" class="dropdown-item">
                                             <i class="ph-note-pencil me-2"></i>
                                             تعديل
                                         </a>
-                                        <a href="#" onclick="performDestroy({{ $video->id }},this)"
+                                        <a href="#" onclick="performDestroy({{ $row->id }},this)"
                                             class="dropdown-item">
                                             <i class="ph-file-doc me-2"></i>
                                             حذف
@@ -83,7 +85,7 @@
 @section('scripts')
     <script>
         function performDestroy(id, referance) {
-            let url = '/cms/admin/videos/' + id;
+            let url = '/cms/admin/rows/' + id;
             confirmDestroy(url, referance);
         }
         const DatatableBasic = function() {

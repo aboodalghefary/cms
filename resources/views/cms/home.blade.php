@@ -355,7 +355,23 @@
 
                     </div>
 
-
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6">
+                            @php
+                                $privacyDiv = $divs->where('name', 'privacy')->first();
+                            @endphp
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold"> حقوق الطبع والنشر </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $privacyDiv->name }}' , '{{ $privacyDiv->id }}' ,'{{ $privacyDiv->href }}','{{ $privacyDiv->content }}' )">تعديل</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>

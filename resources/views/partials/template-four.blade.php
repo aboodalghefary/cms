@@ -4,7 +4,9 @@
         <div class="text-right  mb-3">
             <span class=" mark-title">
             </span>
-            <span class="title-sec text-black">{{ $categories[0]->name }}</span>
+            <a class="cat-id"  href="{{ route('category', ['id' => $category->id]) }}">
+               <span class="title-sec text-black">{{ $categories[0]->name }}</span>
+            </a>
         </div>
 
         <div class="hover ">
@@ -98,7 +100,9 @@
         <div class="text-right  mb-3   ">
             <span class=" mark-title">
             </span>
-            <span class="title-sec text-black"> تكنولوجيا </span>
+            <a class="cat-id"  href="{{ route('category', ['id' => $category->id]) }}">
+               <span class="title-sec text-black"> {{ $categories[0]->name }} </span>
+            </a>
         </div>
         <a href="{{ route('post_details', ['id' => $categories[0]->blogs[1]->id]) }}">
             <div class=" d-flex align-items-center py-3 ">

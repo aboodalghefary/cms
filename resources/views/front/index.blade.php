@@ -115,7 +115,7 @@
                     <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}">
                 </a>
 
-                <a class="">
+                <a class=" ">
                     <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}" alt="">
                 </a>
 
@@ -152,7 +152,7 @@
                                         @php
                                             $category = $blog->category;
                                         @endphp
-                                        <a href="{{ route('category', ['id' => $category->id]) }}">
+                                        <a class="cat-id" href="{{ route('category', ['id' => $category->id]) }}">
                                             <span>{{ $category->name }}</span>
                                         </a>
                                     </div>
@@ -190,7 +190,7 @@
                                         @php
                                             $category = $blog->category;
                                         @endphp
-                                        <a href="{{ route('category', ['id' => $category->id]) }}">
+                                        <a class="cat-id" href="{{ route('category', ['id' => $category->id]) }}">
                                             <span>{{ $category->name }}</span>
                                         </a>
                                     </div>
@@ -491,9 +491,10 @@
 
     <footer dir="rtl">
         <div class=" footer text-white  ">
-            <div class=" mx-auto  ">الحقوق محفوظة لشبكة
-                بيسان
-                الإخبارية (2018)</div>
+            @php
+                $privacyDiv = $divs->where('name', 'privacy')->first();
+            @endphp
+            <div class=" mx-auto  "> {{ $privacyDiv->content }} </div>
             <div class=" d-flex  justify-content-center  ">
                 <ul class="d-flex links justify-content-center  ">
                     <li class="mt-4 bg-white text-danger mb-sm-3 "><a class="twitter" href="#"><i
