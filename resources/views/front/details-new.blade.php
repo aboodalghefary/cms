@@ -29,14 +29,11 @@
         <div class="bread container d-flex">
             <li class="breadcrumb-item active"> الرئيسية </li>
             <li class="breadcrumb-item ">
-                <a href="index.html"> الاخبار</a>
-            </li>
-            <li class="breadcrumb-item ">
-                <a href="index.html"> محليات</a>
+                <a href="{{ route('category', $blog->category_id) }}">{{ $blog->category->name }}</a>
             </li>
             </li>
             <li class="breadcrumb-item ">
-                <a href="index.html"> الخبر مفصلا</a>
+                <a href="#"> الخبر مفصلا</a>
             </li>
         </div>
     </ol>
@@ -66,14 +63,14 @@
                     </div>
                     <div class="hash-tag container py-5 ">
                         @foreach ($blog->tags as $tag)
-                        <a href="#">
-                           <span class="d-inline-block mb-3">#{{ $tag->name }}</span>
-                        </a>
+                            <a href="#">
+                                <span class="d-inline-block mb-3">#{{ $tag->name }}</span>
+                            </a>
                         @endforeach
 
                     </div>
                     <div class="social-links ">
-                        <ul class="pr-0 mb-2   text-white links ">
+                        <ul class="pr-0 mb-2 text-white links ">
                             <li class="twitter d-inline-block mb-sm-3 "><a class="twitter" href=""><i
                                         class="fab fa-twitter"></i></a></li>
                             <li class="facebook d-inline-block mb-sm-3 "><a class="facebook" href=""><i
@@ -127,18 +124,7 @@
                     </div>
                 </div>
                 <div class="my-5 pt-5 pl-5 d-flex align-items-center justify-content-between  border-bottom pb-3">
-                    {{-- <p class="comments">التعليقات : <span class="comments-number">0</span></p>
-                    <div class="filter-comments ">
-                        <form action="/action_page.php">
-                            <label class="comments" for="cars">فرز حسب:</label>
-                            <select name="cars" id="cars">
-                                <option value="volvo">الاقدم </option>
-                                <option value="saab">الاقدم </option>
-                                <option value="opel">الاقدم </option>
-                                <option value="audi">الاقدم </option>
-                            </select>
-                        </form>
-                    </div> --}}
+
                     @if ($blog->comments_enabled == 1)
                         <div class="fb-comments" data-href="{{ route('post_details', $blog->id) }}" data-width="100%"
                             data-numposts="5"></div>
@@ -147,29 +133,7 @@
                             التعليقات معطلة على هذا الخبر
                         </div>
                     @endif
-
-
-
                 </div>
-                {{-- <div class="container-2-col-commits pb-4 ">
-                    <div class=" ">
-                        <img style="width: 70px; height: 80px; background: #000;" src=".#" alt="">
-                    </div>
-                    <div class=" ">
-                        <textarea style="width: 100%; height: 100px;">
-                        </textarea>
-                    </div>
-                </div>
-
-                <div class="border-top pt-2 mb-5 ">
-                    <a class="d-inline-block " href="#">
-                        <i class="fab fa-facebook-f bg-info text-white px-2 py-1 ml-2"></i>
-                        <span>المكون الاضافي على فيسبوك</span>
-                    </a>
-                </div> --}}
-
-
-
             </div>
             <div class="col-lg-4 related-side pt-sm-5 p-lg-0  ">
                 <div class="side-one ">
@@ -247,7 +211,7 @@
                         <span class="title-sec"> الاخبار الرئيسية</span>
                     </div>
                     <div class="d-grid flex-column">
-                       <div class="card h-100 py-2">
+                        <div class="card h-100 py-2">
                             <a href="#"><img class="card-img-top box"
                                     src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
                             <a href="#" class="card-body">
@@ -263,7 +227,7 @@
                                     .</h6>
                             </a>
                         </div>
-                         <div class="card h-100 py-2">
+                        <div class="card h-100 py-2">
                             <a href="#"><img class="card-img-top box"
                                     src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
                             <a href="#" class="card-body">
@@ -307,16 +271,16 @@
         </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
-    <script src="{{ asset('front/assets/js/videolist.js') }}"></script>
-    <script src="{{ asset('front/assets/js/scroll.js') }}"></script>
-
-    <!-- vendor files -->
     <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- vendor files -->
     <!-- تعويض {your-app-id} بمعرّف التطبيق الخاص بك -->
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=1223591008520673&autoLogAppEvents=1"
         nonce="a4LkJkFD"></script>
+    <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
+
 </body>
 
 </html>

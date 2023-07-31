@@ -57,7 +57,7 @@
                         <a class="nav-link" href="#">مقالات</a>
                     </li> --}}
                     <li class=" nav-item nav-item-main ">
-                        <a class="nav-link" href="../pages/video-library.html">فيديو </a>
+                        <a class="nav-link" href="{{ route('video_library') }}">فيديو </a>
                     </li>
                     <li class="nav-item nav-item-main ">
                         <a class="nav-link" href="{{ route('contact') }}">اتصل بنا</a>
