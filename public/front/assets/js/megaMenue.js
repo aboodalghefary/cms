@@ -27,20 +27,12 @@ function displayNewsItems(posts) {
    });
 }
 
-
-function clearNewsItems() {
-   const fourCategoryNews = $('.four-category-news');
-   fourCategoryNews.empty();
-}
-
-
 $(document).ready(function () {
    $('.mega-menue .category-right ul li').on('mouseenter', function (event) {
        const category = $(this).data('category');
        const listItems = $('.mega-menue .category-right ul li');
        listItems.removeClass('active');
        $(this).addClass('active');
-       clearNewsItems(); // Clear old news items before fetching new ones
        $.ajax({
            url: `/get_last_news_ajax/${category}`,
            type: 'GET',
