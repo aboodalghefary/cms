@@ -94,12 +94,12 @@
     </footer>
     <!-- Bootstrap core JavaScript -->
     <!-- Bootstrap core JavaScript -->
-    <script src="{{ asset('front/assets/js/videolist.js') }}"></script>
     <script src="{{ asset('front/assets/js/scroll.js') }}"></script>
 
     <!-- vendor files -->
     <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
 
 </body>
 

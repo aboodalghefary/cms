@@ -169,6 +169,7 @@
     <!-- vendor files -->
     <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
 
 
 </body>

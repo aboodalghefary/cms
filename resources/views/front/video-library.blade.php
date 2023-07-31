@@ -28,7 +28,7 @@
         <div class="bread container d-flex">
             <li class="breadcrumb-item "> الرئيسية </li>
             <li class="breadcrumb-item active ">
-                <a href="index.html"> مكاتب الفيديو </a>
+                <a href="{{ route('video_library') }}"> مكاتب الفيديو </a>
             </li>
         </div>
     </ol>
@@ -97,13 +97,12 @@
     </footer>
 
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="../assets/js/videolist.js"></script>
-    <script src="../assets/js/scroll.js"></script>
+
 
     <!-- vendor files -->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
 
 </body>
 

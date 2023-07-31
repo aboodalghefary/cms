@@ -109,7 +109,6 @@
         </div>
     </footer>
 
-
     <!-- vendor files -->
     <script src="{{ asset('cms/assets/js/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('cms/assets/js/vendor/notifications/sweet_alert.min.js') }}"></script>
@@ -128,6 +127,8 @@
             store('/contact_store', formData);
         }
     </script>
+    <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
+
 </body>
 
 </html>

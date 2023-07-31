@@ -18,7 +18,7 @@ parent_category.forEach((parent) => {
                var formattedDate = new Date(post.updated_at).toLocaleDateString(
                   "en-US"
                );
-               var imageSrc = "storage/images/blog/" + post.image;
+               var imageSrc = "/storage/images/blog/" + post.image;
                var newItem = `
                        <div class="card">
                            <div class="lay">
@@ -64,7 +64,7 @@ subCategoryLinks.forEach((link) => {
                var formattedDate = new Date(post.updated_at).toLocaleDateString(
                   "en-US"
                );
-               var imageSrc = "storage/images/blog/" + post.image;
+               var imageSrc = "/storage/images/blog/" + post.image;
                var newItem = `
                        <div class="card">
                            <div class="lay">

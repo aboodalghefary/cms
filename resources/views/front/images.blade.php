@@ -121,6 +121,7 @@
         });
     </script>
 
+<script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
 
 
 
