@@ -111,13 +111,12 @@
             <!-- مساحة اعلانية -->
             <div class="advertise-space adv-2-columns py-5 ">
 
-                <a class=" ">
-                  <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}">
+                <a class="">
+                    <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}">
                 </a>
 
-                <a class=" ">
-                   <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}"
-                        alt="">
+                <a class="">
+                    <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}" alt="">
                 </a>
 
             </div>
@@ -150,7 +149,12 @@
                                     </div>
                                     <a href="{{ route('category', $blog->category_id) }}" class="overlay"></a>
                                     <div class="label top-right">
-                                        <span>{{ $blog->category->name }}</span>
+                                        @php
+                                            $category = $blog->category;
+                                        @endphp
+                                        <a href="{{ route('category', ['id' => $category->id]) }}">
+                                            <span>{{ $category->name }}</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +187,12 @@
                                     </div>
                                     <a href="" class="overlay"></a>
                                     <div class="label top-right">
-                                        <span>{{ $blog->category->name }}</span>
+                                        @php
+                                            $category = $blog->category;
+                                        @endphp
+                                        <a href="{{ route('category', ['id' => $category->id]) }}">
+                                            <span>{{ $category->name }}</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -194,10 +203,10 @@
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
 
-                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad3Div->image) }}"
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad3Div->image) }}"
                             alt=""> </a>
 
-                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad4Div->image) }}"
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad4Div->image) }}"
                             alt=""> </a>
 
                 </div>
@@ -264,10 +273,10 @@
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
 
-                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad5Div->image) }}"
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad5Div->image) }}"
                             alt=""> </a>
 
-                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad6Div->image) }}"
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad6Div->image) }}"
                             alt=""> </a>
 
                 </div>
@@ -290,10 +299,10 @@
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
 
-                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad7Div->image) }}"
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad7Div->image) }}"
                             alt=""> </a>
 
-                    <a class=" "> <img src="{{ asset('storage/images/div/' . $ad8Div->image) }}"
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad8Div->image) }}"
                             alt=""> </a>
 
                 </div>
