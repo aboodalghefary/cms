@@ -112,12 +112,11 @@
             <div class="advertise-space adv-2-columns py-5 ">
 
                 <a class=" ">
-                  <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}">
+                    <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}">
                 </a>
 
                 <a class=" ">
-                   <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}"
-                        alt="">
+                    <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}" alt="">
                 </a>
 
             </div>
@@ -482,9 +481,10 @@
 
     <footer dir="rtl">
         <div class=" footer text-white  ">
-            <div class=" mx-auto  ">الحقوق محفوظة لشبكة
-                بيسان
-                الإخبارية (2018)</div>
+            @php
+                $privacyDiv = $divs->where('name', 'privacy')->first();
+            @endphp
+            <div class=" mx-auto  "> {{ $privacyDiv->content }} </div>
             <div class=" d-flex  justify-content-center  ">
                 <ul class="d-flex links justify-content-center  ">
                     <li class="mt-4 bg-white text-danger mb-sm-3 "><a class="twitter" href="#"><i
