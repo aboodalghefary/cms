@@ -355,7 +355,6 @@ h6:hover {
    display: none;
  }
  .mega{
-
    background: #1f2024ea;
    display: flex;
    justify-content: space-between;
@@ -364,7 +363,6 @@ h6:hover {
    right: 0;
    left: 0;
    top: 105px;
-   padding: 0 0;
    border-top: 3px solid var(--main-color);
    border-radius: 5px;
  }
@@ -376,7 +374,7 @@ h6:hover {
    }
 }
 .mega-menue .category-right{
-   width: 20%;
+   width: 23%;
    height: 350px;
    padding: 25px 0;
    background: #11151d;
@@ -384,11 +382,6 @@ h6:hover {
 .mega-menue .category-right ul{
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
-}
-
-.mega-menue .category-right ul li a{
- font-size: 13px !important;
 }
 
 .mega-menue .category-right ul li.active{
@@ -403,8 +396,9 @@ h6:hover {
  }
 .mega-menue .category-right ul li a{
    display: block;
+   font-size: 13px !important;
    color: white;
-   padding: 10px 10px;
+   padding: 7px 15px;
 }
 
 
@@ -422,32 +416,29 @@ h6:hover {
    background: none !important;
    border: none !important;
    background-color: #000;
-   border-radius: 35px !important;
 }
-.mega-menue .four-category-news .card .lay {
-   border-radius: 35px !important;
-}
+
 .mega-menue .four-category-news .card .lay img{
    width:210px;
    border-radius: 35px !important;
 }
+
 @media (max-width:1500px) {
    .mega-menue .four-category-news .card .lay img{
       width:180px !important;
    }
-
-
+   .mega-menue .four-category-news .card .card-body h6{
+      font-size: 15px !important;
+   }
+   .mega-menue .four-category-news .date{
+      font-size: 13px !important;
+   }
 }
 @media (min-width:1500px) {
    .mega-menue .four-category-news .card .lay img{
-      width:225px !important;
+      width:195px !important;
    }
-
-
 }
-
-
-
 .mega-menue .four-category-news .card .date{
    background-color: none !important;
 

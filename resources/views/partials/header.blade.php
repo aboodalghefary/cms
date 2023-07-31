@@ -27,7 +27,7 @@
                             @if (count($category->subCategories) != 0)
                                 <div class="mega-menue" data-category="{{ $category->id }}">
                                     <div class="mega container">
-                                        <div class="category-right  px-1 ">
+                                        <div class="category-right">
                                             <ul class="text-right">
                                                 <li class="active all sub-catttt" data-category="{{ $category->id }}">
                                                     <a href="#">الكل</a>

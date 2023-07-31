@@ -19,20 +19,22 @@ parent_category.forEach((parent) => {
                   "en-US"
                );
                var imageSrc = "storage/images/blog/" + post.image;
+               var newsLink = `/post_details/${post.id}`;
+
                var newItem = `
                        <div class="card">
                            <div class="lay">
                                <img style="height: 145px" class="card-img-top" src="${imageSrc}" alt="">
-                               <a href="#" style="display: flex; align-items: center;    border-radius: 35px !important;
+                               <a href="${newsLink}" style="display: flex; align-items: center;    border-radius: 35px !important;
                                justify-content: center;" class="overlayy overlayFade">
                                    <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
                                </a>
                            </div>
-                           <a href="#" class="card-body">
-                               <h6 class="text-right text-white mr-2">${post.name}</h6>
+                           <a href="${newsLink}" class="card-body">
+                               <h6 class="text-right text-white ">${post.name}</h6>
                            </a>
                            <div class="text-white-50 text-right">
-                               <span class="date mr-2">${formattedDate}</span>
+                               <span class="date ">${formattedDate}</span>
                            </div>
                        </div>
                    `;
@@ -65,20 +67,22 @@ subCategoryLinks.forEach((link) => {
                   "en-US"
                );
                var imageSrc = "storage/images/blog/" + post.image;
+               var newsLink = `/post_details/${post.id}`;
+
                var newItem = `
                        <div class="card">
                            <div class="lay">
                                <img style="height: 145px" class="card-img-top" src="${imageSrc}" alt="">
-                               <a href="#" style="display: flex; align-items: center;    border-radius: 35px !important;
+                               <a href="${newsLink}" style="display: flex; align-items: center;    border-radius: 35px !important;
                                justify-content: center;" class="overlayy overlayFade">
                                    <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
                                </a>
                            </div>
-                           <a href="#" class="card-body">
-                               <h6 class="text-right text-white mr-2">${post.name}</h6>
+                           <a href="${newsLink}" class="card-body">
+                               <h6 class="text-right text-white ">${post.name}</h6>
                            </a>
                            <div class="text-white-50 text-right">
-                               <span class="date mr-2">${formattedDate}</span>
+                               <span class="date ">${formattedDate}</span>
                            </div>
                        </div>
                    `;
@@ -90,4 +94,11 @@ subCategoryLinks.forEach((link) => {
          },
       });
    });
+});
+
+
+$('.mega-menue .category-right ul li').on('mouseenter', function (event) {
+   const listItems = $('.mega-menue .category-right ul li');
+   listItems.removeClass('active');
+   $(this).addClass('active');
 });
