@@ -117,6 +117,7 @@
                         </span>
                         <span class="title-sec"> متعلقات</span>
                     </div>
+<<<<<<< HEAD
 
 
                     <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
@@ -142,6 +143,14 @@
                      </div>
                  </div>
 
+=======
+                    <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
+                        <div class="loader-container"
+                            style="display: flex;justify-content: center;align-items: center;padding: 12px; ">
+                            <span class="loader"></span>
+                        </div>
+                    </div>
+>>>>>>> 952805756e57c5bf370cf6c263b7e3538f4d6841
 
                 </div>
                 <div class="side-two py-5 ">
