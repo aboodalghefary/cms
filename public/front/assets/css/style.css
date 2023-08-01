@@ -60,7 +60,21 @@ body {
    100% {
      transform: rotate(360deg);
    }
- } 
+ }
+ .news-more-container {
+   position: relative;
+   /* Add any other styling you need for the container */
+}
+
+.spin {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   /* Add any other styling you need for the spinner */
+}
+
+
 
 textarea {
    width: 100%;
@@ -395,6 +409,8 @@ h6:hover {
    top: 105px;
    border-top: 3px solid var(--main-color);
    border-radius: 5px;
+   overflow: hidden;
+
  }
 
 

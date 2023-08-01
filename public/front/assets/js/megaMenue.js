@@ -14,32 +14,34 @@ parent_category.forEach((parent) => {
          success: function (data) {
             var posts = data.posts;
             container.innerHTML = "";
-            posts.forEach((post) => {
-               var formattedDate = new Date(post.updated_at).toLocaleDateString(
-                  "en-US"
-               );
+            posts.map((post, index) => {
+               var formattedDate = new Date(post.updated_at).toLocaleDateString("en-US");
                var newsLink = `/post_details/${post.id}`;
-
                var imageSrc = "/storage/images/blog/" + post.image;
+
+               var animationDelay = (index + 1) * 200; // تأخير كل عنصر بـ 500 ميلي ثانية
+
                var newItem = `
-                       <div class="card">
-                           <div class="lay">
-                               <img style="height: 145px" class="card-img-top" src="${imageSrc}" alt="">
-                               <a href="${newsLink}" style="display: flex; align-items: center;    border-radius: 35px !important;
-                               justify-content: center;" class="overlayy overlayFade">
-                                   <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
-                               </a>
-                           </div>
-                           <a href="${newsLink}" class="card-body">
-                               <h6 class="text-right text-white ">${post.name}</h6>
+                   <div class="card animate__animated animate__fadeInUp" style="animation-delay: ${animationDelay}ms;">
+                       <div class="lay">
+                           <img style="height: 145px" class="card-img-top" src="${imageSrc}" alt="">
+                           <a href="${newsLink}" style="display: flex; align-items: center; border-radius: 35px !important; justify-content: center;" class="overlayy overlayFade">
+                               <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
                            </a>
-                           <div class="text-white-50 text-right">
-                               <span class="date ">${formattedDate}</span>
-                           </div>
                        </div>
-                   `;
+                       <a href="${newsLink}" class="card-body">
+                           <h6 class="text-right text-white ">${post.name}</h6>
+                       </a>
+                       <div class="text-white-50 text-right">
+                           <span class="date ">${formattedDate}</span>
+                       </div>
+                   </div>
+               `;
                container.innerHTML += newItem;
-            });
+           });
+
+
+
          },
          error: function (error) {
             console.error("Error fetching data:", error);
@@ -62,32 +64,32 @@ subCategoryLinks.forEach((link) => {
          success: function (data) {
             container.innerHTML = "";
             var posts = data.posts;
-            posts.forEach((post) => {
-               var formattedDate = new Date(post.updated_at).toLocaleDateString(
-                  "en-US"
-               );
+            posts.map((post, index) => {
+               var formattedDate = new Date(post.updated_at).toLocaleDateString("en-US");
                var newsLink = `/post_details/${post.id}`;
-
                var imageSrc = "/storage/images/blog/" + post.image;
+
+               var animationDelay = (index + 1) * 500; // تأخير كل عنصر بـ 500 ميلي ثانية
+
                var newItem = `
-                       <div class="card">
-                           <div class="lay">
-                               <img style="height: 145px" class="card-img-top" src="${imageSrc}" alt="">
-                               <a href="${newsLink}" style="display: flex; align-items: center;    border-radius: 35px !important;
-                               justify-content: center;" class="overlayy overlayFade">
-                                   <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
-                               </a>
-                           </div>
-                           <a href="${newsLink}" class="card-body">
-                               <h6 class="text-right text-white ">${post.name}</h6>
+                   <div class="card animate__animated animate__fadeInUp" style="animation-delay: ${animationDelay}ms;">
+                       <div class="lay">
+                           <img style="height: 145px" class="card-img-top" src="${imageSrc}" alt="">
+                           <a href="${newsLink}" style="display: flex; align-items: center; border-radius: 35px !important; justify-content: center;" class="overlayy overlayFade">
+                               <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
                            </a>
-                           <div class="text-white-50 text-right">
-                               <span class="date ">${formattedDate}</span>
-                           </div>
                        </div>
-                   `;
+                       <a href="${newsLink}" class="card-body">
+                           <h6 class="text-right text-white ">${post.name}</h6>
+                       </a>
+                       <div class="text-white-50 text-right">
+                           <span class="date ">${formattedDate}</span>
+                       </div>
+                   </div>
+               `;
                container.innerHTML += newItem;
-            });
+           });
+
          },
          error: function (error) {
             console.error("Error fetching data:", error);
