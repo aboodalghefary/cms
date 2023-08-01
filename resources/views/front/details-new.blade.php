@@ -14,6 +14,8 @@
     <!-- icons -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
 
+    <!-- animate-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- fonts -->
     <!-- <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=neckar-bold" /> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&display=swap">
@@ -117,13 +119,30 @@
                         </span>
                         <span class="title-sec"> متعلقات</span>
                     </div>
-                    <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
-                        <div class="loader-container"
-                            style="display: flex;justify-content: center;align-items: center;padding: 12px; ">
-                            <span class="loader"></span>
-                        </div>
-                    </div>
 
+
+                    <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
+                     <div class="news-more d-flex align-items-center px-4 py-4 border">
+                         <i class="fa-regular fa-arrow-left"></i>
+                         <span class="mr-3"></span>
+                     </div>
+                     <div class="news-more d-flex align-items-center px-4 py-4 border">
+                         <i class="fa-regular fa-arrow-left"></i>
+                         <span class="mr-3"></span>
+                     </div>
+                     <div class="news-more d-flex align-items-center px-4 py-4 border">
+                         <i class="fa-regular fa-arrow-left"></i>
+                         <span class="mr-3"></span>
+                     </div>
+                     <div class="news-more d-flex align-items-center px-4 py-4 border">
+                         <i class="fa-regular fa-arrow-left"></i>
+                         <span class="mr-3"></span>
+                     </div>
+
+                     <div style="width: 100%; height: 100%;" class="spin d-flex justify-content-center align-items-center bg-white">
+                         <span class="loader"></span>
+                     </div>
+                 </div>
                 </div>
                 <div class="side-two py-5 ">
                     <div class="news-more  px-4 py-3 border ">

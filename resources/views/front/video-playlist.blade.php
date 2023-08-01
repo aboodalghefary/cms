@@ -20,6 +20,8 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&family=Marhey&display=swap">
 
+    <!-- animate-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- video plyer -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
