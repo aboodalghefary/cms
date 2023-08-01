@@ -98,6 +98,11 @@ function openEditModal(element, divName, divID, divHref, divContent) {
       contentInput.querySelector("#content").innerText = divContent;
       submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
    }
+   if (divName == "تقارير خاصة") {
+      contentInput.classList.remove("d-none");
+      contentInput.querySelector("#content").innerText = divContent;
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
 }
 function performUpdate(id) {
    let formData = new FormData();
