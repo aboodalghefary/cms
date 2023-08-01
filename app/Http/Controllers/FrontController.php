@@ -113,8 +113,8 @@ class FrontController extends Controller
    {
       $blog = Blog::findOrFail($id);
       $categories = Category::whereNull('parent_id')->get();
-
-      return view('front.details-new', compact('blog', 'categories'));
+      $divs = Div::all();
+      return view('front.details-new', compact('blog', 'categories', 'divs'));
    }
    public function library_details($id)
    {
@@ -127,6 +127,28 @@ class FrontController extends Controller
    public function get_last_news_ajax($id)
    {
       $category = Category::findOrFail($id);
+
+      $blogs = $category->blogs;
+
+      $subCategories = $category->subCategories;
+      $subCategoryBlogs = [];
+
+      foreach ($subCategories as $subCategory) {
+         $subCategoryBlogs = array_merge($subCategoryBlogs, $subCategory->blogs->toArray());
+      }
+
+      $allBlogs = array_unique(array_merge($blogs->toArray(), $subCategoryBlogs), SORT_REGULAR);
+
+      usort($allBlogs, function ($a, $b) {
+         return strtotime($b['created_at']) - strtotime($a['created_at']);
+      });
+      $firstFourBlogs = array_slice($allBlogs, 0, 4);
+      $posts = $firstFourBlogs;
+      return response()->json(['posts' => $posts]);
+   }
+   public function get_last_news_ajax_by_name($name)
+   {
+      $category = Category::where('name', $name)->first();
 
       $blogs = $category->blogs;
 
