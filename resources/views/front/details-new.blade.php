@@ -93,7 +93,7 @@
                 <div class="news-more pt-4 container">
                     <span class=" mark-title">
                     </span>
-                    <span class="title-sec">اقرا ايضا عن (نوع معين من اصناف الاخبار)</span>
+                    <span class="title-sec">اقرا ايضا عن {{ $readTooDiv->content }}</span>
                 </div>
 
                 <div class="row container card-width readTooContainer  "
@@ -122,27 +122,28 @@
 
 
                     <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
-                     <div class="news-more d-flex align-items-center px-4 py-4 border">
-                         <i class="fa-regular fa-arrow-left"></i>
-                         <span class="mr-3"></span>
-                     </div>
-                     <div class="news-more d-flex align-items-center px-4 py-4 border">
-                         <i class="fa-regular fa-arrow-left"></i>
-                         <span class="mr-3"></span>
-                     </div>
-                     <div class="news-more d-flex align-items-center px-4 py-4 border">
-                         <i class="fa-regular fa-arrow-left"></i>
-                         <span class="mr-3"></span>
-                     </div>
-                     <div class="news-more d-flex align-items-center px-4 py-4 border">
-                         <i class="fa-regular fa-arrow-left"></i>
-                         <span class="mr-3"></span>
-                     </div>
+                        <div class="news-more d-flex align-items-center px-4 py-4 border">
+                            <i class="fa-regular fa-arrow-left"></i>
+                            <span class="mr-3"></span>
+                        </div>
+                        <div class="news-more d-flex align-items-center px-4 py-4 border">
+                            <i class="fa-regular fa-arrow-left"></i>
+                            <span class="mr-3"></span>
+                        </div>
+                        <div class="news-more d-flex align-items-center px-4 py-4 border">
+                            <i class="fa-regular fa-arrow-left"></i>
+                            <span class="mr-3"></span>
+                        </div>
+                        <div class="news-more d-flex align-items-center px-4 py-4 border">
+                            <i class="fa-regular fa-arrow-left"></i>
+                            <span class="mr-3"></span>
+                        </div>
 
-                     <div style="width: 100%; height: 100%;" class="spin d-flex justify-content-center align-items-center bg-white">
-                         <span class="loader"></span>
-                     </div>
-                 </div>
+                        <div style="width: 100%; height: 100%;"
+                            class="spin d-flex justify-content-center align-items-center bg-white">
+                            <span class="loader"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="side-two py-5 ">
                     <div class="news-more  px-4 py-3 border ">

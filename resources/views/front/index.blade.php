@@ -118,11 +118,11 @@
             <!-- مساحة اعلانية -->
             <div class="advertise-space adv-2-columns py-5 ">
 
-                <a class="">
+                <a href="{{ $ad1Div->href }}">
                     <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}">
                 </a>
 
-                <a class=" ">
+                <a href="{{ $ad2Div->href }}">
                     <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}" alt="" Loading="lazy">
                 </a>
 
@@ -215,11 +215,13 @@
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad3Div->image) }}" alt=""
-                            Loading="lazy"> </a>
+                    <a class="" href="{{ $ad3Div->href }}"> <img
+                            src="{{ asset('storage/images/div/' . $ad3Div->image) }}" alt="" Loading="lazy">
+                    </a>
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad4Div->image) }}" alt=""
-                            Loading="lazy"> </a>
+                    <a class="" href="{{ $ad4Div->href }}"> <img
+                            src="{{ asset('storage/images/div/' . $ad4Div->image) }}" alt="" Loading="lazy">
+                    </a>
 
                 </div>
 
@@ -285,11 +287,13 @@
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad5Div->image) }}" alt=""
-                            Loading="lazy"> </a>
+                    <a class="" href="{{ $ad5Div->href }}"> <img
+                            src="{{ asset('storage/images/div/' . $ad5Div->image) }}" alt="" Loading="lazy">
+                    </a>
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad6Div->image) }}" alt=""
-                            Loading="lazy"> </a>
+                    <a class="" href="{{ $ad6Div->href }}"> <img
+                            src="{{ asset('storage/images/div/' . $ad6Div->image) }}" alt="" Loading="lazy">
+                    </a>
 
                 </div>
 
@@ -311,11 +315,13 @@
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad7Div->image) }}" alt=""
-                            Loading="lazy"> </a>
+                    <a class="" href="{{ $ad7Div->href }}"> <img
+                            src="{{ asset('storage/images/div/' . $ad7Div->image) }}" alt="" Loading="lazy">
+                    </a>
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad8Div->image) }}" alt=""
-                            Loading="lazy"> </a>
+                    <a class="" href="{{ $ad8Div->href }}"> <img
+                            src="{{ asset('storage/images/div/' . $ad8Div->image) }}" alt="" Loading="lazy">
+                    </a>
 
                 </div>
             </div>
