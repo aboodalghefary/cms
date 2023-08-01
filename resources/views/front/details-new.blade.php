@@ -202,31 +202,11 @@
                         </span>
                         <span class="title-sec"> الاخبار الرئيسية</span>
                     </div>
-                    <div class="d-grid flex-column">
-                        <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top box"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <a href="#" class="card-body">
-                                <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                    .</h6>
-                            </a>
-                        </div>
-                        <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top box"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <a href="#" class="card-body">
-                                <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                    .</h6>
-                            </a>
-                        </div>
-                        <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top box"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <a href="#" class="card-body">
-                                <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                    .</h6>
-                            </a>
-                        </div>
+                    <div class="d-grid flex-column main-news-container"
+                        data-category-name="{{ $mainNewsDiv->content }}">
+
+
+
                     </div>
 
                 </div>
