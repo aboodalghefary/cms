@@ -76,7 +76,7 @@ class FrontController extends Controller
    {
       $categories = Category::whereNull('parent_id')->get();
 
-      return view('front.contact', 'categories');
+      return view('front.contact', compact('categories'));
    }
    public function contact_store(Request $request)
    {

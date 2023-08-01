@@ -83,45 +83,20 @@
                     </div>
 
                 </div>
+                @php
+                    $motaleqtDiv = $divs->where('name', 'متعلقات')->first();
+                    $mainNewsDiv = $divs->where('name', 'الاخبار الرئيسية')->first();
+                    $readTooDiv = $divs->where('name', 'اقرا ايضا')->first();
+                @endphp
                 <div class="news-more pt-4 container">
                     <span class=" mark-title">
                     </span>
                     <span class="title-sec">اقرا ايضا عن (نوع معين من اصناف الاخبار)</span>
                 </div>
-                <div class="row container card-width  ">
-                    <div class="col-lg-4  col-md-6 g-md-3 col-sm-12 mt-3  ">
-                        <div class="card  h-100 box">
-                            <a href="#"><img class="card-img-top"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <a href="#" class="card-body">
 
-                                <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                    .</h6>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4  col-md-6 g-md-3 col-sm-12 mt-3  ">
-                        <div class="card  h-100 box">
-                            <a href="#"><img class="card-img-top"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <a href="#" class="card-body">
+                <div class="row container card-width readTooContainer  "
+                    data-category-name="{{ $readTooDiv->content }}">
 
-                                <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                    .</h6>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4  col-md-6 g-md-3 col-sm-12 mt-3  ">
-                        <div class="card  h-100 box">
-                            <a href="#"><img class="card-img-top"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <a href="#" class="card-body">
-
-                                <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                    .</h6>
-                            </a>
-                        </div>
-                    </div>
                 </div>
                 <div class="my-5 pt-5 pl-5 d-flex align-items-center justify-content-between  border-bottom pb-3">
 
@@ -140,14 +115,10 @@
                     <div class="news-more  px-4 py-3 border ">
                         <span class=" mark-title">
                         </span>
-                        @php
-                            $motaleqtDiv = $divs->where('name', 'متعلقات')->first();
-                            $mainNewsDiv = $divs->where('name', 'الاخبار الرئيسية')->first();
-                            $readTooDiv = $divs->where('name', 'اقرا ايضا')->first();
-                        @endphp
                         <span class="title-sec"> متعلقات</span>
                     </div>
 
+<<<<<<< HEAD
 
                     <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
                      <div class="news-more d-flex align-items-center px-4 py-4 border">
@@ -172,6 +143,14 @@
                      </div>
                  </div>
 
+=======
+                    <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
+                        <div class="loader-container"
+                            style="display: flex;justify-content: center;align-items: center;padding: 12px; ">
+                            <span class="loader"></span>
+                        </div>
+                    </div>
+>>>>>>> 199dfa60d9a4d39fa6f43b8a08713c550617cbf0
 
                 </div>
                 <div class="side-two py-5 ">
@@ -220,31 +199,11 @@
                         </span>
                         <span class="title-sec"> الاخبار الرئيسية</span>
                     </div>
-                    <div class="d-grid flex-column">
-                        <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top box"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <a href="#" class="card-body">
-                                <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                    .</h6>
-                            </a>
-                        </div>
-                        <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top box"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <a href="#" class="card-body">
-                                <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                    .</h6>
-                            </a>
-                        </div>
-                        <div class="card h-100 py-2">
-                            <a href="#"><img class="card-img-top box"
-                                    src="{{ asset('front/assets/images/mainnew.png') }}" alt=""></a>
-                            <a href="#" class="card-body">
-                                <h6 class="card-text ">الاحتلال يكشف عن مهام واسم أبرز وحداته في أحداث غزة
-                                    .</h6>
-                            </a>
-                        </div>
+                    <div class="d-grid flex-column main-news-container"
+                        data-category-name="{{ $mainNewsDiv->content }}">
+
+
+
                     </div>
 
                 </div>
