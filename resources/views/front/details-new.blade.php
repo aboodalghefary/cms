@@ -117,40 +117,12 @@
                         </span>
                         <span class="title-sec"> متعلقات</span>
                     </div>
-
-<<<<<<< HEAD
-
-                    <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
-                     <div class="news-more d-flex align-items-center px-4 py-4 border">
-                         <i class="fa-regular fa-arrow-left"></i>
-                         <span class="mr-3"></span>
-                     </div>
-                     <div class="news-more d-flex align-items-center px-4 py-4 border">
-                         <i class="fa-regular fa-arrow-left"></i>
-                         <span class="mr-3"></span>
-                     </div>
-                     <div class="news-more d-flex align-items-center px-4 py-4 border">
-                         <i class="fa-regular fa-arrow-left"></i>
-                         <span class="mr-3"></span>
-                     </div>
-                     <div class="news-more d-flex align-items-center px-4 py-4 border">
-                         <i class="fa-regular fa-arrow-left"></i>
-                         <span class="mr-3"></span>
-                     </div>
-
-                     <div style="width: 100%; height: 100%;" class="spin d-flex justify-content-center align-items-center bg-white">
-                         <span class="loader"></span>
-                     </div>
-                 </div>
-
-=======
                     <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
                         <div class="loader-container"
                             style="display: flex;justify-content: center;align-items: center;padding: 12px; ">
                             <span class="loader"></span>
                         </div>
                     </div>
->>>>>>> 199dfa60d9a4d39fa6f43b8a08713c550617cbf0
 
                 </div>
                 <div class="side-two py-5 ">
