@@ -71,13 +71,13 @@
 
                </ul>
                <ul class="navbar-nav  text-white nav-links links d-flex flex-row justify-content-end mr-auto pt-3">
-                   <li><a class="twitter" href="#"><i class=" fab fa-twitter"></i></a>
+                   <li class="twitter"><a  href="#"><i class=" fab fa-twitter"></i></a>
                    </li>
-                   <li><a class="facebook" href="#"><i class=" fab fa-facebook-f"></i></a>
+                   <li class="facebook"><a href="#"><i class=" fab fa-facebook-f"></i></a>
                    </li>
-                   <li><a class="youtube" href="#"><i class=" fab fa-youtube"></i></a>
+                   <li class="youtube"><a href="#"><i class=" fab fa-youtube"></i></a>
                    </li>
-                   <li class="search"><a href="#"><i class=" fal fa-search"></i></a></li>
+                   {{-- <li class="search"><a href="#"><i class=" fal fa-search"></i></a></li>
                    <div class="boxsearch" dir="rtl">
                        <button class="close-icon">
                            <i class="fa-solid fa-xmark close"></i> </button>
@@ -85,7 +85,7 @@
                        <button class="search-icon">
                            <i class="fa-solid fa-magnifying-glass search"></i>
                        </button>
-                   </div>
+                   </div> --}}
                </ul>
 
            </div>

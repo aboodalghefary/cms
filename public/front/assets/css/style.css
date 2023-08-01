@@ -30,6 +30,7 @@ html {
 body {
    font-family: nsa;
 }
+
 .loader {
    width: 48px;
    height: 48px;
@@ -39,8 +40,9 @@ body {
    border-right: 4px solid transparent;
    box-sizing: border-box;
    animation: rotation 1s linear infinite;
- }
- .loader::after {
+}
+
+.loader::after {
    content: '';
    box-sizing: border-box;
    position: absolute;
@@ -52,16 +54,19 @@ body {
    border-left: 4px solid #FF3D00;
    border-bottom: 4px solid transparent;
    animation: rotation 0.5s linear infinite reverse;
- }
- @keyframes rotation {
+}
+
+@keyframes rotation {
    0% {
-     transform: rotate(0deg);
+      transform: rotate(0deg);
    }
+
    100% {
-     transform: rotate(360deg);
+      transform: rotate(360deg);
    }
- }
- .news-more-container {
+}
+
+.news-more-container {
    position: relative;
    /* Add any other styling you need for the container */
 }
@@ -395,10 +400,11 @@ h6:hover {
 /* end overlayhover */
 
 /*  start mega-menue */
-.mega-menue{
+.mega-menue {
    display: none;
- }
- .mega{
+}
+
+.mega {
    background: #1f2024ea;
    display: flex;
    justify-content: space-between;
@@ -411,36 +417,40 @@ h6:hover {
    border-radius: 5px;
    overflow: hidden;
 
- }
+}
 
 
 @media (min-width:991px) {
-   .navbar-nav .news:hover .mega-menue{
+   .navbar-nav .news:hover .mega-menue {
       display: block !important;
    }
 }
-.mega-menue .category-right{
+
+.mega-menue .category-right {
    width: 23%;
    height: 350px;
    padding: 25px 0;
    background: #11151d;
 }
-.mega-menue .category-right ul{
+
+.mega-menue .category-right ul {
    display: flex;
    flex-direction: column;
 }
 
-.mega-menue .category-right ul li.active{
+.mega-menue .category-right ul li.active {
    background-color: #cf1e1e81;
- }
+}
 
-.mega-menue .category-right ul li:hover{
+.mega-menue .category-right ul li:hover {
    background-color: #cf1e1e81;
- }
- .mega-menue .category-right ul li:hover a{
+}
+
+.mega-menue .category-right ul li:hover a {
    color: #2980b9 !important;
- }
-.mega-menue .category-right ul li a{
+}
+
+.mega-menue .category-right ul li a {
    display: block;
    font-size: 13px !important;
    color: white;
@@ -448,7 +458,7 @@ h6:hover {
 }
 
 
-.mega-menue .four-category-news{
+.mega-menue .four-category-news {
    display: flex;
    justify-content: space-around;
    flex-wrap: wrap;
@@ -458,46 +468,52 @@ h6:hover {
    height: 100%;
 }
 
-.mega-menue .four-category-news .card{
+.mega-menue .four-category-news .card {
    background: none !important;
    border: none !important;
    background-color: #000;
 }
 
-.mega-menue .four-category-news .card .lay img{
-   width:210px;
+.mega-menue .four-category-news .card .lay img {
+   width: 210px;
    border-radius: 35px !important;
 }
 
 @media (max-width:1500px) {
-   .mega-menue .four-category-news .card .lay img{
-      width:180px !important;
+   .mega-menue .four-category-news .card .lay img {
+      width: 180px !important;
    }
-   .mega-menue .four-category-news .card .card-body h6{
+
+   .mega-menue .four-category-news .card .card-body h6 {
       font-size: 15px !important;
    }
-   .mega-menue .four-category-news .date{
+
+   .mega-menue .four-category-news .date {
       font-size: 13px !important;
    }
 }
+
 @media (min-width:1500px) {
-   .mega-menue .four-category-news .card .lay img{
-      width:195px !important;
+   .mega-menue .four-category-news .card .lay img {
+      width: 195px !important;
    }
 }
-.mega-menue .four-category-news .card .date{
+
+.mega-menue .four-category-news .card .date {
    background-color: none !important;
 
 }
-.mega-menue .four-category-news .card .card-body ,
-   .mega-menue .four-category-news .card .date
-{
+
+.mega-menue .four-category-news .card .card-body,
+.mega-menue .four-category-news .card .date {
    padding: 5px 5px !important;
    margin: 0 !important;
 }
-.mega-menue  h6:hover{
+
+.mega-menue h6:hover {
    color: #2980b9 !important;
 }
+
 /*  end mega-menue */
 
 /* start header */
@@ -626,13 +642,14 @@ header a {
    font-weight: 400;
    margin-top: 5px;
 }
-.cat-id:hover{
+
+.cat-id:hover {
 
    color: #2980b9 !important;
 }
 
 @media (min-width:991px) {
-   .navbar-main .nav-item-main{
+   .navbar-main .nav-item-main {
       padding: 28px 0;
    }
 }
@@ -647,19 +664,25 @@ header a {
 
 }
 
-.links li .twitter:hover {
-   color: rgb(233, 191, 231) !important;
+.links li.twitter:hover {
+   /* color: rgb(233, 191, 231) !important; */
+   background: #1DA1F2 !important;
    transition: .5s;
 }
 
-.links li .facebook:hover {
-   color: rgb(190, 66, 184) !important;
+.links li.facebook:hover {
+   background: #1877F2 !important;
    transition: .5s;
 }
 
-.links li .youtube:hover {
-   color: rgba(194, 162, 159, 0.973) !important;
+.links li.youtube:hover {
+   background: #CD201F !important;
    transition: .5s;
+}
+
+.links li a:hover {
+
+   color: #fff !important;
 }
 
 @media (max-width:768px) {
@@ -767,7 +790,42 @@ header.sticky a.active {
       width: fit-content;
 
    }
+
 }
+
+
+.template-four .hover .column {
+   width: 555px;
+   height: 255px;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+@media (min-width:768px) {
+   .template-four .hover .column {
+      width: 100%;
+      height: 255px;
+   }
+}
+
+@media (max-width:768px) {
+   .tts .hover .column {
+      width: 100%;
+      height: 285px;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
+}
+@media (min-width:768px) {
+   .tts .hover .column {
+      width: 100%;
+      height: 285px;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
+}
+
+
 
 /* video library */
 .container-3-video {
@@ -909,7 +967,7 @@ p {
    text-align: center;
 }
 
-.advertise-space img{
+.advertise-space img {
    width: 100%;
    height: 160px;
    object-fit: cover;
@@ -945,15 +1003,22 @@ p {
 }
 
 
-.scc2 {
-   margin-top: 50px !important;
-}
+
 
 @media (min-width:991px) {
    .scc2 {
       margin-top: 50px !important;
    }
+
 }
+
+@media (min-width:768px) {
+   .scc2 {
+      margin-top: 50px !important;
+   }
+}
+
+
 
 .gallery-section {
    display: grid;
@@ -1340,11 +1405,30 @@ footer {
    }
 }
 
+
 @media (max-width:768px) {
    .container-3-columns {
       grid-template-columns: 1fr;
    }
+
+   .container-3-columns .hover .column {
+      width: 100%;
+      height: 285px;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
+
 }
+
+@media (min-width:768px) {
+   .container-3-columns .hover .column {
+      width: 100%;
+      height: 285px;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
+}
+
 
 @media (min-width:768px) {
    .scc {

@@ -8,14 +8,14 @@
          </span>     </a>
     </div>
 
-    <div class="container-3-columns">
+    <div class="container-3-columns mx-auto">
         <!-- الخبران الرئيسيان البارزان في هذا القالب -->
         @if (isset($categories[0]->blogs[0]))
             <div class="hover ">
                 <div class="content  ">
                     <a href="{{ route('post_details', ['id' => $categories[0]->blogs[0]->id]) }}">
                         <div class="column text-right ">
-                            <div style="width: 330px; height: 285px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $categories[0]->blogs[0]->image ?? null) }});"
+                            <div style="width: 350px; height: 285px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $categories[0]->blogs[0]->image ?? null) }});"
                                 class="column position-relative ">
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right"> {{ $categories[0]->blogs[0]->name }} </h6>
@@ -34,7 +34,7 @@
                 <div class="content ">
                     <a href="{{ route('post_details', ['id' => $categories[0]->blogs[1]->id]) }}">
                         <div class="column text-right ">
-                            <div style="width: 330px; height: 285px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $categories[0]->blogs[1]->image ?? null) }});"
+                            <div style="width: 350px; height: 285px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $categories[0]->blogs[1]->image ?? null) }});"
                                 class="column position-relative ">
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right"> {{ $categories[0]->blogs[1]->name }} </h6>
@@ -49,7 +49,7 @@
         @endif
 
         <!-- هذا العمود يحتوي على 3 اخبار تابعة للتصنيف نفسه -->
-        <div class="column mt-1">
+        <div class="column mt-1 ">
             @if (isset($categories[0]->blogs[2]))
                 <a href="{{ route('post_details', ['id' => $categories[0]->blogs[2]->id]) }}">
                     <div class=" d-flex align-items-center pb-4 ">

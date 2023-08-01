@@ -1,4 +1,4 @@
-<div class="row  d-flex justify-content-between">
+<div class="row  d-flex justify-content-between tts">
     <!--    (بارز)خبر للعمود الاول في التصنيف الاول -->
     <div class="col-xl-4 col-lg-6 col-md-6  text-right py-3 ">
         <div class="text-right  mb-3">
@@ -13,7 +13,8 @@
 
             <div class="content  ">
                 <a href="{{ route('post_details', ['id' => $categories[0]->blogs[0]->id]) }}">
-                    <div style="width: 350px; height: 285px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $categories[0]->blogs[0]->image ?? null) }});"
+                    <div style=" background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)),
+                     url({{ asset('storage/images/blog/' . $categories[0]->blogs[0]->image ?? null) }});"
                         class="column position-relative ">
                         <div class="text text-right bottom-right text-white ">
                             <h6 class=" text-right">
@@ -34,7 +35,7 @@
     </div>
 
     <!-- في العمود الثاني لنفس التصنيف يوجد 3 اخبار -->
-    <div class="scc2 col-xl-4 col-lg-6  col-md-6 col-sm-12 mx-auto ">
+    <div class="scc2 col-xl-4 col-lg-6  col-md-6 col-sm-12 ">
         <a href="{{ route('post_details', ['id' => $categories[0]->blogs[1]->id]) }}">
             <div class=" d-flex align-items-center py-3 ">
                 <div class="lay">
@@ -96,7 +97,7 @@
     </div>
 
     <!-- هذا التصنيف به 3 اخبار مباشرة بدون اي اخبار بارزة -->
-    <div class="col-xl-4 col-lg-6  col-md-6 col-sm-12 py-3   border mx-auto  ">
+    <div class="col-xl-4 col-lg-6  col-md-6 col-sm-12 py-3   border mx-auto ">
         <div class="text-right  mb-3   ">
             <span class=" mark-title">
             </span>

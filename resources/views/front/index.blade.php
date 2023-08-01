@@ -226,26 +226,30 @@
                 </div>
 
                 <!-- اخر الاخبار -->
+                <div class="text-right  mb-3">
+                    <span class=" mark-title">
+                    </span>
+                    <span class="title-sec text-black">اخر الاخبار
+                    </span>
+                </div>
                 <div class="row ">
-                    <div class="text-right  mb-3">
-                        <span class=" mark-title">
-                        </span>
-                        <span class="title-sec text-black">اخر الاخبار
-                        </span>
-                    </div>
-                    <div class="container-4-columns">
+                    <div class="container-4-columns mx-auto ">
                         @foreach ($news as $index => $blog)
                             @if ($index > 4)
                                 <div class="card ">
                                     <a href="{{ route('post_details', $blog->id) }}">
                                         <div class="box">
-                                            <img class="card-img-top" style="height: 260px"
+                                            <img class="card-img-top"
+                                                style="height: 180px; width: 280px;object-fit: cover "
                                                 src="{{ asset('storage/images/blog/' . $blog->image) }}"
                                                 alt="" Loading="lazy">
                                         </div>
                                     </a>
                                     <div class="card-body">
-                                        <a href="#"
+                                        @php
+                                            $category = $blog->category;
+                                        @endphp
+                                        <a href="{{ route('category', ['id' => $category->id]) }}"
                                             class="category-title d-block  text-right pb-2">{{ $blog->category->name }}
                                         </a>
                                         <a href="{{ route('post_details', $blog->id) }}">
@@ -470,11 +474,11 @@
             <div class=" mx-auto  "> {{ $privacyDiv->content }} </div>
             <div class=" d-flex  justify-content-center  ">
                 <ul class="d-flex links justify-content-center  ">
-                    <li class="mt-4 bg-white text-danger mb-sm-3 "><a class="twitter" href="#"><i
+                    <li class="mt-4 bg-white text-danger mb-sm-3 twitter"><a href="#"><i
                                 class=" fab fa-twitter"></i></a></li>
-                    <li class="mt-4 bg-white text-danger mb-sm-3 "><a class="facebook" href="#"><i
+                    <li class="mt-4 bg-white text-danger mb-sm-3 facebook"><a href="#"><i
                                 class=" fab fa-facebook-f"></i></a></li>
-                    <li class="mt-4 bg-white text-danger mb-sm-3 "><a class="youtube" href="#"><i
+                    <li class="mt-4 bg-white text-danger mb-sm-3 youtube"><a href="#"><i
                                 class=" fab fa-youtube"></i></a></li>
                 </ul>
             </div>

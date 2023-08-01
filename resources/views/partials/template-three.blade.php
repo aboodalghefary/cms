@@ -13,7 +13,7 @@
                     <div class="2">
                         <a href="{{ route('post_details', ['id' => $category->blogs[0]->id]) }}">
 
-                            <div style="width: 555px; height: 255px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $category->blogs[0]->image ?? null) }});"
+                            <div style=" background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $category->blogs[0]->image ?? null) }});"
                                 class="column position-relative  ">
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right">
@@ -27,11 +27,11 @@
                 </div>
                 <a href=" {{ route('post_details', ['id' => $category->blogs[0]->id]) }} " class="overlay"></a>
             </div>
-            <div class="row  mt-3">
+            <div class="row tw-2  mt-3 ">
 
                 <div href="{{ route('post_details', ['id' => $category->blogs[1]->id]) }}"
-                    class="col-lg-6 col-md-8 col-sm-12   ">
-                    <div style="width: 260px; " class=" card">
+                    class="col-lg-6 col-md-6 col-sm-12   ">
+                    <div style="width: 260px; " class=" card  mx-auto  mb-2">
                         <div class="lay">
                             <img style="height: 155px" class="card-img-top"
                                 src="{{ asset('storage/images/blog/' . $category->blogs[1]->image ?? null) }}"
@@ -55,8 +55,8 @@
                 </div>
 
                 <div href="{{ route('post_details', ['id' => $category->blogs[2]->id]) }}"
-                    class="col-lg-6 col-md-8 col-sm-12   ">
-                    <div style="width: 260px; " class=" card">
+                    class="col-lg-6 col-md-6 col-sm-12   ">
+                    <div style="width: 260px; " class="  mx-auto card ">
 
                         <div class="lay">
                             <img style="height: 155px" class="card-img-top"
