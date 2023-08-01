@@ -16,6 +16,8 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
+    <!-- animate-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!--  styles for this template -->
     <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
 

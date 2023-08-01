@@ -33,11 +33,8 @@
     <!-- video plyer -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
-     <!-- animate-->
-     <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-   />
+    <!-- animate-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         .column {
             background-size: cover;
@@ -121,7 +118,7 @@
                 </a>
 
                 <a class=" ">
-                    <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}" alt="" Loading="lazy" >
+                    <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}" alt="" Loading="lazy">
                 </a>
 
             </div>
@@ -137,11 +134,12 @@
                                     <div class="content boxx">
                                         <div class="column position-relative  ">
                                             <a href="{{ route('post_details', $blog->id) }}">
-                                             <div class="blurred-img">
+                                                <div class="blurred-img">
 
-                                                <img style="background-size: cover;"
-                                                    src="{{ asset('storage/images/blog/' . $blog->image) }}"
-                                                    alt="Image 1" >                                                   </div>
+                                                    <img style="background-size: cover;"
+                                                        src="{{ asset('storage/images/blog/' . $blog->image) }}"
+                                                        alt="Image 1">
+                                                </div>
 
                                                 <div class="text text-right bottom-right text-white ">
                                                     <h6 class=" text-right">
@@ -178,11 +176,11 @@
                                         <div class="column position-relative  ">
                                             <a href="{{ route('post_details', $blog->id) }}">
 
-                                             <div class="blurred-img">
-                                                <img style="background-size: cover; "
-                                                    src="{{ asset('storage/images/blog/' . $blog->image) }}"
-                                                    alt="Image 1">
-                                                   </div>
+                                                <div class="blurred-img">
+                                                    <img style="background-size: cover; "
+                                                        src="{{ asset('storage/images/blog/' . $blog->image) }}"
+                                                        alt="Image 1">
+                                                </div>
                                                 <div class="text text-right bottom-right text-white ">
                                                     <h6 class=" text-right">
                                                         {{ $blog->name }}
@@ -212,11 +210,11 @@
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad3Div->image) }}"
-                            alt="" Loading="lazy" > </a>
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad3Div->image) }}" alt=""
+                            Loading="lazy"> </a>
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad4Div->image) }}"
-                            alt="" Loading="lazy" > </a>
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad4Div->image) }}" alt=""
+                            Loading="lazy"> </a>
 
                 </div>
 
@@ -236,7 +234,7 @@
                                         <div class="box">
                                             <img class="card-img-top" style="height: 260px"
                                                 src="{{ asset('storage/images/blog/' . $blog->image) }}"
-                                                alt="" Loading="lazy" >
+                                                alt="" Loading="lazy">
                                         </div>
                                     </a>
                                     <div class="card-body">
@@ -282,11 +280,11 @@
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad5Div->image) }}"
-                            alt="" Loading="lazy" > </a>
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad5Div->image) }}" alt=""
+                            Loading="lazy"> </a>
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad6Div->image) }}"
-                            alt="" Loading="lazy" > </a>
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad6Div->image) }}" alt=""
+                            Loading="lazy"> </a>
 
                 </div>
 
@@ -308,11 +306,11 @@
                 <!-- مساحة اعلانية -->
                 <div class="advertise-space adv-2-columns py-5  ">
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad7Div->image) }}"
-                            alt="" Loading="lazy" > </a>
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad7Div->image) }}" alt=""
+                            Loading="lazy"> </a>
 
-                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad8Div->image) }}"
-                            alt="" Loading="lazy" > </a>
+                    <a class=""> <img src="{{ asset('storage/images/div/' . $ad8Div->image) }}" alt=""
+                            Loading="lazy"> </a>
 
                 </div>
             </div>
@@ -474,8 +472,8 @@
                     <a style="height: fit-content; width: 290px;"
                         href="{{ asset('storage/images/photos/' . $photo->image_path) }}">
                         <div class="card" style="height: 310px;">
-                            <img src="{{ asset('storage/images/photos/' . $photo->image_path) }}" alt="" Loading="lazy"
-                                style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('storage/images/photos/' . $photo->image_path) }}" alt=""
+                                Loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                 @endforeach
@@ -484,7 +482,8 @@
                 <a href="{{ route('album_details', $album->id) }}">
                     <div style=" position: relative;" class=" column position-relative img">
                         <img style="height: 310px;width: 100%; object-fit: cover"
-                            src="{{ asset('storage/images/albums/' . $album->image) }}" alt="" Loading="lazy" >
+                            src="{{ asset('storage/images/albums/' . $album->image) }}" alt=""
+                            Loading="lazy">
                         <div class="text text-white text-album" dir="rtl">
                             <h6 style="position: absolute; top: 30px; right: 10px;" class="text-right">
                                 {{ $album->title }}
