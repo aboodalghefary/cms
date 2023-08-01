@@ -521,6 +521,8 @@
         crossorigin="anonymous"></script>
 
 
+        
+
     <!--core JavaScript -->
     <script src="{{ asset('front/assets/js/videolist.js') }}"></script>
     <script src="{{ asset('front/assets/js/scroll.js') }}"></script>

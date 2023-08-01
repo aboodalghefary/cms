@@ -147,7 +147,9 @@
                         @endphp
                         <span class="title-sec"> متعلقات</span>
                     </div>
+                    
                     <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
+
                         <div class="news-more d-flex align-items-center px-4 py-4 border ">
                             <i class="fa-regular fa-arrow-left"></i>
                             <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
@@ -156,7 +158,8 @@
                         <div class="news-more d-flex align-items-center px-4 py-4 border ">
                             <i class="fa-regular fa-arrow-left"></i>
                             <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                    "كيسوفيم"</a></span>
+                                    "كيسوفيم"</a>                                          <span class="loader"></span>
+                                 </span>
                         </div>
                         <div class="news-more d-flex align-items-center px-4 py-4 border ">
                             <i class="fa-regular fa-arrow-left"></i>
