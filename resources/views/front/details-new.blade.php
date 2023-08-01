@@ -149,6 +149,9 @@
                     </div>
 
                     <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
+
+                        <span class="loader"></span>
+
                     </div>
 
                 </div>
