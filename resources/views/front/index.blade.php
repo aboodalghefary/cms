@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
+
     <!-- lightgallery -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-autoplay.min.css" />
@@ -18,6 +20,7 @@
     <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!--  styles for this template -->
+    <link rel="stylesheet" href="{{ asset('front/assets/vendor/magic-master/dist/magic.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
 
     <!-- icons -->
@@ -33,12 +36,14 @@
     <!-- video plyer -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
-    <!-- animate-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         .column {
             background-size: cover;
             background-repeat: no-repeat;
+        }
+
+        .magictime {
+            animation-duration: .6s;
         }
     </style>
 </head>

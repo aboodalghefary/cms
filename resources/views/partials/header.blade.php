@@ -43,9 +43,9 @@
                                                @endforeach
                                            </ul>
                                        </div>
-
                                        <div class="four-category-news">
                                           <span class="loader"></span>
+
                                        </div>
                                    </div>
                                </div>
