@@ -149,9 +149,10 @@
                     </div>
 
                     <div class="news-more-container" data-category-name="{{ $motaleqtDiv->content }}">
-
-                        <span class="loader"></span>
-
+                        <div class="loader-container"
+                            style="display: flex;justify-content: center;align-items: center;padding: 12px; ">
+                            <span class="loader"></span>
+                        </div>
                     </div>
 
                 </div>
