@@ -34,6 +34,7 @@
                                                <li class="active all sub-catttt" data-category="{{ $category->id }}">
                                                    <a href="#">الكل</a>
                                                </li>
+
                                                @foreach ($category->subCategories as $subCategory)
                                                    <li class="sub-catttt" data-category="{{ $subCategory->id }}">
                                                        <a class="sub-category-link"
@@ -45,7 +46,6 @@
 
                                        <div class="four-category-news">
                                           <span class="loader"></span>
-
                                        </div>
                                    </div>
                                </div>
