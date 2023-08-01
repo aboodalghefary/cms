@@ -48,8 +48,21 @@
         </div>
     </ol>
 
+    <div class="advertise-space adv-2-columns  container">
+
+      <a class="">
+          <img src="">
+      </a>
+
+      <a class=" ">
+          <img src="" alt="" Loading="lazy">
+      </a>
+
+  </div>
     <main class="main d-flex flex-column cont box " style="min-height: 70vh;">
+
         <div class="gallery">
+
             @foreach ($album->photos as $photo)
                 <a class="card" href="{{ asset('storage/images/photos/' . $photo->image_path) }}">
                     <img src="{{ asset('storage/images/photos/' . $photo->image_path) }}" alt=""

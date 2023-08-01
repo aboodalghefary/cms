@@ -41,6 +41,7 @@
     </ol>
 
     <main class="container text-right py-5">
+
         <div class="row ">
             <div class="col-lg-8 detail-new ">
                 <div class="card ">
@@ -111,6 +112,17 @@
                         </div>
                     @endif
                 </div>
+                <div class="advertise-space adv-2-columns py-5 ">
+
+                  <a class="">
+                      <img src="">
+                  </a>
+
+                  <a class=" ">
+                      <img src="" alt="" Loading="lazy">
+                  </a>
+
+              </div>
             </div>
             <div class="col-lg-4 related-side pt-sm-5 p-lg-0  ">
                 <div class="side-one ">
@@ -198,6 +210,7 @@
                     </div>
 
                 </div>
+                
             </div>
 
         </div>

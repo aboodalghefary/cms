@@ -41,6 +41,18 @@
     </ol>
 
     <main class="main container  d-flex flex-column justify-content-center  py-5" style="min-height: 100vh;">
+
+      <div class="advertise-space adv-2-columns py-5 ">
+
+         <a class="">
+             <img src="">
+         </a>
+
+         <a class=" ">
+             <img src="" alt="" Loading="lazy">
+         </a>
+
+     </div>
         <div>
             <div class="row  template-main  two-main-news pb-0 no-gutters">
                 @foreach ($allBlogs as $key => $blogData)

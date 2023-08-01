@@ -36,7 +36,20 @@
         </div>
     </ol>
 
+
+
     <main class="main container  d-flex flex-column " style="min-height: 100vh;">
+      <div class="advertise-space adv-2-columns py-5 ">
+
+         <a class="">
+             <img src="">
+         </a>
+
+         <a class=" ">
+             <img src="" alt="" Loading="lazy">
+         </a>
+
+     </div>
         <div class="row pb-5">
             @foreach ($albums as $album)
                 <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">

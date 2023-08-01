@@ -39,6 +39,18 @@
 
 
     <main class="main container  d-flex flex-column" style="min-height: 75vh;">
+
+      <div class="advertise-space adv-2-columns py-5 ">
+
+         <a class="">
+             <img src="">
+         </a>
+
+         <a class=" ">
+             <img src="" alt="" Loading="lazy">
+         </a>
+
+     </div>
         <div class="row">
             @foreach ($libraries as $library)
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-3 d-flex justify-content-center ">

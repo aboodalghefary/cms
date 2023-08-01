@@ -91,6 +91,17 @@
 
     <section class="container py-5">
 
+      <div class="advertise-space adv-2-columns py-5 ">
+
+         <a class="">
+             <img src="">
+         </a>
+
+         <a class=" ">
+             <img src="" alt="" Loading="lazy">
+         </a>
+
+     </div>
         <div class="text-right container">
             <span class=" mark-title">
             </span>

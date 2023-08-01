@@ -57,12 +57,6 @@
                     </div>
 
 
-
-
-
-
-
-
                     <div class=" connect-title col-lg-5 pt-3 border mx-auto ">
                         <div class=" text-right mb-3">
                             <span style="font-weight: bold; " class="label">معلومات الاتصال</span>
