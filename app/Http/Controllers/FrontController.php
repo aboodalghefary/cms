@@ -36,6 +36,19 @@ class FrontController extends Controller
          'divs',
       ));
    }
+   public function search_For_BlogHas($text)
+   {
+      $blogs = Blog::where('content', 'LIKE', '%' . $text . '%')->get();
+
+      $results = $blogs->map(function ($blog) {
+         return [
+            'title' => $blog->name,
+            'url' => route('post_details', $blog->id)
+         ];
+      });
+
+      return $results->toArray();
+   }
    public function video_library()
    {
       $libraries = Library::all();

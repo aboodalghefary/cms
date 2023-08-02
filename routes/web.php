@@ -48,6 +48,7 @@ Route::get('/category/{id}', [FrontController::class, 'category'])->name('catego
 Route::get('/library_details/{id}', [FrontController::class, 'library_details'])->middleware('increase.views')->name('library_details');
 Route::get('/get_last_news_ajax/{id}', [FrontController::class, 'get_last_news_ajax'])->name('get_last_news_ajax');
 Route::get('/get_last_news_ajax_by_name/{name}', [FrontController::class, 'get_last_news_ajax_by_name'])->name('get_last_news_ajax_by_name');
+Route::get('/search_For_BlogHas/{text}', [FrontController::class, 'search_For_BlogHas'])->name('search_For_BlogHas');
 
 
 Route::group([
