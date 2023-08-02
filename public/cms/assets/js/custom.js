@@ -103,6 +103,12 @@ function openEditModal(element, divName, divID, divHref, divContent) {
       contentInput.querySelector("#content").innerText = divContent;
       submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
    }
+   if (divName == "post_ad1") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
 }
 function performUpdate(id) {
    let formData = new FormData();

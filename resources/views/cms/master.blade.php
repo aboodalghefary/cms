@@ -189,7 +189,7 @@
                                     <i class="m-1 ph-caret-down collapsible-indicator ph-sm"></i>
                                 </a>
                             </div>
-                            <a target="blank" href="#"
+                            <a target="blank" href="{{ route('front_index') }}"
                                 class="gap-1 d-flex justify-content-between align-items-center">
                                 <span class="btn btn-outline-dark"> <i
                                         class="fa-solid fa-arrow-up-right-from-square mx-1"></i> عرض الموقع </span>

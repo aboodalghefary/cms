@@ -23,7 +23,7 @@ class BlogsController extends Controller
 
       $this->authorize('viewAny', Blogs::class);
 
-      $blogs = Blog::all();
+      $blogs = Blog::paginate(15);
       return view('cms.blogs.index', compact('blogs'));
    }
    /**

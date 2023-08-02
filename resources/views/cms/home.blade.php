@@ -122,6 +122,8 @@
             stroke-width: 1px;
         }
     </style>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
     @yield('styles')
 
 </head>
@@ -218,10 +220,7 @@
                                 $ad2Div = $divs->where('name', 'home_ad2')->first();
                                 $ad3Div = $divs->where('name', 'home_ad3')->first();
                                 $ad4Div = $divs->where('name', 'home_ad4')->first();
-                                $ad5Div = $divs->where('name', 'home_ad5')->first();
-                                $ad6Div = $divs->where('name', 'home_ad6')->first();
-                                $ad7Div = $divs->where('name', 'home_ad7')->first();
-                                $ad8Div = $divs->where('name', 'home_ad8')->first();
+                                $ad1PostDiv = $divs->where('name', 'post_ad1')->first();
                             @endphp
                             <div class="card card-body">
                                 <div class="d-flex">
@@ -287,72 +286,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card card-body">
-                                <div class="d-flex">
-                                    <div class="flex-fill">
-                                        <div class="fw-semibold"> اعلان الرئيسية الخامس </div>
-                                        <span class="text-muted" data-bs-toggle="modal"
-                                            data-bs-target="#modal_form_horizontal"
-                                            onclick="openEditModal(this , '{{ $ad5Div->name }}' , '{{ $ad5Div->id }}' ,'{{ $ad5Div->href }}','{{ $ad5Div->content }}' )">تعديل</span>
-                                    </div>
-                                    <a href="#" class="ms-3">
-                                        <img src="{{ asset('storage/images/div/' . $ad5Div->image) }}" width="140"
-                                            height="55" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card card-body">
-                                <div class="d-flex">
-                                    <div class="flex-fill">
-                                        <div class="fw-semibold"> اعلان الرئيسية السادس </div>
-                                        <span class="text-muted" data-bs-toggle="modal"
-                                            data-bs-target="#modal_form_horizontal"
-                                            onclick="openEditModal(this , '{{ $ad6Div->name }}' , '{{ $ad6Div->id }}' ,'{{ $ad6Div->href }}','{{ $ad6Div->content }}' )">تعديل</span>
-                                    </div>
-                                    <a href="#" class="ms-3">
-                                        <img src="{{ asset('storage/images/div/' . $ad6Div->image) }}" width="140"
-                                            height="55" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card card-body">
-                                <div class="d-flex">
-                                    <div class="flex-fill">
-                                        <div class="fw-semibold"> اعلان الرئيسية السابع </div>
-                                        <span class="text-muted" data-bs-toggle="modal"
-                                            data-bs-target="#modal_form_horizontal"
-                                            onclick="openEditModal(this , '{{ $ad7Div->name }}' , '{{ $ad7Div->id }}' ,'{{ $ad7Div->href }}','{{ $ad7Div->content }}' )">تعديل</span>
-                                    </div>
-                                    <a href="#" class="ms-3">
-                                        <img src="{{ asset('storage/images/div/' . $ad7Div->image) }}" width="140"
-                                            height="55" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card card-body">
-                                <div class="d-flex">
-                                    <div class="flex-fill">
-                                        <div class="fw-semibold"> اعلان الرئيسية الثامن </div>
-                                        <span class="text-muted" data-bs-toggle="modal"
-                                            data-bs-target="#modal_form_horizontal"
-                                            onclick="openEditModal(this , '{{ $ad8Div->name }}' , '{{ $ad8Div->id }}' ,'{{ $ad8Div->href }}','{{ $ad8Div->content }}' )">تعديل</span>
-                                    </div>
-                                    <a href="#" class="ms-3">
-                                        <img src="{{ asset('storage/images/div/' . $ad8Div->image) }}" width="140"
-                                            height="55" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-
                     </div>
 
                     <div class="row">
@@ -372,30 +305,6 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="col-xl-3 col-lg-6">
-                            <div class="card card-body">
-                                <div class="d-flex">
-                                    <div class="flex-fill">
-                                        <div class="fw-semibold"> حقوق الطبع والنشر </div>
-                                        <span class="text-muted" data-bs-toggle="modal"
-                                            data-bs-target="#modal_form_horizontal"
-                                            onclick="openEditModal(this , '{{ $privacyDiv->name }}' , '{{ $privacyDiv->id }}' ,'{{ $privacyDiv->href }}','{{ $privacyDiv->content }}' )">تعديل</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card card-body">
-                                <div class="d-flex">
-                                    <div class="flex-fill">
-                                        <div class="fw-semibold"> حقوق الطبع والنشر </div>
-                                        <span class="text-muted" data-bs-toggle="modal"
-                                            data-bs-target="#modal_form_horizontal"
-                                            onclick="openEditModal(this , '{{ $privacyDiv->name }}' , '{{ $privacyDiv->id }}' ,'{{ $privacyDiv->href }}','{{ $privacyDiv->content }}' )">تعديل</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
                         <div class="col-xl-3 col-lg-6">
                             <div class="card card-body">
                                 <div class="d-flex">
@@ -451,9 +360,38 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <div class="flex-fill">
+                                        <div class="fw-semibold">اعلان صفحة الخبر </div>
+                                        <span class="text-muted" data-bs-toggle="modal"
+                                            data-bs-target="#modal_form_horizontal"
+                                            onclick="openEditModal(this , '{{ $ad1PostDiv->name }}' , '{{ $ad1PostDiv->id }}' ,'{{ $ad1PostDiv->href }}','{{ $ad1PostDiv->content }}' )">تعديل</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">حالة التعليقات</h5>
+                                </div>
 
+                                <div class="card-body">
+                                    <form action="" class="d-flex justify-content-between">
+                                        <input type="checkbox" id="comments_toggle" data-toggle="toggle"
+                                            data-on="تفعيل" data-off="تعطيل" data-onstyle="success"
+                                            data-offstyle="danger"
+                                            {{ $blogs_comment_enabled == true ? 'checked' : null }}>
+                                        <button onclick="performStore()" class="btn btn-dark"> تطبيق </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /inner content -->
@@ -540,6 +478,16 @@
         </div>
     </div>
 
+
+    <script>
+        function performStore() {
+            let formData = new FormData();
+            formData.append('comments_enabled', $('#comments_toggle').prop('checked') ? 1 : 0);
+            store('/comments_enabled', formData);
+
+        }
+    </script>
+
     <script src="{{ asset('cms/assets/js/jquery/jquery.min.js') }}"></script>
     <!-- Load plugin -->
     <script src="{{ asset('cms/assets/js/vendor/tables/datatables/datatables.min.js') }}"></script>
@@ -556,6 +504,8 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
     <script src="{{ asset('cms/assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
     <!-- /core JS files -->
     <!-- Theme JS files -->
     <script src="{{ asset('cms/assets/demo/pages/dashboard.js') }}"></script>

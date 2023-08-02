@@ -29,7 +29,7 @@
 
     <ol class="breadcrumb" dir="rtl">
         <div class="bread container d-flex">
-            <li class="breadcrumb-item active"> الرئيسية </li>
+            <li class="breadcrumb-item active"> <a href="{{ route('front_index') }}"> الرئيسية </a></li>
             <li class="breadcrumb-item ">
                 <a href="{{ route('category', $blog->category_id) }}">{{ $blog->category->name }}</a>
             </li>
@@ -112,17 +112,15 @@
                         </div>
                     @endif
                 </div>
-                <div class="advertise-space adv-2-columns py-5 ">
-
-                  <a class="">
-                      <img src="">
-                  </a>
-
-                  <a class=" ">
-                      <img src="" alt="" Loading="lazy">
-                  </a>
-
-              </div>
+                <div class="advertise-space adv-2-columns py-5 " style="display: block">
+                    @php
+                        $ad1Div = $divs->where('name', 'post_ad1')->first();
+                        $ad2Div = $divs->where('name', 'post_ad2')->first();
+                    @endphp
+                    <a href="{{ $ad1Div->href }}">
+                        <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}" style="object-fit: contain">
+                    </a>
+                </div>
             </div>
             <div class="col-lg-4 related-side pt-sm-5 p-lg-0  ">
                 <div class="side-one ">
@@ -163,38 +161,26 @@
                         </span>
                         <span class="title-sec"> الأكثر مشاهدة</span>
                     </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
-                        <video width="100" height="80" controls>
-                            <!-- test inert real vedio -->
-                            <source src="../assets/Download.mp4" type=video/mp4>
-                        </video>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
-                    </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
-                        <video width="100" height="80" controls>
-                            <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg>
-                            <source src="/build/videos/arcnet.io(7-sec).mp4" type=video/mp4>
-                        </video>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
-                    </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
-                        <video width="100" height="80" controls>
-                            <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg>
-                            <source src="/build/videos/arcnet.io(7-sec).mp4" type=video/mp4>
-                        </video>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
-                    </div>
-                    <div class="news-more d-flex align-items-center   px-4 py-4 border ">
-                        <video width="100" height="80" controls>
-                            <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg>
-                            <source src="/build/videos/arcnet.io(7-sec).mp4" type=video/mp4>
-                        </video>
-                        <span class="mr-3"> <a href=""> اندلاع حريق جديد بفعل طائرة ورقية في كيبوتس
-                                "كيسوفيم"</a></span>
-                    </div>
+                    @foreach ($blogs_most_views as $blog_most_view)
+                        @if ($blog_most_view->id != $blog->id)
+                            <div class="news-more d-flex align-items-center px-4 py-4 border ">
+                                <img src="{{ asset('storage/images/blog/' . $blog_most_view->image) }}"
+                                    style="max-height: 70px; object-fit: cover; object-position: center top"
+                                    alt="">
+                                <span class="mr-3">
+                                    @php
+                                        $slug = Str::slug($blog_most_view->name);
+                                    @endphp
+                                    <a
+                                        href="{{ route('post_details', ['id' => $blog_most_view->id, 'slug' => $slug]) }}">
+                                        {{ $blog_most_view->name }}
+                                    </a>
+                                </span>
+                            </div>
+                        @endif
+                    @endforeach
+
+
 
                 </div>
                 <div class="side-three pb-5 ">
@@ -211,7 +197,7 @@
                     </div>
 
                 </div>
-                
+
             </div>
 
         </div>

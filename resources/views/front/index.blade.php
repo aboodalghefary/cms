@@ -69,7 +69,11 @@
                                             <span style="font-weight: bold;" class="time">
                                                 قبل {{ $new->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
                                             </span>
-                                            <a href="{{ route('post_details', $new->id) }}">{{ $new->name }}</a>
+                                            @php
+                                                $slug = Str::slug($new->name);
+                                            @endphp
+                                            <a
+                                                href="{{ route('post_details', ['id' => $new->id, 'slug' => $new->name]) }}">{{ $new->name }}</a>
                                         </p>
                                     </div>
                                 @else
@@ -97,21 +101,16 @@
             $ad2Div = $divs->where('name', 'home_ad2')->first();
             $ad3Div = $divs->where('name', 'home_ad3')->first();
             $ad4Div = $divs->where('name', 'home_ad4')->first();
-            $ad5Div = $divs->where('name', 'home_ad5')->first();
-            $ad6Div = $divs->where('name', 'home_ad6')->first();
-            $ad7Div = $divs->where('name', 'home_ad7')->first();
-            $ad8Div = $divs->where('name', 'home_ad8')->first();
         @endphp
         <!-- مساحة اعلانية -->
-        <div class="advertise-space adv-2-columns py-5 ">
+        <div class="advertise-space adv-2-columns py-5 " style="display: block">
 
             <a href="{{ $ad1Div->href }}">
-                <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}">
+                <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}" style="object-fit: contain"
+                    Loading="lazy">
             </a>
 
-            <a href="{{ $ad2Div->href }}">
-                <img src="{{ asset('storage/images/div/' . $ad2Div->image) }}" alt="" Loading="lazy">
-            </a>
+
 
         </div>
 
@@ -125,7 +124,11 @@
                             <div class="hover">
                                 <div class="content boxx">
                                     <div class="column position-relative  ">
-                                        <a href="{{ route('post_details', $blog->id) }}">
+                                        @php
+                                            $slug = Str::slug($blog->name);
+                                        @endphp
+                                        <a
+                                            href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
                                             <div class="blurred-img">
 
                                                 <img style="background-size: cover;"
@@ -144,7 +147,8 @@
                                         </a>
                                     </div>
                                 </div>
-                                <a href="{{ route('category', $blog->category_id) }}" class="overlay"></a>
+                                <a href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}"
+                                    class="overlay"></a>
                                 <div class="label top-right">
                                     @php
                                         $category = $blog->category;
@@ -166,7 +170,11 @@
                             <div class="hover">
                                 <div class="content boxx">
                                     <div class="column position-relative  ">
-                                        <a href="{{ route('post_details', $blog->id) }}">
+                                        @php
+                                            $slug = Str::slug($blog->name);
+                                        @endphp
+                                        <a
+                                            href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
 
                                             <div class="blurred-img">
                                                 <img style="background-size: cover; "
@@ -184,7 +192,8 @@
                                         </a>
                                     </div>
                                 </div>
-                                <a href="" class="overlay"></a>
+                                <a href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}"
+                                    class="overlay"></a>
                                 <div class="label top-right">
                                     @php
                                         $category = $blog->category;
@@ -200,16 +209,11 @@
             </div>
 
             <!-- مساحة اعلانية -->
-            <div class="advertise-space adv-2-columns py-5  ">
-
-                <a class="" href="{{ $ad3Div->href }}"> <img
-                        src="{{ asset('storage/images/div/' . $ad3Div->image) }}" alt="" Loading="lazy">
+            <div class="advertise-space adv-2-columns py-5" style="display: block">
+                <a class="" href="{{ $ad2Div->href }}"> <img
+                        src="{{ asset('storage/images/div/' . $ad3Div->image) }}" style="object-fit: contain"
+                        alt="" Loading="lazy">
                 </a>
-
-                <a class="" href="{{ $ad4Div->href }}"> <img
-                        src="{{ asset('storage/images/div/' . $ad4Div->image) }}" alt="" Loading="lazy">
-                </a>
-
             </div>
 
             <!-- اخر الاخبار -->
@@ -224,7 +228,10 @@
                     @foreach ($news as $index => $blog)
                         @if ($index > 4)
                             <div class="card ">
-                                <a href="{{ route('post_details', $blog->id) }}">
+                                @php
+                                    $slug = Str::slug($blog->name);
+                                @endphp
+                                <a href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
                                     <div class="box">
                                         <img class="card-img-top"
                                             style="height: 180px; width: 280px;object-fit: cover "
@@ -239,7 +246,11 @@
                                     <a href="{{ route('category', ['id' => $category->id]) }}"
                                         class="category-title d-block  text-right pb-2">{{ $blog->category->name }}
                                     </a>
-                                    <a href="{{ route('post_details', $blog->id) }}">
+                                    @php
+                                        $slug = Str::slug($blog->name);
+                                    @endphp
+                                    <a
+                                        href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
                                         <h6 class="category-desc text-right">
                                             {{ $blog->name }}
                                         </h6>
@@ -276,14 +287,10 @@
 
 
             <!-- مساحة اعلانية -->
-            <div class="advertise-space adv-2-columns py-5  ">
+            <div class="advertise-space adv-2-columns py-5" style="display: block">
 
-                <a class="" href="{{ $ad5Div->href }}"> <img
-                        src="{{ asset('storage/images/div/' . $ad5Div->image) }}" alt="" Loading="lazy">
-                </a>
-
-                <a class="" href="{{ $ad6Div->href }}"> <img
-                        src="{{ asset('storage/images/div/' . $ad6Div->image) }}" alt="" Loading="lazy">
+                <a href="{{ $ad3Div->href }}"> <img src="{{ asset('storage/images/div/' . $ad3Div->image) }}"
+                        style="object-fit: contain" alt="" Loading="lazy">
                 </a>
 
             </div>
@@ -304,16 +311,11 @@
             @include('partials.' . $RowNumFour->template, ['categories' => $RowNumFour->categories])
 
             <!-- مساحة اعلانية -->
-            <div class="advertise-space adv-2-columns py-5  ">
-
-                <a class="" href="{{ $ad7Div->href }}"> <img
-                        src="{{ asset('storage/images/div/' . $ad7Div->image) }}" alt="" Loading="lazy">
+            <div class="advertise-space adv-2-columns py-5" style="display: block">
+                <a class="" href="{{ $ad4Div->href }}"> <img
+                        src="{{ asset('storage/images/div/' . $ad4Div->image) }}" alt=""
+                        style="object-fit: contain" Loading="lazy">
                 </a>
-
-                <a class="" href="{{ $ad8Div->href }}"> <img
-                        src="{{ asset('storage/images/div/' . $ad8Div->image) }}" alt="" Loading="lazy">
-                </a>
-
             </div>
         </div>
 

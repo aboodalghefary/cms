@@ -38,7 +38,7 @@ Route::post('/upload', [PostTasksController::class, 'upload']);
 
 
 Route::get('/', [FrontController::class, 'index'])->name('front_index');
-Route::get('/post_details/{id}', [FrontController::class, 'post_details'])->name('post_details');
+Route::get('/post_details/{id}/{slug?}', [FrontController::class, 'post_details'])->middleware('increaseBlog.views')->name('post_details');
 Route::get('/contact', [FrontController::class, 'contactIndex'])->name('contact');
 Route::post('/contact_store', [FrontController::class, 'contact_store'])->name('contact_store');
 Route::get('/image_albums', [FrontController::class, 'image_albums'])->name('image_albums');
@@ -59,6 +59,7 @@ Route::group([
    });
 
    route::middleware(['auth:admin,author'])->get('home', [HomeController::class, 'index'])->name('home');
+   route::middleware(['auth:admin,author'])->post('comments_enabled', [HomeController::class, 'comments_enabled'])->name('comments_enabled');
 
    Route::prefix('cms/')->middleware(['guest:admin,author'])->group(function () {
       route::get('{guard}/login', [UserAuthController::class, 'showLogin'])->name('view.login');

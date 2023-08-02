@@ -21,12 +21,11 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>الصورة</th>
-                    <th>العنوان</th>
+                    <th> الخبر </th>
                     <th>المحتوى</th>
                     <th>المؤلف</th>
                     <th class="text-nowrap">التعليقات</th>
-
+                    <th> المشاهدات </th>
                     <th>التصنيف</th>
                     <th>الاشارات</th>
                     <th class="div-center">الاجراءات</th>
@@ -37,9 +36,9 @@
                     <tr>
                         <td>{{ $blog->id }}</td>
                         <td>
-                            <img src="{{ asset('storage/images/blog/' . $blog->image) }}" alt="Sub Image" width="150">
+                            <img src="{{ asset('storage/images/blog/' . $blog->image) }}" alt="Sub Image" width="80">
+                            <span class="fs-sm"> {{ $blog->name }} </span>
                         </td>
-                        <td>{{ $blog->name }}</td>
                         <td>
                             <button class="btn text-nowrap btn-dark" onclick="openModal({{ $blog->id }})">
                                 معاينة المحتوى
@@ -55,6 +54,9 @@
                                     معطلة</span>
                             @endif
                         </td>
+                        <td> <span class="badge bg-success text-success bg-opacity-20 d-flex align-items-center gap-1"
+                                style="width: fit-content"><i class="ph-eye ph-sm"></i>
+                                {{ $blog->views }} </span> </td>
                         <td>{{ $blog->category->name }}</td>
                         <td>
                             @foreach ($blog->tags as $tag)
@@ -92,6 +94,11 @@
                 @endforeach
             </tbody>
         </table>
+
+        <div class="pagi py-4 px-2">
+            {{ $blogs->links('pagination::bootstrap-4') }}
+
+        </div>
 
         <div class="modal modal-xl fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -169,34 +176,10 @@
                     }
                 });
 
-                $('.datatable-basic').DataTable();
-
-                $('.datatable-pagination').DataTable({
-                    pagingType: "simple",
-                    language: {
-                        paginate: {
-                            'next': document.dir == "rtl" ? 'Next &larr;' : 'Next &rarr;',
-                            'previous': document.dir == "rtl" ? '&rarr; Prev' : '&larr; Prev'
-                        }
-                    }
-                });
-
-                $('.datatable-save-state').DataTable({
-                    stateSave: true
-                });
-
-                const table = $('.datatable-scroll-y').DataTable({
-                    autoWidth: true,
-                    scrollY: 300
-                });
-
-                $('.sidebar-control').on('click', function() {
-                    table.columns.adjust().draw();
+                $('.datatable-basic').DataTable({
+                    paging: false,
                 });
             };
-
-
-
             return {
                 init: function() {
                     _componentDatatableBasic();

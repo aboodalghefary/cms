@@ -39,21 +39,25 @@ class FrontController extends Controller
    public function video_library()
    {
       $libraries = Library::all();
+      $divs = Div::all();
+
       $categories = Category::whereNull('parent_id')->get();
 
-      return view('front.video-library', compact('libraries', 'categories'));
+      return view('front.video-library', compact('libraries', 'categories', 'divs'));
    }
    public function image_albums()
    {
       $albums = Album::all();
       $categories = Category::whereNull('parent_id')->get();
+      $divs = Div::all();
 
-      return view('front.album-image', compact('albums', 'categories'));
+      return view('front.album-image', compact('albums', 'categories', 'divs'));
    }
    public function category($id)
    {
       $categories = Category::whereNull('parent_id')->get();
       $category = Category::findOrFail($id);
+      $divs = Div::all();
 
       $blogs = $category->blogs;
 
@@ -70,13 +74,14 @@ class FrontController extends Controller
          return strtotime($b['created_at']) - strtotime($a['created_at']);
       });
 
-      return view('front.category-news', compact('allBlogs', 'category', 'categories'));
+      return view('front.category-news', compact('allBlogs', 'category', 'categories', 'divs'));
    }
    public function contactIndex()
    {
       $categories = Category::whereNull('parent_id')->get();
+      $divs = Div::all();
 
-      return view('front.contact', compact('categories'));
+      return view('front.contact', compact('categories', 'divs'));
    }
    public function contact_store(Request $request)
    {
@@ -109,20 +114,23 @@ class FrontController extends Controller
          return response()->json(['icon' => 'error', 'title' => $validator->getMessageBag()->first()], 400);
       }
    }
-   public function post_details($id)
+   public function post_details($id, $slug = null)
    {
       $blog = Blog::findOrFail($id);
       $categories = Category::whereNull('parent_id')->get();
+      $blogs_most_views  = Blog::orderBy('views', 'desc')->limit(5)->get();
       $divs = Div::all();
-      return view('front.details-new', compact('blog', 'categories', 'divs'));
+      return view('front.details-new', compact('blog', 'categories',  'blogs_most_views', 'divs'));
    }
    public function library_details($id)
    {
+      $divs = Div::all();
+
       $library = Library::findOrFail($id);
       $libraries_most_views  = Library::orderBy('views', 'desc')->limit(10)->get();
       $categories = Category::whereNull('parent_id')->get();
 
-      return view('front.video-playlist', compact('library', 'libraries_most_views', 'categories'));
+      return view('front.video-playlist', compact('library', 'libraries_most_views', 'categories', 'divs'));
    }
    public function get_last_news_ajax($id)
    {
@@ -172,7 +180,8 @@ class FrontController extends Controller
    {
       $album = Album::findOrFail($id);
       $categories = Category::whereNull('parent_id')->get();
+      $divs = Div::all();
 
-      return view('front.images', compact('album', 'categories'));
+      return view('front.images', compact('album', 'categories', 'divs'));
    }
 }

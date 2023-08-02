@@ -13,7 +13,10 @@ class Blog extends Model
 
    use HasFactory;
 
-
+   public function incrementViews()
+   {
+      $this->increment('views');
+   }
    public function tags()
    {
       return $this->belongsToMany(Tag::class);
