@@ -137,7 +137,7 @@
                                                 <h6 class=" text-right">
                                                     {{ $blog->name }}
                                                 </h6>
-                                                <span class="time ">قبل
+                                                <span class="time">قبل
                                                     {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
                                                 </span>
                                             </div>
@@ -174,7 +174,7 @@
                                                     alt="Image 1">
                                             </div>
                                             <div class="text text-right bottom-right text-white ">
-                                                <h6 class=" text-right">
+                                                <h6 class=" text-right ">
                                                     {{ $blog->name }}
                                                 </h6>
                                                 <span class="time "> منذ
@@ -225,7 +225,7 @@
                         @if ($index > 4)
                             <div class="card ">
                                 <a href="{{ route('post_details', $blog->id) }}">
-                                    <div class="box">
+                                    <div class="box skeleton">
                                         <img class="card-img-top"
                                             style="height: 180px; width: 280px;object-fit: cover "
                                             src="{{ asset('storage/images/blog/' . $blog->image) }}"
@@ -237,17 +237,17 @@
                                         $category = $blog->category;
                                     @endphp
                                     <a href="{{ route('category', ['id' => $category->id]) }}"
-                                        class="category-title d-block  text-right pb-2">{{ $blog->category->name }}
+                                        class="category-title d-block  text-right pb-2 ">{{ $blog->category->name }}
                                     </a>
                                     <a href="{{ route('post_details', $blog->id) }}">
-                                        <h6 class="category-desc text-right">
+                                        <h6 class="category-desc text-right ">
                                             {{ $blog->name }}
                                         </h6>
                                     </a>
                                 </div>
 
                                 <div class="container text-black-50 pb-2 bg-white text-right">
-                                    <span class="time"> منذ
+                                    <span class="time "> منذ
                                         {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
                                     </span>
                                 </div>
@@ -580,6 +580,7 @@
         }
     });
 </script>
+<script src="{{ asset('front/assets/js/skel.js') }}"></script>
 
 </body>
 

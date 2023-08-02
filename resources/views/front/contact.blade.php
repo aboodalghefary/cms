@@ -36,12 +36,12 @@
     </ol>
     <div>
         <main class="">
-            <div class="main container contact d-flex flex-column justify-content-center" style="min-height: 70vh;">
+            <div class="main container contact d-flex flex-column justify-content-center" >
                 <div class="row  no-gutters ">
 
 
-                    <div class="col-lg-7  pb-4 ">
-                        <form action="">
+                    <div class="col-lg-7 col-sm-12  pb-4 ">
+                        <form class=""  action="">
                             <div class="d-flex justify-content-between">
                                 <input type="text" class="form-control my-3 px-4 py-3" name="name" id="name"
                                     placeholder="الاسم">
@@ -51,13 +51,13 @@
                             <input style="width: 100%;" type="text" class="form-control px-4 py-3 mb-3"
                                 name="title" id="title" placeholder="الموضوع">
                             <textarea style="outline: none" id="content" placeholder="نص الرسالة" class="p-3"></textarea>
-                            <button type="button" onclick="performStore()" class="btn main-btn mt-5">ارسال
+                            <button type="button" onclick="performStore()" class="btn main-btn mt-5 mb-3">ارسال
                                 الرسالة</button>
                         </form>
                     </div>
 
 
-                    <div class=" connect-title col-lg-5 pt-3 border mx-auto ">
+                    <div class=" connect-title col-lg-5 col-sm-12 pt-3 border mx-auto ">
                         <div class=" text-right mb-3">
                             <span style="font-weight: bold; " class="label">معلومات الاتصال</span>
                         </div>
