@@ -15,7 +15,7 @@
                     <div class=" d-flex align-items-center py-3  ">
                         <div class="lay">
                             <div style="width: 100px; height: 75px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $blog->image ?? null) }});"
-                                class="text-right">
+                                class="text-right skeleton">
                             </div>
                             <a href=" {{ route('post_details', ['id' => $blog->id]) }} "
                                 style="display: flex; align-items: center; justify-content: center;"

@@ -16,7 +16,7 @@
                 <div class="content  ">
                     <a href="{{ route('post_details', ['id' => $categories[0]->blogs[0]->id]) }}">
                         <div style="background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $categories[0]->blogs[0]->image ?? null) }});"
-                            class="column position-relative ">
+                            class="column position-relative skeleton">
                             <div class="text text-right bottom-right text-white ">
                                 <h6 class=" text-right"> {{ $categories[0]->blogs[0]->name }} </h6>
                                 <span class="date "> {{ $categories[0]->blogs[0]->date }}</span>
@@ -35,7 +35,7 @@
 
                 <div class="lay">
                     <div style="width: 100px; height: 75px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[0]->blogs[1]->image ?? null) }});"
-                        class=" text-right ">
+                        class=" text-right skeleton ">
                     </div>
                     <a href="{{ route('post_details', ['id' => $categories[0]->blogs[1]->id]) }}"
                         style="display: flex; align-items: center; justify-content: center;"
@@ -57,7 +57,7 @@
             <div class=" d-flex align-items-center pb-3  ">
                 <div class="lay">
                     <div style="width: 100px; height: 75px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[0]->blogs[2]->image ?? null) }} );"
-                        class=" text-right img">
+                        class=" text-right img skeleton">
                     </div>
                     <a href=" {{ route('post_details', ['id' => $categories[0]->blogs[2]->id]) }} "
                         style="display: flex; align-items: center; justify-content: center;"
@@ -75,7 +75,7 @@
             <div class=" d-flex align-items-center pb-3  ">
                 <div class="lay">
                     <div style="width: 100px; height: 75px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[0]->blogs[3]->image ?? null) }} );"
-                        class=" text-right img">
+                        class=" text-right img skeleton">
                     </div>
                     <a href=" {{ route('post_details', ['id' => $categories[0]->blogs[3]->id]) }} "
                         style="display: flex; align-items: center; justify-content: center;"
@@ -93,7 +93,7 @@
             <div class=" d-flex align-items-center pb-3  ">
                 <div class="lay">
                     <div style="width: 100px; height: 75px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[0]->blogs[4]->image ?? null) }} );"
-                        class=" text-right img">
+                        class=" text-right img skeleton">
                     </div>
                     <a href=" {{ route('post_details', ['id' => $categories[0]->blogs[4]->id]) }} "
                         style="display: flex; align-items: center; justify-content: center;"
@@ -111,7 +111,7 @@
             <div class=" d-flex align-items-center pb-3  ">
                 <div class="lay">
                     <div style="width: 100px; height: 75px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[0]->blogs[5]->image ?? null) }} );"
-                        class=" text-right img">
+                        class=" text-right img skeleton">
                     </div>
                     <a href="{{ route('post_details', ['id' => $categories[0]->blogs[5]->id]) }}"
                         style="display: flex; align-items: center; justify-content: center;"
@@ -145,7 +145,7 @@
                             <a href="{{ route('post_details', ['id' => $categories[1]->blogs[0]->id]) }}"
                                 class=" d-flex  py-2  ">
                                 <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[0]->image ?? null) }} );"
-                                    class=" text-right">
+                                    class=" text-right skeleton">
                                 </div>
                                 <div class="text text-right  text-black mr-3">
                                     <h6 class="text-right "> {{ $categories[1]->blogs[0]->name }}
@@ -166,7 +166,7 @@
                             <a href="{{ route('post_details', ['id' => $categories[1]->blogs[1]->id]) }}"
                                 class=" d-flex  py-2  ">
                                 <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[1]->image ?? null) }} );"
-                                    class=" text-right">
+                                    class=" text-right skeleton">
                                 </div>
                                 <div class="text text-right  text-black mr-3">
                                     <h6 class="text-right "> {{ $categories[1]->blogs[1]->name }}
@@ -187,7 +187,7 @@
                             <a href="{{ route('post_details', ['id' => $categories[1]->blogs[2]->id]) }}"
                                 class=" d-flex  py-2  ">
                                 <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[3]->image ?? null) }} );"
-                                    class=" text-right">
+                                    class=" text-right skeleton">
                                 </div>
                                 <div class="text text-right  text-black mr-3">
                                     <h6 class="text-right "> {{ $categories[1]->blogs[2]->name }}
@@ -208,7 +208,7 @@
                             <a href="{{ route('post_details', ['id' => $categories[1]->blogs[3]->id]) }}"
                                 class=" d-flex  py-2  ">
                                 <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[4]->image ?? null) }} );"
-                                    class=" text-right">
+                                    class=" text-right skeleton">
                                 </div>
                                 <div class="text text-right  text-black mr-3">
                                     <h6 class="text-right "> {{ $categories[1]->blogs[3]->name }}

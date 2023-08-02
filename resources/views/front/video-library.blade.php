@@ -113,10 +113,14 @@
 
 
 
-    <!-- vendor files -->
-    <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
+<!--core JavaScript -->
+<script src="{{ asset('front/assets/js/videolist.js') }}"></script>
+<script src="{{ asset('front/assets/js/scroll.js') }}"></script>
+
+<!-- vendor files -->
+<script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 

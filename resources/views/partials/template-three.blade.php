@@ -10,11 +10,11 @@
             </div>
             <div class="hover ">
                 <div class="content  ">
-                    <div class="2">
+                    <div class="">
                         <a href="{{ route('post_details', ['id' => $category->blogs[0]->id]) }}">
 
                             <div style=" background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url({{ asset('storage/images/blog/' . $category->blogs[0]->image ?? null) }});"
-                                class="column position-relative  ">
+                                class="column position-relative skeleton  ">
                                 <div class="text text-right bottom-right text-white ">
                                     <h6 class=" text-right">
                                         {{ $category->blogs[0]->name }}
@@ -33,9 +33,13 @@
                     class="col-lg-6 col-md-6 col-sm-12   ">
                     <div style="width: 260px; " class=" card  mx-auto  mb-2">
                         <div class="lay">
-                            <img style="height: 155px" class="card-img-top"
-                                src="{{ asset('storage/images/blog/' . $category->blogs[1]->image ?? null) }}"
-                                alt="">
+
+                           <div class="skeleton">
+                              <img style="height: 155px" class="card-img-top"
+                              src="{{ asset('storage/images/blog/' . $category->blogs[1]->image ?? null) }}"
+                              alt="">
+                           </div>
+
                             <a href=" {{ route('post_details', ['id' => $category->blogs[1]->id]) }} "
                                 style="display: flex; align-items: center; justify-content: center;"
                                 class="overlayy overlayFade">
@@ -59,9 +63,12 @@
                     <div style="width: 260px; " class="  mx-auto card ">
 
                         <div class="lay">
-                            <img style="height: 155px" class="card-img-top"
-                                src="{{ asset('storage/images/blog/' . $category->blogs[2]->image ?? null) }}"
-                                alt="">
+                           <div class="skeleton">
+                              <img style="height: 155px" class="card-img-top"
+                              src="{{ asset('storage/images/blog/' . $category->blogs[2]->image ?? null) }}"
+                              alt="">
+                           </div>
+
                             <a href=" {{ route('post_details', ['id' => $category->blogs[2]->id]) }} "
                                 style="display: flex; align-items: center; justify-content: center;"
                                 class="overlayy overlayFade">

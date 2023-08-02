@@ -140,7 +140,7 @@
                                                 <h6 class=" text-right">
                                                     {{ $blog->name }}
                                                 </h6>
-                                                <span class="time ">قبل
+                                                <span class="time">قبل
                                                     {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
                                                 </span>
                                             </div>
@@ -182,7 +182,7 @@
                                                     alt="Image 1">
                                             </div>
                                             <div class="text text-right bottom-right text-white ">
-                                                <h6 class=" text-right">
+                                                <h6 class=" text-right ">
                                                     {{ $blog->name }}
                                                 </h6>
                                                 <span class="time "> منذ
@@ -233,36 +233,40 @@
                                 @endphp
                                 <a href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
                                     <div class="box">
-                                        <img class="card-img-top"
-                                            style="height: 180px; width: 280px;object-fit: cover "
-                                            src="{{ asset('storage/images/blog/' . $blog->image) }}"
-                                            alt="" Loading="lazy">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    @php
-                                        $category = $blog->category;
-                                    @endphp
-                                    <a href="{{ route('category', ['id' => $category->id]) }}"
-                                        class="category-title d-block  text-right pb-2">{{ $blog->category->name }}
-                                    </a>
-                                    @php
-                                        $slug = Str::slug($blog->name);
-                                    @endphp
-                                    <a
-                                        href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
-                                        <h6 class="category-desc text-right">
-                                            {{ $blog->name }}
-                                        </h6>
-                                    </a>
-                                </div>
+                                        <a href="{{ route('post_details', $blog->id) }}">
+                                            <div class="box skeleton">
+                                                <img class="card-img-top"
+                                                    style="height: 180px; width: 280px;object-fit: cover "
+                                                    src="{{ asset('storage/images/blog/' . $blog->image) }}"
+                                                    alt="" Loading="lazy">
+                                            </div>
+                                        </a>
+                                        <div class="card-body">
+                                            @php
+                                                $category = $blog->category;
+                                            @endphp
+                                            <a href="{{ route('category', ['id' => $category->id]) }}"
+                                                class="category-title d-block  text-right pb-2 ">{{ $blog->category->name }}
+                                            </a>
+                                            @php
+                                                $slug = Str::slug($blog->name);
+                                            @endphp
+                                            <a
+                                                href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
+                                                <h6 class="category-desc text-right">
+                                                    <a href="{{ route('post_details', $blog->id) }}">
+                                                        <h6 class="category-desc text-right ">
+                                                            {{ $blog->name }}
+                                                        </h6>
+                                                    </a>
+                                        </div>
 
-                                <div class="container text-black-50 pb-2 bg-white text-right">
-                                    <span class="time"> منذ
-                                        {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
-                                    </span>
-                                </div>
-                            </div>
+                                        <div class="container text-black-50 pb-2 bg-white text-right">
+                                            <span class="time "> منذ
+                                                {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
+                                            </span>
+                                        </div>
+                                    </div>
                         @endif
                     @endforeach
 
@@ -455,12 +459,13 @@
     </div>
 </section>
 
-<footer dir="rtl">
+
+
+<footer>
     <div class=" footer text-white  ">
-        @php
-            $privacyDiv = $divs->where('name', 'privacy')->first();
-        @endphp
-        <div class=" mx-auto  "> {{ $privacyDiv->content }} </div>
+        <div class=" mx-auto  ">الحقوق محفوظة لشبكة
+            بيسان
+            الإخبارية (2018)</div>
         <div class=" d-flex  justify-content-center  ">
             <ul class="d-flex links justify-content-center  ">
                 <li class="mt-4 bg-white text-danger mb-sm-3 twitter"><a href="#"><i
@@ -582,6 +587,7 @@
         }
     });
 </script>
+<script src="{{ asset('front/assets/js/skel.js') }}"></script>
 
 </body>
 
