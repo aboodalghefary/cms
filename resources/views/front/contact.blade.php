@@ -2,26 +2,52 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
 
-    <!--  styles for this template -->
-    <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
 
-    <!-- animate-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- icons -->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css" rel="stylesheet">
-    <!-- fonts -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=neckar-bold" /> -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&display=swap">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&family=Marhey&display=swap">
+
+   <!-- lightgallery -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-autoplay.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-fullscreen.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-share.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-zoom.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-thumbnail.min.css" />
+
+   <!-- Bootstrap core CSS -->
+   <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+   <!--  styles for this template -->
+   <link rel="stylesheet" href="{{ asset('front/assets/vendor/magic-master/dist/magic.css') }}">
+   <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
+
+   <!-- icons -->
+   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+
+   <!-- fonts -->
+   <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=neckar-bold" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&display=swap">
+   <link rel="stylesheet"
+       href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&family=Marhey&display=swap">
+
+
+   <!-- video plyer -->
+   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+   <style>
+       .column {
+           background-size: cover;
+           background-repeat: no-repeat;
+       }
+
+       .magictime {
+           animation-duration: .6s;
+       }
+   </style>
 </head>
+
 
 <body>
 
@@ -105,25 +131,14 @@
         </div>
     </footer>
 
-    <!-- vendor files -->
-    <script src="{{ asset('cms/assets/js/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('cms/assets/js/vendor/notifications/sweet_alert.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"
-        integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{{ asset('cms/assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('cms/assets/js/crud.js') }}"></script>
-    <script>
-        function performStore() {
-            let formData = new FormData();
-            formData.append('name', document.getElementById('name').value);
-            formData.append('email', document.getElementById('email').value);
-            formData.append('content', document.getElementById('content').value);
-            formData.append('title', document.getElementById('title').value);
-            store('/contact_store', formData);
-        }
-    </script>
-    <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
+  <!--core JavaScript -->
+<script src="{{ asset('front/assets/js/videolist.js') }}"></script>
+<script src="{{ asset('front/assets/js/scroll.js') }}"></script>
+
+<!-- vendor files -->
+<script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 
