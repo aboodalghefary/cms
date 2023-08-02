@@ -740,6 +740,7 @@ header.sticky a.active {
    pointer-events: none;
    transition: all .4s;
    cursor: pointer;
+   z-index: 555555555555555555555555555555;
 }
 
 .to-top.active {
@@ -1318,6 +1319,7 @@ p {
 
 /*start contact page */
 
+
 .form-control {
    height: 52px;
    width: 47%;
@@ -1619,6 +1621,7 @@ footer {
       padding-left: 1px !important;
    }
 }
+
 
 .contact .no-gutters {
    margin-right: 0 !important;

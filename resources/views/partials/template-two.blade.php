@@ -211,7 +211,7 @@
                                     class=" text-right skeleton">
                                 </div>
                                 <div class="text text-right  text-black mr-3">
-                                    <h6 class="text-right skeleton"> {{ $categories[1]->blogs[3]->name }}
+                                    <h6 class="text-right "> {{ $categories[1]->blogs[3]->name }}
                                     </h6>
                                     <span class="date text-black-50"> {{ $categories[1]->blogs[3]->date }} </span>
                                 </div>
