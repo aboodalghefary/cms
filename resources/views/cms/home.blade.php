@@ -37,6 +37,14 @@
         rel="stylesheet">
     <!-- /global stylesheets -->
     <style>
+        .sidebar-main-resized .nav-sidebar {
+            align-items: center;
+        }
+
+        .sidebar-main-unfold .nav-sidebar {
+            align-items: inherit;
+        }
+
         button.swal2-styled {
             border: none !important;
             outline: none !important;
@@ -191,9 +199,7 @@
 
             <!-- Inner content -->
             <div class="content-inner">
-                <div class="content">
-
-                </div>
+                @yield('content')
             </div>
             <!-- /inner content -->
 
@@ -260,7 +266,7 @@
     <!-- Theme JS files -->
     <script src="{{ asset('cms/assets/demo/pages/dashboard.js') }}"></script>
     <!-- /theme JS files -->
-
+    @yield('scripts')
 </body>
 
 </html>

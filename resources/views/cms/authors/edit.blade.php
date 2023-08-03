@@ -83,7 +83,8 @@
                     <label class="col-form-label col-lg-3">الجنس</label>
                     <div class="col-lg-9">
                         <select data-placeholder="الجنس" name="gender" id="gender" class="form-control select-icons">
-                            <option value="male" {{ $author->gender == 'male ' ? selected : null }}>ذكر</option>
+                            <option value="male" {{ $author->gender == 'male ' ? selected : null }}>ذكر
+                            </option>
                             <option value="female" {{ $author->gender == 'female ' ? selected : null }}>انثى
                             </option>
                         </select>
@@ -144,7 +145,6 @@
             let formData = new FormData();
             formData.append('name', document.getElementById('name').value);
             formData.append('email', document.getElementById('email').value);
-            formData.append('password', document.getElementById('password').value);
             formData.append('mobile', document.getElementById('mobile').value);
             formData.append('address', document.getElementById('address').value);
             formData.append('city', document.getElementById('city').value);

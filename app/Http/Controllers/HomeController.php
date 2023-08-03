@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
+use App\Models\Author;
 use App\Models\Blog;
 use App\Models\Div;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class HomeController extends Controller
 {
@@ -20,17 +23,28 @@ class HomeController extends Controller
       return view('cms.front_control', compact('divs', 'blogs_comment_enabled'));
    }
 
+   public function show_profileAdmin($id)
+   {
+      $admin = Admin::findOrFail($id);
+      $roles = Role::where('guard_name', 'admin')->get();
+      return view('cms.authors.show_profile_admin', compact('admin', 'roles'));
+   }
+   public function show_profileAuthor($id)
+   {
+      $author = Author::findOrFail($id);
+      $roles = Role::where('guard_name', 'author')->get();
+
+      return view('cms.authors.show_profile_author', compact('author','roles'));
+   }
+
    public function comments_enabled(Request $request)
    {
-      // قم بتحديث قيمة الحقل blogs_comment_enabled في جدول blogs لتصبح 0 لجميع السجلات
       try {
          $status = $request->get('comments_enabled');
          Blog::query()->update(['blogs_comment_enabled' => $status]);
 
-         // رسالة نجاح
          return response()->json(['icon' => 'success', 'title' => "تمت عملية التعديل بنجاح"], 200);
       } catch (\Exception $e) {
-         // في حالة حدوث أي خطأ أثناء التحديث، راجع رسالة الفشل
          return response()->json(['icon' => 'error', 'title' => "فشلت عملية التعديل"], 500);
       }
    }

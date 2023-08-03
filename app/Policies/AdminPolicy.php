@@ -71,7 +71,7 @@ class AdminPolicy
       foreach (array_keys(config('auth.guards')) as $guard) {
 
          if (auth()->guard($guard)->check()) {
-            return auth()->user()->hasPermissionTo('update-admins') ? $this->allow() : $this->deny('لا تملك صلاحية هذا الاجراء');
+            return auth()->user()->hasPermissionTo('edit-admins') ? $this->allow() : $this->deny('لا تملك صلاحية هذا الاجراء');
          }
       }
    }

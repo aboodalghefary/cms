@@ -61,6 +61,8 @@ Route::group([
 
    route::middleware(['auth:admin,author'])->get('home', [HomeController::class, 'index'])->name('home');
    route::middleware(['auth:admin,author'])->get('front_control', [HomeController::class, 'front_control'])->name('front_control');
+   route::middleware(['auth:admin,author'])->get('show_profile_author/{id}', [HomeController::class, 'show_profileAuthor'])->name('show_profile_author');
+   route::middleware(['auth:admin,author'])->get('show_profile_admin/{id}', [HomeController::class, 'show_profileAdmin'])->name('show_profile_admin');
    route::middleware(['auth:admin,author'])->post('comments_enabled', [HomeController::class, 'comments_enabled'])->name('comments_enabled');
 
    Route::prefix('cms/')->middleware(['guest:admin,author'])->group(function () {
@@ -103,8 +105,10 @@ Route::group([
 
       Route::resource('admins', AdminController::class);
       Route::post('admins_update/{id}', [AdminController::class, 'update'])->name('admins_update');
+      Route::post('admins_update_password/{id}', [AdminController::class, 'admins_update_password'])->name('admins_update_password');
       Route::resource('authors', AuthorController::class);
       Route::post('authors_update/{id}', [AuthorController::class, 'update'])->name('authors_update');
+      Route::post('authors_update_password/{id}', [AuthorController::class, 'authors_update_password'])->name('authors_update_password');
 
       Route::resource('roles', RoleController::class);
       Route::post('roles_update/{id}', [RoleController::class, 'update'])->name('roles_update');

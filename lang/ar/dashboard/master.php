@@ -6,6 +6,7 @@ return [
    "home" => 'الرئيسية',
    "control_items" => 'عناصر التحكم',
    "admins" => 'المشرفين',
+   "memmbers" => 'الاعضاء',
    "authors" => 'المحررين',
    "view_admins" => 'عرض المشرفين',
    "add_admin" => 'اضافة المشرفين',
