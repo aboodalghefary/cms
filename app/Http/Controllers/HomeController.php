@@ -10,10 +10,14 @@ class HomeController extends Controller
 {
    public function index()
    {
+      return view('cms.home');
+   }
+   public function front_control()
+   {
       $divs = Div::all();
       $checked = Blog::first();
       $blogs_comment_enabled = $checked->blogs_comment_enabled;
-      return view('cms.home', compact('divs', 'blogs_comment_enabled'));
+      return view('cms.front_control', compact('divs', 'blogs_comment_enabled'));
    }
 
    public function comments_enabled(Request $request)

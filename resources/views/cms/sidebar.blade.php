@@ -250,8 +250,8 @@
                             </li>
                         @endcanany
                         </li>
-                        <li class="nav-item">
-                            @canany(['index-libraries', 'create-libraries'])
+                        @canany(['index-libraries', 'create-libraries'])
+                            <li class="nav-item">
                             <li class="nav-item nav-item-submenu">
                                 <a href="#" class="nav-link">
                                     <i class="ph-user"></i>
@@ -273,6 +273,15 @@
                                         </li>
                                     @endcan
                                 </ul>
+                            </li>
+                        @endcanany
+                        @canany(['index-libraries', 'create-libraries'])
+                            <li class="nav-item">
+                            <li class="nav-item nav-item">
+                                <a href="{{ route('front_control') }}" class="nav-link">
+                                    <i class="ph-user"></i>
+                                    <span> التحكم بالفرونت </span>
+                                </a>
                             </li>
                         @endcanany
                         </li>

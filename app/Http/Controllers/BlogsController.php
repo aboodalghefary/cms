@@ -52,11 +52,11 @@ class BlogsController extends Controller
       $this->authorize('create', Blogs::class);
 
       $validator = validator($request->all(), [
-         'name' => 'required|string|min:3|max:20',
+         'name' => 'required|string|min:3|max:100',
       ], [
          'name.required' => 'الإسم مطلوب',
-         'name.min' => 'لا يقبل أقل من 3 حروف',
-         'name.max' => 'لا يقبل أكثر من 20 حروف',
+         'name.min' => 'لا يقبل  الاسم أقل من 3 حروف',
+         'name.max' => 'لا يقبل  الاسم أكثر من 100 حروف',
       ]);
 
       if (!$validator->fails()) {

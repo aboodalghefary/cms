@@ -60,6 +60,7 @@ Route::group([
    });
 
    route::middleware(['auth:admin,author'])->get('home', [HomeController::class, 'index'])->name('home');
+   route::middleware(['auth:admin,author'])->get('front_control', [HomeController::class, 'front_control'])->name('front_control');
    route::middleware(['auth:admin,author'])->post('comments_enabled', [HomeController::class, 'comments_enabled'])->name('comments_enabled');
 
    Route::prefix('cms/')->middleware(['guest:admin,author'])->group(function () {
