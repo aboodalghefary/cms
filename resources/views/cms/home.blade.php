@@ -367,7 +367,7 @@
                                         <div class="fw-semibold">اعلان صفحة الخبر </div>
                                         <span class="text-muted" data-bs-toggle="modal"
                                             data-bs-target="#modal_form_horizontal"
-                                            onclick="openEditModal(this , '{{ $ad1PostDiv->name }}' , '{{ $ad1PostDiv->id }}' ,'{{ $ad1PostDiv->href }}','{{ $ad1PostDiv->content }}' )">تعديل</span>
+                                            {{-- onclick="openEditModal(this , '{{ $ad1PostDiv->name }}' , '{{ $ad1PostDiv->id }}' ,'{{ $ad1PostDiv->href }}','{{ $ad1PostDiv->content }}' )">تعديل</span> --}}
                                     </div>
                                 </div>
                             </div>

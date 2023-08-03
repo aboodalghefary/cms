@@ -725,7 +725,7 @@ header.sticky a.active {
 .to-top {
    background: var(--main-color);
    position: fixed;
-   bottom: 16px;
+   top: 710px;
    right: 32px;
    width: 50px;
    height: 50px;
@@ -1343,17 +1343,12 @@ p {
    }
 }
 
-
-
 @media (max-width:992px) {
    .contact{
-      height: 100vh;
+      height: 110vh;
       margin: 50px 0;
    }
-   .contact form{
-      /* width: 350px; */
-      margin-top: 45px;
-   }
+
 
 }
 
@@ -1395,34 +1390,14 @@ footer {
 .footer {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
-   gap: 10px;
+   /* gap: 10px; */
    align-items: center;
-   /* padding: 5px 0%; */
-   padding-right: 8%;
+   padding-top: 8px;
+   padding-right: 7%;
 }
 
-@media (max-width:1200px) {
-   .footer {
-      grid-template-columns: 1fr 1fr 1fr;
-      padding: 10px;
-   }
-}
 
-@media (max-width:1500px) {
-   .footer {
-      grid-template-columns: 1fr 1fr 1fr;
-      padding-right: 10%;
 
-   }
-}
-
-@media (max-width:991px) {
-   .footer {
-      grid-template-columns: 1fr 1fr;
-      padding-right: 10%;
-
-   }
-}
 
 @media (max-width:768px) {
    .footer {
