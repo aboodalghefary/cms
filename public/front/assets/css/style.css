@@ -677,12 +677,12 @@ header a {
 
 .links li.youtube:hover {
    background: #CD201F !important;
-   transition: .5s;
+   transition: .8s;
 }
 
-.links li a:hover {
-
+.links li:hover a{
    color: #fff !important;
+   transition: .8s;
 }
 
 @media (max-width:768px) {
