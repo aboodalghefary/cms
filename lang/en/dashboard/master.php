@@ -7,6 +7,7 @@ return [
    "control_items" => 'Control Items',
    "admins" => 'Admins',
    "authors" => 'Authors',
+   "memmbers" => 'Memmber',
    "albums" => 'Image Albums',
    "libraries" => 'Video Libraries',
    "view_admins" => 'View Admins',
