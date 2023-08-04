@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <style>
 
+        body {
+            font-family: "the10", Arial, "Segoe UI", "Helvetica Neue", sans-serif;
+        }
+    </style>
 
     <!-- lightgallery -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />

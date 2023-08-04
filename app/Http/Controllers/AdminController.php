@@ -8,6 +8,7 @@ use App\Traits\UserTypeTrait;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
@@ -102,6 +103,34 @@ class AdminController extends Controller
          return response()->json(['icon' => 'error', 'title' => $e->getMessage()], 400);
       }
    }
+
+   public function admins_update_password(Request $request, $id)
+   {
+      $validator = validator($request->all(), [
+         'new_password' => 'required',
+         'current_password' => 'required',
+      ], []);
+      if ($validator->fails()) {
+         return response()->json(['icon' => 'error', 'title' => $validator->getMessageBag()->first()], 400);
+      }
+      $admin = Admin::findOrFail($id);
+      $currentPassword = $request->input('current_password');
+
+      if (Hash::check($currentPassword, $admin->password)) {
+         $newPassword = Hash::make($request->input('new_password'));
+         $admin->password =  $newPassword;
+         $isSaved = $admin->save();
+         if ($isSaved) {
+            return response()->json(['icon' => 'success', 'title' => "تمت عملية التخزين"], 200);
+         } else {
+            return response()->json(['icon' => 'error', 'title' => "فشلت عملية التخزين"], 400);
+         }
+      } else {
+         return response()->json(['icon' => 'error', 'title' => " كلمة المرور غير متطابقة "], 400);
+      }
+   }
+
+
 
    /**
     * Remove the specified resource from storage.

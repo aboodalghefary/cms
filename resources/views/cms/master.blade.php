@@ -38,6 +38,14 @@
         <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
         <!-- /global stylesheets -->
         <style>
+            .sidebar-main-resized .nav-sidebar {
+                align-items: center;
+            }
+
+            .sidebar-main-unfold .nav-sidebar {
+                align-items: inherit;
+            }
+
             button.swal2-styled {
                 border: none !important;
                 outline: none !important;

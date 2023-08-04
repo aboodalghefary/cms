@@ -110,10 +110,3 @@ function openEditModal(element, divName, divID, divHref, divContent) {
       submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
    }
 }
-function performUpdate(id) {
-   let formData = new FormData();
-   formData.append("content", document.getElementById("content").value);
-   formData.append("href", document.getElementById("href").value);
-   formData.append("image", document.getElementById("image").files[0]);
-   storeRedirect("/cms/admin/divs_update/" + id, formData, "/home");
-}

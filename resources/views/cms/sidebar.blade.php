@@ -1,4 +1,4 @@
-        <div class="sidebar sidebar-dark sidebar-main sidebar-expand-lg">
+        <div class="sidebar sidebar-dark sidebar-main sidebar-expand-lg sidebar-main-resized">
 
             <div class="sidebar-content">
 
@@ -8,12 +8,12 @@
 
                         <div>
                             <button type="button"
-                                class="border-transparent btn btn-flat-white btn-icon btn-sm rounded-pill sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+                                class="border-transparent btn btn-flat-white btn-icon text-white btn-sm rounded-pill sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
                                 <i class="ph-arrows-left-right"></i>
                             </button>
 
                             <button type="button"
-                                class="border-transparent btn btn-flat-white btn-icon btn-sm rounded-pill sidebar-mobile-main-toggle d-lg-none">
+                                class="border-transparent btn btn-flat-white btn-icon text-white btn-sm rounded-pill sidebar-mobile-main-toggle d-lg-none">
                                 <i class="ph-x"></i>
                             </button>
                         </div>
@@ -50,7 +50,7 @@
                             @canany(['index-permissions', 'create-permissions'])
                             <li class="nav-item nav-item-submenu">
                                 <a href="#" class="nav-link">
-                                    <i class="ph-circles-four"></i>
+                                    <i class="ph-lock-key"></i>
                                     <span>الصلاحيات</span>
                                 </a>
                                 <ul class="nav-group-sub collapse">
@@ -74,7 +74,7 @@
                             @canany(['index-roles', 'create-roles', 'edit-roles', 'delete-roles'])
                             <li class="nav-item nav-item-submenu">
                                 <a href="#" class="nav-link">
-                                    <i class="ph-circles-four"></i>
+                                    <i class="ph-lock-key-open"></i>
                                     <span>الادوار</span>
                                 </a>
                                 <ul class="nav-group-sub collapse">
@@ -92,44 +92,17 @@
                             </li>
                         @endcanany
                         </li>
-
-                        <li class="nav-item">
-                            @canany(['index-about_us', 'create-about_us'])
-                            <li class="nav-item nav-item-submenu">
-                                <a href="#" class="nav-link">
-                                    <i class="ph-user"></i>
-                                    <span>{{ __('dashboard/master.about_us') }}</span>
-                                </a>
-                                <ul class="nav-group-sub collapse">
-                                    @can('index-about_us')
-                                        <li class="nav-item">
-                                            <a href="{{ route('about_us.index') }}" class="nav-link">
-                                                <i class="ph-eye"></i>
-                                                {{ __('dashboard/master.view') }}</a>
-                                        </li>
-                                    @endcan
-                                    @can('create-about_us')
-                                        <li class="nav-item">
-                                            <a href="{{ route('about_us.create') }}" class="nav-link">
-                                                <i class="ph-plus"></i>
-                                                {{ __('dashboard/master.add') }}</a>
-                                        </li>
-                                    @endcan
-                                </ul>
-                            </li>
-                        @endcanany
-                        </li>
                         <li class="nav-item">
                             @canany(['index-admins', 'create-admins'])
                             <li class="nav-item nav-item-submenu">
                                 <a href="#" class="nav-link">
-                                    <i class="ph-user"></i>
-                                    <span>{{ __('dashboard/master.admins') }}</span>
+                                    <i class="ph-users-three"></i>
+                                    <span>{{ __('dashboard/master.memmbers') }}</span>
                                 </a>
                                 <ul class="nav-group-sub collapse">
                                     @can('index-admins')
                                         <li class="nav-item">
-                                            <a href="{{ route('admins.index') }}" class="nav-link">
+                                            <a href="{{ route('authors.index') }}" class="nav-link">
                                                 <i class="ph-eye"></i>
                                                 {{ __('dashboard/master.view') }}</a>
                                         </li>
@@ -139,25 +112,6 @@
                                             <a href="{{ route('admins.create') }}" class="nav-link">
                                                 <i class="ph-plus"></i>
                                                 {{ __('dashboard/master.add') }}</a>
-                                        </li>
-                                    @endcan
-                                </ul>
-                            </li>
-                        @endcanany
-                        </li>
-                        <li class="nav-item">
-                            @canany(['index-authors', 'create-authors'])
-                            <li class="nav-item nav-item-submenu">
-                                <a href="#" class="nav-link">
-                                    <i class="ph-user"></i>
-                                    <span>{{ __('dashboard/master.authors') }}</span>
-                                </a>
-                                <ul class="nav-group-sub collapse">
-                                    @can('index-authors')
-                                        <li class="nav-item">
-                                            <a href="{{ route('authors.index') }}" class="nav-link">
-                                                <i class="ph-eye"></i>
-                                                {{ __('dashboard/master.view') }}</a>
                                         </li>
                                     @endcan
                                     @can('create-authors')
@@ -175,7 +129,7 @@
                             @canany(['index-blogs', 'create-blogs'])
                             <li class="nav-item nav-item-submenu">
                                 <a href="#" class="nav-link">
-                                    <i class="ph-user"></i>
+                                    <i class="ph-article"></i>
                                     <span>{{ __('dashboard/master.posts') }}</span>
                                 </a>
                                 <ul class="nav-group-sub collapse">
@@ -201,7 +155,7 @@
                             @canany(['index-categories', 'create-categories'])
                             <li class="nav-item nav-item-submenu">
                                 <a href="#" class="nav-link">
-                                    <i class="ph-user"></i>
+                                    <i class="ph-squares-four"></i>
                                     <span>{{ __('dashboard/master.categories') }}</span>
                                 </a>
                                 <ul class="nav-group-sub collapse">
@@ -227,7 +181,7 @@
                             @canany(['index-albums', 'create-albums'])
                             <li class="nav-item nav-item-submenu">
                                 <a href="#" class="nav-link">
-                                    <i class="ph-user"></i>
+                                    <i class="ph-image"></i>
                                     <span> {{ __('dashboard/master.albums') }}</span>
                                 </a>
                                 <ul class="nav-group-sub collapse">
@@ -254,7 +208,7 @@
                             <li class="nav-item">
                             <li class="nav-item nav-item-submenu">
                                 <a href="#" class="nav-link">
-                                    <i class="ph-user"></i>
+                                    <i class="ph-monitor-play"></i>
                                     <span>{{ __('dashboard/master.libraries') }}</span>
                                 </a>
                                 <ul class="nav-group-sub collapse">
@@ -275,11 +229,36 @@
                                 </ul>
                             </li>
                         @endcanany
-                        @canany(['index-libraries', 'create-libraries'])
+                        @canany(['index-roles', 'create-roles'])
+                            <li class="nav-item">
+                            <li class="nav-item nav-item-submenu">
+                                <a href="#" class="nav-link">
+                                    <i class="ph-puzzle-piece"></i>
+                                    <span> التحكم في عرض الفرونت </span>
+                                </a>
+                                <ul class="nav-group-sub collapse">
+                                    @can('index-roles')
+                                        <li class="nav-item">
+                                            <a href="{{ route('rows.index') }}" class="nav-link">
+                                                <i class="ph-eye"></i>
+                                                {{ __('dashboard/master.view') }}</a>
+                                        </li>
+                                    @endcan
+                                    @can('create-roles')
+                                        <li class="nav-item">
+                                            <a href="{{ route('rows.create') }}" class="nav-link">
+                                                <i class="ph-plus"></i>
+                                                {{ __('dashboard/master.add') }}</a>
+                                        </li>
+                                    @endcan
+                                </ul>
+                            </li>
+                        @endcanany
+                        @canany(['index-roles', 'create-roles'])
                             <li class="nav-item">
                             <li class="nav-item nav-item">
                                 <a href="{{ route('front_control') }}" class="nav-link">
-                                    <i class="ph-user"></i>
+                                    <i class="ph-gear"></i>
                                     <span> التحكم بالفرونت </span>
                                 </a>
                             </li>

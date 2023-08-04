@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Author;
 use App\Traits\UserTypeTrait;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 
 class AuthorController extends Controller
@@ -21,9 +23,11 @@ class AuthorController extends Controller
    public function index()
    {
       $this->authorize('viewAny', Author::class);
+      $roles = Role::all();
 
       $authors = Author::with('user')->get();
-      return view('cms.authors.index', compact('authors'));
+      $admins = Admin::with('user')->get();
+      return view('cms.authors.index', compact('authors', 'roles', 'admins'));
    }
 
    /**
@@ -58,7 +62,31 @@ class AuthorController extends Controller
          return response()->json(['icon' => 'error', 'title' => $e->getMessage()], 400);
       }
    }
+   public function authors_update_password(Request $request, $id)
+   {
+      $validator = validator($request->all(), [
+         'new_password' => 'required',
+         'current_password' => 'required',
+      ], []);
+      if ($validator->fails()) {
+         return response()->json(['icon' => 'error', 'title' => $validator->getMessageBag()->first()], 400);
+      }
+      $author = Author::findOrFail($id);
+      $currentPassword = $request->input('current_password');
 
+      if (Hash::check($currentPassword, $author->password)) {
+         $newPassword = Hash::make($request->input('new_password'));
+         $author->password =  $newPassword;
+         $isSaved = $author->save();
+         if ($isSaved) {
+            return response()->json(['icon' => 'success', 'title' => "تمت عملية التخزين"], 200);
+         } else {
+            return response()->json(['icon' => 'error', 'title' => "فشلت عملية التخزين"], 400);
+         }
+      } else {
+         return response()->json(['icon' => 'error', 'title' => " كلمة المرور غير متطابقة "], 400);
+      }
+   }
    /**
     * Display the specified resource.
     *

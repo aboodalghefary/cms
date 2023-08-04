@@ -1,8 +1,8 @@
 @extends('cms.master')
-@section('title', 'المحررين')
+@section('title', 'الاعضاء')
 
-@section('tittle_1', ' عرض المحررين ')
-@section('tittle_2', ' عرض المحررين ')
+@section('tittle_1', ' عرض الاعضاء ')
+@section('tittle_2', ' عرض الاعضاء ')
 
 
 @section('styles')
@@ -17,76 +17,121 @@
 
 
 @section('content')
-
-    <!-- Basic datatable -->
-    <div class="card">
-        <div class="card-header">
-            <h5 class="mb-0">قائمة المحررين</h5>
-        </div>
-
-        <table class="table datatable-basic">
-            <thead>
-                <tr>
-                    <th>الصورة</th>
-                    <th>الاسم</th>
-                    <th>الايميل</th>
-                    <th>العنوان</th>
-                    <th>المدينة</th>
-                    <th>الحالة</th>
-                    <th>تاريخ الميلاد</th>
-                    <th>الجنس</th>
-                    <th class="div-center">الاجراءات</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($authors as $author)
-                    <tr>
-                        <td><img class="rounded-circle w-48px h-48px"
-                                src="{{ asset('storage/images/author/' . $author->user->image) }}"></td>
-                        <td>{{ $author->user->name ?? null }}</td>
-                        <td>{{ $author->email ?? null }}</td>
-                        <td>{{ $author->user->address ?? null }}</td>
-                        <td>{{ $author->user->city ?? null }}</td>
-                        <td>
-                            @if ($author->user->status == 'separated')
-                                مطلق
-                            @elseif ($author->user->status == 'single')
-                                اعزب
-                            @elseif ($author->user->status == 'married')
-                                متزوج
-                            @endif
-                        </td>
-                        <td>{{ $author->user->birthday ?? null }}</td>
-                        <td>{{ $author->user->gender == 'male' ? 'ذكر' : 'انثى' }}
-                        </td>
-                        <td class="div-center">
-                            <div class="d-inline-flex">
-                                <div class="dropdown">
-                                    <a href="#" class="div-body" data-bs-toggle="dropdown">
-                                        <i class="ph-list"></i>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="{{ route('authors.edit', $author->id) }}" class="dropdown-item">
-                                            <i class="ph-file-doc me-2"></i>
-                                            تعديل
+    <div class="row" style="border: none;">
+        <div class="col-lg-6" style="border: none;">
+            <div class="card" style="border: none;">
+                <div class="card-header" style="border: none;">
+                    <h5 class="mb-0">المحررين</h5>
+                </div>
+                <div class="list-group list-group-borderless py-2" style="border: none;">
+                    @foreach ($roles->where('guard_name', 'author')->all() as $role)
+                        @foreach ($authors as $index => $author)
+                            @if ($author->hasRole($role->name))
+                                @if ($index == 0)
+                                    <div class="list-group-item fw-semibold" style="border: none;">{{ $role->name }}
+                                    </div>
+                                @endif
+                                <div style="border: none;">
+                                    <div class="list-group-item hstack gap-3" style="border: none;">
+                                        <a href="#" class="status-indicator-container">
+                                            <img src="{{ asset('storage/images/author/' . $author->user->image) }}"
+                                                class="w-40px h-40px rounded-pill" alt="">
+                                            <span class="status-indicator bg-success"></span>
                                         </a>
-                                        <a href="#" onclick="performDestroy({{ $author->id }},this)"
-                                            class="dropdown-item">
-                                            <i class="ph-file-doc me-2"></i>
-                                            حذف
-                                        </a>
+
+                                        <div class="flex-fill">
+                                            <a href="{{ route('authors.edit', $author->id) }}"
+                                                class="fw-semibold">{{ ucwords($author->user->name) }}</a>
+                                        </div>
+
+                                        <div class="align-self-center ms-3">
+                                            <a href="#p{{ $author->user->id }}" class="text-body collapsed"
+                                                data-bs-toggle="collapse">
+                                                <i class="ph-caret-down collapsible-indicator"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse" id="p{{ $author->user->id }}">
+                                        <div class="p-3">
+                                            <ul class="list list-unstyled mb-0">
+                                                <li><i class="ph-map-pin me-2"></i> {{ $author->user->city }}</li>
+                                                <li><i class="ph-briefcase me-2"></i>{{ $author->user->address }}</li>
+                                                <li><i class="ph-phone me-2"></i> {{ $author->user->mobile }}</li>
+                                                <li><i class="ph-at me-2"></i> <a href="mailto:{{ $author->email }}">{{ $author->email }}</a>
+                                                <li><i class="ph-pen me-2"></i> <a
+                                                        href="{{ route('show_profile_author', $author->id) }}"> تعديل </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    <!-- /basic datatable -->
+                            @endif
+                        @endforeach
+                    @endforeach
+                </div>
+            </div>
+        </div>
 
+        <div class="col-lg-6" style="border: none;">
+            <div class="card" style="border: none;">
+                <div class="card-header" style="border: none;">
+                    <h5 class="mb-0"> المشرفين </h5>
+                </div>
+                <div class="list-group list-group-borderless py-2" style="border: none;">
+                    @foreach ($roles->where('guard_name', 'admin')->all() as $role)
+                        @foreach ($admins as $index => $admin)
+                            @if ($admin->hasRole($role->name))
+                                @if ($index == 0)
+                                    <div class="list-group-item fw-semibold" style="border: none;">{{ $role->name }}
+                                    </div>
+                                @endif
+                                <div style="border: none;">
+                                    <div class="list-group-item hstack gap-3" style="border: none;">
+                                        <a href="#" class="status-indicator-container">
+                                            <img src="{{ asset('storage/images/admin/' . $admin->user->image) }}"
+                                                class="w-40px h-40px rounded-pill" alt="">
+                                            <span class="status-indicator bg-success"></span>
+                                        </a>
+
+                                        <div class="flex-fill">
+                                            <a href="{{ route('admins.edit', $admin->id) }}"
+                                                class="fw-semibold">{{ ucwords($admin->user->name) }}</a>
+
+                                        </div>
+
+                                        <div class="align-self-center ms-3">
+                                            <a href="#p{{ $admin->user->id }}" class="text-body collapsed"
+                                                data-bs-toggle="collapse">
+                                                <i class="ph-caret-down collapsible-indicator"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse" id="p{{ $admin->user->id }}">
+                                        <div class="p-3">
+                                            <ul class="list list-unstyled mb-0">
+                                                <li><i class="ph-map-pin me-2"></i> {{ $admin->user->city }}</li>
+                                                <li><i class="ph-briefcase me-2"></i>{{ $admin->user->address }}</li>
+                                                <li><i class="ph-phone me-2"></i> {{ $admin->user->mobile }}</li>
+                                                <li><i class="ph-at me-2"></i> <a
+                                                        href="mailto:{{ $admin->email }}">{{ $admin->email }}</a>
+                                                </li>
+                                                <li><i class="ph-pen me-2"></i> <a
+                                                        href="{{ route('show_profile_admin', $admin->id) }}"> تعديل </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+    </div>
 @endsection
 
 
