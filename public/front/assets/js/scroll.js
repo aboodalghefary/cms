@@ -1,23 +1,41 @@
-// header event
 window.addEventListener("scroll" , function () {
  var header = document.querySelector("header");
  header.classList.toggle("sticky" , window.scrollY > 0);
-    
+
 })
 
+window.addEventListener("scroll", function () {
+   if (window.scrollY > 600) {
+     document.querySelector(".scroll-top").classList.remove("not-visible");
+   } else {
+     document.querySelector(".scroll-top").classList.add("not-visible");
+   }
+ });
 
-//  to-top event
-const toTop = document.querySelector(".to-top");
+ document.querySelector(".scroll-top").addEventListener("click", function (event) {
+   event.preventDefault();
+   scrollToTop(1000);
+ });
 
-window.addEventListener("scroll" ,() => {
-    if (window.scrollY > 100) {
-        toTop.classList.add("active");
-    }else{
-        toTop.classList.remove("active");
+ function scrollToTop(duration) {
+   const startingY = window.scrollY;
+   const startTime = performance.now();
 
-    }
-        
-    })
+   function step(timestamp) {
+     const currentTime = timestamp || performance.now();
+     const elapsed = currentTime - startTime;
+     const progress = Math.min(elapsed / duration, 1);
+
+     window.scrollTo(0, startingY * (1 - progress));
+
+     if (progress < 1) {
+       window.requestAnimationFrame(step);
+     }
+   }
+
+   window.requestAnimationFrame(step);
+ }
+
 
     // search btn
 let search = document.querySelector(".boxsearch");
@@ -26,8 +44,8 @@ let closeIcon = document.querySelector(".close");
 iconSearch.onclick = _ =>{
     search.style.display = "flex";
     search.style.position = "fixed";
-    
-     
+
+
     }
     closeIcon.onclick = _ =>{
      search.style.display = "none"
