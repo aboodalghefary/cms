@@ -15,7 +15,7 @@ class FileController extends Controller
 {
    public function index()
    {
-      $files = File::all();
+      $files = File::orderBy('id', 'desc')->limit(50)->get();
       return response()->json(['files' => $files]);
    }
 
