@@ -35,7 +35,7 @@
 }
 
 html {
-   scroll-behavior: smooth;
+   /* scroll-behavior: smooth; */
 }
 
 body {
@@ -733,7 +733,7 @@ header.sticky a.active {
 
 
 /* scrol to top up */
-.to-top {
+/* .to-top {
    background: var(--main-color);
    position: fixed;
    top: 710px;
@@ -759,7 +759,47 @@ header.sticky a.active {
    pointer-events: auto;
    opacity: 1;
    color: white;
+} */
+.scroll-top {
+   bottom: 50px;
+   cursor: pointer;
+   height: 50px;
+   position: fixed;
+   right: 20px;
+   text-align: center;
+   width: 50px;
+   z-index: 9999;
+   -webkit-transition: 0.4s;
+   -o-transition: 0.4s;
+   transition: 0.4s;
+   border-radius: 50%;
+   background-color: var(--main-color);
+   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+   box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
+
+/* @media only screen and (max-width: 767.98px) {
+   .scroll-top {
+       display: none;
+   }
+} */
+
+.scroll-top i {
+   line-height: 50px;
+   color: #fff;
+   font-size: 25px;
+}
+
+.scroll-top.not-visible {
+   bottom: -50px;
+   visibility: hidden;
+   opacity: 0;
+}
+
+.scroll-top:hover {
+   background-color: #222222;
+}
+
 
 /* main page */
 

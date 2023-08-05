@@ -404,6 +404,11 @@
         <a href="#" class="to-top ">
             <i class="fas fa-chevron-up"></i>
         </a>
+
+
+   <!-- Scroll to top start -->
+   <div class="scroll-top not-visible"><i class="fa fa-angle-up"></i></div>
+   <!-- Scroll to Top End -->
 </main>
 
 <!-- تقارير خاصة -->
