@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>لوحة التحكم - الرئيسية</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link href="{{ asset('cms/assets/fonts/inter/inter.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('cms/assets/icons/phosphor/styles.min.css') }}" rel="stylesheet" type="text/css">
@@ -30,6 +31,7 @@
             type="text/css">
         <link href="{{ asset('cms/assets/css/ltr/layout.min.css') }}" id="stylesheet" rel="stylesheet" type="text/css">
     @endif
+
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,6 +131,65 @@
             stroke: #ccc;
             stroke-width: 1px;
         }
+
+        .card-file {
+            width: fit-content;
+            position: relative;
+        }
+
+
+        .card-file:hover .card-image-overlay {
+            opacity: 1
+        }
+
+        .card-image {
+            width: 200px;
+            height: 180px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-image video {
+            width: 200px;
+            height: 180px;
+        }
+
+        .card-image-overlay {
+            position: absolute;
+            transition-duration: .5s;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            background-color: #012125c9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-image-overlay span {
+            font-size: 11px;
+            margin-block: 10px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .card-image-overlay a {
+            transition-duration: .5s;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            margin-inline: 5px;
+        }
     </style>
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
@@ -151,11 +212,19 @@
                 <a href="#" class="d-inline-flex align-items-center">
                     <img src="{{ asset('cms/assets/icons/Group (1).png') }}" alt="">
                 </a>
+
             </div>
 
             <ul class="flex-row order-1 nav justify-content-end order-lg-2">
+                <li class="nav-item">
+                    <button type="button" onclick="fetchFiles('all')" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#files_library">
+                        مكتبة الملفات
+                    </button>
+                </li>
 
                 <li class="nav-item nav-item-dropdown-lg dropdown ms-lg-2">
+
                     <a href="#" class="p-1 navbar-nav-link align-items-center rounded-pill"
                         data-bs-toggle="dropdown">
                         <div class="status-indicator-container">
@@ -169,7 +238,7 @@
                             <span class="status-indicator bg-success"></span>
                         </div>
                         <span
-                            class="d-none d-lg-inline-block mx-lg-2">{{ Auth::check() ? Auth::user()->user->name : null }}</span>
+                            class="d-none d-lg-inline-block mx-lg-2">{{ Auth::check() ? ucwords(Auth::user()->user->name) : null }}</span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end">
@@ -242,7 +311,174 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="files_library" tabindex="-1" aria-labelledby="files_libraryLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-full">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title" id="files_libraryLabel">مكتبة الملفات</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-lg-flex align-items-lg-start">
 
+                        <!-- Left sidebar component -->
+                        <div class="sidebar sidebar-component sidebar-expand-lg border rounded shadow-sm me-lg-3 mb-3">
+
+                            <!-- Sidebar content -->
+                            <div class="sidebar-content">
+
+                                <!-- Header -->
+                                <div
+                                    class="sidebar-section sidebar-section-body d-flex align-items-center d-lg-none pb-2">
+                                    <h5 class="mb-0">Sidebar</h5>
+                                    <div class="ms-auto">
+                                        <button type="button"
+                                            class="btn btn-light border-transparent btn-icon rounded-pill btn-sm sidebar-mobile-component-toggle">
+                                            <i class="ph-x"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /header -->
+
+
+                                <!-- Sidebar search -->
+                                <div class="sidebar-section">
+                                    <div class="sidebar-section-header border-bottom">
+                                        <span class="fw-semibold">Sidebar search</span>
+                                        <div class="ms-auto">
+                                            <a href="#sidebar-search" class="text-reset" data-bs-toggle="collapse"
+                                                aria-expanded="true">
+                                                <i class="ph-caret-down collapsible-indicator"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse show" id="sidebar-search" style="">
+                                        <div class="sidebar-section-body">
+                                            <div class="form-control-feedback form-control-feedback-end">
+                                                <input type="search" class="form-control" placeholder="Search">
+                                                <div class="form-control-feedback-icon">
+                                                    <i class="ph-magnifying-glass opacity-50"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /sidebar search -->
+
+
+                                <!-- Actions -->
+                                <div class="sidebar-section">
+                                    <div class="sidebar-section-header border-bottom">
+                                        <span class="fw-semibold"> نوع الملفات </span>
+                                        <div class="ms-auto">
+                                            <a href="#sidebar-actions" class="text-reset" data-bs-toggle="collapse"
+                                                aria-expanded="true">
+                                                <i class="ph-caret-down collapsible-indicator"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse show" id="sidebar-actions" style="">
+                                        <div class="sidebar-section-body">
+                                            <div class="row row-tile g-0">
+                                                <div class="col">
+                                                    <button type="button" onclick="fetchFiles('all')"
+                                                        class="btn btn-light w-100 flex-column rounded-0 rounded-top-start py-2">
+                                                        <i class="ph-app-store-logo text-primary ph-2x mb-1"></i>
+                                                        الكل
+                                                    </button>
+
+                                                    <button type="button" onclick="fetchFiles('video')"
+                                                        class="btn btn-light w-100 flex-column rounded-0 rounded-bottom-start py-2">
+                                                        <i class="ph-twitter-logo text-info ph-2x mb-1"></i>
+                                                        الفيديوهات
+                                                    </button>
+                                                </div>
+
+                                                <div class="col">
+                                                    <button type="button" onclick="fetchFiles('image')"
+                                                        class="btn btn-light w-100 flex-column rounded-0 rounded-top-end py-2">
+                                                        <i class="ph-dribbble-logo text-pink ph-2x mb-1"></i>
+                                                        الصور
+                                                    </button>
+
+                                                    <button type="button" onclick="fetchFiles('document')"
+                                                        class="btn btn-light w-100 flex-column rounded-0 rounded-bottom-end py-2">
+                                                        <i class="ph-spotify-logo text-success ph-2x mb-1"></i>
+                                                        المستندات
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /actions -->
+
+                            </div>
+                            <!-- /sidebar content -->
+
+                        </div>
+                        <!-- /left sidebar component -->
+
+
+                        <!-- Right content -->
+                        <div class="flex-1">
+
+                            <!-- Info alert -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0"> رفع الملفات </h5>
+                                </div>
+
+                                <div class="card-body">
+                                    <p class="fw-semibold"> اقصى عدد ملفات 4 واقصى حجم للملف 15 ميغا </p>
+                                    <form action="#" class="dropzone" id="dropzone_file_limits"></form>
+                                    <div id="progress-bar-container" style="width: 100%; background-color: #f1f1f1;">
+                                        <div id="progress-bar" class="my-5 text-center"
+                                            style="height: 0px;
+                                            background-color: rgb(76, 175, 80);
+                                            width: 0;
+                                            color: white;
+                                            font-weight: bold;
+                                            border-radius: 10px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /info alert -->
+
+
+                            <!-- Sidebars overview -->
+                            <div class="card overview">
+                                <div class="card-header">
+                                    <h5 class="mb-0"> كل الملفات </h5>
+                                </div>
+                                <input type="text" id="clipboard-input"
+                                    style="position: absolute; left: -9999px; top: -9999px;" />
+
+                                <div class="card-body d-flex justify-content-center p-3 flex-wrap gap-1">
+                                    <video
+                                        src="http://127.0.0.1:8000/storage/files/video/1691254913particlesmp4video.mp4"></video>
+                                </div>
+                            </div>
+
+                            <!-- /sidebar classes -->
+
+                        </div>
+                        <!-- /right content -->
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
+                    <button type="button" class="btn btn-info"> حفظ </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="{{ asset('cms/assets/js/jquery/jquery.min.js') }}"></script>
     <!-- Load plugin -->
@@ -261,10 +497,57 @@
 
     <script src="{{ asset('cms/assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="{{ asset('cms/assets/js/vendor/uploaders/dropzone.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 
+    <script>
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        let dropzoneFileLimits = new Dropzone("#dropzone_file_limits", {
+            url: "{{ route('upload_files') }}",
+            paramName: "file",
+            dictDefaultMessage: 'Drop files to upload <span>or CLICK</span>',
+            maxFilesize: 55,
+            maxFiles: 4,
+            maxThumbnailFilesize: 1,
+            addRemoveLinks: true,
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            success: function(data, status) {
+                var response = JSON.parse(data.xhr
+                    .responseText); // قد تحتاج لتحويل البيانات من JSON إلى كائن JavaScript
+                Swal.fire({
+                    icon: response.icon,
+                    title: response.title,
+                });
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr);
+                console.log(status);
+                console.log(error);
+                Swal.fire({
+                    icon: "error",
+                    title: "فشل في التحميل",
+                    text: "تﺃكد من حجم او عدد الملفات المرفوعة",
+                });
+            }
+        });
+        const progressBar = document.getElementById("progress-bar");
+
+        dropzoneFileLimits.on("totaluploadprogress", function(progress) {
+            var progressPercentage = Math.round(progress);
+            progressBar.style.width = progressPercentage + "%";
+            progressBar.style.height = '20px';
+            progressBar.innerText = progressPercentage + "%";
+        });
+    </script>
     <!-- /core JS files -->
     <!-- Theme JS files -->
     <script src="{{ asset('cms/assets/demo/pages/dashboard.js') }}"></script>
+    <script src="{{ asset('cms/assets/js/library_files.js') }}"></script>
+    <script src="{{ asset('cms/assets/js/vendor/notifications/noty.min.js') }}"></script>
+    <script src="{{ asset('cms/assets/demo/pages/components_progress.js') }}"></script>
+
     <!-- /theme JS files -->
     @yield('scripts')
 </body>

@@ -8,6 +8,7 @@ use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\DivController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LibraryController;
@@ -83,6 +84,15 @@ Route::group([
 
       Route::resource('rows', RowController::class);
       Route::post('rows_update/{id}', [RowController::class, 'update'])->name('rows_update');
+
+
+
+
+      Route::post('upload_files', [FileController::class, 'upload'])->name('upload_files');
+      Route::get('upload_files', [FileController::class, 'index'])->name('upload_files');
+      Route::delete('upload_files/{id}', [FileController::class, 'destroy']);
+
+
 
 
       Route::resource('photos', PhotosController::class);

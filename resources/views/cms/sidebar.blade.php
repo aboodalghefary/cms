@@ -19,8 +19,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="sidebar-section">
                     <ul class="nav nav-sidebar" data-nav-type="accordion">
                         <li class="pt-0 nav-item-header">

@@ -180,6 +180,8 @@ return [
       App\Providers\FortifyServiceProvider::class,
       RakibDevs\Weather\WeatherServiceProvider::class,
       Spatie\Permission\PermissionServiceProvider::class,
+      Intervention\Image\ImageServiceProvider::class,
+      ProtoneMedia\LaravelFFMpeg\Support\ServiceProvider::class,
 
 
    ],
@@ -198,6 +200,7 @@ return [
    'aliases' => Facade::defaultAliases()->merge([
       // ...
       'Weather' => RakibDevs\Weather\Weather::class,
+      'FFMpeg' => ProtoneMedia\LaravelFFMpeg\Support\FFMpeg::class
 
    ])->toArray(),
 

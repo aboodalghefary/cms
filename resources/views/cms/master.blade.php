@@ -151,7 +151,7 @@
                                 <span class="status-indicator bg-success"></span>
                             </div>
                             <span
-                                class="d-none d-lg-inline-block mx-lg-2">{{ Auth::check() ? Auth::user()->user->name : null }}</span>
+                                class="d-none d-lg-inline-block mx-lg-2">{{ Auth::check() ? ucwords(Auth::user()->user->name) : null }}</span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end">
