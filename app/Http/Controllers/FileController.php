@@ -81,4 +81,11 @@ class FileController extends Controller
       $files = File::destroy($id);
       return response()->json(['icon' => 'success', 'title' => 'Deleted is Successfully'], $files ? 200 : 400);
    }
+
+   public function search_For_FileHas($text)
+   {
+      $files = File::where('file', 'LIKE', '%' . $text . '%')->get();
+
+      return response()->json(['files' => $files]);
+   }
 }

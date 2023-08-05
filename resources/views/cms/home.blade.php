@@ -358,7 +358,8 @@
                                     <div class="collapse show" id="sidebar-search" style="">
                                         <div class="sidebar-section-body">
                                             <div class="form-control-feedback form-control-feedback-end">
-                                                <input type="search" class="form-control" placeholder="Search">
+                                                <input type="search" class="form-control searchForFile"
+                                                    placeholder="Search">
                                                 <div class="form-control-feedback-icon">
                                                     <i class="ph-magnifying-glass opacity-50"></i>
                                                 </div>
@@ -387,13 +388,13 @@
                                                 <div class="col">
                                                     <button type="button" onclick="fetchFiles('all')"
                                                         class="btn btn-light w-100 flex-column rounded-0 rounded-top-start py-2">
-                                                        <i class="ph-app-store-logo text-primary ph-2x mb-1"></i>
+                                                        <i class="ph-squares-four text-primary ph-2x mb-1"></i>
                                                         الكل
                                                     </button>
 
                                                     <button type="button" onclick="fetchFiles('video')"
                                                         class="btn btn-light w-100 flex-column rounded-0 rounded-bottom-start py-2">
-                                                        <i class="ph-twitter-logo text-info ph-2x mb-1"></i>
+                                                        <i class="ph-monitor-play text-info ph-2x mb-1"></i>
                                                         الفيديوهات
                                                     </button>
                                                 </div>
@@ -401,13 +402,13 @@
                                                 <div class="col">
                                                     <button type="button" onclick="fetchFiles('image')"
                                                         class="btn btn-light w-100 flex-column rounded-0 rounded-top-end py-2">
-                                                        <i class="ph-dribbble-logo text-pink ph-2x mb-1"></i>
+                                                        <i class="ph-image text-pink ph-2x mb-1"></i>
                                                         الصور
                                                     </button>
 
                                                     <button type="button" onclick="fetchFiles('document')"
                                                         class="btn btn-light w-100 flex-column rounded-0 rounded-bottom-end py-2">
-                                                        <i class="ph-spotify-logo text-success ph-2x mb-1"></i>
+                                                        <i class="ph-files text-success ph-2x mb-1"></i>
                                                         المستندات
                                                     </button>
                                                 </div>
@@ -459,9 +460,8 @@
                                 <input type="text" id="clipboard-input"
                                     style="position: absolute; left: -9999px; top: -9999px;" />
 
-                                <div class="card-body d-flex justify-content-center p-3 flex-wrap gap-1">
-                                    <video
-                                        src="http://127.0.0.1:8000/storage/files/video/1691254913particlesmp4video.mp4"></video>
+                                <div class="card-body d-flex justify-content-center p-3 flex-wrap gap-1"
+                                    data-type="all">
                                 </div>
                             </div>
 

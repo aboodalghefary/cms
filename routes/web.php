@@ -91,6 +91,7 @@ Route::group([
       Route::post('upload_files', [FileController::class, 'upload'])->name('upload_files');
       Route::get('upload_files', [FileController::class, 'index'])->name('upload_files');
       Route::delete('upload_files/{id}', [FileController::class, 'destroy']);
+      Route::get('/search_For_FileHas/{text}', [FileController::class, 'search_For_FileHas'])->name('search_For_FileHas');
 
 
 
