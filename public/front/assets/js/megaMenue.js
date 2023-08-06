@@ -29,7 +29,7 @@ parent_category.forEach((parent) => {
                var animationDelay = (index + 1) * 70;
 
                var newItem = `
-                   <div class="card magictime spaceInDown"  style="animation-delay: ${animationDelay}ms;">
+                   <div class="card magictime spaceInDown"  style="animation-delay: ${animationDelay}ms; width: 195px;">
                        <div class="lay">
                            <img style="height: 145px" class="card-img-top" src="${imageSrc}" alt="">
                            <a href="${newsLink}" style="display: flex; align-items: center; border-radius: 35px !important; justify-content: center;" class="overlayy overlayFade">
@@ -37,7 +37,7 @@ parent_category.forEach((parent) => {
                            </a>
                        </div>
                        <a href="${newsLink}" class="card-body">
-                           <h6 class="text-right text-white ">${post.name}</h6>
+                           <h6 class="text-right text-white text-wrap">${post.name}</h6>
                        </a>
                        <div class="text-white-50 text-right">
                            <span class="date ">${formattedDate}</span>
@@ -81,8 +81,8 @@ subCategoryLinks.forEach((link) => {
                var animationDelay = (index + 1) * 250;
 
                var newItem = `
-                        <div class="card magictime spaceInDown" style="animation-delay: ${animationDelay}ms;">
-                            <div class="lay">
+                     <div class="card magictime spaceInDown"  style="animation-delay: ${animationDelay}ms; width: 195px;">
+                        <div class="lay">
                                 <img style="height: 145px" class="card-img-top" src="${imageSrc}" alt="">
                                 <a href="${newsLink}" style="display: flex; align-items: center; border-radius: 35px !important; justify-content: center;" class="overlayy overlayFade">
                                     <i style="display: block; color: white; font-size: 25px;" class="fa-solid fa-link-simple"></i>
