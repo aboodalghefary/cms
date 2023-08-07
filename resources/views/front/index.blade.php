@@ -119,7 +119,7 @@
             <div class="row  template-main  two-main-news pb-0 no-gutters">
                 @foreach ($mainNews as $index => $blog)
                     @if ($index < 2)
-                        <div class="col-lg-6 col-md-6 col-sm-12  mb-1">
+                        <div class="col-lg-6 col-md-6 col-sm-12  mb-1 custom-col">
                             <div class="hover">
                                 <div class="content boxx">
                                     <div class="column position-relative  ">
@@ -234,7 +234,7 @@
                                     <a href="{{ route('post_details', $blog->id) }}">
                                         <div class="box skeleton">
                                             <img class="card-img-top"
-                                                style="height: 180px; width: 280px;object-fit: cover "
+                                                style="height: 180px; width: 100%;object-fit: cover "
                                                 src="{{ asset('storage/images/blog/' . $blog->image) }}"
                                                 alt="" Loading="lazy">
                                         </div>
