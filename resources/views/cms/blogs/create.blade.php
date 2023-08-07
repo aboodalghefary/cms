@@ -72,6 +72,20 @@
                             data-onstyle="success" data-offstyle="danger" checked>
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <label class="col-lg-3 col-form-label">الجدولة</label>
+                    <div class="col-lg-9">
+                        <input type="checkbox" id="schedule_toggle" data-toggle="toggle" data-on="تفعيل" data-off="تعطيل"
+                            data-onstyle="success" data-offstyle="danger">
+                    </div>
+                </div>
+
+                <div class="row mb-3 schedule d-none" id="scheduledDiv">
+                    <label class="col-lg-3 col-form-label">جدولة</label>
+                    <div class="col-lg-9">
+                        <input type="date" class="form-control" id="dateschedule" placeholder="Select Date">
+                    </div>
+                </div>
 
                 <div class="row mb-3">
                     <label class="col-lg-3 col-form-label">الاشارات</label>
@@ -80,6 +94,7 @@
                             placeholder="Select tags">
                     </div>
                 </div>
+
 
                 <div class="row mb-3">
                     <label class="col-lg-3 col-form-label">الصورة</label>
@@ -100,6 +115,8 @@
                     <a href="{{ route('admins.index') }}" class="btn btn-light">الغاء</a>
                     <button type="button" onclick="performStore()" class="btn btn-primary ms-3"> اضافة <i
                             class="ph-paper-plane-tilt ms-2"></i></button>
+                    <button type="button" onclick="performStore('draft')" class="btn btn-primary ms-3"> حفظ كمُسَوَّدة <i
+                            class="ph-paper-plane-tilt ms-2"></i></button>
                 </div>
             </form>
 
@@ -119,7 +136,7 @@
     <script src="{{ asset('cms/assets/js/vendor/forms/selects/select2.min.js') }}"></script>
     <script src="{{ asset('cms/assets/demo/pages/form_select2.js') }}"></script>
     <script>
-        function performStore() {
+        function performStore(status = 'posted') {
             let formData = new FormData();
             formData.append('name', document.getElementById('name').value);
             formData.append('date', document.getElementById('date').value);
@@ -127,9 +144,18 @@
             formData.append('author', document.getElementById('author').value);
             formData.append('category_id', document.getElementById('category_id').value);
             formData.append('image', document.getElementById('image').files[0]);
+            console.log($('#schedule_toggle').prop('checked'));
+            if ($('#schedule_toggle').prop('checked')) {
+                console.log($('#schedule_toggle').prop('checked'));
+                formData.append('dateschedule', document.getElementById('dateschedule').value);
+            }
             formData.append('comments_enabled', $('#comments_toggle').prop('checked') ? 1 : 0);
             formData.append('tags', JSON.stringify(tfBasic.getItems()));
-            store('/cms/admin/blogs', formData);
+            if (status == 'posted') {
+                store('/cms/admin/blogs', formData);
+            } else if (status == 'draft') {
+                store('/cms/admin/blogs_draft/draft', formData);
+            }
         }
 
         // دالة تقوم بعملية البحث وإظهار القائمة
@@ -304,6 +330,16 @@
                     value: id,
                     label: name
                 }))
+            });
+        });
+
+        $(document).ready(function() {
+            $('#schedule_toggle').on('change', function() {
+                if ($(this).prop('checked')) {
+                    $('#scheduledDiv').removeClass('d-none');
+                } else {
+                    $('#scheduledDiv').addClass('d-none');
+                }
             });
         });
     </script>

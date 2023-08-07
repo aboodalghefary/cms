@@ -111,6 +111,7 @@ Route::group([
 
       Route::resource('blogs', BlogsController::class);
       Route::post('blogs_update/{id}', [BlogsController::class, 'update'])->name('blogs_update');
+      Route::post('blogs_draft/{status}', [BlogsController::class, 'store'])->name('blogs_draft');
 
       Route::resource('about_us', AboutUsController::class);
 

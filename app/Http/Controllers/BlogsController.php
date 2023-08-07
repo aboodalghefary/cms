@@ -23,7 +23,7 @@ class BlogsController extends Controller
 
       $this->authorize('viewAny', Blogs::class);
 
-      $blogs = Blog::paginate(15);
+      $blogs = Blog::orderBy('id', 'desc')->paginate(15);
       return view('cms.blogs.index', compact('blogs'));
    }
    /**
@@ -47,10 +47,9 @@ class BlogsController extends Controller
     * @param  \Illuminate\Http\Request  $request
     * @return \Illuminate\Http\Response
     */
-   public function store(Request $request)
+   public function store(Request $request, $status = 'posted')
    {
       $this->authorize('create', Blogs::class);
-
       $validator = validator($request->all(), [
          'name' => 'required|string|min:3|max:100',
       ], [
@@ -74,6 +73,17 @@ class BlogsController extends Controller
          }
          $blog->author_id = $request->get('author');
          $tags = json_decode($request->get('tags'));
+         if ($request->get('dateschedule') != null) {
+            $scheduledDate = $request->get('dateschedule');
+            $blog->scheduled_at = date('Y-m-d H:i:s', strtotime($scheduledDate));
+         }
+         if ($status == 'draft') {
+            $blog->status = 'draft';
+         } elseif ($scheduledDate && strtotime(date('Y-m-d H:i:s')) < strtotime($scheduledDate)) {
+            $blog->status = 'scheduled';
+         } elseif ($status == 'posted') {
+            $blog->status = 'posted';
+         }
          $isSaved = $blog->save();
 
          if ($isSaved) {
