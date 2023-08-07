@@ -83,7 +83,7 @@
                 <div class="row mb-3 schedule d-none" id="scheduledDiv">
                     <label class="col-lg-3 col-form-label">جدولة</label>
                     <div class="col-lg-9">
-                        <input type="date" class="form-control" id="dateschedule" placeholder="Select Date">
+                        <input type="datetime-local" class="form-control" id="dateschedule" placeholder="Select Date">
                     </div>
                 </div>
 
@@ -110,13 +110,26 @@
                      </textarea>
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <label class="col-lg-3 col-form-label">الخيارات</label>
+                    <div class="col-lg-6">
+                        <div class="form-check form-switch mb-2">
+                            <input type="checkbox" class="form-check-input form-check-input-secondary" id="recent">
+                            <label class="form-check-label" for="recent">عرض في اخر الاخبار</label>
+                        </div>
+                        <div class="form-check form-switch mb-2">
+                            <input type="checkbox" class="form-check-input form-check-input-success" id="main">
+                            <label class="form-check-label" for="main">عرض في الاخبار الرئيسية</label>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="d-flex justify-content-end align-items-center my-5">
                     <a href="{{ route('admins.index') }}" class="btn btn-light">الغاء</a>
                     <button type="button" onclick="performStore()" class="btn btn-primary ms-3"> اضافة <i
                             class="ph-paper-plane-tilt ms-2"></i></button>
-                    <button type="button" onclick="performStore('draft')" class="btn btn-primary ms-3"> حفظ كمُسَوَّدة <i
-                            class="ph-paper-plane-tilt ms-2"></i></button>
+                    <button type="button" onclick="performStore('draft')" class="btn btn-dark ms-3"> حفظ كمُسَوَّدة
+                        <i class="ph-paper-plane-tilt ms-2"></i></button>
                 </div>
             </form>
 
@@ -143,6 +156,8 @@
             formData.append('editor', tinymce.activeEditor.getContent());
             formData.append('author', document.getElementById('author').value);
             formData.append('category_id', document.getElementById('category_id').value);
+            formData.append('recent', document.getElementById('recent').checked);
+            formData.append('main', document.getElementById('main').checked);
             formData.append('image', document.getElementById('image').files[0]);
             console.log($('#schedule_toggle').prop('checked'));
             if ($('#schedule_toggle').prop('checked')) {

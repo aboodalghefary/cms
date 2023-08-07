@@ -7,7 +7,6 @@
     <title>Document</title>
 
     <style>
-
         body {
             font-family: "the10", Arial, "Segoe UI", "Helvetica Neue", sans-serif;
         }
@@ -57,6 +56,11 @@
 
     @include('partials.header')
 
+    @php
+        $mainNews = $news->where('name', 'add_to_main')->all();
+        $recentNews = $news->where('name', 'add_to_recent')->all();
+
+    @endphp
     <main class="py-3" dir="rtl">
         <div class="container home-intro">
             <!-- شريط الاخبار -->
@@ -123,7 +127,7 @@
         <div class="template-one ">
             <!-- الاخبار الرئيسية البارزة للتنصيف )  هنا ضع اول خبرين للتصنيف الذي تريده)-->
             <div class="row  template-main  two-main-news pb-0 no-gutters">
-                @foreach ($news as $index => $blog)
+                @foreach ($mainNews as $index => $blog)
                     @if ($index < 2)
                         <div class="col-lg-6 col-md-6 col-sm-12  mb-1">
                             <div class="hover">
@@ -169,7 +173,7 @@
             </div>
             <!--  الاخبار الفرعية للتنصيف)  هنا ضع  ثلاثة اخبار للتصنيف)-->
             <div class="row template-sub  three-sub-news no-gutters ">
-                @foreach ($news as $index => $blog)
+                @foreach ($mainNews as $index => $blog)
                     @if ($index > 1 && $index <= 4)
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-1">
                             <div class="hover">
@@ -230,50 +234,48 @@
             </div>
             <div class="row ">
                 <div class="container-4-columns mx-auto ">
-                    @foreach ($news as $index => $blog)
-                        @if ($index > 4)
-                            <div class="card ">
-                                @php
-                                    $slug = Str::slug($blog->name);
-                                @endphp
-                                <a href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
-                                    <div class="box">
-                                        <a href="{{ route('post_details', $blog->id) }}">
-                                            <div class="box skeleton">
-                                                <img class="card-img-top"
-                                                    style="height: 180px; width: 280px;object-fit: cover "
-                                                    src="{{ asset('storage/images/blog/' . $blog->image) }}"
-                                                    alt="" Loading="lazy">
-                                            </div>
+                    @foreach ($recentNews as $index => $blog)
+                        <div class="card ">
+                            @php
+                                $slug = Str::slug($blog->name);
+                            @endphp
+                            <a href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
+                                <div class="box">
+                                    <a href="{{ route('post_details', $blog->id) }}">
+                                        <div class="box skeleton">
+                                            <img class="card-img-top"
+                                                style="height: 180px; width: 280px;object-fit: cover "
+                                                src="{{ asset('storage/images/blog/' . $blog->image) }}"
+                                                alt="" Loading="lazy">
+                                        </div>
+                                    </a>
+                                    <div class="card-body">
+                                        @php
+                                            $category = $blog->category;
+                                        @endphp
+                                        <a href="{{ route('category', ['id' => $category->id]) }}"
+                                            class="category-title d-block  text-right pb-2 ">{{ $blog->category->name }}
                                         </a>
-                                        <div class="card-body">
-                                            @php
-                                                $category = $blog->category;
-                                            @endphp
-                                            <a href="{{ route('category', ['id' => $category->id]) }}"
-                                                class="category-title d-block  text-right pb-2 ">{{ $blog->category->name }}
-                                            </a>
-                                            @php
-                                                $slug = Str::slug($blog->name);
-                                            @endphp
-                                            <a
-                                                href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
-                                                <h6 class="category-desc text-right">
-                                                    <a href="{{ route('post_details', $blog->id) }}">
-                                                        <h6 class="category-desc text-right ">
-                                                            {{ $blog->name }}
-                                                        </h6>
-                                                    </a>
-                                        </div>
-
-                                        <div class="container text-black-50 pb-2 bg-white text-right">
-                                            <span class="time "> منذ
-                                                {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
-                                            </span>
-                                        </div>
+                                        @php
+                                            $slug = Str::slug($blog->name);
+                                        @endphp
+                                        <a
+                                            href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
+                                            <h6 class="category-desc text-right">
+                                                <a href="{{ route('post_details', $blog->id) }}">
+                                                    <h6 class="category-desc text-right ">
+                                                        {{ $blog->name }}
+                                                    </h6>
+                                                </a>
                                     </div>
-                            </div>
-                        @endif
+
+                                    <div class="container text-black-50 pb-2 bg-white text-right">
+                                        <span class="time "> منذ
+                                            {{ $blog->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
+                                        </span>
+                                    </div>
+                                </div>
+                        </div>
                     @endforeach
 
                 </div>
@@ -406,9 +408,9 @@
         </a>
 
 
-   <!-- Scroll to top start -->
-   <div class="scroll-top not-visible"><i class="fa fa-angle-up"></i></div>
-   <!-- Scroll to Top End -->
+        <!-- Scroll to top start -->
+        <div class="scroll-top not-visible"><i class="fa fa-angle-up"></i></div>
+        <!-- Scroll to Top End -->
 </main>
 
 <!-- تقارير خاصة -->

@@ -22,7 +22,7 @@ class FrontController extends Controller
       $library = Library::with('videos')->first();
       $album = Album::latest()->first();
       $images = Photo::latest()->take(2)->get();
-      $news = Blog::latest()->take(13)->get();
+      $news = Blog::where('status', 'posted')->latest()->take(13)->get();
       $categories = Category::whereNull('parent_id')->get();
 
 
@@ -38,7 +38,7 @@ class FrontController extends Controller
    }
    public function search_For_BlogHas($text)
    {
-      $blogs = Blog::where('content', 'LIKE', '%' . $text . '%')->get();
+      $blogs = Blog::where('status', 'posted')->where('content', 'LIKE', '%' . $text . '%')->get();
 
       $results = $blogs->map(function ($blog) {
          return [
@@ -131,7 +131,7 @@ class FrontController extends Controller
    {
       $blog = Blog::findOrFail($id);
       $categories = Category::whereNull('parent_id')->get();
-      $blogs_most_views  = Blog::orderBy('views', 'desc')->limit(5)->get();
+      $blogs_most_views  = Blog::where('status', 'posted')->orderBy('views', 'desc')->limit(5)->get();
       $divs = Div::all();
       return view('front.details-new', compact('blog', 'categories',  'blogs_most_views', 'divs'));
    }

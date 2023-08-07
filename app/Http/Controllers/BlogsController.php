@@ -65,6 +65,8 @@ class BlogsController extends Controller
          $blog->content = $request->get('editor');
          $blog->comments_enabled = $request->get('comments_enabled');
          $blog->category_id = $request->get('category_id');
+         $blog->add_to_recent = $request->get('recent') == 'true' ? '1' : '0';
+         $blog->add_to_main = $request->get('main') == 'true' ? '1' : '0';
          if (request()->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . 'image.' . $image->getClientOriginalExtension();
@@ -76,11 +78,12 @@ class BlogsController extends Controller
          if ($request->get('dateschedule') != null) {
             $scheduledDate = $request->get('dateschedule');
             $blog->scheduled_at = date('Y-m-d H:i:s', strtotime($scheduledDate));
+            if (strtotime(date('Y-m-d H:i:s')) < strtotime($scheduledDate)) {
+               $blog->status = 'scheduled';
+            }
          }
          if ($status == 'draft') {
             $blog->status = 'draft';
-         } elseif ($scheduledDate && strtotime(date('Y-m-d H:i:s')) < strtotime($scheduledDate)) {
-            $blog->status = 'scheduled';
          } elseif ($status == 'posted') {
             $blog->status = 'posted';
          }
@@ -160,6 +163,8 @@ class BlogsController extends Controller
          $blog->content = $request->get('editor');
          $blog->comments_enabled = $request->get('comments_enabled');
          $blog->category_id = $request->get('category_id');
+         $blog->add_to_recent = $request->get('recent');
+         $blog->add_to_main = $request->get('main');
          if (request()->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . 'image.' . $image->getClientOriginalExtension();

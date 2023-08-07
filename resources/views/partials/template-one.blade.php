@@ -4,8 +4,9 @@
         </span>
 
         <a class="cat-id" href="{{ route('category', ['id' => $category->id]) }}">
-         <span class="title-sec text-white"> {{ $categories[0]->name }}
-         </span>     </a>
+            <span class="title-sec text-white"> {{ $categories[0]->name }}
+            </span>
+        </a>
     </div>
 
     <div class="container-3-columns mx-auto">
