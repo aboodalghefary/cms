@@ -420,7 +420,7 @@ h6:hover {
 
 /*  start mega-menue */
 .mega-menue {
-   display: none;
+   display: block;
 }
 
 .mega {

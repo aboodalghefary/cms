@@ -34,12 +34,12 @@
 
                                         <div class="category-right">
                                             <ul class="text-right">
-                                                <li class="active all sub-catttt" data-category="{{ $category->id }}">
+                                                <li class="m-0 active all sub-catttt" data-category="{{ $category->id }}">
                                                     <a href="#">الكل</a>
                                                 </li>
 
                                                 @foreach ($category->subCategories as $subCategory)
-                                                    <li class="sub-catttt" data-category="{{ $subCategory->id }}">
+                                                    <li class="m-0 sub-catttt" data-category="{{ $subCategory->id }}">
                                                         <a class="sub-category-link"
                                                             href="{{ route('category', ['id' => $subCategory->id]) }}">{{ $subCategory->name }}</a>
                                                     </li>
