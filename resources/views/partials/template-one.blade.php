@@ -2,8 +2,7 @@
     <div class="text-right mb-3">
         <span class=" mark-title">
         </span>
-
-        <a class="cat-id" href="{{ route('category', ['id' => $category->id]) }}">
+        <a class="cat-id" href="{{ route('category', ['id' => $categories[0]->id]) }}">
             <span class="title-sec text-white"> {{ $categories[0]->name }}
             </span>
         </a>

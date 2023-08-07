@@ -24,7 +24,8 @@ class FrontController extends Controller
       $images = Photo::latest()->take(2)->get();
       $news = Blog::where('status', 'posted')->latest()->take(13)->get();
       $categories = Category::whereNull('parent_id')->get();
-
+      $recentNews = Blog::where('status', 'posted')->where('add_to_recent', '1')->latest()->take(8)->get();
+      $mainNews = Blog::where('status', 'posted')->where('add_to_main', '1')->latest()->take(6)->get();
 
       return view('front.index', compact(
          'rows',
@@ -34,6 +35,8 @@ class FrontController extends Controller
          'album',
          'images',
          'divs',
+         'recentNews',
+         'mainNews',
       ));
    }
    public function search_For_BlogHas($text)

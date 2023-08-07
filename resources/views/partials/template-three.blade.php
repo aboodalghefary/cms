@@ -5,8 +5,8 @@
                 <span class=" mark-title">
                 </span>
                 <a class="cat-id" href="{{ route('category', ['id' => $category->id]) }}">
-                  <span class="title-sec text-black"> {{ $category->name }} </span>
-               </span>     </a>
+                    <span class="title-sec text-black"> {{ $category->name }} </span>
+                    </span> </a>
             </div>
             <div class="hover ">
                 <div class="content  ">
@@ -34,11 +34,11 @@
                     <div style="width: 260px; " class=" card  mx-auto  mb-2">
                         <div class="lay">
 
-                           <div class="skeleton">
-                              <img style="height: 155px" class="card-img-top"
-                              src="{{ asset('storage/images/blog/' . $category->blogs[1]->image ?? null) }}"
-                              alt="">
-                           </div>
+                            <div class="skeleton">
+                                <img style="height: 155px" class="card-img-top"
+                                    src="{{ asset('storage/images/blog/' . $category->blogs[1]->image ?? null) }}"
+                                    alt="">
+                            </div>
 
                             <a href=" {{ route('post_details', ['id' => $category->blogs[1]->id]) }} "
                                 style="display: flex; align-items: center; justify-content: center;"
@@ -63,11 +63,11 @@
                     <div style="width: 260px; " class="  mx-auto card ">
 
                         <div class="lay">
-                           <div class="skeleton">
-                              <img style="height: 155px" class="card-img-top"
-                              src="{{ asset('storage/images/blog/' . $category->blogs[2]->image ?? null) }}"
-                              alt="">
-                           </div>
+                            <div class="skeleton">
+                                <img style="height: 155px" class="card-img-top"
+                                    src="{{ asset('storage/images/blog/' . $category->blogs[2]->image ?? null) }}"
+                                    alt="">
+                            </div>
 
                             <a href=" {{ route('post_details', ['id' => $category->blogs[2]->id]) }} "
                                 style="display: flex; align-items: center; justify-content: center;"

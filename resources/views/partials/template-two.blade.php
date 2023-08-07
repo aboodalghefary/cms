@@ -6,7 +6,7 @@
                 <span class=" mark-title">
                 </span>
 
-                <a class="cat-id" href="{{ route('category', ['id' => $category->id]) }}">
+                <a class="cat-id" href="{{ route('category', ['id' => $categories[1]->id]) }}">
                     <span class="title-sec text-black"> {{ $categories[0]->name }}
                     </span> </a>
             </div>
@@ -129,101 +129,101 @@
         </div>
 
         <!-- هذا العمود ليس تصنيف (هذا عمود لجدول المقالات) -->
-            <div class="column artic border py-3 px-3  ">
-                <div class="text-right  mb-3">
-                    <span class=" mark-title">
-                    </span>
+        <div class="column artic border py-3 px-3  ">
+            <div class="text-right  mb-3">
+                <span class=" mark-title">
+                </span>
 
-                    <a class="cat-id" href="{{ route('category', ['id' => $category->id]) }}">
-                        <span class="title-sec text-black"> {{ $categories[1]->name }}
-                        </span> </a>
-                </div>
-                <div class="">
-                    <div class="hover ">
-
-                        <div class="content  ">
-                            <a href="{{ route('post_details', ['id' => $categories[1]->blogs[0]->id]) }}"
-                                class=" d-flex  py-2  ">
-                                <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[0]->image ?? null) }} );"
-                                    class=" text-right skeleton">
-                                </div>
-                                <div class="text text-right  text-black mr-3">
-                                    <h6 class="text-right "> {{ $categories[1]->blogs[0]->name }}
-                                    </h6>
-                                    <span class="date text-black-50"> {{ $categories[1]->blogs[0]->date }} </span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <a href="{{ route('post_details', ['id' => $categories[1]->blogs[0]->id]) }}"
-                            class="overlay"></a>
-
-                    </div>
-
-                    <div class="hover ">
-
-                        <div class="content  ">
-                            <a href="{{ route('post_details', ['id' => $categories[1]->blogs[1]->id]) }}"
-                                class=" d-flex  py-2  ">
-                                <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[1]->image ?? null) }} );"
-                                    class=" text-right skeleton">
-                                </div>
-                                <div class="text text-right  text-black mr-3">
-                                    <h6 class="text-right "> {{ $categories[1]->blogs[1]->name }}
-                                    </h6>
-                                    <span class="date text-black-50"> {{ $categories[1]->blogs[1]->date }} </span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <a href="{{ route('post_details', ['id' => $categories[1]->blogs[1]->id]) }}"
-                            class="overlay"></a>
-
-                    </div>
-
-                    <div class="hover ">
-
-                        <div class="content  ">
-                            <a href="{{ route('post_details', ['id' => $categories[1]->blogs[2]->id]) }}"
-                                class=" d-flex  py-2  ">
-                                <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[3]->image ?? null) }} );"
-                                    class=" text-right skeleton">
-                                </div>
-                                <div class="text text-right  text-black mr-3">
-                                    <h6 class="text-right "> {{ $categories[1]->blogs[2]->name }}
-                                    </h6>
-                                    <span class="date text-black-50"> {{ $categories[1]->blogs[2]->date }} </span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <a href="{{ route('post_details', ['id' => $categories[1]->blogs[2]->id]) }}"
-                            class="overlay"></a>
-
-                    </div>
-
-                    <div class="hover ">
-
-                        <div class="content  ">
-                            <a href="{{ route('post_details', ['id' => $categories[1]->blogs[3]->id]) }}"
-                                class=" d-flex  py-2  ">
-                                <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[4]->image ?? null) }} );"
-                                    class=" text-right skeleton">
-                                </div>
-                                <div class="text text-right  text-black mr-3">
-                                    <h6 class="text-right "> {{ $categories[1]->blogs[3]->name }}
-                                    </h6>
-                                    <span class="date text-black-50"> {{ $categories[1]->blogs[3]->date }} </span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <a href="{{ route('post_details', ['id' => $categories[1]->blogs[3]->id]) }}"
-                            class="overlay"></a>
-
-                    </div>
-
-                </div>
+                <a class="cat-id" href="{{ route('category', ['id' => $categories[1]->id]) }}">
+                    <span class="title-sec text-black"> {{ $categories[1]->name }}
+                    </span> </a>
             </div>
+            <div class="">
+                <div class="hover ">
+
+                    <div class="content  ">
+                        <a href="{{ route('post_details', ['id' => $categories[1]->blogs[0]->id]) }}"
+                            class=" d-flex  py-2  ">
+                            <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[0]->image ?? null) }} );"
+                                class=" text-right skeleton">
+                            </div>
+                            <div class="text text-right  text-black mr-3">
+                                <h6 class="text-right "> {{ $categories[1]->blogs[0]->name }}
+                                </h6>
+                                <span class="date text-black-50"> {{ $categories[1]->blogs[0]->date }} </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <a href="{{ route('post_details', ['id' => $categories[1]->blogs[0]->id]) }}"
+                        class="overlay"></a>
+
+                </div>
+
+                <div class="hover ">
+
+                    <div class="content  ">
+                        <a href="{{ route('post_details', ['id' => $categories[1]->blogs[1]->id]) }}"
+                            class=" d-flex  py-2  ">
+                            <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[1]->image ?? null) }} );"
+                                class=" text-right skeleton">
+                            </div>
+                            <div class="text text-right  text-black mr-3">
+                                <h6 class="text-right "> {{ $categories[1]->blogs[1]->name }}
+                                </h6>
+                                <span class="date text-black-50"> {{ $categories[1]->blogs[1]->date }} </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <a href="{{ route('post_details', ['id' => $categories[1]->blogs[1]->id]) }}"
+                        class="overlay"></a>
+
+                </div>
+
+                <div class="hover ">
+
+                    <div class="content  ">
+                        <a href="{{ route('post_details', ['id' => $categories[1]->blogs[2]->id]) }}"
+                            class=" d-flex  py-2  ">
+                            <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[3]->image ?? null) }} );"
+                                class=" text-right skeleton">
+                            </div>
+                            <div class="text text-right  text-black mr-3">
+                                <h6 class="text-right "> {{ $categories[1]->blogs[2]->name }}
+                                </h6>
+                                <span class="date text-black-50"> {{ $categories[1]->blogs[2]->date }} </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <a href="{{ route('post_details', ['id' => $categories[1]->blogs[2]->id]) }}"
+                        class="overlay"></a>
+
+                </div>
+
+                <div class="hover ">
+
+                    <div class="content  ">
+                        <a href="{{ route('post_details', ['id' => $categories[1]->blogs[3]->id]) }}"
+                            class=" d-flex  py-2  ">
+                            <div style="width: 78px; height: 78px; border-radius: 50%; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(to bottom right, rgb(0 0 0 / 0%), rgb(0 0 0 / 40%)), url( {{ asset('storage/images/blog/' . $categories[1]->blogs[4]->image ?? null) }} );"
+                                class=" text-right skeleton">
+                            </div>
+                            <div class="text text-right  text-black mr-3">
+                                <h6 class="text-right "> {{ $categories[1]->blogs[3]->name }}
+                                </h6>
+                                <span class="date text-black-50"> {{ $categories[1]->blogs[3]->date }} </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <a href="{{ route('post_details', ['id' => $categories[1]->blogs[3]->id]) }}"
+                        class="overlay"></a>
+
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>

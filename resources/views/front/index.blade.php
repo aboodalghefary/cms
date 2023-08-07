@@ -55,12 +55,6 @@
 <body>
 
     @include('partials.header')
-
-    @php
-        $mainNews = $news->where('name', 'add_to_main')->all();
-        $recentNews = $news->where('name', 'add_to_recent')->all();
-
-    @endphp
     <main class="py-3" dir="rtl">
         <div class="container home-intro">
             <!-- شريط الاخبار -->
@@ -72,7 +66,7 @@
                         data-ride="carousel">
                         <div class="carousel-inner ">
                             @foreach ($news as $index => $new)
-                                @if ($index <= 2)
+                                @if ($index <= 5)
                                     <div class="carousel-item @if ($index === 0) active @endif">
                                         <p class="text-ticker text-right text-black-50">
                                             <span style="font-weight: bold;" class="time">
@@ -113,14 +107,10 @@
         @endphp
         <!-- مساحة اعلانية -->
         <div class="advertise-space adv-2-columns py-5 " style="display: block">
-
             <a href="{{ $ad1Div->href }}">
                 <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}" style="object-fit: contain"
                     Loading="lazy">
             </a>
-
-
-
         </div>
 
         <!-- فالب التصنيف الاول (خبران بارزان و3 فرعي)-->
@@ -234,7 +224,7 @@
             </div>
             <div class="row ">
                 <div class="container-4-columns mx-auto ">
-                    @foreach ($recentNews as $index => $blog)
+                    @foreach ($recentNews as $blog)
                         <div class="card ">
                             @php
                                 $slug = Str::slug($blog->name);
