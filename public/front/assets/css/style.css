@@ -396,7 +396,6 @@ h6:hover {
    width: 100%;
    height: 280px;
    display: block;
-   object-position: 0px -15px;
    object-fit: cover;
 }
 
@@ -406,6 +405,15 @@ h6:hover {
    width: 100%;
    background-color: #11151d69;
    text-align: center;
+}
+
+.mega.container{
+   width: 100%;
+   padding-right: 0 !important;
+   padding-left: 0 !important;
+   margin-right: auto;
+   margin-left: auto;
+
 }
 
 /* end overlayhover */
@@ -1648,13 +1656,13 @@ footer {
 
 }
 
-/* .col,
+.col,
 [class*="col-"] {
    padding-right: 1px !important;
    padding-left: 1px !important;
 }
 
-
+/*
 .contact .no-gutters {
    margin-right: 0 !important;
    margin-left: 0 !important;

@@ -130,7 +130,7 @@
                                             href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
                                             <div class="blurred-img">
 
-                                                <img style="background-size: cover;"
+                                                <img style=""
                                                     src="{{ asset('storage/images/blog/' . $blog->image) }}"
                                                     alt="Image 1">
                                             </div>
@@ -176,7 +176,7 @@
                                             href="{{ route('post_details', ['id' => $blog->id, 'slug' => $blog->name]) }}">
 
                                             <div class="blurred-img">
-                                                <img style="background-size: cover; "
+                                                <img style=""
                                                     src="{{ asset('storage/images/blog/' . $blog->image) }}"
                                                     alt="Image 1">
                                             </div>
