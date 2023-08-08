@@ -11,7 +11,7 @@
             font-family: "the10", Arial, "Segoe UI", "Helvetica Neue", sans-serif;
         }
     </style>
-
+    @livewireStyles
     <!-- lightgallery -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-autoplay.min.css" />
@@ -403,6 +403,8 @@
         <!-- Scroll to Top End -->
 </main>
 
+@livewire('index-breaking-news')
+
 <!-- تقارير خاصة -->
 <div class="spec-artical bg-light  py-5 box2">
 
@@ -462,6 +464,7 @@
     </div>
 </section>
 
+
 <div dir="rtl">
     @include('partials.footer')
 </div>
@@ -475,9 +478,9 @@
 
 
 <!--core JavaScript -->
+@livewireScripts
 <script src="{{ asset('front/assets/js/videolist.js') }}"></script>
 <script src="{{ asset('front/assets/js/scroll.js') }}"></script>
-
 <!-- vendor files -->
 <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
