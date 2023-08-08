@@ -407,7 +407,7 @@ h6:hover {
    text-align: center;
 }
 
-.mega.container{
+.mega.container {
    width: 100%;
    padding-right: 0 !important;
    padding-left: 0 !important;
@@ -420,7 +420,7 @@ h6:hover {
 
 /*  start mega-menue */
 .mega-menue {
-   display: block;
+   display: none;
 }
 
 .mega {

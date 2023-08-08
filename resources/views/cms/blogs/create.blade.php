@@ -35,6 +35,13 @@
                     <label class="form-label">الاسم</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder=" الاسم ">
                 </div>
+                <div class="row mb-3">
+                    <label class="col-form-label col-lg-3">المصدر</label>
+                    <div class="col-lg-9">
+                        <input type="text" name="source" id="source" class="form-control" placeholder=" المصدر ">
+                    </div>
+
+                </div>
 
                 <div class="row mb-3">
                     <label class="col-form-label col-lg-3">التاريخ</label>
@@ -66,24 +73,37 @@
                 </div>
 
                 <div class="row mb-3">
-                    <label class="col-lg-3 col-form-label">التعليقات</label>
-                    <div class="col-lg-9">
-                        <input type="checkbox" id="comments_toggle" data-toggle="toggle" data-on="تفعيل" data-off="تعطيل"
-                            data-onstyle="success" data-offstyle="danger" checked>
+                    <label class="col-lg-3 col-form-label">الخيارات</label>
+                    <div class="col-lg-6">
+                        <div class="form-check form-switch mb-2">
+                            <input type="checkbox" class="form-check-input form-check-input-secondary" id="recent">
+                            <label class="form-check-label" for="recent">عرض في اخر الاخبار</label>
+                        </div>
+                        <div class="form-check form-switch mb-2">
+                            <input type="checkbox" class="form-check-input form-check-input-success" id="main">
+                            <label class="form-check-label" for="main">عرض في الاخبار الرئيسية</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-lg-3 col-form-label">الجدولة</label>
-                    <div class="col-lg-9">
-                        <input type="checkbox" id="schedule_toggle" data-toggle="toggle" data-on="تفعيل" data-off="تعطيل"
-                            data-onstyle="success" data-offstyle="danger">
+                    <div class="row mb-3">
+                        <label class="col-lg-3 col-form-label">التعليقات</label>
+                        <div class="col-lg-9">
+                            <input type="checkbox" id="comments_toggle" data-toggle="toggle" data-on="تفعيل"
+                                data-off="تعطيل" data-onstyle="success" data-offstyle="danger" checked>
+                        </div>
                     </div>
-                </div>
+                    <div class="row mb-3">
+                        <label class="col-lg-3 col-form-label">الجدولة</label>
+                        <div class="col-lg-9">
+                            <input type="checkbox" id="schedule_toggle" data-toggle="toggle" data-on="تفعيل"
+                                data-off="تعطيل" data-onstyle="success" data-offstyle="danger">
+                        </div>
+                    </div>
 
-                <div class="row mb-3 schedule d-none" id="scheduledDiv">
-                    <label class="col-lg-3 col-form-label">جدولة</label>
-                    <div class="col-lg-9">
-                        <input type="datetime-local" class="form-control" id="dateschedule" placeholder="Select Date">
+                    <div class="row mb-3 schedule d-none" id="scheduledDiv">
+                        <label class="col-lg-3 col-form-label">جدولة</label>
+                        <div class="col-lg-9">
+                            <input type="datetime-local" class="form-control" id="dateschedule" placeholder="Select Date">
+                        </div>
                     </div>
                 </div>
 
@@ -104,25 +124,11 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-lg-3 col-form-label">المحتوى</label>
-                    <div class="col-lg-9">
-                        <textarea id="editor">
+                    <label class="form-label">المحتوى</label>
+                    <textarea id="editor">
                      </textarea>
-                    </div>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-lg-3 col-form-label">الخيارات</label>
-                    <div class="col-lg-6">
-                        <div class="form-check form-switch mb-2">
-                            <input type="checkbox" class="form-check-input form-check-input-secondary" id="recent">
-                            <label class="form-check-label" for="recent">عرض في اخر الاخبار</label>
-                        </div>
-                        <div class="form-check form-switch mb-2">
-                            <input type="checkbox" class="form-check-input form-check-input-success" id="main">
-                            <label class="form-check-label" for="main">عرض في الاخبار الرئيسية</label>
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="d-flex justify-content-end align-items-center my-5">
                     <a href="{{ route('admins.index') }}" class="btn btn-light">الغاء</a>
@@ -152,6 +158,7 @@
         function performStore(status = 'posted') {
             let formData = new FormData();
             formData.append('name', document.getElementById('name').value);
+            formData.append('source', document.getElementById('source').value);
             formData.append('date', document.getElementById('date').value);
             formData.append('editor', tinymce.activeEditor.getContent());
             formData.append('author', document.getElementById('author').value);

@@ -62,6 +62,7 @@ class BlogsController extends Controller
       if (!$validator->fails()) {
          $blog = new Blog();
          $blog->name = $request->get('name');
+         $blog->source = $request->get('source');
          $blog->date = $request->get('date');
          $blog->content = $request->get('editor');
          $blog->comments_enabled = $request->get('comments_enabled');

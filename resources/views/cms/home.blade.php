@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>لوحة التحكم - الرئيسية</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @livewireStyles
 
     <link href="{{ asset('cms/assets/fonts/inter/inter.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('cms/assets/icons/phosphor/styles.min.css') }}" rel="stylesheet" type="text/css">
@@ -268,7 +269,27 @@
 
             <!-- Inner content -->
             <div class="content-inner">
-                @yield('content')
+                <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal"
+                    data-bs-target="#create-breakingNews">
+                    خبر عاجل
+                </button>
+
+                <div class="modal fade" id="create-breakingNews" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"> انشاء فرع </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                @livewire('create-breaking-news')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!-- /inner content -->
 
@@ -479,7 +500,7 @@
             </div>
         </div>
     </div>
-
+    @livewireScripts
     <script src="{{ asset('cms/assets/js/jquery/jquery.min.js') }}"></script>
     <!-- Load plugin -->
     <script src="{{ asset('cms/assets/js/vendor/tables/datatables/datatables.min.js') }}"></script>
