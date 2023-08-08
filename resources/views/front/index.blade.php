@@ -58,7 +58,7 @@
     <main class="py-3" dir="rtl">
         <div class="container home-intro">
             <!-- شريط الاخبار -->
-            <div class=" news-ticker pl-3   fixed-top container">
+            <div class=" news-ticker pl-3   fixed-top container magictime slideRightReturn" style="animation-delay:.8ms;">
 
                 <div class=" d-flex align-items-center">
                    <div class="logo  d-flex flex-column align-items-start ">
