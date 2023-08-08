@@ -165,7 +165,7 @@
             <div class="row template-sub  three-sub-news no-gutters ">
                 @foreach ($mainNews as $index => $blog)
                     @if ($index > 1 && $index <= 4)
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-1">
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-1 custom-col">
                             <div class="hover">
                                 <div class="content boxx">
                                     <div class="column position-relative  ">
@@ -391,12 +391,6 @@
                 @include('partials.' . $row->template, ['categories' => $row->categories])
             </div>
         @endforeach
-
-
-        <a href="#" class="to-top ">
-            <i class="fas fa-chevron-up"></i>
-        </a>
-
 
         <!-- Scroll to top start -->
         <div class="scroll-top not-visible"><i class="fa fa-angle-up"></i></div>

@@ -1460,14 +1460,37 @@ footer {
    padding-right: 7%;
 }
 
-
-
-
 @media (max-width:768px) {
    .footer {
       grid-template-columns: 1fr;
    }
 }
+.logo-container {
+   position: relative;
+   display: inline-block;
+   width: 120px;
+}
+
+.w-logo, .b-logo {
+   position: absolute;
+   /* top: 0; */
+   left: 0;
+   width: 100%;
+   transition: opacity 0.3s;
+}
+
+.b-logo {
+   opacity: 0;
+}
+
+.logo-container:hover .w-logo {
+   opacity: 0;
+}
+
+.logo-container:hover .b-logo {
+   opacity: 1;
+}
+
 
 
 /* deneral media-quiry */
