@@ -932,10 +932,12 @@ header.sticky a.active {
    gap: 10px;
    align-items: flex-start;
    padding: 0 5px;
+   margin-top: 118px;
+   background: var(--main-color) !important;
 }
 
 .news-ticker .s1 {
-   font-size: 18px;
+   font-size: 28px;
    font-weight: bold;
    width: 15%;
    color: var(--main-color);
@@ -993,7 +995,7 @@ header.sticky a.active {
 
 .fa-chevron-left,
 .fa-chevron-right {
-   color: red;
+   color: white;
    font-size: 25px;
    font-weight: bold;
 }

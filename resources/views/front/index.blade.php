@@ -58,17 +58,28 @@
     <main class="py-3" dir="rtl">
         <div class="container home-intro">
             <!-- شريط الاخبار -->
-            <div class=" news-ticker px-3 border-1 ">
+            <div class=" news-ticker pl-3   fixed-top container">
 
                 <div class=" d-flex align-items-center">
-                    <span class="s1 pl-3 d-flex align-items-center "> شريط الاخبار</span>
-                    <div id="carouselExampleControls" class="carousel slide border-right border-left pr-3"
+                   <div class="logo  d-flex flex-column align-items-start ">
+                        <span class="s1 d-flex align-items-center text-white  pr-3"> عاجل </span>
+                        @php
+                            $logoDiv = $divs->where('name', 'logo')->first();
+                        @endphp
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87px"
+                            height="51px">
+                            <image x="0px" y="0px" width="87px" height="51px"
+                                xlink:href="{{ asset('storage/images/div/' . $logoDiv->image) }}" />
+                        </svg>
+                    </div>
+
+                    <div id="carouselExampleControls" class="carousel slide  pr-3"
                         data-ride="carousel">
                         <div class="carousel-inner ">
                             @foreach ($news as $index => $new)
                                 @if ($index <= 5)
                                     <div class="carousel-item @if ($index === 0) active @endif">
-                                        <p class="text-ticker text-right text-black-50">
+                                        <p class="text-right text-white">
                                             <span style="font-weight: bold;" class="time">
                                                 قبل {{ $new->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
                                             </span>
@@ -86,6 +97,7 @@
                     </div>
                 </div>
             </div>
+
             <div style=" height: 100%;" class="tran col-lg-2 mx-3  ">
                 <a class="carousel-control-prev " href="#carouselExampleControls" role="button" data-slide="prev">
                     <!-- <span class="carousel-control-prev-icon " aria-hidden="true"></span> -->
@@ -106,7 +118,7 @@
             $ad4Div = $divs->where('name', 'home_ad4')->first();
         @endphp
         <!-- مساحة اعلانية -->
-        <div class="advertise-space adv-2-columns py-5 " style="display: block">
+        <div class="advertise-space adv-2-columns py-5 mt-5" style="display: block">
             <a href="{{ $ad1Div->href }}">
                 <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}" style="object-fit: contain"
                     Loading="lazy">
