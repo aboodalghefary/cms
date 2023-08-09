@@ -58,28 +58,18 @@
     <main class="py-3" dir="rtl">
         <div class="container home-intro">
             <!-- شريط الاخبار -->
-            <div class=" news-ticker pl-3   fixed-top container magictime slideRightReturn" style="animation-delay:.8ms;">
+            <div class=" news-ticker px-3 border-1" style="">
 
                 <div class=" d-flex align-items-center">
-                   <div class="logo  d-flex flex-column align-items-start ">
-                        <span class="s1 d-flex align-items-center text-white  pr-3"> عاجل </span>
-                        @php
-                            $logoDiv = $divs->where('name', 'logo')->first();
-                        @endphp
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87px"
-                            height="51px">
-                            <image x="0px" y="0px" width="87px" height="51px"
-                                xlink:href="{{ asset('storage/images/div/' . $logoDiv->image) }}" />
-                        </svg>
-                    </div>
+                    <span class="s1 pl-3 d-flex align-items-center "> شريط الاخبار</span>
 
-                    <div id="carouselExampleControls" class="carousel slide  pr-3"
+                    <div id="carouselExampleControls" class="carousel slide border-right border-left pr-3"
                         data-ride="carousel">
                         <div class="carousel-inner ">
                             @foreach ($news as $index => $new)
                                 @if ($index <= 5)
                                     <div class="carousel-item @if ($index === 0) active @endif">
-                                        <p class="text-right text-white">
+                                        <p class="text-ticker text-right text-black-50">
                                             <span style="font-weight: bold;" class="time">
                                                 قبل {{ $new->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
                                             </span>
@@ -118,7 +108,7 @@
             $ad4Div = $divs->where('name', 'home_ad4')->first();
         @endphp
         <!-- مساحة اعلانية -->
-        <div class="advertise-space adv-2-columns py-5 mt-5" style="display: block">
+        <div class="advertise-space adv-2-columns py-5 " style="display: block">
             <a href="{{ $ad1Div->href }}">
                 <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}" style="object-fit: contain"
                     Loading="lazy">
@@ -409,7 +399,7 @@
         <!-- Scroll to Top End -->
 </main>
 
-@livewire('index-breaking-news')
+
 
 <!-- تقارير خاصة -->
 <div class="spec-artical bg-light  py-5 box2">
@@ -470,6 +460,7 @@
     </div>
 </section>
 
+@livewire('index-breaking-news')
 
 <div dir="rtl">
     @include('partials.footer')
@@ -479,10 +470,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.4/plyr.js"
     integrity="sha512-M/AUlH5tMMuhvt9trN4rXBjsXq9HrOUmtblZHhesbx97sGycEnXX/ws1W7yyrF8zEjotdNhYNfHOd3WMu96eKA=="
     crossorigin="anonymous"></script>
-
-
-
-
 <!--core JavaScript -->
 @livewireScripts
 <script src="{{ asset('front/assets/js/videolist.js') }}"></script>
