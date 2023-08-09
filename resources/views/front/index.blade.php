@@ -58,23 +58,23 @@
     <main class="py-3" dir="rtl">
         <div class="container home-intro">
             <!-- شريط الاخبار -->
-            <div class=" news-ticker pl-3   fixed-top container magictime slideRightReturn" style="animation-delay:.8ms;">
+            <div class=" news-ticker pl-3   fixed-top container magictime slideRightReturn"
+                style="animation-delay:.8ms;">
 
                 <div class=" d-flex align-items-center">
-                   <div class="logo  d-flex flex-column align-items-start ">
+                    <div class="logo  d-flex flex-column align-items-start ">
                         <span class="s1 d-flex align-items-center text-white  pr-3"> عاجل </span>
                         @php
                             $logoDiv = $divs->where('name', 'logo')->first();
                         @endphp
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87px"
-                            height="51px">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="87px" height="51px">
                             <image x="0px" y="0px" width="87px" height="51px"
                                 xlink:href="{{ asset('storage/images/div/' . $logoDiv->image) }}" />
                         </svg>
                     </div>
 
-                    <div id="carouselExampleControls" class="carousel slide  pr-3"
-                        data-ride="carousel">
+                    <div id="carouselExampleControls" class="carousel slide  pr-3" data-ride="carousel">
                         <div class="carousel-inner ">
                             @foreach ($news as $index => $new)
                                 @if ($index <= 5)

@@ -4,5 +4,6 @@
             <div class="title text-end p-5 mx-5">
                 <a href="{{ $breackingNews->href }}" class="text-bg-danger fs-1">{{ $breackingNews->title }}</a>
             </div>
+        </div>
     @endif
 </div>
