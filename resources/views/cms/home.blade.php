@@ -273,6 +273,7 @@
                     data-bs-target="#create-breakingNews">
                     خبر عاجل
                 </button>
+                @livewire('index-breaking-news')
 
                 <div class="modal fade" id="create-breakingNews" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">

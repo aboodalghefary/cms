@@ -998,6 +998,15 @@ header.sticky a.active {
    font-weight: bold;
 }
 
+.ajel-news .ajeel{
+   color: var(--main-color);
+   font-weight: bold;
+   font-size: 23px;
+   }
+
+.breaking-news{
+   background: var(--main-color);
+}
 .news-ticker {
    background-color: #e9ecef;
 }

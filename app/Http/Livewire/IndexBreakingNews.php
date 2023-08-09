@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class IndexBreakingNews extends Component
 {
+
    public function render()
    {
       $breackingNews = BreakingNew::latest()->first();
