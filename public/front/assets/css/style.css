@@ -932,10 +932,12 @@ header.sticky a.active {
    gap: 10px;
    align-items: flex-start;
    padding: 0 5px;
+   margin-top: 118px;
+   background: var(--main-color) !important;
 }
 
 .news-ticker .s1 {
-   font-size: 18px;
+   font-size: 28px;
    font-weight: bold;
    width: 15%;
    color: var(--main-color);
@@ -993,7 +995,7 @@ header.sticky a.active {
 
 .fa-chevron-left,
 .fa-chevron-right {
-   color: red;
+   color: white;
    font-size: 25px;
    font-weight: bold;
 }
@@ -1460,14 +1462,37 @@ footer {
    padding-right: 7%;
 }
 
-
-
-
 @media (max-width:768px) {
    .footer {
       grid-template-columns: 1fr;
    }
 }
+.logo-container {
+   position: relative;
+   display: inline-block;
+   width: 120px;
+}
+
+.w-logo, .b-logo {
+   position: absolute;
+   /* top: 0; */
+   left: 0;
+   width: 100%;
+   transition: opacity 0.3s;
+}
+
+.b-logo {
+   opacity: 0;
+}
+
+.logo-container:hover .w-logo {
+   opacity: 0;
+}
+
+.logo-container:hover .b-logo {
+   opacity: 1;
+}
+
 
 
 /* deneral media-quiry */
