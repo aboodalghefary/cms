@@ -403,6 +403,7 @@
         <!-- Scroll to Top End -->
 </main>
 
+
 @livewire('index-breaking-news')
 
 <!-- تقارير خاصة -->
