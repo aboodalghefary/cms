@@ -1,5 +1,5 @@
 <div>
-    <h1>إنشاء فرع جديد</h1>
+    <h1>إنشاء خبر عاجل جديد</h1>
 
     @if (session()->has('message'))
         <div class="alert alert-success">
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <label for="title">الاسم</label>
-                <input type="text" class="form-control" id="title" placeholder="اسم الفرع" wire:model="title">
+                <input type="text" class="form-control" id="title" placeholder="اسم الخبر عاجل" wire:model="title">
                 @error('title')
                     <div class="text-danger" id="title-error">{{ $message }}</div>
                 @enderror
