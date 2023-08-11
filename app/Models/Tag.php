@@ -20,7 +20,7 @@ class Tag extends Model
       $this->increment('views');
 
       $today = now();
-      $weekStart = $today->startOfWeek();
+      $weekStart = $today->copy()->startOfWeek();
       $weekDate = $weekStart->format('Y-m-d');
       $dayOfWeek = $today->dayOfWeek;
 

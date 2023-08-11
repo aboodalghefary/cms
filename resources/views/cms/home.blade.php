@@ -553,7 +553,32 @@
         // Chart options
         var top5tagsJson = {!! $top5tagsJson !!};
         var tagNames = top5tagsJson.map(tag => tag.name);
-        console.log(tagNames);
+        var tagViews = top5tagsJson.map(tag => tag.views);
+        var tagWeekDays = [];
+        for (var day in tagViews[0]) {
+            tagWeekDays.push(day);
+        }
+        var tagWeekDayViewsOne = [];
+        for (var day in tagViews[0]) {
+            tagWeekDayViewsOne.push(tagViews[0][day]);
+        }
+        var tagWeekDayViewsTwo = [];
+        for (var day in tagViews[1]) {
+            tagWeekDayViewsTwo.push(tagViews[1][day]);
+        }
+        var tagWeekDayViewsThree = [];
+        for (var day in tagViews[2]) {
+            tagWeekDayViewsThree.push(tagViews[2][day]);
+        }
+        var tagWeekDayViewsFour = [];
+        for (var day in tagViews[3]) {
+            tagWeekDayViewsFour.push(tagViews[3][day]);
+        }
+        var tagWeekDayViewsFive = [];
+        for (var day in tagViews[4]) {
+            tagWeekDayViewsFive.push(tagViews[4][day]);
+        }
+
         option = {
             color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
             title: {
@@ -585,7 +610,7 @@
             xAxis: [{
                 type: 'category',
                 boundaryGap: false,
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                data: tagWeekDays
             }],
             yAxis: [{
                 type: 'value'
@@ -614,7 +639,7 @@
                     emphasis: {
                         focus: 'series'
                     },
-                    data: [140, 232, 101, 264, 90, 340, 250]
+                    data: tagWeekDayViewsOne
                 },
                 {
                     name: tagNames[1],
@@ -640,7 +665,7 @@
                     emphasis: {
                         focus: 'series'
                     },
-                    data: [120, 282, 111, 234, 220, 340, 310]
+                    data: tagWeekDayViewsTwo
                 },
                 {
                     name: tagNames[2],
@@ -666,7 +691,7 @@
                     emphasis: {
                         focus: 'series'
                     },
-                    data: [320, 132, 201, 334, 190, 130, 220]
+                    data: tagWeekDayViewsThree
                 },
                 {
                     name: tagNames[3],
@@ -692,7 +717,7 @@
                     emphasis: {
                         focus: 'series'
                     },
-                    data: [220, 402, 231, 134, 190, 230, 120]
+                    data: tagWeekDayViewsFour
                 },
                 {
                     name: tagNames[4],
@@ -722,7 +747,7 @@
                     emphasis: {
                         focus: 'series'
                     },
-                    data: [220, 302, 181, 234, 210, 290, 150]
+                    data: tagWeekDayViewsFive
                 }
             ]
         };

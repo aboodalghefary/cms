@@ -10,4 +10,9 @@ class DailyView extends Model
    use HasFactory;
 
    protected $fillable = ['week_date', 'day_of_week', 'views'];
+
+   public function tags()
+   {
+      return $this->hasMany(Tag::class);
+   }
 }

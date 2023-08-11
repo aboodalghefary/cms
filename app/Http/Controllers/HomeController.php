@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Models\Author;
 use App\Models\Blog;
+use App\Models\DailyView;
 use App\Models\Div;
 use App\Models\File;
 use App\Models\PageView;
@@ -24,26 +25,41 @@ class HomeController extends Controller
       $endDate = now()->endOfWeek(); // تاريخ نهاية الأسبوع الحالي
       $startDate = now()->subWeek()->startOfWeek(); // تاريخ بداية الأسبوع السابق
 
-      $topTagsLastWeek = Tag::with(['dailyViews' => function ($query) use ($startDate, $endDate) {
-         $query->whereBetween('week_date', [$startDate, $endDate])->orderBy('week_date');
-      }])->orderByDesc('views')->take(5)->get();
+      $lastWeekTags = DailyView::whereBetween('week_date', [$startDate, $endDate])
+         ->orderBy('tag_id')
+         ->get();
 
-      $data = [];
-      foreach ($topTagsLastWeek as $tag) {
-         $tagData = [
-            'name' => $tag->name,
-            'views' => []
-         ];
+      $tagData = [];
 
-         foreach ($tag->dailyViews as $dailyView) {
-            $dayOfWeek = date('l', strtotime($dailyView->week_date));
-            $tagData['views'][$dayOfWeek] = $dailyView->views;
+      foreach ($lastWeekTags as $dailyView) {
+         $tagId = $dailyView->tag_id;
+         $tag = Tag::findOrFail($tagId);
+         if (!isset($tagData[$tagId])) {
+            $tagData[$tagId] = [
+               'tag_id' => $tagId,
+               'name' => $tag->name,
+               'views' => [],
+            ];
          }
 
-         $data[] = $tagData;
+         $weekDays = [0, 1, 2, 3, 4, 5, 6];
+         foreach ($weekDays as $key => $dayOfWeek) {
+            $todayViews = $dailyView->where('tag_id', $tagId)->where('day_of_week', $dayOfWeek)->first();
+            $dayName = date('l', strtotime('Sunday +' . $dayOfWeek . ' days'));
+            $tagData[$tagId]['views'][$dayName] = $todayViews->views ?? 0;
+         }
       }
-      dd($data);
 
+      // ترتيب المصفوفة حسب مجموع المشاهدات على مدار الأسبوع
+      usort($tagData, function ($a, $b) {
+         $aViewsTotal = array_sum($a['views']);
+         $bViewsTotal = array_sum($b['views']);
+         return $bViewsTotal - $aViewsTotal;
+      });
+
+      // اختيار أعلى 5 وسوم
+      $top5Tags = array_slice($tagData, 0, 5);
+      $top5tagsJson = json_encode($top5Tags);
       return view('cms.home', compact('visits', 'newsCount', 'filesCount', 'tagsCount', 'top5tagsJson'));
    }
    public function front_control()
