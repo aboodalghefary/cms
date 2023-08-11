@@ -9,7 +9,9 @@ use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Div;
 use App\Models\Library;
+use App\Models\PageView;
 use App\Models\Row;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -26,6 +28,7 @@ class FrontController extends Controller
       $categories = Category::whereNull('parent_id')->get();
       $recentNews = Blog::where('status', 'posted')->where('add_to_recent', '1')->latest()->take(8)->get();
       $mainNews = Blog::where('status', 'posted')->where('add_to_main', '1')->latest()->take(6)->get();
+      PageView::where('id', '1')->increment('count');
 
       return view('front.index', compact(
          'rows',
@@ -91,6 +94,15 @@ class FrontController extends Controller
       });
 
       return view('front.category-news', compact('allBlogs', 'category', 'categories', 'divs'));
+   }
+   public function tag($id)
+   {
+      $categories = Category::whereNull('parent_id')->get();
+      $tag = Tag::findOrFail($id);
+      $allBlogs = $tag->blogs;
+      $divs = Div::all();
+
+      return view('front.tag-news', compact('allBlogs', 'tag', 'categories', 'divs'));
    }
    public function contactIndex()
    {

@@ -12,6 +12,8 @@
       "fruitcake/laravel-cors": "^2.0.5",
       "guzzlehttp/guzzle": "^7.7",
       "intervention/image": "^2.7",
+      "kreait/laravel-firebase": "^4.2",
+      "laravel-notification-channels/fcm": "~2.0",
       "laravel/fortify": "^1.17",
       "laravel/framework": "^9.0",
       "laravel/sanctum": "^2.14",

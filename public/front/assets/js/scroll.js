@@ -37,16 +37,4 @@ window.addEventListener("scroll", function () {
  }
 
 
-    // search btn
-let search = document.querySelector(".boxsearch");
-let iconSearch = document.querySelector(".search");
-let closeIcon = document.querySelector(".close");
-iconSearch.onclick = _ =>{
-    search.style.display = "flex";
-    search.style.position = "fixed";
-
-
-    }
-    closeIcon.onclick = _ =>{
-     search.style.display = "none"
-    }
+    

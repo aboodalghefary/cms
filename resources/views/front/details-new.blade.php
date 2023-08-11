@@ -66,7 +66,7 @@
                     </div>
                     <div class="hash-tag container py-5 ">
                         @foreach ($blog->tags as $tag)
-                            <a href="#">
+                            <a href="{{ route('tag', $tag->id) }}">
                                 <span class="d-inline-block mb-3">#{{ $tag->name }}</span>
                             </a>
                         @endforeach

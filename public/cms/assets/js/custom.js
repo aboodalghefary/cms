@@ -110,3 +110,5 @@ function openEditModal(element, divName, divID, divHref, divContent) {
       submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
    }
 }
+
+

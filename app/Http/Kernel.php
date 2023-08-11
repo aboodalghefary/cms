@@ -71,6 +71,7 @@ class Kernel extends HttpKernel
       'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
       'increase.views' => \App\Http\Middleware\IncreaseLibrariesViews::class,
       'increaseBlog.views' => \App\Http\Middleware\IncreaseBlogsViews::class,
+      'increaseTag.views' => \App\Http\Middleware\IncreaseTagsViews::class,
 
    ];
 }

@@ -18,6 +18,7 @@ use App\Http\Controllers\PostTasksController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RolePermissionController;
 use App\Http\Controllers\RowController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\VideosController;
 use Illuminate\Support\Facades\Route;
@@ -39,13 +40,14 @@ Route::post('/upload', [PostTasksController::class, 'upload']);
 
 
 Route::get('/', [FrontController::class, 'index'])->name('front_index');
-Route::get('/post_details/{id}/{slug?}', [FrontController::class, 'post_details'])->middleware('increaseBlog.views')->name('post_details');
+Route::get('/post_details/{id}/{slug?}', [FrontController::class, 'post_details'])->middleware(['increaseBlog.views', 'increaseTag.views'])->name('post_details');
 Route::get('/contact', [FrontController::class, 'contactIndex'])->name('contact');
 Route::post('/contact_store', [FrontController::class, 'contact_store'])->name('contact_store');
 Route::get('/image_albums', [FrontController::class, 'image_albums'])->name('image_albums');
 Route::get('/video_library', [FrontController::class, 'video_library'])->name('video_library');
 Route::get('/album_details/{id}', [FrontController::class, 'album_details'])->name('album_details');
 Route::get('/category/{id}', [FrontController::class, 'category'])->name('category');
+Route::get('/tag/{id}', [FrontController::class, 'tag'])->name('tag');
 Route::get('/library_details/{id}', [FrontController::class, 'library_details'])->middleware('increase.views')->name('library_details');
 Route::get('/get_last_news_ajax/{id}', [FrontController::class, 'get_last_news_ajax'])->name('get_last_news_ajax');
 Route::get('/get_last_news_ajax_by_name/{name}', [FrontController::class, 'get_last_news_ajax_by_name'])->name('get_last_news_ajax_by_name');
@@ -85,6 +87,12 @@ Route::group([
       Route::resource('rows', RowController::class);
       Route::post('rows_update/{id}', [RowController::class, 'update'])->name('rows_update');
 
+
+      Route::get('/createFormBreakingNew', [TestController::class, 'createForm']);
+      Route::post('/createBreakingNew', [TestController::class, 'create']);
+      Route::get('/indexBreakingNew', [TestController::class, 'index']);
+      Route::put('/editBreakingNew', [TestController::class, 'edit']);
+      Route::delete('/deleteBreakingNew', [TestController::class, 'delete']);
 
 
 

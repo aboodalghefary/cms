@@ -266,34 +266,65 @@
 
         <!-- Main content -->
         <div class="content-wrapper">
+            <div class="container-fluid">
+                <div class="row mt-5">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card card-body bg-primary text-white">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-fill">
+                                    <h4 class="mb-0">{{ $tagsCount }}</h4>
+                                    اجمالي عدد الوسوم
+                                </div>
 
-            <!-- Inner content -->
-            <div class="content-inner">
-                <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal"
-                    data-bs-target="#create-breakingNews">
-                    خبر عاجل
-                </button>
-                @livewire('index-breaking-news')
-
-                <div class="modal fade" id="create-breakingNews" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel"> انشاء فرع </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <i class="ph-tag ph-2x opacity-75 ms-3"></i>
                             </div>
-                            <div class="modal-body">
-                                @livewire('create-breaking-news')
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card card-body bg-danger text-white">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-fill">
+                                    <h4 class="mb-0">{{ $newsCount }}</h4>
+                                    اجمالي عدد الاخبار
+                                </div>
+
+                                <i class="ph-article ph-2x opacity-75 ms-3"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card card-body bg-success text-white">
+                            <div class="d-flex align-items-center">
+                                <i class="ph-hand-pointing ph-2x opacity-75 me-3"></i>
+
+                                <div class="flex-fill text-end">
+                                    <h4 class="mb-0">{{ $filesCount }}</h4>
+                                    اجمالي عدد الملفات
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card card-body bg-indigo text-white">
+                            <div class="d-flex align-items-center">
+                                <i class="ph-users-three ph-2x opacity-75 me-3"></i>
+
+                                <div class="flex-fill text-end">
+                                    <h4 class="mb-0">{{ $visits->count }}</h4>
+                                    مجموع الزيارات
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="row mt-5">
+                    <div id="chart" style="width: 100%; height: 400px;"></div>
 
+                </div>
             </div>
-            <!-- /inner content -->
-
         </div>
     </div>
     <!-- /page content -->
@@ -502,6 +533,9 @@
         </div>
     </div>
     @livewireScripts
+
+
+
     <script src="{{ asset('cms/assets/js/jquery/jquery.min.js') }}"></script>
     <!-- Load plugin -->
     <script src="{{ asset('cms/assets/js/vendor/tables/datatables/datatables.min.js') }}"></script>
@@ -513,7 +547,192 @@
     <script src="{{ asset('cms/assets/js/crud.js') }}"></script>
     <script src="{{ asset('cms/assets/js/app.js') }}"></script>
     <script src="{{ asset('cms/assets/js/custom.js') }}"></script>
-    <!-- Core JS files -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script> <!-- Core JS files -->
+
+    <script>
+        // Chart options
+        var top5tagsJson = {!! $top5tagsJson !!};
+        var tagNames = top5tagsJson.map(tag => tag.name);
+        console.log(tagNames);
+        option = {
+            color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+            title: {
+                text: ' اكثر الوسوم زيارة '
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            legend: {
+                data: tagNames
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [{
+                type: 'category',
+                boundaryGap: false,
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            }],
+            yAxis: [{
+                type: 'value'
+            }],
+            series: [{
+                    name: tagNames[0],
+                    type: 'line',
+                    stack: 'Total',
+                    smooth: true,
+                    lineStyle: {
+                        width: 0
+                    },
+                    showSymbol: false,
+                    areaStyle: {
+                        opacity: 0.8,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgb(128, 255, 165)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgb(1, 191, 236)'
+                            }
+                        ])
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [140, 232, 101, 264, 90, 340, 250]
+                },
+                {
+                    name: tagNames[1],
+                    type: 'line',
+                    stack: 'Total',
+                    smooth: true,
+                    lineStyle: {
+                        width: 0
+                    },
+                    showSymbol: false,
+                    areaStyle: {
+                        opacity: 0.8,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgb(0, 221, 255)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgb(77, 119, 255)'
+                            }
+                        ])
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [120, 282, 111, 234, 220, 340, 310]
+                },
+                {
+                    name: tagNames[2],
+                    type: 'line',
+                    stack: 'Total',
+                    smooth: true,
+                    lineStyle: {
+                        width: 0
+                    },
+                    showSymbol: false,
+                    areaStyle: {
+                        opacity: 0.8,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgb(55, 162, 255)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgb(116, 21, 219)'
+                            }
+                        ])
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [320, 132, 201, 334, 190, 130, 220]
+                },
+                {
+                    name: tagNames[3],
+                    type: 'line',
+                    stack: 'Total',
+                    smooth: true,
+                    lineStyle: {
+                        width: 0
+                    },
+                    showSymbol: false,
+                    areaStyle: {
+                        opacity: 0.8,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgb(255, 0, 135)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgb(135, 0, 157)'
+                            }
+                        ])
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [220, 402, 231, 134, 190, 230, 120]
+                },
+                {
+                    name: tagNames[4],
+                    type: 'line',
+                    stack: 'Total',
+                    smooth: true,
+                    lineStyle: {
+                        width: 0
+                    },
+                    showSymbol: false,
+                    label: {
+                        show: true,
+                        position: 'top'
+                    },
+                    areaStyle: {
+                        opacity: 0.8,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgb(255, 191, 0)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgb(224, 62, 76)'
+                            }
+                        ])
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [220, 302, 181, 234, 210, 290, 150]
+                }
+            ]
+        };
+        // Initialize the chart
+        var chart = echarts.init(document.getElementById('chart'));
+
+        // Set the chart options and render it
+        chart.setOption(option);
+    </script>
+
     <script src="{{ asset('cms/assets/demo/demo_configurator.js') }}"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
@@ -567,6 +786,7 @@
     <!-- Theme JS files -->
     <script src="{{ asset('cms/assets/demo/pages/dashboard.js') }}"></script>
     <script src="{{ asset('cms/assets/js/library_files.js') }}"></script>
+    <script src="{{ asset('cms/assets/js/homePage.js') }}"></script>
     <script src="{{ asset('cms/assets/js/vendor/notifications/noty.min.js') }}"></script>
     <script src="{{ asset('cms/assets/demo/pages/components_progress.js') }}"></script>
 

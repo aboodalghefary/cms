@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 
@@ -12,7 +11,6 @@
             font-family: "the10", Arial, "Segoe UI", "Helvetica Neue", sans-serif;
         }
     </style>
-    @livewireStyles
     <!-- lightgallery -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-autoplay.min.css" />
@@ -58,36 +56,36 @@
     @include('partials.header')
     <main class="py-3" dir="rtl">
         <div class="container home-intro">
-         <!-- شريط الاخبار -->
-     <div class=" news-ticker px-3 border-1" style="">
+            <!-- شريط الاخبار -->
+            <div class=" news-ticker px-3 border-1" style="">
 
-      <div class=" d-flex align-items-center">
-        <span class="s1 pl-3 d-flex align-items-center "> شريط الاخبار</span>
+                <div class=" d-flex align-items-center">
+                    <span class="s1 pl-3 d-flex align-items-center "> شريط الاخبار</span>
 
-        <div id="carouselExampleControls" class="carousel slide border-right border-left pr-3"
-              data-ride="carousel">
-              <div class="carousel-inner ">
-                  @foreach ($news as $index => $new)
-                      @if ($index <= 5)
-                          <div class="carousel-item @if ($index === 0) active @endif">
-                              <p class="text-ticker text-right text-black-50">
-                                  <span style="font-weight: bold;" class="time">
-                                      قبل {{ $new->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
-                                  </span>
-                                  @php
-                                      $slug = Str::slug($new->name);
-                                  @endphp
-                                  <a
-                                      href="{{ route('post_details', ['id' => $new->id, 'slug' => $new->name]) }}">{{ $new->name }}</a>
-                              </p>
-                          </div>
-                      @else
-                      @break
-                  @endif
-              @endforeach
-          </div>
-      </div>
-  </div>
+                    <div id="carouselExampleControls" class="carousel slide border-right border-left pr-3"
+                        data-ride="carousel">
+                        <div class="carousel-inner ">
+                            @foreach ($news as $index => $new)
+                                @if ($index <= 5)
+                                    <div class="carousel-item @if ($index === 0) active @endif">
+                                        <p class="text-ticker text-right text-black-50">
+                                            <span style="font-weight: bold;" class="time">
+                                                قبل {{ $new->created_at->locale('ar')->shortAbsoluteDiffForHumans() }}
+                                            </span>
+                                            @php
+                                                $slug = Str::slug($new->name);
+                                            @endphp
+                                            <a
+                                                href="{{ route('post_details', ['id' => $new->id, 'slug' => $new->name]) }}">{{ $new->name }}</a>
+                                        </p>
+                                    </div>
+                                @else
+                                @break
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            </div>
 
 
             <div style=" height: 100%;" class="tran col-lg-2 mx-3  ">
@@ -402,6 +400,7 @@
 </main>
 
 
+<div id="news-list"></div>
 
 <!-- تقارير خاصة -->
 <div class="spec-artical bg-light  py-5 box2">
@@ -462,7 +461,6 @@
     </div>
 </section>
 
-@livewire('index-breaking-news')
 
 <div dir="rtl">
     @include('partials.footer')
@@ -477,7 +475,73 @@
 
 
 <!--core JavaScript -->
-@livewireScripts
+
+<script type="module">
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import {
+        getAnalytics
+    } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+    import {
+        getDatabase,
+        ref,
+        onChildAdded
+    } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js"; // استيراد مكتبة قاعدة البيانات
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyDUuLYy1pUoWyVHsKBXXHPklFkaCXOMf1A",
+        authDomain: "cms-alquds.firebaseapp.com",
+        databaseURL: "https://cms-alquds-default-rtdb.firebaseio.com",
+        projectId: "cms-alquds",
+        storageBucket: "cms-alquds.appspot.com",
+        messagingSenderId: "60271703498",
+        appId: "1:60271703498:web:02f2a906fcb0b73b1acb33",
+        measurementId: "G-NJLCVE4RQ0"
+    };
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    const newsList = document.getElementById('news-list');
+
+    // الحصول على مرجع لقاعدة البيانات
+    const database = getDatabase();
+    const breakingNewsRef = ref(database, 'breakingNews'); // تحديد المسار
+
+    // الاشتراك في تحديثات قاعدة البيانات للـ breakingNews
+    onChildAdded(breakingNewsRef, (snapshot) => {
+        const newBreakingNews = snapshot.val();
+        const creationTime = new Date(newBreakingNews.creationTimestamp * 1000); // تحويل الثواني إلى مللي ثانية
+
+        // الوقت الحالي
+        const currentTime = new Date();
+
+        // حساب فارق الوقت بين وقت الإنشاء والوقت الحالي بالدقائق
+        const timeDifferenceMinutes = (currentTime - creationTime) / (1000 * 60);
+        // التحقق مما إذا كان وقت الإنشاء خلال أخر ربع ساعة
+        if (timeDifferenceMinutes <= 15) {
+
+            while (newsList.firstChild) {
+                newsList.removeChild(newsList.firstChild);
+            }
+
+            addBreakingNews(newBreakingNews, snapshot, newsList);
+
+            // تعيين وقت لإزالة الخبر بعد مرور ربع ساعة من الإنشاء
+            const removalTime = new Date(creationTime);
+            removalTime.setMinutes(removalTime.getMinutes() + 15);
+
+            // حساب فارق الوقت بين الوقت الحالي ووقت الإزالة
+            const removalTimeDifferenceMilliseconds = removalTime - currentTime;
+
+            // تنفيذ إزالة الخبر بعد انتهاء الوقت المحدد
+            setTimeout(() => {
+                newsList.removeChild(newsList.firstChild);
+            }, removalTimeDifferenceMilliseconds);
+        }
+    });
+</script>
+
 <script src="{{ asset('front/assets/js/videolist.js') }}"></script>
 <script src="{{ asset('front/assets/js/scroll.js') }}"></script>
 <!-- vendor files -->
@@ -496,81 +560,48 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
 <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
 <script src="{{ asset('front/assets/js/reports.js') }}"></script>
-<script>
-    let gallery = document.querySelector('.gallery');
-    lightGallery(gallery, {
-        plugins: [lgFullscreen, lgShare, lgZoom, lgThumbnail], // Include the lgThumbnail plugin
-        controls: true,
-        counter: true,
-        download: false,
-        autoplay: true,
-        autoplaySpeed: 1000,
-        pauseOnHover: true,
-        getThumbContHeight: function() {
-            return 100; // Adjust the height of the thumbnail container as needed
-        },
-        thumbWidth: 100, // Adjust the width of each thumbnail as needed
-        thumbHeight: '80px', // Adjust the height of each thumbnail as needed
-        thumbMargin: 10, // Adjust the margin between thumbnails as needed
-        thumbContHeight: 120 // Adjust the height of the thumbnail container as needed
-    });
-    let main__video = document.querySelector(".main-video");
-    let first__video = document.querySelector(".videoooo");
-    main__video.querySelector("iframe").src = first__video.dataset.src;
 
-    const getHoverDirection = function(event) {
-        var directions = ['top', 'right', 'bottom', 'left'];
-        var item = event.currentTarget;
-
-        var w = item.offsetWidth;
-        var h = item.offsetHeight;
-
-
-        var x = (event.clientX - item.getBoundingClientRect().left - (w / 2)) * (w > h ? (h / w) : 1);
-        var y = (event.clientY - item.getBoundingClientRect().top - (h / 2)) * (h > w ? (w / h) : 1);
-
-
-        var d = Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
-
-        return directions[d];
-    };
-    document.addEventListener('DOMContentLoaded', function(event) {
-        // Loop over items (in a IE11 compatible way).
-        var items = document.getElementsByClassName('hover');
-        for (var i = 0; i < items.length; i++) {
-
-            // Loop over the registered event types.
-            ['mouseenter', 'mouseleave'].forEach(function(eventname) {
-                items[i].addEventListener(eventname, function(event) {
-
-                    // Retrieve the direction of the enter/leave event.
-                    var dir = getHoverDirection(event);
-
-                    // Reset classes.
-                    // event.currentTarget.className = 'item hover';
-                    // > If support for IE11 is not needed.
-                    // event.currentTarget.classList.remove('mouseenter', 'mouseleave', 'top', 'right', 'bottom', 'left');
-                    // > If support for IE11 is needed.
-                    event.currentTarget.classList.remove('mouseenter');
-                    event.currentTarget.classList.remove('mouseleave');
-                    event.currentTarget.classList.remove('top');
-                    event.currentTarget.classList.remove('right');
-                    event.currentTarget.classList.remove('bottom');
-                    event.currentTarget.classList.remove('left');
-
-                    // Add the event and direction classes.
-                    // > If support for IE11 is not needed.
-                    // event.currentTarget.classList.add(event.type, dir);
-                    // > If support for IE11 is needed.
-                    event.currentTarget.className += ' ' + event.type + ' ' + dir;
-
-                }, false);
-            });
-        }
-    });
-</script>
+<script src="{{ asset('front/assets/js/gallery.js') }}"></script>
 <script src="{{ asset('front/assets/js/skel.js') }}"></script>
+<script>
+    function addBreakingNews(newBreakingNews, snapshot, newsList) {
+        const breakingNewsParentDiv = document.createElement("div");
+        breakingNewsParentDiv.setAttribute(
+            "class",
+            "breaking-news w-100 text-right d-flex magictime spaceInDown"
+        );
+        breakingNewsParentDiv.setAttribute("style", "animation-delay:2ms");
+        breakingNewsParentDiv.setAttribute("dir", "rtl");
+        const containerDiv = document.createElement("div");
+        containerDiv.setAttribute("class", "container");
+        containerDiv.innerHTML = `
+         <div class="ajel-news d-flex align-items-center">
+            <div class="right">
+               <p style="width: 130px" class="bg-white ajeel m-0 py-2">عاجل</p>
+               <div style="width: fit-content" class="logo">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="91px" height="60px">
+                        <image x="0px" y="0px" width="91px" height="65px"
+                           xlink:href="${
+                              window.location.origin +
+                              "/front/assets/images/logo-b.png"
+                           }" />
+                  </svg>
+               </div>
+            </div>
+            <div class="left">
+               <div class="title text-end py-2 mx-5 fs-1 d-flex align-items-center text-white">
+                  <a href="${newBreakingNews.href}"
+                        class="text-bg-danger fs-1">${newBreakingNews.title}</a>
+               </div>
+            </div>
+         </div>
+   `;
 
+        breakingNewsParentDiv.appendChild(containerDiv);
+        newsList.appendChild(breakingNewsParentDiv);
+    }
+</script>
 </body>
 
 </html>
