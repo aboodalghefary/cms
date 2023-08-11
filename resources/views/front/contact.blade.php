@@ -29,94 +29,103 @@
    <!-- fonts -->
    <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=neckar-bold" />
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&display=swap">
-   <link rel="stylesheet"
-       href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&family=Marhey&display=swap">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&family=Marhey&display=swap">
 
 
    <!-- video plyer -->
    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
    <style>
-       .column {
-           background-size: cover;
-           background-repeat: no-repeat;
-       }
+      .column {
+         background-size: cover;
+         background-repeat: no-repeat;
+      }
 
-       .magictime {
-           animation-duration: .6s;
-       }
+      .magictime {
+         animation-duration: .6s;
+      }
    </style>
 </head>
 
 
 <body>
 
-    @include('partials.header')
-    <ol class="breadcrumb" dir="rtl">
-        <div class="bread container d-flex">
-            <li class="breadcrumb-item active"> الرئيسية </li>
-            <li class="breadcrumb-item ">
-                <a href="index.html"> اتصل بنا</a>
-            </li>
-        </div>
-    </ol>
-    <div>
-        <main class="">
-            <div class="main container contact d-flex flex-column justify-content-center" >
-                <div class="row  no-gutters ">
+   @include('partials.header')
+   <ol class="breadcrumb" dir="rtl">
+      <div class="bread container d-flex">
+         <li class="breadcrumb-item active"> الرئيسية </li>
+         <li class="breadcrumb-item ">
+            <a href="index.html"> اتصل بنا</a>
+         </li>
+      </div>
+   </ol>
+   <div>
+      <main class="">
+         @php
+         $ad1Div = $divs->where('name', 'contact_ad')->first();
+         @endphp
+         <div class="advertise-space adv-2-columns py-5 " style="display: block">
+            <a href="{{ $ad1Div->href }}">
+               <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}" style="object-fit: contain"
+                  Loading="lazy">
+            </a>
+         </div>
+         <div class="main container contact d-flex flex-column justify-content-center">
+            <div class="row  no-gutters ">
 
 
-                  <div class="col-lg-7 col-sm-12 pb-4 " style="padding-right: 35px!important; padding-left: 35px!important;">
-                                          <form class=""  action="">
-                            <div class="d-flex justify-content-between">
-                                <input type="text" class="form-control my-3 px-4 py-3" name="name" id="name"
-                                    placeholder="الاسم">
-                                <input type="email" class="form-control my-3 px-4 py-3" name="email" id="email"
-                                    placeholder="البريد الالكتروني">
-                            </div>
-                            <input style="width: 100%;" type="text" class="form-control px-4 py-3 mb-3"
-                                name="title" id="title" placeholder="الموضوع">
-                            <textarea style="outline: none" id="content" placeholder="نص الرسالة" class="p-3"></textarea>
-                            <button type="button" onclick="performStore()" class="btn main-btn mt-5 mb-3">ارسال
-                                الرسالة</button>
-                        </form>
-                    </div>
+               <div class="col-lg-7 col-sm-12 pb-4 "
+                  style="padding-right: 35px!important; padding-left: 35px!important;">
+                  <form class="" action="">
+                     <div class="d-flex justify-content-between">
+                        <input type="text" class="form-control my-3 px-4 py-3" name="name" id="name"
+                           placeholder="الاسم">
+                        <input type="email" class="form-control my-3 px-4 py-3" name="email" id="email"
+                           placeholder="البريد الالكتروني">
+                     </div>
+                     <input style="width: 100%;" type="text" class="form-control px-4 py-3 mb-3" name="title" id="title"
+                        placeholder="الموضوع">
+                     <textarea style="outline: none" id="content" placeholder="نص الرسالة" class="p-3"></textarea>
+                     <button type="button" onclick="performStore()" class="btn main-btn mt-5 mb-3">ارسال
+                        الرسالة</button>
+                  </form>
+               </div>
 
 
-                    <div class=" connect-title col-lg-5 col-sm-12 pt-3 border mx-auto ">
-                        <div class=" text-right mb-3">
-                            <span style="font-weight: bold; " class="label">معلومات الاتصال</span>
-                        </div>
-                        <div class="sub-title border-right text-right pr-3  ">
-                            <span class="main-location d-block">المقر الرئيسيي</span>
-                            <span class="text-black-50">فلسطين - غزة - شارع الجلاء - برج وطن</span>
-                        </div>
-                        <div class="sub-title border-right text-right pr-3 my-5 ">
-                            <span class="main-location d-block">تليفون </span>
-                            <span class="text-black-50">0597564616</span>
-                        </div>
-                        <div class="sub-title border-right text-right pr-3  ">
-                            <span class="main-location d-block">البريد الالكتروني </span>
-                            <span class="text-black-50">adm@dd.com</span>
-                        </div>
+               <div class=" connect-title col-lg-5 col-sm-12 pt-3 border mx-auto ">
+                  <div class=" text-right mb-3">
+                     <span style="font-weight: bold; " class="label">معلومات الاتصال</span>
+                  </div>
+                  <div class="sub-title border-right text-right pr-3  ">
+                     <span class="main-location d-block">المقر الرئيسيي</span>
+                     <span class="text-black-50">فلسطين - غزة - شارع الجلاء - برج وطن</span>
+                  </div>
+                  <div class="sub-title border-right text-right pr-3 my-5 ">
+                     <span class="main-location d-block">تليفون </span>
+                     <span class="text-black-50">0597564616</span>
+                  </div>
+                  <div class="sub-title border-right text-right pr-3  ">
+                     <span class="main-location d-block">البريد الالكتروني </span>
+                     <span class="text-black-50">adm@dd.com</span>
+                  </div>
 
-                    </div>
+               </div>
 
-                </div>
             </div>
-        </main>
-    </div>
-    @include('partials.footer')
+         </div>
+      </main>
+   </div>
+   @include('partials.footer')
 
 
-  <!--core JavaScript -->
-<script src="{{ asset('front/assets/js/videolist.js') }}"></script>
-<script src="{{ asset('front/assets/js/scroll.js') }}"></script>
+   <!--core JavaScript -->
+   <script src="{{ asset('front/assets/js/videolist.js') }}"></script>
+   <script src="{{ asset('front/assets/js/scroll.js') }}"></script>
 
-<!-- vendor files -->
-<script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!-- vendor files -->
+   <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
+   <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 

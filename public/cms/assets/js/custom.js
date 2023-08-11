@@ -109,6 +109,57 @@ function openEditModal(element, divName, divID, divHref, divContent) {
       hrefInput.querySelector("input").setAttribute("value", divHref);
       submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
    }
+   if (divName == "categoryDiv") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "album_detailsDiv") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "library_detailsDiv") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "contactDiv") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "librariesDiv") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "tagDiv") {
+      imageInput.classList.remove("d-none");
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "facebook") {
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "twitter") {
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
+   if (divName == "youtube") {
+      hrefInput.classList.remove("d-none");
+      hrefInput.querySelector("input").setAttribute("value", divHref);
+      submmitBtn.setAttribute("onclick", `performUpdate(${divID})`);
+   }
 }
 
 

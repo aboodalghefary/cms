@@ -88,7 +88,7 @@ Route::group([
       Route::post('rows_update/{id}', [RowController::class, 'update'])->name('rows_update');
 
 
-      Route::get('/createFormBreakingNew', [TestController::class, 'createForm']);
+      Route::get('/createFormBreakingNew', [TestController::class, 'createForm'])->name('createFormBreakingNew');
       Route::post('/createBreakingNew', [TestController::class, 'create']);
       Route::get('/indexBreakingNew', [TestController::class, 'index']);
       Route::put('/editBreakingNew', [TestController::class, 'edit']);

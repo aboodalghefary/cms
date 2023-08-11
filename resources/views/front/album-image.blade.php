@@ -2,97 +2,93 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <!-- Bootstrap core CSS -->
+   <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <!--  styles for this template -->
-    <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
+   <!--  styles for this template -->
+   <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
 
-    <!-- icons -->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+   <!-- icons -->
+   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
 
-    <!-- animate-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- fonts -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=neckar-bold" /> -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&display=swap">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&family=Marhey&display=swap">
+   <!-- animate-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+   <!-- fonts -->
+   <!-- <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=neckar-bold" /> -->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&display=swap">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Harmattan:wght@500&family=Marhey&display=swap">
 </head>
 
 <body>
 
-    @include('partials.header')
+   @include('partials.header')
 
-    <ol class="breadcrumb" dir="rtl">
-        <div class="bread container d-flex">
-            <li class="breadcrumb-item active"> الرئيسية </li>
-            <li class="breadcrumb-item ">
-                <a href="index.html"> البوم الصور</a>
-            </li>
-        </div>
-    </ol>
+   <ol class="breadcrumb" dir="rtl">
+      <div class="bread container d-flex">
+         <li class="breadcrumb-item active"> الرئيسية </li>
+         <li class="breadcrumb-item ">
+            <a href="index.html"> البوم الصور</a>
+         </li>
+      </div>
+   </ol>
 
 
 
-    <main class="main container  d-flex flex-column " style="min-height: 100vh;">
-      <div class="advertise-space adv-2-columns py-5 ">
-
-         <a class="">
-             <img src="">
+   <main class="main container  d-flex flex-column " style="min-height: 100vh;">
+      @php
+      $ad1Div = $divs->where('name', 'albums_ad')->first();
+      @endphp
+      <div class="advertise-space adv-2-columns py-5 " style="display: block">
+         <a href="{{ $ad1Div->href }}">
+            <img src="{{ asset('storage/images/div/' . $ad1Div->image) }}" style="object-fit: contain" Loading="lazy">
          </a>
+      </div>
+      <div class="row pb-5">
+         @foreach ($albums as $album)
+         <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
+            <div class="card h-100 position-relative box">
+               <a href="{{ route('album_details', ['id' => $album->id]) }}"><img class="card-img-top"
+                     src="{{ asset('storage/images/albums/' . $album->image) }}"
+                     style="height: 230px; object-fit: cover; object-position: top top;" alt=""></a>
+               <a href="{{ route('album_details', ['id' => $album->id]) }}" class="card-body">
 
-         <a class=" ">
-             <img src="" alt="" Loading="lazy">
-         </a>
+                  <h5 class="card-text text-right">
+                     {{ $album->title }}
+                  </h5>
+               </a>
+               <div class="container text-black-50 pb-4 bg-white text-right">
+                  <span class="date"> منذ
+                     {{ $album->created_at->locale('ar')->shortAbsoluteDiffForHumans() }} </span>
+               </div>
+            </div>
+            <div class="img-num top-left d-flex align-items-center">
+               <span>{{ count($album->photos) }}</span>
+               <i class="mr-2 fa-regular fa-image"></i>
+            </div>
+         </div>
+         @endforeach
 
-     </div>
-        <div class="row pb-5">
-            @foreach ($albums as $album)
-                <div class="col-lg-4 col-md-6 col-sm-12 mt-5  ">
-                    <div class="card h-100 position-relative box">
-                        <a href="{{ route('album_details', ['id' => $album->id]) }}"><img class="card-img-top"
-                                src="{{ asset('storage/images/albums/' . $album->image) }}"
-                                style="height: 230px; object-fit: cover; object-position: top top;" alt=""></a>
-                        <a href="{{ route('album_details', ['id' => $album->id]) }}" class="card-body">
-
-                            <h5 class="card-text text-right">
-                                {{ $album->title }}
-                            </h5>
-                        </a>
-                        <div class="container text-black-50 pb-4 bg-white text-right">
-                            <span class="date"> منذ
-                                {{ $album->created_at->locale('ar')->shortAbsoluteDiffForHumans() }} </span>
-                        </div>
-                    </div>
-                    <div class="img-num top-left d-flex align-items-center">
-                        <span>{{ count($album->photos) }}</span>
-                        <i class="mr-2 fa-regular fa-image"></i>
-                    </div>
-                </div>
-            @endforeach
-
-        </div>
+      </div>
 
 
-        <a href="#" class="to-top">
-            <i class="fas fa-chevron-up"></i>
-        </a>
-    </main>
+      <a href="#" class="to-top">
+         <i class="fas fa-chevron-up"></i>
+      </a>
+   </main>
 
-    @include('partials.footer')
+   @include('partials.footer')
 
-    <!-- Bootstrap core JavaScript -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{ asset('front/assets/js/scroll.js') }}"></script>
+   <!-- Bootstrap core JavaScript -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="{{ asset('front/assets/js/scroll.js') }}"></script>
 
-    <!-- vendor files -->
-    <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
+   <!-- vendor files -->
+   <script src="{{ asset('front/assets/vendor/jquery/jquery.min.js') }}"></script>
+   <script src="{{ asset('front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{ asset('front/assets/js/megaMenue.js') }}"></script>
 
 </body>
 
