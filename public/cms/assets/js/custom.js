@@ -18,6 +18,7 @@ if (lang == "rtl") {
 }
 
 function openEditModal(element, divName, divID, divHref, divContent) {
+    console.log('123');
    var imageInput = document.querySelector(
       "#modal_form_horizontal .imageInput"
    );

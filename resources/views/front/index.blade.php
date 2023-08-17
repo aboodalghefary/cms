@@ -213,7 +213,7 @@
       <div class="row ">
          <div class="container-4-columns mx-auto ">
             @foreach ($recentNews as $blog)
-            <div class="card ">
+            <div class="card" style="min-width: 268px">
                @php
                $slug = Str::slug($blog->name);
                @endphp

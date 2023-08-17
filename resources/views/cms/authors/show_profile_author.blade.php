@@ -1,4 +1,4 @@
-@extends('cms.home')
+@extends('cms.embed')
 
 
 @section('content')
@@ -7,7 +7,7 @@
         <div class="page-header-content d-lg-flex">
             <div class="d-flex">
                 <h4 class="page-title mb-0">
-                    User Pages - <span class="fw-normal">Profile Cover</span>
+                    صفحة الاعضاء - <span class="fw-normal">المحرر</span>
                 </h4>
 
                 <a href="#page_header"
@@ -22,8 +22,8 @@
             <div class="d-flex">
                 <div class="breadcrumb py-2">
                     <a href="index.html" class="breadcrumb-item"><i class="ph-house"></i></a>
-                    <a href="#" class="breadcrumb-item">User pages</a>
-                    <span class="breadcrumb-item active">Profile {{ ucwords($author->user->name) }}
+                    <a href="#" class="breadcrumb-item">الاعضاء</a>
+                    <span class="breadcrumb-item active">ملف {{ ucwords($author->user->name) }}
                     </span>
                 </div>
 
@@ -72,7 +72,7 @@
                     <a href="#settings" class="navbar-nav-link navbar-nav-link-icon rounded" data-bs-toggle="tab">
                         <div class="d-flex align-items-center mx-lg-1">
                             <i class="ph-gear"></i>
-                            <span class="d-none d-lg-inline-block ms-2">Settings</span>
+                            <span class="d-none d-lg-inline-block ms-2">الاعدادات</span>
                         </div>
                     </a>
                 </li>
@@ -104,7 +104,7 @@
                     <!-- Profile info -->
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Profile information</h5>
+                            <h5 class="mb-0"> المعلومات الشخصية </h5>
                         </div>
 
                         <div class="card-body">
@@ -248,27 +248,26 @@
                             <form action="#">
                                 <div class="row">
                                     <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label class="form-label"> كلمة المرور السابقة </label>
+                                            <input type="password" id="current_password" value="password"
+                                                class="form-control">
+                                        </div>
+                                    </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
-                                                <label class="form-label">New password</label>
+                                                <label class="form-label">كلمة المرور الجديدة</label>
                                                 <input type="password" id="new_password" placeholder="Enter new password"
                                                     class="form-control">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">Current password</label>
-                                            <input type="password" id="current_password" value="password"
-                                                class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
+
 
                                 <div class="text-end">
                                     <button type="button" onclick="performUpdatePassword({{ $author->id }})"
-                                        class="btn btn-primary">Save changes</button>
+                                        class="btn btn-primary"> حفظ التغييرات </button>
                                 </div>
                             </form>
                         </div>

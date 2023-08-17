@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end align-items-center">
-                    <a href="{{ route('admins.index') }}" class="btn btn-light">الغاء</a>
+                    <a href="{{ route('authors.index') }}" class="btn btn-light">الغاء</a>
                     <button type="button" onclick="performUpdate({{ $admin->id }})" class="btn btn-primary ms-3">
                         تعديل
                         <i class="ph-paper-plane-tilt ms-2"></i></button>

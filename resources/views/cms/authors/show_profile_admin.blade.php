@@ -1,4 +1,4 @@
-@extends('cms.home')
+@extends('cms.embed')
 
 
 @section('content')
@@ -7,7 +7,7 @@
         <div class="page-header-content d-lg-flex">
             <div class="d-flex">
                 <h4 class="page-title mb-0">
-                    User Pages - <span class="fw-normal">Profile Cover</span>
+                    الاعضاء - <span class="fw-normal">ملف العضو</span>
                 </h4>
 
                 <a href="#page_header"
@@ -21,7 +21,7 @@
         <div class="page-header-content d-lg-flex border-top">
             <div class="d-flex">
                 <div class="breadcrumb py-2">
-                    <a href="index.html" class="breadcrumb-item"><i class="ph-house"></i></a>
+                    <a href="{{ route('home') }}" class="breadcrumb-item"><i class="ph-house"></i></a>
                     <a href="{{ route('authors.index') }}" class="breadcrumb-item">صفحة الاعضاء</a>
                     <span class="breadcrumb-item active">ملف {{ ucwords($admin->user->name) }}
                     </span>
@@ -72,7 +72,7 @@
                     <a href="#settings" class="navbar-nav-link navbar-nav-link-icon rounded" data-bs-toggle="tab">
                         <div class="d-flex align-items-center mx-lg-1">
                             <i class="ph-gear"></i>
-                            <span class="d-none d-lg-inline-block ms-2">Settings</span>
+                            <span class="d-none d-lg-inline-block ms-2">الاعدادات</span>
                         </div>
                     </a>
                 </li>
@@ -104,7 +104,7 @@
                     <!-- Profile info -->
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Profile information</h5>
+                            <h5 class="mb-0">المعلومات الشخصية</h5>
                         </div>
 
                         <div class="card-body">
@@ -215,7 +215,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="mb-3">
-                                            <label class="form-label">Upload profile image</label>
+                                            <label class="form-label">ارفع صورة الملف الشخصي الجديدة</label>
                                             <input type="file" class="form-control" name="image" id="image"
                                                 value="{{ $admin->image }}">
                                             <div class="form-text text-muted">Accepted formats: gif, png, jpg. Max file
@@ -247,22 +247,19 @@
                             <form action="#">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label class="form-label">New password</label>
-                                                <input type="password" id="new_password" placeholder="Enter new password"
-                                                    class="form-control">
-                                            </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">كلمة السر الحالية</label>
+                                            <input type="password" id="current_password" class="form-control">
                                         </div>
                                     </div>
-
                                     <div class="col-lg-6">
                                         <div class="mb-3">
-                                            <label class="form-label">Current password</label>
-                                            <input type="password" id="current_password" value="password"
+                                            <label class="form-label"> كلمة السر الجديدة </label>
+                                            <input type="password" id="new_password" placeholder="Enter new password"
                                                 class="form-control">
                                         </div>
                                     </div>
+
                                 </div>
 
                                 <div class="text-end">

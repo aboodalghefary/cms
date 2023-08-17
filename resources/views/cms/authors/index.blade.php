@@ -27,10 +27,23 @@
                     @foreach ($roles->where('guard_name', 'author')->all() as $role)
                         @foreach ($authors as $index => $author)
                             @if ($author->hasRole($role->name))
-                                @if ($index == 0)
+                                 @if ($index == 0)
                                     <div class="list-group-item fw-semibold" style="border: none;">{{ $role->name }}
                                     </div>
                                 @endif
+                                
+                                 @if ($index != 0)
+                                    @if($roleName != $role->name)
+                                        <div class="list-group-item fw-semibold" style="border: none;">{{ $role->name }}</div>
+                                    @endif    
+                                @endif
+                                
+                                @php
+                                    $roleName = $role->name;
+                                @endphp
+                                                                
+
+                                
                                 <div style="border: none;">
                                     <div class="list-group-item hstack gap-3" style="border: none;">
                                         <a href="#" class="status-indicator-container">
@@ -40,7 +53,7 @@
                                         </a>
 
                                         <div class="flex-fill">
-                                            <a href="{{ route('authors.edit', $author->id) }}"
+                                            <a href="{{ route('show_profile_author', $author->id) }}"
                                                 class="fw-semibold">{{ ucwords($author->user->name) }}</a>
                                         </div>
 
@@ -62,6 +75,9 @@
                                                 <li><i class="ph-pen me-2"></i> <a
                                                         href="{{ route('show_profile_author', $author->id) }}"> تعديل </a>
                                                 </li>
+                                                <li><i class="ph-trash me-2"></i> <a href="#"
+                                                        onclick="performDestroyAuthor({{ $author->id }},this)"> حذف </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -82,10 +98,21 @@
                     @foreach ($roles->where('guard_name', 'admin')->all() as $role)
                         @foreach ($admins as $index => $admin)
                             @if ($admin->hasRole($role->name))
-                                @if ($index == 0)
+                                 @if ($index == 0)
                                     <div class="list-group-item fw-semibold" style="border: none;">{{ $role->name }}
                                     </div>
                                 @endif
+                                
+                                 @if ($index != 0)
+                                    @if($roleName != $role->name)
+                                        <div class="list-group-item fw-semibold" style="border: none;">{{ $role->name }}</div>
+                                    @endif    
+                                @endif
+                                
+                                @php
+                                    $roleName = $role->name;
+                                @endphp
+                                        
                                 <div style="border: none;">
                                     <div class="list-group-item hstack gap-3" style="border: none;">
                                         <a href="#" class="status-indicator-container">
@@ -95,7 +122,7 @@
                                         </a>
 
                                         <div class="flex-fill">
-                                            <a href="{{ route('admins.edit', $admin->id) }}"
+                                            <a href="{{ route('show_profile_admin', $admin->id) }}"
                                                 class="fw-semibold">{{ ucwords($admin->user->name) }}</a>
 
                                         </div>
@@ -120,6 +147,9 @@
                                                 <li><i class="ph-pen me-2"></i> <a
                                                         href="{{ route('show_profile_admin', $admin->id) }}"> تعديل </a>
                                                 </li>
+                                                <li><i class="ph-trash me-2"></i> <a href="#"
+                                                        onclick="performDestroyAdmin({{ $admin->id }},this)"> حذف </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -141,9 +171,32 @@
 
 @section('scripts')
     <script>
-        function performDestroy(id, referance) {
+        function performDestroyAdmin(id, referance) {
+            let url = '/cms/admin/admins/' + id;
+            destroyr(url, referance);
+        }
+        function performDestroyAuthor(id, referance) {
             let url = '/cms/admin/authors/' + id;
-            confirmDestroy(url, referance);
+            destroyr(url, referance);
+        }
+        function destroyr(url, td) {
+            axios
+                .delete(url)
+                .then(function (response) {
+                    // handle success
+                    console.log(response);
+                    showMessage(response.data);
+                    window.location.href = window.location.origin + '/ar/cms/admin/authors'
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error.response);
+                    showMessage(error.response.response.data);
+                })
+                .then(function () {
+                    // always executed
+                    showMessage(response.data);
+                });
         }
         /* ------------------------------------------------------------------------------
          *

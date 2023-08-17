@@ -108,15 +108,13 @@
                                     @can('create-admins')
                                         <li class="nav-item">
                                             <a href="{{ route('admins.create') }}" class="nav-link">
-                                                <i class="ph-plus"></i>
-                                                {{ __('dashboard/master.add') }}</a>
+                                                <i class="ph-plus"></i> اضافة مشرف </a>
                                         </li>
                                     @endcan
                                     @can('create-authors')
                                         <li class="nav-item">
                                             <a href="{{ route('authors.create') }}" class="nav-link">
-                                                <i class="ph-plus"></i>
-                                                {{ __('dashboard/master.add') }}</a>
+                                                <i class="ph-plus"></i> اضافة محرر </a>
                                         </li>
                                     @endcan
                                 </ul>

@@ -49,7 +49,7 @@ class AuthorPolicy
     * @param  \App\Models\User  $user
     * @return \Illuminate\Auth\Access\Response|bool
     */
-   public function create(User $user)
+   public function create()
    {
       foreach (array_keys(config('auth.guards')) as $guard) {
 
